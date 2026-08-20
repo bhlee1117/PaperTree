@@ -1,0 +1,10 @@
+.env
+*.key
+.venv/
+__pycache__/
+*.pyc
+backups/
+*.csv
+*.bib
+*.tmp
+update.log

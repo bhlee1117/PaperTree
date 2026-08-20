@@ -17,7 +17,7 @@ Zotero: right-click the collection -> Export Collection -> CSV (or CSL JSON).
 Deps: pip install requests
 """
 
-import argparse, csv, hashlib, json, math, os, re, sys, time, itertools, unicodedata
+import argparse, csv, json, math, os, re, sys, time, itertools, unicodedata
 from collections import Counter, defaultdict
 import requests
 
@@ -480,8 +480,6 @@ def label_papers(papers, lang="English", checkpoint=None, every=20):
             p["needs_review"] = True
             print(f"  [{i}/{len(papers)}] SKIP no abstract · {p['title'][:48]}")
             continue
-        prev_lab = dict(p.get("labels") or {})
-        prev_conf = dict(p.get("confidence") or {})
         try:
             out = call_claude(build_prompt(p, lang), key)
         except Exception as e:
@@ -502,12 +500,6 @@ def label_papers(papers, lang="English", checkpoint=None, every=20):
         p["evidence"] = out.get("evidence", {})
         p["significance"] = out.get("significance", "")
         p["keywords"] = out.get("keywords", [])
-        # a taxonomy change must not silently discard axes you verified by hand
-        if p.get("human_verified"):
-            for ax in TAXONOMY:
-                if float(prev_conf.get(ax, 0)) >= 1.0 and ax in prev_lab:
-                    p["labels"][ax] = prev_lab[ax]
-                    p["confidence"][ax] = 1.0
         p["needs_review"] = min([float(x) for x in p["confidence"].values()] or [1]) < 0.6
         print(f"  [{i}/{len(papers)}] {p['title'][:56]}")
         if checkpoint and i % every == 0:
@@ -729,26 +721,8 @@ def merge_existing(papers, path, force_relabel=()):
     return papers, {"new": new, "cached": cached, "dropped": len(old), "repaired": repaired}
 
 
-def axes_fingerprint():
-    """Identity of the current taxonomy. Stored in the database so that a cached label
-    can be recognised as belonging to a different question set."""
-    spec = {k: sorted(v["values"]) for k, v in TAXONOMY.items()}
-    spec.update({"multi:" + k: sorted(v["values"]) for k, v in MULTI.items()})
-    return hashlib.sha1(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
-
-
 def needs_call(p):
-    """A cached label is only reusable if it answers the CURRENT questions.
-
-    This check exists because of a real failure: after two axes were retired and one
-    added, a checkpoint from the previous taxonomy was resumed, every paper counted as
-    already labelled, and the run reported "0 papers to label" while leaving the
-    database full of answers to questions that no longer existed. Presence of labels is
-    not the test; matching the axis set is.
-    """
-    if not p.get("labels") or not p.get("confidence"):
-        return True
-    return set(p["labels"]) != set(TAXONOMY)
+    return not p.get("labels") or not p.get("confidence")
 
 
 def estimate(papers):
@@ -872,15 +846,6 @@ def main():
         make_gold(papers, a.gold)
         return
 
-    stale = [p for p in papers if p.get("labels") and set(p["labels"]) != set(TAXONOMY)]
-    if stale:
-        old = sorted({a for p in stale for a in p["labels"]} - set(TAXONOMY))
-        new = sorted(set(TAXONOMY) - {a for p in stale for a in p["labels"]})
-        print(f"\n  ! {len(stale)} papers carry labels from a different taxonomy and will be relabelled")
-        if old: print(f"      retired axes present: {', '.join(old)}")
-        if new: print(f"      new axes missing:     {', '.join(new)}")
-        print("      hand-verified axes that still exist are preserved")
-
     todo = estimate(papers)
     if a.dry_run:
         print("\n  dry run — nothing was sent to the API")
@@ -910,7 +875,6 @@ def main():
         p.pop("refs", None); p.pop("author_ids", None)
 
     db = {"meta": {"generated": time.strftime("%Y-%m-%d %H:%M"), "n": len(papers),
-                   "taxonomy": axes_fingerprint(),
                    "axes": [{"id": k, "label": v["label"], "values": list(v["values"])}
                             for k, v in TAXONOMY.items()],
                    "multi_axes": [{"id": k, "label": v["label"], "values": v["values"]}

@@ -8,3 +8,5 @@ backups/
 *.bib
 *.tmp
 update.log
+.openalex_cache.json
+.openalex_cache.json

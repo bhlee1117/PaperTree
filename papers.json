@@ -1,0 +1,1809 @@
+{
+ "meta": {
+  "generated": "2026-08-20 18:52",
+  "n": 14,
+  "taxonomy": "bd488454f7bf",
+  "axes": [
+   {
+    "id": "scope",
+    "label": "Scope",
+    "values": [
+     "dendritic computation",
+     "hippocampal coding & memory",
+     "circuit & behavior",
+     "synaptic physiology",
+     "methods & tools",
+     "other"
+    ]
+   },
+   {
+    "id": "article_type",
+    "label": "Article type",
+    "values": [
+     "primary research",
+     "review / perspective",
+     "methods / tool",
+     "theory"
+    ]
+   },
+   {
+    "id": "prep",
+    "label": "Preparation",
+    "values": [
+     "acute slice",
+     "organotypic slice",
+     "anesthetized in vivo",
+     "awake in vivo",
+     "computational / modeling",
+     "human tissue",
+     "dissociated culture",
+     "unclear"
+    ]
+   },
+   {
+    "id": "modality",
+    "label": "Primary evidence modality",
+    "values": [
+     "patch",
+     "voltage imaging",
+     "calcium imaging",
+     "extracellular",
+     "anatomy",
+     "modeling",
+     "review",
+     "unclear"
+    ]
+   }
+  ],
+  "multi_axes": [
+   {
+    "id": "phenomena",
+    "label": "Phenomena reported",
+    "values": [
+     "NMDA spike",
+     "Ca spike",
+     "Na spike",
+     "bAP",
+     "plateau potential",
+     "passive integration",
+     "branch-specific computation"
+    ]
+   },
+   {
+    "id": "method_flags",
+    "label": "Method flags",
+    "values": [
+     "optogenetics",
+     "glutamate uncaging",
+     "anesthetized",
+     "room temperature",
+     "pharmacology",
+     "behavior",
+     "chronic/longitudinal"
+    ]
+   }
+  ],
+  "lineage": [
+   {
+    "person": "Mark T. Harnett",
+    "trained_in": [
+     "Stuart + Williams"
+    ],
+    "now_leads": [
+     "Harnett (single)"
+    ],
+    "as_first": 1,
+    "as_last": 1
+   }
+  ],
+  "weights": {
+   "last": 1.0,
+   "first": 0.85,
+   "penultimate": 0.45,
+   "second": 0.35,
+   "middle": 0.12,
+   "tau": 0.3
+  }
+ },
+ "papers": [
+  {
+   "title": "Distinct Neuronal Coding Schemes in Memory Revealed by Selective Erasure of Fast Synchronous Synaptic Transmission",
+   "year": 2012,
+   "doi": "10.1016/j.neuron.2011.12.036",
+   "authors": [
+    "Wei Xu",
+    "Wade Morishita",
+    "Paul S. Buckmaster",
+    "Zhiping P. Pang",
+    "Robert C. Malenka",
+    "Thomas C. Südhof"
+   ],
+   "venue": "Neuron",
+   "abstract": "",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1016_j.neuron.2011.12.036",
+   "cited_by": 198,
+   "first_author": "Wei Xu",
+   "last_author": "Thomas C. Südhof",
+   "tldr": "",
+   "labels": {
+    "scope": "other",
+    "article_type": "primary research",
+    "prep": "unclear",
+    "modality": "unclear"
+   },
+   "phenomena": [],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.0,
+    "article_type": 0.0,
+    "prep": 0.0,
+    "modality": 0.0
+   },
+   "evidence": {},
+   "significance": "(no abstract — label this one from the PDF)",
+   "needs_review": true,
+   "lab_cluster": 2,
+   "lab_cluster_name": "Südhof (single)",
+   "similar": [],
+   "lineage": []
+  },
+  {
+   "title": "Dendrocentric learning for synthetic intelligence",
+   "year": 2022,
+   "doi": "10.1038/s41586-022-05340-6",
+   "authors": [
+    "Kwabena Boahen"
+   ],
+   "venue": "Nature",
+   "abstract": "Artificial intelligence now advances by performing twice as many floating-point multiplications every two months, but the semiconductor industry tiles twice as many multipliers on a chip every two years. Moreover, the returns from tiling these multipliers ever more densely now diminish because signals must travel relatively farther and farther. Although travel can be shortened by stacking tiled multipliers in a three-dimensional chip, such a solution acutely reduces the available surface area for dissipating heat. Here I propose to transcend this three-dimensional thermal constraint by moving away from learning with synapses to learning with dendrites. Synaptic inputs are not weighted precisely but rather ordered meticulously along a short stretch of dendrite, termed dendrocentric learning. With the help of a computational model of a dendrite and a conceptual model of a ferroelectric device that emulates it, I illustrate how dendrocentric learning artificial intelligence—or synthetic intelligence for short—could run not with megawatts in the cloud but rather with watts on a smartphone.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41586-022-05340-6",
+   "cited_by": 94,
+   "first_author": "Kwabena Boahen",
+   "last_author": "Kwabena Boahen",
+   "tldr": "The concept of dendrocentric learning artificial intelligence is proposed to replace synaptocentric learning, reducing the energy use requirement and removing the thermal constraint.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "theory",
+    "prep": "computational / modeling",
+    "modality": "modeling"
+   },
+   "phenomena": [
+    "branch-specific computation",
+    "passive integration"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.85,
+    "article_type": 0.75,
+    "prep": 0.9,
+    "modality": 0.9
+   },
+   "evidence": {
+    "modality": "computational model of dendrite; no new recordings",
+    "prep": "computational and conceptual models; no animal or tissue preparation"
+   },
+   "significance": "Proposed dendrocentric learning via ordered synaptic inputs on dendritic branches, suggesting a path to energy-efficient neuromorphic hardware beyond current semiconductor scaling limits.",
+   "keywords": [
+    "dendrocentric learning",
+    "neuromorphic computing",
+    "synthetic intelligence",
+    "ferroelectric device",
+    "dendritic computation",
+    "energy efficiency"
+   ],
+   "needs_review": false,
+   "lab_cluster": 3,
+   "lab_cluster_name": "Boahen (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Dendritic branches treated as independent computational subunits for hardware design",
+     "quote": "ordered meticulously along a short stretch of dendrite",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In computational/modeling context; single neuron with dendritic subunits as multi-layer network",
+     "quote": "moving away from learning with synapses to learning with dendrites",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Theoretical/modeling context; dendrites treated primarily as plasticity substrate",
+     "quote": "moving away from learning with synapses to learning with dendrites",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dendritic, delayed, stochastic CaMKII activation in behavioural time scale plasticity",
+   "year": 2024,
+   "doi": "10.1038/s41586-024-08021-8",
+   "authors": [
+    "Anant Jain",
+    "Yoshihisa Nakahata",
+    "Tristano Pancani",
+    "Tetsuya Watabe",
+    "Polina Rusina",
+    "Kelly South",
+    "Kengo Adachi",
+    "Long Yan",
+    "Noriko Simorowski",
+    "Hiro Furukawa",
+    "Ryohei Yasuda"
+   ],
+   "venue": "Nature",
+   "abstract": "Abstract Behavioural time scale plasticity (BTSP) is non-Hebbian plasticity induced by integrating presynaptic and postsynaptic components separated by a behaviourally relevant time scale (seconds) 1 . BTSP in hippocampal CA1 neurons underlies place cell formation. However, the molecular mechanisms that enable synapse-specific plasticity on a behavioural time scale are unknown. Here we show that BTSP can be induced in a single dendritic spine using two-photon glutamate uncaging paired with postsynaptic current injection temporally separated by a behavioural time scale. Using an improved Ca 2+ /calmodulin-dependent kinase II (CaMKII) sensor, we did not detect CaMKII activation during this BTSP induction. Instead, we observed dendritic, delayed and stochastic CaMKII activation (DDSC) associated with Ca 2+ influx and plateau potentials 10–100 s after BTSP induction. DDSC required both presynaptic and postsynaptic activity, which suggests that CaMKII can integrate these two signals. Also, optogenetically blocking CaMKII 15–30 s after the BTSP protocol inhibited synaptic potentiation, which indicated that DDSC is an essential mechanism of BTSP. IP 3 -dependent intracellular Ca 2+ release facilitated both DDSC and BTSP. Thus, our study suggests that non-synapse-specific CaMKII activation provides an instructive signal with an extensive time window over tens of seconds during BTSP.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41586-024-08021-8",
+   "cited_by": 39,
+   "first_author": "Anant Jain",
+   "last_author": "Ryohei Yasuda",
+   "tldr": "This study suggests that non-synapse-specific CaMKII activation provides an instructive signal with an extensive time window over tens of seconds during BTSP, findings that clarify the mechanisms that underlie place cell formation.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [
+    "Ca spike",
+    "plateau potential",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "optogenetics",
+    "glutamate uncaging",
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.88,
+    "article_type": 0.97,
+    "prep": 0.72,
+    "modality": 0.82
+   },
+   "evidence": {
+    "modality": "improved CaMKII sensor and Ca2+ imaging in dendritic spines",
+    "prep": "two-photon glutamate uncaging with postsynaptic current injection; likely acute slice but not explicitly stated"
+   },
+   "significance": "Demonstrated that delayed stochastic dendritic CaMKII activation after BTSP induction provides the molecular bridge integrating presynaptic and postsynaptic signals across behavioural timescales, reframing how synapse-specific long-term plasticity is achieved.",
+   "keywords": [
+    "BTSP",
+    "CaMKII",
+    "place cell",
+    "hippocampus",
+    "dendritic spine",
+    "plateau potential"
+   ],
+   "needs_review": false,
+   "lab_cluster": 4,
+   "lab_cluster_name": "Yasuda (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "In CA1 acute slice, single-spine glutamate uncaging paired with postsynaptic current injection",
+     "quote": "BTSP in hippocampal CA1 neurons underlies place cell formation",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.4",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "Plateau potentials are required for DDSC and BTSP; coincidence alone is insufficient",
+     "quote": "Ca2+ influx and plateau potentials 10–100 s after BTSP induction",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3a",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "BTSP involves non-synapse-specific CaMKII activation spreading beyond the stimulated spine",
+     "quote": "non-synapse-specific CaMKII activation provides an instructive signal",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.5",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "CaMKII activation is dendritic and non-localized; synapse specificity carried by glutamate-bound NMDARs",
+     "quote": "non-synapse-specific CaMKII activation provides an instructive signal with an extensive time window",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Delayed stochastic CaMKII activation provides a raised likelihood of plasticity over tens of seconds post-induction",
+     "quote": "DDSC is an essential mechanism of BTSP",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Ca2+ imaging used to detect plateau potentials and CaMKII-associated Ca2+ influx",
+     "quote": "Ca2+ influx and plateau potentials 10–100 s after BTSP induction",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dependence of EPSP Efficacy on Synapse Location in Neocortical Pyramidal Neurons",
+   "year": 2002,
+   "doi": "10.1126/science.1067903",
+   "authors": [
+    "Stephen R. Williams",
+    "Greg J. Stuart"
+   ],
+   "venue": "Science",
+   "abstract": "Neurons receive thousands of synaptic inputs throughout elaborate dendritic trees. Here we determine the somatic impact of excitatory postsynaptic potentials (EPSPs) generated at known dendritic sites in neocortical pyramidal neurons. As inputs became more distal, somatic EPSP amplitude decreased, whereas use-dependent depression increased. Despite marked attenuation (>40-fold), when coactivated within a narrow time window (approximately 10 milliseconds), distal EPSPs could directly influence action potential output following dendritic spike generation. These findings reveal that distal EPSPs are ineffective sources of background somatic excitation, but through coincidence detection have a powerful transient signaling role.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1126_science.1067903",
+   "cited_by": 383,
+   "first_author": "Stephen R. Williams",
+   "last_author": "Greg J. Stuart",
+   "tldr": "The findings reveal that distal EPSPs are ineffective sources of background somatic excitation, but through coincidence detection have a powerful transient signaling role.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "phenomena": [
+    "NMDA spike",
+    "passive integration",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.97,
+    "prep": 0.72,
+    "modality": 0.93
+   },
+   "evidence": {
+    "modality": "EPSPs recorded at soma and known dendritic sites via patch electrodes",
+    "prep": "neocortical pyramidal neurons with dendritic recordings; slice implied but not stated explicitly"
+   },
+   "significance": "Showed distal EPSPs are ineffective background drivers but potent coincidence detectors via dendritic spikes, redefining location-dependent synaptic efficacy in neocortical pyramids.",
+   "keywords": [
+    "EPSP attenuation",
+    "dendritic spike",
+    "coincidence detection",
+    "neocortical pyramidal neuron",
+    "synaptic location",
+    "input integration"
+   ],
+   "needs_review": false,
+   "lab_cluster": 0,
+   "lab_cluster_name": "Stuart + Williams",
+   "similar": [
+    {
+     "id": "10.1523_JNEUROSCI.2813-14.2015",
+     "score": 0.467,
+     "title": "Distribution and Function of HCN Channels in the Apical Dendritic Tuft of Neocortical Pyramidal Neurons",
+     "year": 2015
+    }
+   ],
+   "lineage": [
+    "Mark T. Harnett"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "neocortical pyramidal neurons in acute slice, patch recording",
+     "quote": "distal EPSPs could directly influence action potential output following dendritic spike generation",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "coincident distal synaptic inputs within ~10ms time window in neocortical pyramidal dendrites",
+     "quote": "coactivated within a narrow time window, distal EPSPs could directly influence action potential output following dendritic spike generation",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "distal synaptic inputs coactivated within narrow temporal window; supralinear only for coincident inputs",
+     "quote": "distal EPSPs are ineffective sources of background somatic excitation, but through coincidence detection have a powerful transient signaling role",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dendritic Spines Prevent Synaptic Voltage Clamp",
+   "year": 2017,
+   "doi": "10.1016/j.neuron.2017.11.016",
+   "authors": [
+    "Lou Beaulieu-Laroche",
+    "Mark T. Harnett"
+   ],
+   "venue": "Neuron",
+   "abstract": "",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1016_j.neuron.2017.11.016",
+   "cited_by": 88,
+   "first_author": "Lou Beaulieu-Laroche",
+   "last_author": "Mark T. Harnett",
+   "tldr": "It is revealed that voltage clamp is completely ineffective for most excitatory synapses due to spine electrical compartmentalization, and an approach is developed to provide new, accurate measurements of synaptic conductance.",
+   "labels": {
+    "scope": "other",
+    "article_type": "primary research",
+    "prep": "unclear",
+    "modality": "unclear"
+   },
+   "phenomena": [],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.0,
+    "article_type": 0.0,
+    "prep": 0.0,
+    "modality": 0.0
+   },
+   "evidence": {},
+   "significance": "It is revealed that voltage clamp is completely ineffective for most excitatory synapses due to spine electrical compartmentalization, and an approach is developed to provide new, accurate measurements of synaptic conductance.",
+   "needs_review": true,
+   "lab_cluster": 5,
+   "lab_cluster_name": "Harnett (single)",
+   "similar": [
+    {
+     "id": "10.1523_JNEUROSCI.2813-14.2015",
+     "score": 0.467,
+     "title": "Distribution and Function of HCN Channels in the Apical Dendritic Tuft of Neocortical Pyramidal Neurons",
+     "year": 2015
+    }
+   ],
+   "lineage": [
+    "Mark T. Harnett"
+   ]
+  },
+  {
+   "title": "Distal tuft dendrites predict properties of new hippocampal place fields",
+   "year": 2025,
+   "doi": "10.1016/j.neuron.2025.03.029",
+   "authors": [
+    "Justin K. O’Hare",
+    "Jamie Wang",
+    "Margjele D. Shala",
+    "Franck Polleux",
+    "Attila Losonczy"
+   ],
+   "venue": "Neuron",
+   "abstract": "Hippocampal pyramidal neurons support episodic memory by integrating complementary information streams into new “place fields.” Distal tuft dendrites have been proposed to drive place field formation via dendritic plateau potentials. However, the relationship between distal dendritic and somatic activity is unknown in vivo. Here, we gained simultaneous optical access to distal tuft dendrites and their soma in head-fixed mice navigating virtual reality environments. While distal tuft dendrites rarely express local peri-formation plateau potentials, the timing and extent of their recruitment predict properties of resultant somatic place fields. Following somatic place field formation, distal tuft dendrites readily express plateau potentials as well as local place fields that are back shifted relative to that of their soma. Distal tuft dendrites may therefore undergo local plasticity during somatic place field formation. Through direct in vivo observation, we provide an updated dendritic basis for hippocampal feature selectivity during navigational learning.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1016_j.neuron.2025.03.029",
+   "cited_by": 20,
+   "first_author": "Justin K. O’Hare",
+   "last_author": "Attila Losonczy",
+   "tldr": "Through direct in vivo observation, this work provides an updated dendritic basis for hippocampal feature selectivity during navigational learning by gaining simultaneous optical access to distal tuft dendrites and their soma in head-fixed mice navigating virtual reality environments.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [
+    "plateau potential",
+    "bAP",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal"
+   ],
+   "confidence": {
+    "scope": 0.92,
+    "article_type": 0.98,
+    "prep": 0.97,
+    "modality": 0.93
+   },
+   "evidence": {
+    "modality": "simultaneous optical access to distal tuft dendrites and soma",
+    "prep": "head-fixed mice navigating virtual reality environments"
+   },
+   "significance": "Simultaneous dendritic and somatic calcium imaging showed distal tuft activity predicts place field properties, revising the dendritic plateau model of hippocampal place field formation.",
+   "keywords": [
+    "place field formation",
+    "distal tuft dendrites",
+    "plateau potentials",
+    "calcium imaging",
+    "hippocampal plasticity",
+    "virtual reality navigation"
+   ],
+   "needs_review": false,
+   "lab_cluster": 6,
+   "lab_cluster_name": "Losonczy (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Distal tuft dendrites rarely show plateau potentials at place field formation; their recruitment timing predicts field properties",
+     "quote": "distal tuft dendrites rarely express local peri-formation plateau potentials",
+     "confidence": 0.9,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "BTSP via plateau potentials is not the sole mechanism; distal dendritic recruitment without clear plateau predicts field formation",
+     "quote": "timing and extent of their recruitment predict properties of resultant somatic place fields",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "In awake in vivo CA1 mice; distal tuft and somatic activity are correlated but show distinct place field properties",
+     "quote": "relationship between distal dendritic and somatic activity is unknown in vivo",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3c",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "In vivo awake CA1; plateau potentials post-field formation occur in distal tuft and show back-shifted local place fields",
+     "quote": "distal tuft dendrites readily express plateau potentials as well as local place fields",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Calcium imaging used to infer dendritic voltage events including plateau potentials",
+     "quote": "we gained simultaneous optical access to distal tuft dendrites and their soma",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In awake navigating mice; distal dendritic activity predicts and likely shapes somatic place field formation",
+     "quote": "distal tuft dendrites may therefore undergo local plasticity during somatic place field formation",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Distribution of bursting neurons in the CA1 region and the subiculum of the rat hippocampus",
+   "year": 2007,
+   "doi": "10.1002/cne.21564",
+   "authors": [
+    "Tim Jarsky",
+    "Rina Mady",
+    "Benjamin Kennedy",
+    "Nelson Spruston"
+   ],
+   "venue": "The Journal of Comparative Neurology",
+   "abstract": "We performed patch-clamp recordings from morphologically identified and anatomically mapped pyramidal neurons of the ventral hippocampus to test the hypothesis that bursting neurons are distributed on a gradient from the CA2/CA1 border (proximal) through the subiculum (distal), with more bursting observed at distal locations. We find that the well-defined morphological boundaries between the hippocampal subregions CA1 and subiculum do not correspond to abrupt changes in electrophysiological properties. Rather, we observed that the percentage of bursting neurons is linearly correlated with position in the proximal-distal axis across the CA1 and the subiculum, the percentages of bursting neurons being 10% near the CA1-CA2 border, 24% at the CA1-subiculum border, and higher than 50% in the distal subiculum. The distribution of bursting neurons was paralleled by a gradient in afterdepolarization (ADP) amplitude. We also tested the hypothesis that there was an association between bursting and two previously described morphologically distinct groups of pyramidal neurons (twin and single apical dendrites) in the CA1 region. We found no difference in output mode between single and twin apical dendrite morphologies, which was consistent with the observation that the two morphologies were equally distributed across the transverse axis of the CA1 region. Taken together with the known organization of connections from CA3 to CA1 and CA1 to subiculum, our results indicate that bursting neurons are most likely to be connected to regular spiking neurons and vice versa.",
+   "zotero_tags": [],
+   "zotero_extra": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/cne.21564",
+   "id": "10.1002_cne.21564",
+   "cited_by": 132,
+   "first_author": "Tim Jarsky",
+   "last_author": "Nelson Spruston",
+   "tldr": "The results indicate that bursting neurons are most likely to be connected to regular spiking neurons and vice versa.",
+   "labels": {
+    "scope": "circuit & behavior",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "phenomena": [],
+   "method_flags": [
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.72,
+    "article_type": 0.97,
+    "prep": 0.8,
+    "modality": 0.98
+   },
+   "evidence": {
+    "modality": "patch-clamp recordings from morphologically identified pyramidal neurons",
+    "prep": "patch-clamp from ventral hippocampus slices; acute preparation implied"
+   },
+   "significance": "Bursting neuron prevalence follows a continuous proximal-distal gradient across CA1 and subiculum, challenging discrete subregion-based electrophysiological classification.",
+   "keywords": [
+    "CA1",
+    "subiculum",
+    "bursting",
+    "pyramidal neuron",
+    "proximal-distal gradient",
+    "afterdepolarization"
+   ],
+   "needs_review": false,
+   "lab_cluster": 1,
+   "lab_cluster_name": "Spruston",
+   "similar": [
+    {
+     "id": "10.1073_pnas.0707919104",
+     "score": 0.75,
+     "title": "Dendritic spikes induce single-burst long-term potentiation",
+     "year": 2007
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Distinct synaptic plasticity rules operate across dendritic compartments in vivo during learning",
+   "year": 2025,
+   "doi": "10.1126/science.ads4706",
+   "authors": [
+    "William J. Wright",
+    "Nathan G. Hedrick",
+    "Takaki Komiyama"
+   ],
+   "venue": "Science",
+   "abstract": "Synaptic plasticity underlies learning by modifying specific synaptic inputs to reshape neural activity and behavior. However, the rules governing which synapses will undergo different forms of plasticity in vivo during learning and whether these rules are uniform within individual neurons remain unclear. Using in vivo longitudinal imaging with single-synapse resolution in the mouse motor cortex during motor learning, we found that apical and basal dendrites of layer 2/3 (L2/3) pyramidal neurons showed distinct activity-dependent synaptic plasticity rules. The strengthening of apical and of basal synapses is predicted by local coactivity with nearby synapses and activity coincident with postsynaptic action potentials, respectively. Blocking postsynaptic spiking diminished basal synaptic potentiation without affecting apical plasticity. Thus, individual neurons use multiple activity-dependent plasticity rules in a compartment-specific manner in vivo during learning.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1126_science.ads4706",
+   "cited_by": 66,
+   "first_author": "William J. Wright",
+   "last_author": "Takaki Komiyama",
+   "tldr": "Using in vivo longitudinal imaging with single synapse resolution in the mouse motor cortex during motor learning, it is found that apical and basal dendrites of L2/3 pyramidal neurons showed distinct activity-dependent synaptic plasticity rules.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [
+    "branch-specific computation",
+    "passive integration"
+   ],
+   "method_flags": [
+    "pharmacology",
+    "behavior",
+    "chronic/longitudinal"
+   ],
+   "confidence": {
+    "scope": 0.92,
+    "article_type": 0.98,
+    "prep": 0.95,
+    "modality": 0.92
+   },
+   "evidence": {
+    "modality": "longitudinal imaging with single-synapse resolution in motor cortex",
+    "prep": "awake mouse motor learning task, longitudinal in vivo imaging"
+   },
+   "significance": "Apical and basal dendrites obey distinct plasticity rules during learning, establishing that single neurons use compartment-specific mechanisms to modify synaptic weights in vivo.",
+   "keywords": [
+    "dendritic compartments",
+    "synaptic plasticity",
+    "motor learning",
+    "L2/3 pyramidal neurons",
+    "coactivity",
+    "in vivo imaging"
+   ],
+   "needs_review": false,
+   "lab_cluster": 7,
+   "lab_cluster_name": "Komiyama (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "L2/3 pyramidal neurons in motor cortex during motor learning in vivo",
+     "quote": "apical and basal dendrites showed distinct activity-dependent synaptic plasticity rules",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Apical dendrites follow coactivity-based plasticity; basal dendrites follow spike-coincidence rules",
+     "quote": "individual neurons use multiple activity-dependent plasticity rules in a compartment-specific manner",
+     "confidence": 0.82,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C5.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Compartment-specific plasticity rules observed in vivo during learning in L2/3 motor cortex",
+     "quote": "apical and basal dendrites showed distinct activity-dependent synaptic plasticity rules",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "Motor cortex L2/3 during motor learning; blocking spiking diminished basal potentiation",
+     "quote": "Blocking postsynaptic spiking diminished basal synaptic potentiation without affecting apical plasticity",
+     "confidence": 0.78,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Calcium imaging used to infer synaptic activity and plasticity at single-synapse resolution",
+     "quote": "longitudinal imaging with single-synapse resolution in the mouse motor cortex",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Distribution and Function of HCN Channels in the Apical Dendritic Tuft of Neocortical Pyramidal Neurons",
+   "year": 2015,
+   "doi": "10.1523/JNEUROSCI.2813-14.2015",
+   "authors": [
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
+    "Stephen R. Williams"
+   ],
+   "venue": "Journal of Neuroscience",
+   "abstract": "The apical tuft is the most remote area of the dendritic tree of neocortical pyramidal neurons. Despite its distal location, the apical dendritic tuft of layer 5 pyramidal neurons receives substantial excitatory synaptic drive and actively processes corticocortical input during behavior. The properties of the voltage-activated ion channels that regulate synaptic integration in tuft dendrites have, however, not been thoroughly investigated. Here, we use electrophysiological and optical approaches to examine the subcellular distribution and function of hyperpolarization-activated cyclic nucleotide-gated nonselective cation (HCN) channels in rat layer 5B pyramidal neurons. Outside-out patch recordings demonstrated that the amplitude and properties of ensemble HCN channel activity were uniform in patches excised from distal apical dendritic trunk and tuft sites. Simultaneous apical dendritic tuft and trunk whole-cell current-clamp recordings revealed that the pharmacological blockade of HCN channels decreased voltage compartmentalization and enhanced the generation and spread of apical dendritic tuft and trunk regenerative activity. Furthermore, multisite two-photon glutamate uncaging demonstrated that HCN channels control the amplitude and duration of synaptically evoked regenerative activity in the distal apical dendritic tuft. In contrast, at proximal apical dendritic trunk and somatic recording sites, the blockade of HCN channels decreased excitability. Dynamic-clamp experiments revealed that these compartment-specific actions of HCN channels were heavily influenced by the local and distributed impact of the high density of HCN channels in the distal apical dendritic arbor. The properties and subcellular distribution pattern of HCN channels are therefore tuned to regulate the interaction between integration compartments in layer 5B pyramidal neurons.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1523_JNEUROSCI.2813-14.2015",
+   "cited_by": 158,
+   "first_author": "Mark T. Harnett",
+   "last_author": "Stephen R. Williams",
+   "tldr": "Electrophysiological and optical approaches are used to examine the subcellular distribution and function of hyperpolarization-activated cyclic nucleotide-gated nonselective cation channels in rat layer 5B pyramidal neurons and demonstrate that HCN channels control the amplitude and duration of synaptically evoked regenerative activity in the distal apical dendritic tuft.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "phenomena": [
+    "Ca spike",
+    "plateau potential",
+    "branch-specific computation",
+    "passive integration"
+   ],
+   "method_flags": [
+    "glutamate uncaging",
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.97,
+    "prep": 0.8,
+    "modality": 0.85
+   },
+   "evidence": {
+    "modality": "Outside-out patch, whole-cell current-clamp, dynamic-clamp recordings",
+    "prep": "Patch recordings from rat L5B pyramidal neurons; likely acute slice but not explicit"
+   },
+   "significance": "HCN channels in distal apical tuft regulate compartment-specific excitability, revealing how channel distribution tunes interaction between dendritic integration compartments in L5 pyramidal neurons.",
+   "keywords": [
+    "HCN channels",
+    "apical tuft",
+    "layer 5 pyramidal",
+    "dendritic compartmentalization",
+    "Ih",
+    "regenerative activity"
+   ],
+   "needs_review": false,
+   "lab_cluster": 0,
+   "lab_cluster_name": "Stuart + Williams",
+   "similar": [
+    {
+     "id": "10.1016_j.neuron.2017.11.016",
+     "score": 0.467,
+     "title": "Dendritic Spines Prevent Synaptic Voltage Clamp",
+     "year": 2017
+    },
+    {
+     "id": "10.1126_science.1067903",
+     "score": 0.467,
+     "title": "Dependence of EPSP Efficacy on Synapse Location in Neocortical Pyramidal Neurons",
+     "year": 2002
+    },
+    {
+     "id": "10.1152_jn.1999.82.4.1895",
+     "score": 0.21,
+     "title": "Dendritic Voltage-Gated Ion Channels Regulate the Action Potential Firing Mode of Hippocampal CA1 Pyramidal Neurons",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Mark T. Harnett"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "In L5B pyramidal neurons, HCN channels promote voltage compartmentalization between apical tuft and trunk",
+     "quote": "HCN channels decreased voltage compartmentalization and enhanced the generation and spread",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3c",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Ca plateau potentials in tuft are regulated by HCN channels; spread depends on channel blockade state",
+     "quote": "HCN channels control the amplitude and duration of synaptically evoked regenerative activity",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In L5B apical tuft dendrites under pharmacological manipulation of HCN channels",
+     "quote": "multisite two-photon glutamate uncaging demonstrated that HCN channels control synaptically evoked regenerative activity",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In L5B apical tuft dendrites; HCN blockade enhanced generation of regenerative activity without somatic prerequisite",
+     "quote": "enhanced the generation and spread of apical dendritic tuft and trunk regenerative activity",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Slice experiments conducted; temperature effects on HCN or dendritic excitability not addressed",
+     "quote": "electrophysiological and optical approaches to examine the subcellular distribution and function",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dendritic spikes induce single-burst long-term potentiation",
+   "year": 2007,
+   "doi": "10.1073/pnas.0707919104",
+   "authors": [
+    "Stefan Remy",
+    "Nelson Spruston"
+   ],
+   "venue": "Proceedings of the National Academy of Sciences",
+   "abstract": "The hippocampus is essential for episodic memory, which requires single-trial learning. Although long-term potentiation (LTP) of synaptic strength is a candidate mechanism for learning, it is typically induced by using repeated synaptic activation to produce precisely timed, high-frequency, or rhythmic firing. Here we show that hippocampal synapses potentiate robustly in response to strong activation by a single burst. The induction mechanism of this single-burst LTP requires activation of NMDA receptors, L-type voltage-gated calcium channels, and dendritic spikes. Thus, dendritic spikes are a critical trigger for a form of LTP that is consistent with the function of the hippocampus in episodic memory.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1073_pnas.0707919104",
+   "cited_by": 194,
+   "first_author": "Stefan Remy",
+   "last_author": "Nelson Spruston",
+   "tldr": "Dendritic spikes are a critical trigger for a form of LTP that is consistent with the function of the hippocampus in episodic memory and shows that hippocampal synapses potentiate robustly in response to strong activation by a single burst.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "phenomena": [
+    "NMDA spike",
+    "Ca spike",
+    "plateau potential",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.97,
+    "prep": 0.72,
+    "modality": 0.8
+   },
+   "evidence": {
+    "modality": "electrophysiological recording of LTP induction in hippocampal neurons",
+    "prep": "hippocampal synapse physiology study; slice preparation implied but not explicit"
+   },
+   "significance": "Showed that dendritic spikes trigger single-burst LTP via NMDA receptors and L-type calcium channels, establishing a biologically plausible single-trial learning mechanism in hippocampus.",
+   "keywords": [
+    "LTP",
+    "dendritic spike",
+    "single-burst",
+    "NMDA receptor",
+    "L-type calcium channel",
+    "episodic memory"
+   ],
+   "needs_review": false,
+   "lab_cluster": 1,
+   "lab_cluster_name": "Spruston",
+   "similar": [
+    {
+     "id": "10.1002_cne.21564",
+     "score": 0.75,
+     "title": "Distribution of bursting neurons in the CA1 region and the subiculum of the rat hippocampus",
+     "year": 2007
+    }
+   ],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "strong, concentrated synaptic burst activation in hippocampal CA1 slice",
+     "quote": "dendritic spikes are a critical trigger for a form of LTP",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3a",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "NMDA receptor activation is required for single-burst LTP induction",
+     "quote": "induction mechanism requires activation of NMDA receptors",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "hippocampal CA1 slice; single burst activation paradigm",
+     "quote": "dendritic spikes are a critical trigger for a form of LTP",
+     "confidence": 0.82,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "BTSP is not the only dendritic-spike-dependent plasticity mechanism in CA1",
+     "quote": "hippocampal synapses potentiate robustly in response to strong activation by a single burst",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "LTP of synaptic strength assumed as memory substrate",
+     "quote": "long-term potentiation of synaptic strength is a candidate mechanism for learning",
+     "confidence": 0.9,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dendritic Voltage-Gated Ion Channels Regulate the Action Potential Firing Mode of Hippocampal CA1 Pyramidal Neurons",
+   "year": 1999,
+   "doi": "10.1152/jn.1999.82.4.1895",
+   "authors": [
+    "Jeffrey C. Magee",
+    "Michael Carruth"
+   ],
+   "venue": "Journal of Neurophysiology",
+   "abstract": "The role of dendritic voltage-gated ion channels in the generation of action potential bursting was investigated using whole cell patch-clamp recordings from the soma and dendrites of CA1 pyramidal neurons located in hippocampal slices of adult rats. Under control conditions somatic current injections evoked single action potentials that were associated with an afterhyperpolarization (AHP). After localized application of 4-aminopyridine (4-AP) to the distal apical dendritic arborization, the same current injections resulted in the generation of an afterdepolarization (ADP) and multiple action potentials. This burst firing was not observed after localized application of 4-AP to the soma/proximal dendrites. The dendritic 4-AP application allowed large-amplitude Na(+)-dependent action potentials, which were prolonged in duration, to backpropagate into the distal apical dendrites. No change in action potential backpropagation was seen with proximal 4-AP application. Both the ADP and action potential bursting could be inhibited by the bath application of nonspecific concentrations of divalent Ca(2+) channel blockers (NiCl and CdCl). Ca(2+) channel blockade also reduced the dendritic action potential duration without significantly affecting spike amplitude. Low concentrations of TTX (10-50 nM) also reduced the ability of the CA1 neurons to fire in the busting mode. This effect was found to be the result of an inhibition of backpropagating dendritic action potentials and could be overcome through the coordinated injection of transient, large-amplitude depolarizing current into the dendrite. Dendritic current injections were able to restore the burst firing mode (represented as a large ADP) even in the presence of high concentrations of TTX (300-500 microM). These data suggest the role of dendritic Na(+) channels in bursting is to allow somatic/axonal action potentials to backpropagate into the dendrites where they then activate dendritic Ca(2+) channels. Although it appears that most Ca(2+) channel subtypes are important in burst generation, blockade of T- and R-type Ca(2+) channels by NiCl (75 microM) inhibited action potential bursting to a greater extent than L-channel (10 microM nimodipine) or N-, P/Q-type (1 microM omega-conotoxin MVIIC) Ca(2+) channel blockade. This suggest that the Ni-sensitive voltage-gated Ca(2+) channels have the most important role in action potential burst generation. In summary, these data suggest that the activation of dendritic voltage-gated Ca(2+) channels, by large-amplitude backpropagating spikes, provides a prolonged inward current that is capable of generating an ADP and burst of multiple action potentials in the soma of CA1 pyramidal neurons. Dendritic voltage-gated ion channels profoundly regulate the processing and storage of incoming information in CA1 pyramidal neurons by modulating the action potential firing mode from single spiking to burst firing.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1152_jn.1999.82.4.1895",
+   "cited_by": 305,
+   "first_author": "Jeffrey C. Magee",
+   "last_author": "Michael Carruth",
+   "tldr": "The activation of dendritic voltage-gated Ca(2+) channels, by large-amplitude backpropagating spikes, provides a prolonged inward current that is capable of generating an ADP and burst of multiple action potentials in the soma of CA1 pyramidal neurons.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "phenomena": [
+    "bAP",
+    "Ca spike",
+    "Na spike",
+    "plateau potential"
+   ],
+   "method_flags": [
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.99,
+    "prep": 0.95,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "whole cell patch-clamp recordings from soma and dendrites",
+    "prep": "CA1 pyramidal neurons in hippocampal slices of adult rats"
+   },
+   "significance": "Showed that bAPs activate dendritic Ca²⁺ channels to generate burst firing, establishing dendritic voltage-gated channels as key regulators of CA1 output mode.",
+   "keywords": [
+    "burst firing",
+    "backpropagating action potential",
+    "CA1 pyramidal neuron",
+    "dendritic ion channels",
+    "4-aminopyridine",
+    "calcium channels"
+   ],
+   "needs_review": false,
+   "lab_cluster": 8,
+   "lab_cluster_name": "Carruth (single)",
+   "similar": [
+    {
+     "id": "10.1523_JNEUROSCI.2813-14.2015",
+     "score": 0.21,
+     "title": "Distribution and Function of HCN Channels in the Apical Dendritic Tuft of Neocortical Pyramidal Neurons",
+     "year": 2015
+    }
+   ],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C1.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "In CA1 slice; bAP amplitude in distal dendrites determines Ca2+ channel activation and burst mode",
+     "quote": "backpropagate into the dendrites where they then activate dendritic Ca2+ channels",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.3",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 acute slice; A-type K channel block (4-AP) enables bAP propagation and burst firing",
+     "quote": "localized application of 4-aminopyridine to the distal apical dendritic arborization...resulted in...multiple action potentials",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Paper focuses on bAPs not locally initiated dendritic Na spikes",
+     "quote": "somatic/axonal action potentials to backpropagate into the dendrites",
+     "confidence": 0.62,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Experiments conducted in acute slice, temperature not specified as physiological",
+     "quote": "whole cell patch-clamp recordings from the soma and dendrites of CA1 pyramidal neurons located in hippocampal slices",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Distinct CA3 inputs differentially shape the learning-dependent evolution of right CA1 spatial maps",
+   "year": 2026,
+   "doi": "10.1038/s41467-026-72275-1",
+   "authors": [
+    "Anqi Jiang",
+    "Douglas GoodSmith",
+    "Julliana Ramirez-Matias",
+    "Ariana F. Tortolani",
+    "Mark E. J. Sheffield"
+   ],
+   "venue": "Nature Communications",
+   "abstract": "Spatial maps in hippocampal CA1 arise from place fields that support memory and navigation, yet how upstream inputs shape these maps during learning remains unclear. Here we show that CA3 projections from the left and right hemispheres make distinct contributions to right CA1 spatial representations as animals become familiar with a new environment. Using two-photon calcium imaging and optogenetic inhibition in mice navigating virtual tracks, we monitored and perturbed CA3 inputs converging onto CA1. CA1 spatial maps were initially inaccurate but stabilized within ~10 laps, marking a transition from an early learning phase to a later stable phase. During early learning, right-origin CA3 inputs exerted stronger influence on the refinement of spatial coding, whereas left-origin inputs became more important for maintaining stable representations later. Axonal recordings revealed a corresponding shift in spatial activity between right and left CA3 inputs over time. Together, these results reveal that distinct CA3 inputs dynamically redistribute their influence during learning to coordinate the refinement and stabilization of right CA1 spatial maps. Neural mechanisms underlying spatial dynamics across distinct memory phases are not fully understood. Here authors show that distinct inputs from the left and right CA3 dynamically shape CA1 spatial maps, shifting their influence from early refinement to later stability as animals learn a new environment.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41467-026-72275-1",
+   "cited_by": 1,
+   "first_author": "Anqi Jiang",
+   "last_author": "Mark E. J. Sheffield",
+   "tldr": "It is shown that distinct inputs from the left and right CA3 dynamically shape CA1 spatial maps, shifting their influence from early refinement to later stability as animals learn a new environment.",
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [],
+   "method_flags": [
+    "optogenetics",
+    "behavior",
+    "chronic/longitudinal"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.98,
+    "prep": 0.97,
+    "modality": 0.97
+   },
+   "evidence": {
+    "modality": "two-photon calcium imaging of CA1 and CA3 axons",
+    "prep": "mice navigating virtual tracks, awake behaving"
+   },
+   "significance": "Revealed that left and right CA3 inputs dynamically shift their dominance over CA1 spatial maps during learning, establishing a hemispheric division of labor between map refinement and stabilization.",
+   "keywords": [
+    "CA1 place fields",
+    "CA3 inputs",
+    "spatial learning",
+    "optogenetic inhibition",
+    "hemispheric asymmetry",
+    "two-photon imaging"
+   ],
+   "needs_review": false,
+   "lab_cluster": 9,
+   "lab_cluster_name": "Sheffield (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "CA1 place fields and spatial maps are the substrate of hippocampal memory",
+     "quote": "place fields that support memory and navigation",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "CA3 inputs contribute to place field formation, suggesting additional mechanisms beyond BTSP alone",
+     "quote": "distinct CA3 inputs dynamically redistribute their influence during learning",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "dendritic/synaptic events in CA1 shape spatial representations and thus behaviour",
+     "quote": "CA3 projections make distinct contributions to right CA1 spatial representations",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Distinct sensorimotor encoding in tuft dendrites and somata associated with action, correction, and learning",
+   "year": 2026,
+   "doi": "10.64898/2026.05.06.722323",
+   "authors": [
+    "Jackson Scheib",
+    "Zachary Newman",
+    "Jacob Gable",
+    "Deano Farinella",
+    "Mitchell Head",
+    "Savannah Bliese",
+    "Benjamin Dougen",
+    "Harishankar Jayakumar",
+    "Sarah Young",
+    "Nicole Miller",
+    "Robert Al Khoury",
+    "Huan Tran",
+    "Tien Dinh",
+    "Aaron Kerlin"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "abstract": "Frontal cortex plays critical roles in action control and motor skill learning. Within the layer 1 apical tuft dendrites of layer 5 (L5) neurons in frontal cortex, precise input patterns and back-propagating action potentials can trigger powerful regenerative events that may be essential for flexible computation and learning. However, it remains unclear whether tuft activity in frontal cortical L5 circuits encodes sensorimotor information that differs from the information conveyed by their outputs to downstream targets. Using longitudinal two-photon calcium imaging, we investigated sensorimotor encoding in the apical tuft dendrites and somata of L5 extratelencephalic (ET) neurons in the frontal cortex of mice during learning of a discrete change to a cued dexterous action. During learning, movement errors either triggered corrective action or did not, allowing us to dissociate error signals from signals selective for corrective action. Somatic activity tracked both instructional cues and action, whereas tuft activity predominantly tracked instructional cues. Movement errors during learning revealed additional distinct tuft activity that was selectively associated with corrective actions. Furthermore, learning induced divergent changes in the response gain and net selectivity of tuft dendrites compared to somata. Our measurements uncover systematic differences between the tuft dendrites and somata in sensorimotor selectivity, sensitivity to corrective action, and functional plasticity, providing a foundation for investigating the contributions of dendritic computation to motor skill learning.",
+   "zotero_tags": [],
+   "zotero_extra": "ISSN: 2692-8205 Pages: 2026.05.06.722323 Section: New Results",
+   "id": "10.64898_2026.05.06.722323",
+   "cited_by": 0,
+   "first_author": "Jackson Scheib",
+   "last_author": "Aaron Kerlin",
+   "tldr": "These measurements uncover systematic differences between the tuft dendrites and somata in sensorimotor selectivity, sensitivity to corrective action, and functional plasticity, providing a foundation for investigating the contributions of dendritic computation to motor skill learning.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [
+    "bAP",
+    "plateau potential",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal"
+   ],
+   "confidence": {
+    "scope": 0.9,
+    "article_type": 0.98,
+    "prep": 0.95,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "longitudinal two-photon calcium imaging of tuft dendrites and somata",
+    "prep": "awake mice performing dexterous motor learning task"
+   },
+   "significance": "Showed tuft dendrites and somata encode distinct sensorimotor signals during learning, establishing apical dendrites as functionally compartmentalized substrates for motor skill acquisition.",
+   "keywords": [
+    "apical tuft dendrites",
+    "layer 5 pyramidal neurons",
+    "frontal cortex",
+    "motor learning",
+    "two-photon calcium imaging",
+    "sensorimotor encoding"
+   ],
+   "needs_review": false,
+   "lab_cluster": 10,
+   "lab_cluster_name": "Kerlin (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C2.2",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "Awake in vivo calcium imaging of L5 ET neurons in frontal cortex during motor learning",
+     "quote": "systematic differences between the tuft dendrites and somata in sensorimotor selectivity",
+     "confidence": 0.9,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Tuft dendritic activity in frontal cortex correlates with corrective actions and learning-induced plasticity",
+     "quote": "tuft activity predominantly tracked instructional cues... selectively associated with corrective actions",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Two-photon calcium imaging used to report dendritic activity without calibration against voltage",
+     "quote": "longitudinal two-photon calcium imaging... apical tuft dendrites and somata",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Tuft dendrites show learning-induced plasticity distinct from somatic output, consistent with plasticity-specific role",
+     "quote": "learning induced divergent changes in the response gain and net selectivity of tuft dendrites",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Frontal cortex L5 neurons show distinct tuft vs. soma encoding in vivo during behavior",
+     "quote": "systematic differences between the tuft dendrites and somata in sensorimotor selectivity",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Distinct types of dendritic Ca2+ spikes in CA3 pyramidal neurons associated with neuronal activity changes during navigation",
+   "year": 2026,
+   "doi": "10.1126/sciadv.aec6015",
+   "authors": [
+    "Snežana Rauš Balind",
+    "Balázs Lükő",
+    "Imola Plangár",
+    "Martin Blazsek",
+    "Balázs Ujfalussy",
+    "Judit K. Makara"
+   ],
+   "venue": "Science Advances",
+   "abstract": "Active dendrites enrich single-neuron computations by performing nonlinear input integration, including generation of dendritic spikes. Diverse dendritic spike types have been found in various cortical neuron classes in vitro; however, their in vivo prevalence and roles remained elusive. We measured calcium activity in apical dendrites and soma of pyramidal cells in the hippocampal area CA3 (CA3PCs) during virtual navigation in mice. Although dendritic activity was generally synchronous with the soma, their correlation decreased with dendritic distance. We identified two types of regenerative dendritic activities: slow, large-amplitude global Ca 2+ events representing putative Ca 2+ plateaus and fast Ca 2+ events with large dendrite-to-soma attenuation, representing putative dendritically initiated Ca 2+ spikes. Ca 2+ plateaus contributed to spatially tuned activity but only occasionally induced new place fields, suggesting conditional induction of synaptic plasticity. In contrast, fast Ca 2+ spikes were often followed by transient increase in somatic activity without spatial tuning, suggesting increased excitatory inputs or excitability. Our results unveil previously unidentified mechanisms whereby dendritic activity shapes output of CA3PCs in vivo.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1126_sciadv.aec6015",
+   "cited_by": 0,
+   "first_author": "Snežana Rauš Balind",
+   "last_author": "Judit K. Makara",
+   "tldr": "The results unveil previously unidentified mechanisms whereby dendritic activity shapes output of CA3PCs in vivo, suggesting conditional induction of synaptic plasticity and increased excitatory inputs or excitability.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [
+    "Ca spike",
+    "plateau potential",
+    "bAP",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal"
+   ],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.98,
+    "prep": 0.97,
+    "modality": 0.98
+   },
+   "evidence": {
+    "modality": "calcium activity measured in apical dendrites and soma",
+    "prep": "awake mice performing virtual navigation task"
+   },
+   "significance": "Two distinct dendritic Ca²⁺ spike types in CA3 pyramidal cells differentially shape somatic output in vivo, establishing that dendrite-type-specific regenerative events selectively gate plasticity versus excitability.",
+   "keywords": [
+    "CA3 pyramidal neurons",
+    "dendritic calcium spikes",
+    "plateau potential",
+    "place fields",
+    "virtual navigation",
+    "in vivo dendrite imaging"
+   ],
+   "needs_review": false,
+   "lab_cluster": 11,
+   "lab_cluster_name": "Makara (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C2.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "CA3 pyramidal cells in vivo; correlation decreases with dendritic distance",
+     "quote": "dendritic activity was generally synchronous with the soma, their correlation decreased",
+     "confidence": 0.88,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3c",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "CA3 in vivo; Ca plateaus are global/slow events, not branch-restricted",
+     "quote": "slow, large-amplitude global Ca2+ events representing putative Ca2+ plateaus",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.1",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "CA3, not CA1; Ca plateaus only occasionally induced new place fields",
+     "quote": "Ca2+ plateaus contributed to spatially tuned activity but only occasionally induced new place fields",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "CA3 context; plateau-induced place field induction is conditional, not obligate",
+     "quote": "suggesting conditional induction of synaptic plasticity",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.3",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "CA3 pyramidal cells show distinct dendritic spike types with different spatial tuning properties",
+     "quote": "fast Ca2+ spikes were often followed by transient increase in somatic activity without spatial tuning",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "calcium imaging used throughout as proxy for dendritic voltage events",
+     "quote": "We measured calcium activity in apical dendrites and soma of pyramidal cells",
+     "confidence": 0.82,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "CA3 in vivo; plateaus link to plasticity, fast spikes link to excitability/integration",
+     "quote": "unveil previously unidentified mechanisms whereby dendritic activity shapes output of CA3PCs",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "CA3 apical dendrites in vivo show distinct regenerative events with large dendrite-to-soma attenuation",
+     "quote": "fast Ca2+ events with large dendrite-to-soma attenuation, representing putative dendritically initiated Ca2+ spikes",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  }
+ ]
+}

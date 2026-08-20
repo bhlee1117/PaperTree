@@ -1,0 +1,1071 @@
+meta:
+  version: 0.2
+  stances:
+  - supports
+  - qualifies
+  - contradicts
+  - assumes
+  strengths:
+  - direct
+  - indirect
+  - assumed
+  statuses:
+  - settled
+  - contested
+  - open
+  region_policy: recorded on edges, never a splitting axis
+  caveat_rules:
+    calcium: C7.1
+    optogenetic: C7.4
+    room_temp: C7.2
+    anesthetized: C7.3
+  modalities:
+  - patch
+  - voltage
+  - calcium
+  - model
+  - review
+  - theory
+questions:
+- id: Q1
+  text: '"What initiates dendritic regenerative events?"'
+- id: Q2
+  text: '"How far do dendritic events spread'
+  and is the branch an independent unit?": ''
+- id: Q3
+  text: '"What are dendritic excitations for — integration'
+  or plasticity?": ''
+- id: Q4
+  text: '"What plasticity rule builds hippocampal place fields?"'
+- id: Q5
+  text: '"What does the instructive signal represent?"'
+- id: Q6
+  text: '"How is a memory maintained across days?"'
+- id: Q7
+  text: '"What can each recording modality actually resolve?"'
+claims:
+- id: C1.1
+  parent: Q1
+  text: Dendrites initiate regenerative spikes locally, without a preceding somatic action potential.
+  status: contested
+  note: 'The split tracks stimulus modality, not preparation. Every positive report used strong,
+    spatially concentrated, fast-onset drive; the one negative report used gradual distributed
+    optogenetic drive. Stuart & Spruston quantify the requirement at a handful to dozens of inputs
+    within a few ms in a localised region — which is precisely what optogenetics does not deliver.
+    The unresolved question is which regime real synaptic bombardment resembles.
+
+    '
+  evidence:
+  - key: golding_spruston_1998
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: strong local current injection into the dendrite
+    modality: patch
+  - key: losonczy_magee_2006
+    doi: 10.1016/j.neuron.2006.03.016
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: synchronous clustered glutamate uncaging on radial oblique branches
+    modality: patch
+  - key: schiller_2000
+    doi: 10.1038/35005094
+    stance: supports
+    strength: direct
+    region: L5
+    condition: clustered input to basal dendrites; NMDA-dependent
+    modality: patch
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: review; quantifies the requirement as a handful to dozens of inputs in a localised
+      region within a few ms, and asks openly whether that ever happens in vivo
+    modality: review
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: contradicts
+    strength: direct
+    region: CA1
+    condition: optogenetic drive (~130 pA, distributed), acute slice at 34 C. Never observed dendrite-initiated
+      dSpikes; attributes this to stimulus modality and reproduces it in a conductance-based model
+    modality: voltage
+    flags: &id001
+    - optogenetic
+  - key: chavlis_poirazi_2026
+    doi: 10.1146/annurev-neuro-090325-115846
+    stance: assumes
+    strength: assumed
+    region: both
+    condition: treats local NMDA spikes as the established substrate of branch computation
+    modality: review
+- id: C1.2
+  parent: Q1
+  text: 'Whether a bAP becomes a dendritic spike is set by prior dendritic depolarisation, not
+    by somatic spike rate.
+
+    '
+  status: contested
+  note: 'REGION CONFOUND, FLAGGED. Every "rate is the variable" result is L5/cortex; the only
+    "depolarisation is the variable" result is CA1. Per the no-region-split decision these sit
+    on one node, but the confound is total and should be resolved before either framing is treated
+    as general. The cleanest test would be the Park ramp protocol run in L5.
+
+    '
+  evidence:
+  - key: larkum_1999_pnas
+    stance: contradicts
+    strength: direct
+    region: L5
+    condition: critical bAP frequency (~100 Hz) for distal Ca electrogenesis
+    modality: patch
+  - key: beaulieu_laroche_2019
+    doi: 10.1016/j.neuron.2019.05.014
+    stance: contradicts
+    strength: direct
+    region: L5
+    condition: ex vivo dual patch, V1 L5 — 200 Hz bAP trains engage dendritic electrogenesis,
+      50 Hz do not. Frequency dependence is explicit.
+    modality: calcium
+  - key: larkum_zhu_sakmann_1999
+    doi: 10.1038/18686
+    stance: qualifies
+    strength: direct
+    region: L5
+    condition: BAC firing — a single bAP paired with distal input suffices, which is nearer Park's
+      rule than the frequency framing is
+    modality: patch
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: an isolated bAP becomes a dSpike if the distal dendrite was depolarised >=15 ms
+      beforehand; sigmoidal dependence on stimulus distance, ~80% beyond 300 um
+    modality: voltage
+    flags: *id001
+- id: C1.3
+  parent: Q1
+  text: 'A-type Kv inactivation opens the dendritic spike window and slow Nav inactivation closes
+    it, making the dendrite a spike-rate accelerometer.
+
+    '
+  status: open
+  note: 'The two channel contributions are each well established separately; the claim that their
+    timescales jointly define a transient window is new and rests on one paper plus its model.
+    Prime candidate for replication, and the strongest single thing to look for in vivo.
+
+    '
+  evidence:
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: 4-AP and Ba2+ raise dSpike probability, 20 nM TTX lowers it; NEURON model reproduces
+      the failure-success-failure motif across a wide parameter range
+    modality: voltage
+    flags: *id001
+  - key: hoffman_1997
+    stance: supports
+    strength: indirect
+    region: CA1
+    condition: measured the ~6-fold distal enrichment and inactivation kinetics of A-type Kv
+    modality: patch
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: supports
+    strength: indirect
+    region: both
+    condition: reviews Kv channels as restricting dendritic Ca spike generation and spread, and
+      bAP-driven reduction of subsequent Na spike probability — the ingredients, not the synthesis
+    modality: review
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: assumes
+    strength: assumed
+    region: CA1
+    condition: Box 1 treats Kv and HCN as plateau regulators without this framing
+    modality: review
+- id: C1.4
+  parent: Q1
+  text: 'Plateau potentials require collision of a dendritic Na spike with glutamatergic input;
+    coincidence of distal input with somatic spiking alone is not sufficient.
+
+    '
+  status: open
+  note: 'Sharpest testable prediction in the set, and a real constraint on BTSP: during sustained
+    fast firing the dendrite is refractory, so a distal input arriving late in a spike train cannot
+    induce plasticity. If it holds, BTSP has a duty cycle. Untested in vivo.
+
+    '
+  evidence:
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: EFS at 0.5 s into an optogenetic ramp evoked plateaus, at 2.5 s (24 Hz sustained)
+      did not. D-AP5, Ni2+ and TTX each reduce the plateau, so NMDAR, VGCC and Nav are all necessary
+    modality: voltage
+    flags: *id001
+  - key: takahashi_magee_2009
+    stance: qualifies
+    strength: direct
+    region: CA1
+    condition: high-frequency EFS trains; stronger NMDAR dependence than Park saw with a single
+      pulse. Induction protocol, not biology, may explain the gap
+    modality: patch
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: assumes
+    strength: assumed
+    region: CA1
+    condition: treats plateaus as reliably inducible by EC3/CA3 conjunction; no refractory window
+    modality: review
+  - key: fischer_2022
+    doi: 10.1523/JNEUROSCI.1132-22.2022
+    stance: assumes
+    strength: assumed
+    region: CA1
+    condition: '"only a single plateau potential is sufficient" — stated without a rate caveat'
+    modality: review
+- id: C1.5
+  parent: Q1
+  text: 'The dendritic spike is a cell-wide broadcast carrying timing but not spatial information;
+    synapse identity is carried by glutamate-bound NMDARs.
+
+    '
+  status: open
+  note: 'Answers "where is the eligibility trace" by elimination: dSpike footprints did not depend
+    on which branch was stimulated, so voltage cannot carry it. Stuart & Spruston reach a compatible
+    worry from the opposite direction — if dSpikes occur spontaneously from background activity,
+    they cannot be input-specific either. Two independent routes to the same conclusion is the
+    strongest thing this node has.
+
+    '
+  evidence:
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: bAP and dSpike spatial profiles insensitive to stimulus location; no preference
+      for the stimulated branch
+    modality: voltage
+    flags: *id001
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: supports
+    strength: indirect
+    region: both
+    condition: notes that spontaneous dSpikes from background synaptic activity, without clustered
+      input, "questions their role in information processing"
+    modality: review
+  - key: chavlis_poirazi_2026
+    doi: 10.1146/annurev-neuro-090325-115846
+    stance: contradicts
+    strength: indirect
+    region: both
+    condition: 'reviews branch-specific plasticity and clustered spine formation as evidence that
+      the branch is the unit of memory allocation. May be scope rather than conflict: clustered-input
+      regime vs bAP-driven regime'
+    modality: review
+- id: C2.1
+  parent: Q2
+  text: Dendritic branches act as independent computational subunits.
+  status: contested
+  note: 'Independence is conditional on impedance, not a property of branches. Wybo 2019 formalises
+    this; Otor 2022 shows a subcompartment''s morphology predicts its functional independence.
+    So the honest form of this claim is "under conditions X" — and nobody has measured how often
+    X holds in vivo.
+
+    '
+  evidence:
+  - key: poirazi_2003
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: model; branches as independent sigmoidal subunits
+    modality: model
+  - key: losonczy_magee_2006
+    doi: 10.1016/j.neuron.2006.03.016
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: branch-local spike initiation with sharp threshold in oblique dendrites
+    modality: patch
+  - key: cichon_gan_2015
+    stance: supports
+    strength: direct
+    region: L5
+    condition: distinct motor skills engage non-overlapping apical tuft branches in vivo
+    modality: calcium
+  - key: voigts_harnett_2020
+    stance: supports
+    strength: direct
+    region: RSC
+    condition: apical segments carry spatial tuning different from their own soma
+    modality: calcium
+  - key: wybo_2019
+    stance: qualifies
+    strength: direct
+    region: model
+    condition: independence requires sufficiently high inter-branch impedance; dynamically regulated
+    modality: model
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: Na spikes fail propagating from high- to low-impedance dendrites; NMDA spikes cannot
+      leave the glutamate-release region. Compartmentalisation is a propagation failure, not a
+      designed boundary
+    modality: review
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: contradicts
+    strength: direct
+    region: CA1
+    condition: under bAP-driven conditions dSpikes engaged the whole apical tree, with no branch
+      preference
+    modality: voltage
+    flags: *id001
+- id: C2.2
+  parent: Q2
+  text: Somatic and dendritic activity are highly correlated in vivo.
+  status: contested
+  note: 'Fischer 2022 states this split explicitly with both citation lists, which is why this
+    node exists in this form. CRITICAL SCOPE, see C7.1 — every "highly correlated" result is calcium,
+    and Beaulieu-Laroche''s own calibration shows GCaMP6f is blind to subthreshold. So the correlation
+    claim is about suprathreshold events only, and the two camps may not be measuring the same
+    thing.
+
+    '
+  evidence:
+  - key: beaulieu_laroche_2019
+    doi: 10.1016/j.neuron.2019.05.014
+    stance: supports
+    strength: direct
+    region: L5
+    condition: V1 L5 awake; dendritic activity in 156/157 pairs, correlation 0.542, coupling index
+      ~0.97, unchanged by visual stimuli or locomotion
+    modality: calcium
+  - key: francioni_2019
+    doi: 10.7554/eLife.49145
+    stance: supports
+    strength: direct
+    region: L5
+    condition: V1 L5; high but asymmetric coupling, independent of stimulation and locomotion
+    modality: calcium
+  - key: kerlin_2019
+    stance: supports
+    strength: direct
+    region: ALM
+    condition: functional clustering during decision-making
+    modality: calcium
+  - key: otor_2022
+    stance: qualifies
+    strength: direct
+    region: L5
+    condition: tuft subcompartments compute independently, but independence predicted by morphology
+    modality: calcium
+  - key: sheffield_dombeck_2015
+    stance: contradicts
+    strength: direct
+    region: CA1
+    condition: branch-specific Ca transient prevalence predicts place field properties
+    modality: calcium
+  - key: voigts_harnett_2020
+    stance: contradicts
+    strength: direct
+    region: RSC
+    condition: dendritic spatial tuning differs from somatic during 2D navigation
+    modality: calcium
+  - key: fischer_2022
+    doi: 10.1523/JNEUROSCI.1132-22.2022
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: names the disagreement explicitly and lists both camps without adjudicating
+    modality: review
+  - key: beaulieu_laroche_2019_selfcaveat
+    doi: 10.1016/j.neuron.2019.05.014
+    stance: qualifies
+    strength: direct
+    region: L5
+    condition: the same authors note compartmentalisation persists at subthreshold level, and
+      that flexible coupling may occur on timescales or along categories GCaMP cannot resolve
+    modality: calcium
+- id: C2.3a
+  parent: Q2
+  text: NMDA spikes are spatially restricted to the branch that generates them.
+  status: settled
+  note: 'Settled by mechanism rather than by accumulated observation: NMDAR gating needs both
+    glutamate and depolarisation, so the event cannot exist outside the glutamate field. Kept
+    in the tree as the calibration point for what ''settled'' means here.'
+  evidence:
+  - key: schiller_2000
+    doi: 10.1038/35005094
+    stance: supports
+    strength: direct
+    region: L5
+    modality: patch
+    condition: NMDA spikes confined to the activated basal branch
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: supports
+    strength: indirect
+    region: both
+    modality: review
+    condition: NMDA spikes cannot propagate beyond the region of glutamate release, since NMDAR
+      activation requires both glutamate and depolarisation
+- id: C2.3b
+  parent: Q2
+  text: Dendritic Na spikes are spatially restricted to the branch that generates them.
+  status: contested
+  note: 'SPLITTING THIS OUT CHANGED THE ANSWER. In the merged node Park''s result was diluted
+    by the NMDA and plateau evidence. Isolated, it is a head-on contradiction: Park''s dSpikes
+    are Na-mediated (abolished by 20 nM TTX) yet engaged the whole apical tree with no branch
+    preference. Either impedance confinement fails for bAP-driven Na spikes, or locally-initiated
+    and bAP-driven Na spikes are different objects sharing a name.'
+  evidence:
+  - key: golding_spruston_1998
+    stance: supports
+    strength: direct
+    region: CA1
+    modality: patch
+    condition: Na spikes are variable triggers of axonal APs; often fail to reach the soma
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: supports
+    strength: indirect
+    region: both
+    modality: review
+    condition: Na spikes fail propagating from small high-impedance dendrites into larger low-impedance
+      ones
+  - key: ariav_2003
+    stance: supports
+    strength: direct
+    region: CA1
+    modality: patch
+    condition: fast Na dendritic spikes in basal dendrites with submillisecond precision
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: contradicts
+    strength: direct
+    region: CA1
+    modality: voltage
+    flags:
+    - optogenetic
+    condition: TTX-sensitive dSpikes engaged the entire apical tree regardless of stimulus location;
+      no branch preference in 17 neurons
+- id: C2.3c
+  parent: Q2
+  text: Dendritic Ca plateau potentials are spatially restricted to the compartment that generates
+    them.
+  status: contested
+  note: 'Probably false as written, and the interesting part is the unit. Ca spikes are restricted
+    to a DOMAIN (the distal apical initiation zone) but propagate freely within and beyond it.
+    If the tree keeps confusing domain-level with branch-level confinement, the fix is a `unit:
+    branch|domain|cell` field rather than more nodes.'
+  evidence:
+  - key: schiller_1997
+    stance: supports
+    strength: direct
+    region: L5
+    modality: patch
+    condition: Ca action potentials restricted to distal apical dendrites — a domain claim, not
+      a branch claim
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: contradicts
+    strength: indirect
+    region: CA1
+    modality: review
+    condition: Box 1 — plateaus propagate through the entirety of CA1 pyramidal neurons; explicitly
+      contrasted with local Na and NMDA events
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: contradicts
+    strength: indirect
+    region: both
+    modality: review
+    condition: Ca spikes deliver more charge to soma and axon than Na spikes and drive high-frequency
+      burst firing
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: contradicts
+    strength: direct
+    region: CA1
+    modality: voltage
+    flags:
+    - optogenetic
+    condition: plateaus were global, accompanied by somatic complex spikes
+- id: C3.1
+  parent: Q3
+  text: Dendritic nonlinearity primarily serves synaptic plasticity, not input integration.
+  status: contested
+  note: 'BHL''s original view axis, promoted to a claim. This is the single most useful contested
+    node in the tree — it is the disagreement that organises the two reviews, and Park''s paper
+    argues one side explicitly while flagging it as untested in vivo.
+
+    '
+  evidence:
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: under conditions where integration was linear and passive, bAPs still drove strong
+      dendritic excitations. Authors state the plasticity-primacy reading and flag it as requiring
+      in vivo test
+    modality: voltage
+    flags: *id001
+  - key: golding_2002
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: distal LTP requires local dSpikes, not the bAP
+    modality: patch
+  - key: magee_johnston_1997
+    doi: 10.1126/science.275.5297.209
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: bAP as the associative signal for Hebbian plasticity
+    modality: patch
+  - key: chavlis_poirazi_2026
+    doi: 10.1146/annurev-neuro-090325-115846
+    stance: contradicts
+    strength: indirect
+    region: both
+    condition: argues throughout that the dendrite is a computational unit; XOR, orientation selectivity,
+      multi-unit processor
+    modality: review
+  - key: smith_2013
+    doi: 10.1038/nature12600
+    stance: contradicts
+    strength: direct
+    region: L2/3
+    condition: dendritic spikes sharpen orientation tuning relative to soma — integration, not
+      plasticity
+    modality: patch
+    flags: &id002
+    - anesthetized
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: reviews both roles as established and does not rank them
+    modality: review
+- id: C3.2
+  parent: Q3
+  text: Synaptic integration in vivo is supralinear.
+  status: contested
+  note: 'Stuart & Spruston''s conclusion is that this is the wrong question: in vivo neurons perform
+    both sub- and supra-linear integration, varying by cell type, layer and stimulus. If that
+    is right this node should eventually be retired and replaced by "under what conditions", which
+    is C1.1.
+
+    '
+  evidence:
+  - key: smith_2013
+    doi: 10.1038/nature12600
+    stance: supports
+    strength: direct
+    region: L2/3
+    condition: V1 in vivo
+    modality: patch
+    flags: *id002
+  - key: xu_2012
+    doi: 10.1038/nature11601
+    stance: supports
+    strength: direct
+    region: L5
+    condition: whisker task, awake
+    modality: calcium
+  - key: palmer_2014
+    stance: supports
+    strength: direct
+    region: L2/3
+    condition: NMDA spikes enhance AP generation during sensory input
+    modality: patch
+    flags:
+    - anesthetized
+  - key: jia_2014
+    stance: contradicts
+    strength: direct
+    region: L4
+    condition: linear integration of spine Ca signals in vivo
+    modality: calcium
+  - key: longordo_2013
+    stance: contradicts
+    strength: direct
+    region: V1
+    condition: sublinear binocular integration
+    modality: patch
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: concludes both modes occur; treats the dichotomy as ill-posed
+    modality: review
+- id: C3.3
+  parent: Q3
+  text: A single neuron implements a multi-layer network.
+  status: open
+  note: 'Mostly a modelling claim with in vivo support that is suggestive rather than direct.
+    Note that C1.5, if true, is a serious problem for it: a two-layer network needs the hidden
+    layer to be addressable, and a broadcast dSpike is not.
+
+    '
+  evidence:
+  - key: poirazi_2003
+    stance: supports
+    strength: direct
+    region: model
+    condition: two-layer model fits CA1 input-output
+    modality: model
+  - key: chavlis_poirazi_2026
+    doi: 10.1146/annurev-neuro-090325-115846
+    stance: supports
+    strength: indirect
+    region: both
+    condition: review; extends to ANN performance gains
+    modality: review
+  - key: bicknell_hausser_2021
+    stance: supports
+    strength: direct
+    region: model
+    condition: morphologically detailed model learns feature binding that a point neuron cannot
+    modality: model
+  - key: fischer_2022
+    doi: 10.1523/JNEUROSCI.1132-22.2022
+    stance: qualifies
+    strength: indirect
+    region: model
+    condition: reports a continuum of task specialisation across cell types rather than a categorical
+      dendritic advantage
+    modality: review
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: contradicts
+    strength: indirect
+    region: CA1
+    condition: a spatially non-specific dSpike is a poor substrate for an addressable hidden layer
+    modality: voltage
+    flags: *id001
+- id: C3.4
+  parent: Q3
+  text: Dendritic events causally shape behaviour.
+  status: open
+  note: 'Stuart & Spruston''s 2015 verdict was that only correlations existed. Takahashi 2016
+    and Maristany 2025 are the causal exceptions, and both are optogenetic manipulation of tuft
+    activity. Still very thin for how load-bearing this claim is across the field.
+
+    '
+  evidence:
+  - key: takahashi_2016
+    doi: 10.1126/science.aah6066
+    stance: supports
+    strength: direct
+    region: L5
+    condition: enhancing or suppressing apical activity shifts perceptual threshold
+    modality: calcium
+    flags:
+    - optogenetic
+  - key: maristany_2025
+    stance: supports
+    strength: direct
+    region: ALM
+    condition: inhibiting apical tufts impairs relearning under new rules but not established
+      behaviour
+    modality: calcium
+    flags:
+    - optogenetic
+  - key: takahashi_2020
+    stance: qualifies
+    strength: direct
+    region: L5
+    condition: effect is pathway-specific (ET not IT) and context-dependent — not a general dendritic
+      property
+    modality: calcium
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: contradicts
+    strength: indirect
+    region: both
+    condition: as of 2015, "even the best work has only shown correlations"
+    modality: review
+- id: C4.1
+  parent: Q4
+  text: BTSP is the main mechanism producing CA1 place fields.
+  status: open
+  note: Magee Box 2 already is this node, with four numbered evidence lines each carrying its
+    own caveat.
+  evidence:
+  - key: bittner_2017
+    doi: 10.1126/science.aan3846
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: single plateau produces a predictive place field in one trial
+    modality: patch
+  - key: grienberger_magee_2022
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: EC3 inhibition removes the reward-site overrepresentation
+    modality: calcium
+    flags:
+    - optogenetic
+  - key: priestley_2022
+    stance: supports
+    strength: indirect
+    region: CA1
+    condition: most new PCs show BTSP signatures during novel experience
+    modality: calcium
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: supports
+    strength: indirect
+    region: CA1
+    condition: review; Box 2 aggregates four lines with caveats
+    modality: review
+  - key: fischer_2022
+    doi: 10.1523/JNEUROSCI.1132-22.2022
+    stance: assumes
+    strength: assumed
+    region: CA1
+    condition: treats BTSP as the mechanism when framing credit assignment
+    modality: review
+- id: C4.2
+  parent: Q4
+  text: BTSP is the only plasticity mechanism producing CA1 place fields.
+  status: contested
+  note: 'Split from C4.1 deliberately. "Main" and "only" have different evidence and must not
+    share a node — Magee concedes under 25% of PCs lack BTSP hallmarks and explicitly leaves this
+    open, while Sheffield & Dombeck offer a clustered-synapse alternative.
+
+    '
+  evidence:
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: contradicts
+    strength: indirect
+    region: CA1
+    condition: '"Questions remain as to whether BTSP is the sole synaptic plasticity mechanism";
+      <25% of PCs lack the signatures'
+    modality: review
+  - key: sheffield_dombeck_2015
+    stance: contradicts
+    strength: direct
+    region: CA1
+    condition: already-strengthened or clustered synapses can drive place cell activity via local
+      dSpikes
+    modality: calcium
+  - key: madar_2025
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: BTSP but not STDP accounts for place field shifting dynamics
+    modality: model
+- id: C4.3
+  parent: Q4
+  text: The BTSP rule is asymmetric in CA1 and symmetric in CA3.
+  status: open
+  note: 'If true, the plasticity rule is tuned to network function rather than fixed by biochemistry
+    — which is a much stronger claim than it looks, and rests on one paper.
+
+    '
+  evidence:
+  - key: li_2024
+    stance: supports
+    strength: direct
+    region: CA3
+    condition: symmetric ~5 s window at CA3-CA3 recurrent synapses
+    modality: patch
+  - key: bittner_2017
+    doi: 10.1126/science.aan3846
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: asymmetric, projecting further backward
+    modality: patch
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: supports
+    strength: indirect
+    region: both
+    condition: review; links the asymmetry to prediction vs attractor stability
+    modality: review
+- id: C5.1
+  parent: Q5
+  text: EC3 input is a target signal, not an error signal.
+  status: contested
+  note: 'Magee''s argument is negative evidence with a clear logic — EC3 activity stayed constant
+    while CA1 adapted, which is not what an error signal does. The predictive-coding models require
+    error. Chavlis & Poirazi state outright the question is unresolved.
+
+    '
+  evidence:
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: EC3 peak at salient regions persisted for the whole session instead of decaying
+      as CA1 adapted
+    modality: review
+  - key: urbanczik_senn_2014
+    stance: contradicts
+    strength: direct
+    region: model
+    condition: dendritic voltage as prediction, somatic spike as ground truth; requires an error
+    modality: model
+  - key: chavlis_poirazi_2026
+    doi: 10.1146/annurev-neuro-090325-115846
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: 'section 2.5.2 frames association vs prediction error as unresolved: "remains to
+      be seen"'
+    modality: review
+  - key: gillon_2024
+    stance: contradicts
+    strength: direct
+    region: V1
+    condition: distal apical responses to pattern-violating stimuli increase as somatic responses
+      adapt — error-like
+    modality: calcium
+- id: C5.2
+  parent: Q5
+  text: Dendrites implement backpropagation-like, neuron-specific credit assignment.
+  status: open
+  note: 'Fischer 2022 says plainly this "remains untested", and describes the BCI design built
+    to test it. Worth watching as the node most likely to move in the next two years.
+
+    '
+  evidence:
+  - key: guerguiev_2017
+    stance: supports
+    strength: direct
+    region: model
+    condition: segregated dendrites approximate backprop error
+    modality: model
+  - key: payeur_2021
+    stance: supports
+    strength: direct
+    region: model
+    condition: burst-dependent plasticity coordinates learning in hierarchical circuits
+    modality: model
+  - key: francioni_2025
+    stance: supports
+    strength: direct
+    region: L5
+    condition: apical dendrites process instructive signals in vectorised format during a BCI
+      task
+    modality: calcium
+  - key: fischer_2022
+    doi: 10.1523/JNEUROSCI.1132-22.2022
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: states the hypothesis "remains untested" and lays out the BCI design intended to
+      test it
+    modality: review
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: contradicts
+    strength: indirect
+    region: CA1
+    condition: argues EC3 cannot be neuron-specific — stochastic, and each axon innervates thousands
+      of CA1 cells; proposes stable residual weights supply the specificity instead
+    modality: review
+- id: C6.1
+  parent: Q6
+  text: Memory persists through stabilised synaptic weights.
+  status: contested
+  note: The classical position. Magee Box 5 is written explicitly as a contrast against it.
+  evidence:
+  - key: marr_1971
+    stance: supports
+    strength: assumed
+    region: theory
+    condition: foundational assumption of the archicortex model
+    modality: theory
+  - key: hopfield_1982
+    stance: supports
+    strength: assumed
+    region: theory
+    condition: attractor memory via fixed weights
+    modality: theory
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: contradicts
+    strength: indirect
+    region: CA1
+    condition: Box 5 — "Contrasts with concepts based on complete reactivation ... via stable
+      synaptic weights"
+    modality: review
+  - key: vaidya_2025
+    stance: contradicts
+    strength: direct
+    region: CA1
+    condition: even stable PCs required new BTSP each day; weights decayed or were overwritten
+      overnight
+    modality: patch
+- id: C6.2
+  parent: Q6
+  text: Memory persists via a raised likelihood of new neuron-specific plasticity.
+  status: open
+  note: 'The positive form of C6.1''s negation, and a genuinely new proposal. Rests on the residual
+    subthreshold depolarisation that lowers plateau threshold at particular locations. One lab.
+
+    '
+  evidence:
+  - key: vaidya_2025
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: stable PC population expanded ~3-fold over a week; residual amplitude grew with
+      days
+    modality: patch
+  - key: qian_2025
+    stance: supports
+    strength: direct
+    region: CA1
+    condition: experience-dependent place cell referencing
+    modality: patch
+  - key: magee_2026
+    doi: 10.1038/s41593-026-02214-2
+    stance: supports
+    strength: indirect
+    region: CA1
+    condition: review; proposes it as the solution to the stability-plasticity dilemma
+    modality: review
+- id: C7.1
+  parent: Q7
+  text: Dendritic calcium signals report dendritic voltage.
+  status: contested
+  note: 'THIS NODE RE-WEIGHTS MOST OTHERS. Beaulieu-Laroche calibrated it directly and found subthreshold
+    depolarisation produces negligible GCaMP6f signal — so calcium reports suprathreshold electrogenesis,
+    not membrane potential. Park adds a spatial argument: Ca diffuses ~2 um in 100 ms while electrical
+    length constants exceed 100 um, so the two signals have different spatial structure by construction.
+    Most in vivo dendritic literature is calcium. Every claim above resting on calcium in vivo
+    inherits this scope.
+
+    '
+  evidence:
+  - key: beaulieu_laroche_2019
+    doi: 10.1016/j.neuron.2019.05.014
+    stance: qualifies
+    strength: direct
+    region: L5
+    condition: ex vivo dual patch + GCaMP6f — subthreshold produces negligible dF/F, suprathreshold
+      electrogenesis produces significant dF/F. Calcium reports electrogenesis specifically
+    modality: patch
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: contradicts
+    strength: indirect
+    region: CA1
+    condition: Ca buffered diffusion <20 um2/s gives ~2 um spread per 100 ms vs >100 um electrical
+      length constants; calls for simultaneous voltage and calcium imaging to settle it
+    modality: voltage
+    flags: *id001
+  - key: fischer_2022
+    doi: 10.1523/JNEUROSCI.1132-22.2022
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: names calcium temporal resolution and fluorescence nonlinearity as formidable obstacles
+    modality: review
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: assumes
+    strength: assumed
+    region: both
+    condition: treats in vivo calcium imaging as evidence for dendritic spikes throughout
+    modality: review
+- id: C7.2
+  parent: Q7
+  text: Slice dendritic excitability at room temperature reflects physiological behaviour.
+  status: contested
+  note: 'Park measured this directly and the effect is large. Several classic dendritic results
+    were collected at room temperature, so this is not a pedantic node.
+
+    '
+  evidence:
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: contradicts
+    strength: direct
+    region: CA1
+    condition: dSpike probability 16% at 34 C vs 50% at 24 C (any bAP); authors propose this explains
+      discrepancies with earlier room-temperature bAP propagation measurements
+    modality: voltage
+    flags: *id001
+- id: C7.3
+  parent: Q7
+  text: Anaesthesia preserves dendritic integration.
+  status: contested
+  note: 'Stuart & Spruston raise this as an unresolved confound and note that in vitro work shows
+    most anaesthetics degrade active dendritic membrane properties. A large share of the in vivo
+    dendritic literature is anaesthetized.
+
+    '
+  evidence:
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: contradicts
+    strength: indirect
+    region: both
+    condition: flags anaesthetics as a possible source of apparent disagreement; cites in vitro
+      evidence that most anaesthetics negatively affect active dendritic membrane properties
+    modality: review
+  - key: potez_larkum_2008
+    stance: contradicts
+    strength: direct
+    region: L5
+    condition: direct measurement of anaesthetic effects on dendritic properties
+    modality: patch
+  - key: suzuki_larkum_2020
+    stance: contradicts
+    strength: direct
+    region: L5
+    condition: general anaesthesia decouples apical input from somatic output
+    modality: patch
+- id: C7.4
+  parent: Q7
+  text: Optogenetic dendritic stimulation approximates physiological synaptic drive.
+  status: open
+  note: 'The methodological node underneath C1.1. Park estimates ~130 pA of dendritic CheRiff
+    current, far below the injected currents that trigger local Na spikes in patch studies — which
+    is either the reason their result differs, or the reason their result is the more physiological
+    one. Nobody has measured which.
+
+    '
+  evidence:
+  - key: park_2025
+    doi: 10.1038/s41467-025-55819-9
+    stance: qualifies
+    strength: direct
+    region: CA1
+    condition: estimates dendritic CheRiff currents at ~130 pA and shows in simulation that the
+      absence of dendrite-initiated dSpikes follows from the gradual, weak, distributed stimulus
+    modality: voltage
+    flags: *id001
+  - key: stuart_spruston_2015
+    doi: 10.1038/nn.4157
+    stance: qualifies
+    strength: indirect
+    region: both
+    condition: '"activation is nonetheless artificial"; in vitro studies describe possible computations,
+      not the ones the brain uses'
+    modality: review

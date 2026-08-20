@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dendrite Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFF1EC; --card:#FAFBF7; --ink:#10161A; --ink2:#5F6A66; --ink3:#8C948F;
+  --rule:#D2D7CD; --dendrite:#24484B; --spike:#C7126A;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --serif:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink); font-family:var(--serif);
+  font-size:15px; line-height:1.5;
+  /* faint graph-paper ground: this is a lab notebook, not a website */
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+  background-size:56px 56px; background-position:-1px -1px;
+}
+body::before{content:"";position:fixed;inset:0;background:var(--paper);opacity:.55;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 20px 100px}
+
+/* ── header ───────────────────────────────────────────── */
+header{padding:34px 0 18px;border-bottom:1.5px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2)}
+h1{font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:-.02em;margin:6px 0 0}
+h1 em{font-style:normal;color:var(--spike)}
+.stats{font-family:var(--mono);font-size:11px;color:var(--ink2);margin-top:8px;display:flex;gap:18px;flex-wrap:wrap}
+.stats b{font-weight:600;color:var(--ink)}
+
+/* ── layout ───────────────────────────────────────────── */
+.cols{display:grid;grid-template-columns:238px 1fr;gap:34px;margin-top:26px;align-items:start}
+@media(max-width:820px){.cols{grid-template-columns:1fr;gap:20px}aside{position:static!important}}
+
+/* ── controls ─────────────────────────────────────────── */
+aside{position:sticky;top:18px;font-family:var(--mono);font-size:11.5px}
+.blk{margin-bottom:22px}
+.blk>h2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);
+  font-weight:500;margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid var(--rule)}
+.seg{display:flex;flex-direction:column;gap:1px}
+.seg button{font:inherit;text-align:left;background:none;border:none;padding:5px 7px;cursor:pointer;
+  color:var(--ink2);border-left:2px solid transparent;transition:.12s}
+.seg button:hover{background:var(--card);color:var(--ink)}
+.seg button[aria-pressed=true]{color:var(--ink);border-left-color:var(--spike);background:var(--card);font-weight:500}
+.axis{display:flex;align-items:center;gap:6px;padding:4px 0}
+.axis label{flex:1;display:flex;align-items:center;gap:6px;cursor:pointer;color:var(--ink2)}
+.axis input{accent-color:var(--spike);margin:0}
+.axis.on label{color:var(--ink)}
+.mv{background:none;border:1px solid var(--rule);color:var(--ink3);cursor:pointer;
+  width:19px;height:19px;line-height:1;padding:0;font-size:10px;border-radius:2px}
+.mv:hover:not(:disabled){border-color:var(--dendrite);color:var(--dendrite)}
+.mv:disabled{opacity:.3;cursor:default}
+input[type=search],select{font:inherit;font-family:var(--mono);width:100%;padding:6px 8px;
+  background:var(--card);border:1px solid var(--rule);border-radius:2px;color:var(--ink)}
+input[type=search]:focus,select:focus{outline:2px solid var(--spike);outline-offset:-1px}
+.chk{display:flex;align-items:center;gap:6px;color:var(--ink2);cursor:pointer;padding:3px 0}
+.chk input{accent-color:var(--spike);margin:0}
+.act{font:inherit;font-family:var(--mono);width:100%;padding:7px;margin-top:6px;cursor:pointer;
+  background:var(--card);border:1px solid var(--rule);border-radius:2px;color:var(--ink2)}
+.act:hover{border-color:var(--dendrite);color:var(--dendrite)}
+.act.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.act.primary:hover{background:var(--spike);border-color:var(--spike);color:#fff}
+
+/* ── the dendritic gutter: the one place we spend ink ── */
+.grp{position:relative}
+.grp-h{display:flex;align-items:baseline;gap:10px;cursor:pointer;padding:9px 0 7px;user-select:none}
+.grp-h .dot{flex:none;border-radius:50%;background:var(--spike);align-self:center}
+.grp-h .nm{font-family:var(--mono);font-weight:600;letter-spacing:-.01em}
+.grp-h .ct{font-family:var(--mono);font-size:10.5px;color:var(--ink3);letter-spacing:.06em}
+.grp-h .ax{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.grp-h:hover .nm{color:var(--spike)}
+.kids{margin-left:9px;padding-left:15px}          /* stroke width set inline, tapers with depth */
+.grp[data-collapsed=true] .kids{display:none}
+.caret{font-family:var(--mono);font-size:9px;color:var(--ink3);width:8px;flex:none}
+
+/* ── paper row ────────────────────────────────────────── */
+.p{padding:10px 12px 11px;margin:2px 0;background:var(--card);border:1px solid transparent;
+  border-left:2px solid var(--rule);cursor:pointer;transition:.12s}
+.p:hover{border-left-color:var(--dendrite)}
+.p[data-open=true]{border-color:var(--rule);border-left-color:var(--spike)}
+.p .t{font-weight:600;line-height:1.32;font-size:14.5px}
+.p .s{color:var(--ink2);font-size:13.5px;line-height:1.45;margin-top:4px}
+.p .m{font-family:var(--mono);font-size:10.5px;color:var(--ink3);margin-top:6px;
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.p .m .yr{color:var(--dendrite);font-weight:600}
+.p .m a{color:var(--ink3);text-decoration:none;border-bottom:1px dotted var(--rule)}
+.p .m a:hover{color:var(--spike);border-color:var(--spike)}
+.flag{color:var(--spike);font-weight:600}
+.tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;padding:1px 5px;
+  border:1px solid var(--rule);border-radius:2px;color:var(--ink2);background:var(--paper)}
+.tag.ph{border-style:dotted;color:var(--dendrite)}
+.chip{font:inherit;font-family:var(--mono);font-size:10px;padding:2px 7px;margin:0 3px 3px 0;
+  border:1px solid var(--rule);border-radius:11px;background:var(--card);color:var(--ink2);cursor:pointer}
+.chip:hover{border-color:var(--dendrite);color:var(--dendrite)}
+.chip[aria-pressed=true]{background:var(--spike);border-color:var(--spike);color:#fff}
+.sim{margin-top:9px}
+.sim .hd{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:3px}
+.sim .r{display:grid;grid-template-columns:38px 1fr;gap:7px;color:var(--ink2);
+  padding:1.5px 0;line-height:1.35}
+.sim .r b{color:var(--spike);font-weight:600;font-variant-numeric:tabular-nums}
+.lin{margin-top:8px;color:var(--dendrite);font-size:10.5px}
+
+/* ── expanded editor ──────────────────────────────────── */
+.det{margin-top:11px;padding-top:10px;border-top:1px dashed var(--rule);
+  font-family:var(--mono);font-size:11px;cursor:default}
+.det .row{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:center;margin-bottom:5px}
+.det .row span{color:var(--ink3);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.det .conf{font-size:10px;color:var(--ink3);margin-left:6px}
+.det textarea{font:inherit;font-family:var(--mono);width:100%;min-height:44px;padding:6px 8px;
+  background:var(--paper);border:1px solid var(--rule);border-radius:2px;color:var(--ink);resize:vertical}
+.det .au{color:var(--ink2);line-height:1.5;margin-top:7px}
+
+.empty{font-family:var(--mono);font-size:12px;color:var(--ink3);padding:50px 0;text-align:center}
+.drop{position:fixed;inset:0;background:rgba(199,18,106,.08);border:3px dashed var(--spike);
+  z-index:99;display:none;place-items:center;font-family:var(--mono);color:var(--spike)}
+.drop.on{display:grid}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="drop" id="drop">drop papers.json to load</div>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Literature atlas</div>
+  <h1>Dendritic <em>computation</em></h1>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="cols">
+  <aside>
+    <div class="blk">
+      <h2>Group by</h2>
+      <div class="seg" id="modes">
+        <button data-m="hier" aria-pressed="true">Hierarchy</button>
+        <button data-m="year" aria-pressed="false">Year</button>
+        <button data-m="lab"  aria-pressed="false">Lab cluster</button>
+        <button data-m="flat" aria-pressed="false">Flat list</button>
+      </div>
+    </div>
+
+    <div class="blk" id="axisBlk">
+      <h2>Hierarchy order</h2>
+      <div id="axes"></div>
+    </div>
+
+    <div class="blk">
+      <h2>Sort within group</h2>
+      <select id="sort">
+        <option value="year_desc">Year — newest first</option>
+        <option value="year_asc">Year — oldest first</option>
+        <option value="cites">Citations</option>
+        <option value="title">Title A–Z</option>
+      </select>
+    </div>
+
+    <div class="blk">
+      <h2>Filter</h2>
+      <input type="search" id="q" placeholder="title, author, keyword…">
+      <label class="chk" style="margin-top:8px">
+        <input type="checkbox" id="onlyFlag"> only flagged for review
+      </label>
+    </div>
+
+    <div class="blk" id="multiBlk"></div>
+
+    <div class="blk">
+      <h2>Data</h2>
+      <button class="act" id="loadBtn">Load papers.json…</button>
+      <button class="act primary" id="saveBtn">Export with my edits</button>
+      <input type="file" id="file" accept=".json" hidden>
+    </div>
+  </aside>
+
+  <main id="out"></main>
+</div>
+</div>
+
+<script>
+const DB = {
+ "meta": {
+  "generated": "2026-08-20",
+  "n": 18,
+  "sample": true,
+  "axes": [
+   {
+    "id": "article_type",
+    "label": "Article type",
+    "values": [
+     "primary research",
+     "review / perspective",
+     "methods / tool",
+     "theory"
+    ]
+   },
+   {
+    "id": "prep",
+    "label": "Preparation",
+    "values": [
+     "acute slice",
+     "organotypic slice",
+     "anesthetized in vivo",
+     "awake in vivo",
+     "computational / modeling",
+     "human tissue",
+     "dissociated culture",
+     "unclear"
+    ]
+   },
+   {
+    "id": "view",
+    "label": "Conceptual perspective",
+    "values": [
+     "dendritic-local computation centric",
+     "bAP-centric",
+     "synaptic plasticity centric",
+     "somatic-output centric",
+     "mixed",
+     "not applicable"
+    ]
+   },
+   {
+    "id": "phenomenon_primary",
+    "label": "Primary phenomenon",
+    "values": [
+     "NMDA spike",
+     "Ca spike",
+     "Na spike",
+     "bAP",
+     "plateau potential",
+     "passive integration",
+     "branch-specific computation",
+     "none / not applicable"
+    ]
+   }
+  ],
+  "multi_axes": [
+   {
+    "id": "phenomena",
+    "label": "All phenomena reported",
+    "values": [
+     "NMDA spike",
+     "Ca spike",
+     "Na spike",
+     "bAP",
+     "plateau potential",
+     "passive integration",
+     "branch-specific computation"
+    ]
+   }
+  ],
+  "lineage": [
+   {
+    "person": "Matthew E. Larkum",
+    "trained_in": [
+     "Sakmann"
+    ],
+    "now_leads": [
+     "Larkum (single)"
+    ],
+    "as_first": 1,
+    "as_last": 1
+   }
+  ],
+  "weights": {
+   "last": 1.0,
+   "first": 0.85,
+   "penultimate": 0.45,
+   "second": 0.35,
+   "middle": 0.12,
+   "tau": 0.3
+  }
+ },
+ "papers": [
+  {
+   "title": "Active propagation of somatic action potentials into neocortical pyramidal cell dendrites",
+   "year": 1994,
+   "venue": "Nature",
+   "doi": "10.1038/367069a0",
+   "authors": [
+    "Greg J. Stuart",
+    "Bert Sakmann"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "view": "bAP-centric",
+    "phenomenon_primary": "bAP"
+   },
+   "confidence": {
+    "article_type": 0.95,
+    "prep": 0.97,
+    "view": 0.93,
+    "phenomenon_primary": 0.96
+   },
+   "significance": "Showed that somatic spikes actively invade the apical dendrite, making the bAP a real, measurable signal available to synapses rather than a theoretical one.",
+   "keywords": [
+    "backpropagation",
+    "dendritic patch",
+    "layer 5"
+   ],
+   "cited_by": 2100,
+   "id": "10.1038_367069a0",
+   "first_author": "Greg J. Stuart",
+   "last_author": "Bert Sakmann",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "bAP"
+   ],
+   "lab_cluster": 1,
+   "lab_cluster_name": "Sakmann",
+   "similar": [
+    {
+     "id": "10.1038_18686",
+     "score": 0.75,
+     "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Matthew E. Larkum"
+   ]
+  },
+  {
+   "title": "A synaptically controlled, associative signal for Hebbian plasticity in hippocampal neurons",
+   "year": 1997,
+   "venue": "Science",
+   "doi": "10.1126/science.275.5297.209",
+   "authors": [
+    "Jeffrey C. Magee",
+    "Daniel Johnston"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "view": "synaptic plasticity centric",
+    "phenomenon_primary": "bAP"
+   },
+   "confidence": {
+    "article_type": 0.94,
+    "prep": 0.96,
+    "view": 0.91,
+    "phenomenon_primary": 0.93
+   },
+   "significance": "Identified the bAP paired with EPSPs as the associative signal for plasticity, giving Hebb's postulate a concrete biophysical implementation.",
+   "keywords": [
+    "STDP",
+    "Hebbian",
+    "CA1"
+   ],
+   "cited_by": 2400,
+   "id": "10.1126_science.275.5297.209",
+   "first_author": "Jeffrey C. Magee",
+   "last_author": "Daniel Johnston",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "bAP"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.493,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.493,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.451,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.448,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+   "year": 1999,
+   "venue": "Nature",
+   "doi": "10.1038/18686",
+   "authors": [
+    "Matthew E. Larkum",
+    "J. Julius Zhu",
+    "Bert Sakmann"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "view": "mixed",
+    "phenomenon_primary": "Ca spike"
+   },
+   "confidence": {
+    "article_type": 0.95,
+    "prep": 0.96,
+    "view": 0.72,
+    "phenomenon_primary": 0.94
+   },
+   "significance": "Described BAC firing, where a bAP coincident with distal input triggers a dendritic Ca spike and a somatic burst, recasting L5 cells as two-compartment coincidence detectors.",
+   "keywords": [
+    "BAC firing",
+    "Ca spike",
+    "layer 5"
+   ],
+   "cited_by": 1500,
+   "id": "10.1038_18686",
+   "first_author": "Matthew E. Larkum",
+   "last_author": "Bert Sakmann",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Ca spike",
+    "bAP"
+   ],
+   "lab_cluster": 1,
+   "lab_cluster_name": "Sakmann",
+   "similar": [
+    {
+     "id": "10.1038_367069a0",
+     "score": 0.75,
+     "title": "Active propagation of somatic action potentials into neocortical pyramidal cell dendrites",
+     "year": 1994
+    },
+    {
+     "id": "10.1126_science.aah6066",
+     "score": 0.428,
+     "title": "Active cortical dendrites modulate perception",
+     "year": 2016
+    }
+   ],
+   "lineage": [
+    "Matthew E. Larkum"
+   ]
+  },
+  {
+   "title": "NMDA spikes in basal dendrites of cortical pyramidal neurons",
+   "year": 2000,
+   "venue": "Nature",
+   "doi": "10.1038/35005094",
+   "authors": [
+    "Jackie Schiller",
+    "Guy Major",
+    "Helmut J. Koester",
+    "Yitzhak Schiller"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "NMDA spike"
+   },
+   "confidence": {
+    "article_type": 0.96,
+    "prep": 0.95,
+    "view": 0.92,
+    "phenomenon_primary": 0.97
+   },
+   "significance": "Found regenerative NMDA spikes confined to single basal branches, establishing the thin-dendrite branch as an independent nonlinear subunit.",
+   "keywords": [
+    "NMDA spike",
+    "basal dendrite",
+    "branch subunit"
+   ],
+   "cited_by": 1300,
+   "id": "10.1038_35005094",
+   "first_author": "Jackie Schiller",
+   "last_author": "Yitzhak Schiller",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "NMDA spike"
+   ],
+   "lab_cluster": 3,
+   "lab_cluster_name": "Schiller (single)",
+   "similar": [],
+   "lineage": []
+  },
+  {
+   "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
+   "year": 2002,
+   "venue": "Nature",
+   "doi": "10.1038/nature00854",
+   "authors": [
+    "Nelson B. Golding",
+    "Nathan P. Staff",
+    "Nelson Spruston"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "view": "synaptic plasticity centric",
+    "phenomenon_primary": "Na spike"
+   },
+   "confidence": {
+    "article_type": 0.93,
+    "prep": 0.96,
+    "view": 0.68,
+    "phenomenon_primary": 0.85
+   },
+   "significance": "Showed LTP at distal CA1 synapses requires local dendritic spikes and not the bAP, breaking the assumption that somatic output is necessary for plasticity.",
+   "keywords": [
+    "local spike",
+    "distal LTP",
+    "CA1"
+   ],
+   "cited_by": 1000,
+   "id": "10.1038_nature00854",
+   "first_author": "Nelson B. Golding",
+   "last_author": "Nelson Spruston",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike",
+    "bAP"
+   ],
+   "lab_cluster": 4,
+   "lab_cluster_name": "Spruston (single)",
+   "similar": [],
+   "lineage": []
+  },
+  {
+   "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+   "year": 2006,
+   "venue": "Journal of Neuroscience",
+   "doi": "10.1523/JNEUROSCI.4428-05.2006",
+   "authors": [
+    "Sonia Gasparini",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "Na spike"
+   },
+   "confidence": {
+    "article_type": 0.94,
+    "prep": 0.96,
+    "view": 0.83,
+    "phenomenon_primary": 0.88
+   },
+   "significance": "Demonstrated that whether CA1 dendrites integrate linearly or fire local spikes depends on input synchrony, making the computation itself state-dependent rather than fixed.",
+   "keywords": [
+    "input synchrony",
+    "local spike",
+    "integration mode"
+   ],
+   "cited_by": 600,
+   "id": "10.1523_JNEUROSCI.4428-05.2006",
+   "first_author": "Sonia Gasparini",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike",
+    "passive integration"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.75,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.75,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+   "year": 2006,
+   "venue": "Neuron",
+   "doi": "10.1016/j.neuron.2006.03.016",
+   "authors": [
+    "Attila Losonczy",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "branch-specific computation"
+   },
+   "confidence": {
+    "article_type": 0.95,
+    "prep": 0.96,
+    "view": 0.9,
+    "phenomenon_primary": 0.86
+   },
+   "significance": "Mapped branch-local spike initiation and its sharp threshold in oblique dendrites, supplying the empirical basis for treating branches as separate integration units.",
+   "keywords": [
+    "oblique dendrite",
+    "glutamate uncaging",
+    "branch strength"
+   ],
+   "cited_by": 800,
+   "id": "10.1016_j.neuron.2006.03.016",
+   "first_author": "Attila Losonczy",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike",
+    "branch-specific computation"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.75,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.75,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+   "year": 2012,
+   "venue": "Nature",
+   "doi": "10.1038/nature11601",
+   "authors": [
+    "Ning-long Xu",
+    "Mark T. Harnett",
+    "Stephen R. Williams",
+    "Daniel Huber",
+    "Daniel H. O'Connor",
+    "Karel Svoboda",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "view": "mixed",
+    "phenomenon_primary": "plateau potential"
+   },
+   "confidence": {
+    "article_type": 0.93,
+    "prep": 0.95,
+    "view": 0.64,
+    "phenomenon_primary": 0.82
+   },
+   "significance": "Recorded dendritic plateaus in behaving mice and tied them to convergence of touch and motor signals, moving dendritic nonlinearity from slice phenomenology to behavioral relevance.",
+   "keywords": [
+    "plateau potential",
+    "whisker",
+    "tuft"
+   ],
+   "cited_by": 700,
+   "id": "10.1038_nature11601",
+   "first_author": "Ning-long Xu",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential",
+    "Ca spike"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.75,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.75,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Dendritic spikes enhance stimulus selectivity in cortical neurons in vivo",
+   "year": 2013,
+   "venue": "Nature",
+   "doi": "10.1038/nature12600",
+   "authors": [
+    "Spencer L. Smith",
+    "Ikuko T. Smith",
+    "Tiago Branco",
+    "Michael Häusser"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "anesthetized in vivo",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "Na spike"
+   },
+   "confidence": {
+    "article_type": 0.95,
+    "prep": 0.79,
+    "view": 0.9,
+    "phenomenon_primary": 0.87
+   },
+   "significance": "Recorded dendritic spikes in V1 in vivo and showed they are more orientation-tuned than the soma, arguing dendrites sharpen selectivity before the axon sees it.",
+   "keywords": [
+    "orientation tuning",
+    "V1",
+    "dendritic patch in vivo"
+   ],
+   "cited_by": 900,
+   "id": "10.1038_nature12600",
+   "first_author": "Spencer L. Smith",
+   "last_author": "Michael Häusser",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike",
+    "branch-specific computation"
+   ],
+   "lab_cluster": 5,
+   "lab_cluster_name": "Häusser (single)",
+   "similar": [],
+   "lineage": []
+  },
+  {
+   "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+   "year": 2015,
+   "venue": "Nature Neuroscience",
+   "doi": "10.1038/nn.4062",
+   "authors": [
+    "Katie C. Bittner",
+    "Christine Grienberger",
+    "Sachin P. Vaidya",
+    "Aaron D. Milstein",
+    "John J. Macklin",
+    "Jinhyun Kim",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "plateau potential"
+   },
+   "confidence": {
+    "article_type": 0.92,
+    "prep": 0.95,
+    "view": 0.81,
+    "phenomenon_primary": 0.9
+   },
+   "significance": "Showed CA1 place fields arise from dendritic plateau potentials driven by conjunctive CA3 and entorhinal input rather than from somatic summation.",
+   "keywords": [
+    "plateau",
+    "place field",
+    "conjunctive input"
+   ],
+   "cited_by": 650,
+   "id": "10.1038_nn.4062",
+   "first_author": "Katie C. Bittner",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.87,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "NMDA receptor-dependent multidendrite Ca2+ spikes required for hippocampal burst firing in vivo",
+   "year": 2014,
+   "venue": "Neuron",
+   "doi": "10.1016/j.neuron.2014.11.015",
+   "authors": [
+    "Christine Grienberger",
+    "Xiaowei Chen",
+    "Arthur Konnerth"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "anesthetized in vivo",
+    "view": "somatic-output centric",
+    "phenomenon_primary": "Ca spike"
+   },
+   "confidence": {
+    "article_type": 0.91,
+    "prep": 0.77,
+    "view": 0.58,
+    "phenomenon_primary": 0.84
+   },
+   "significance": "Linked multi-branch NMDA-dependent Ca spikes to somatic bursting in vivo, connecting local dendritic events directly to the neuron's output code.",
+   "keywords": [
+    "Ca spike",
+    "burst firing",
+    "CA1 in vivo"
+   ],
+   "cited_by": 400,
+   "id": "10.1016_j.neuron.2014.11.015",
+   "first_author": "Christine Grienberger",
+   "last_author": "Arthur Konnerth",
+   "needs_review": true,
+   "evidence": {},
+   "phenomena": [
+    "Ca spike",
+    "NMDA spike"
+   ],
+   "lab_cluster": 6,
+   "lab_cluster_name": "Konnerth (single)",
+   "similar": [
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.148,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.051,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Active cortical dendrites modulate perception",
+   "year": 2016,
+   "venue": "Science",
+   "doi": "10.1126/science.aah6066",
+   "authors": [
+    "Naoya Takahashi",
+    "Thomas G. Oertner",
+    "Peter Hegemann",
+    "Matthew E. Larkum"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "Ca spike"
+   },
+   "confidence": {
+    "article_type": 0.9,
+    "prep": 0.94,
+    "view": 0.85,
+    "phenomenon_primary": 0.88
+   },
+   "significance": "Manipulated dendritic Ca activity during a detection task and shifted perceptual threshold, providing causal evidence that dendritic events matter for behavior.",
+   "keywords": [
+    "perception",
+    "optogenetics",
+    "tuft"
+   ],
+   "cited_by": 550,
+   "id": "10.1126_science.aah6066",
+   "first_author": "Naoya Takahashi",
+   "last_author": "Matthew E. Larkum",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Ca spike"
+   ],
+   "lab_cluster": 7,
+   "lab_cluster_name": "Larkum (single)",
+   "similar": [
+    {
+     "id": "10.1038_18686",
+     "score": 0.428,
+     "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Matthew E. Larkum"
+   ]
+  },
+  {
+   "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+   "year": 2017,
+   "venue": "Science",
+   "doi": "10.1126/science.aan3846",
+   "authors": [
+    "Katie C. Bittner",
+    "Aaron D. Milstein",
+    "Christine Grienberger",
+    "Sandro Romani",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "view": "synaptic plasticity centric",
+    "phenomenon_primary": "plateau potential"
+   },
+   "confidence": {
+    "article_type": 0.94,
+    "prep": 0.93,
+    "view": 0.87,
+    "phenomenon_primary": 0.92
+   },
+   "significance": "Described a plateau-driven plasticity rule operating over seconds, displacing millisecond STDP as the dominant account of how place fields form.",
+   "keywords": [
+    "BTSP",
+    "plateau",
+    "place field"
+   ],
+   "cited_by": 900,
+   "id": "10.1126_science.aan3846",
+   "first_author": "Katie C. Bittner",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.87,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "High and asymmetric somato-dendritic coupling of V1 layer 5 pyramidal neurons independent of visual stimulation and locomotion",
+   "year": 2019,
+   "venue": "eLife",
+   "doi": "10.7554/eLife.49145",
+   "authors": [
+    "Valerio Francioni",
+    "Zahid Padamsey",
+    "Nathalie L. Rochefort"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "view": "bAP-centric",
+    "phenomenon_primary": "bAP"
+   },
+   "confidence": {
+    "article_type": 0.92,
+    "prep": 0.93,
+    "view": 0.9,
+    "phenomenon_primary": 0.83
+   },
+   "significance": "Reported that dendritic Ca signals in V1 L5 cells mostly track somatic spiking, pushing back on the view that dendritic events are routinely independent in vivo.",
+   "keywords": [
+    "somato-dendritic coupling",
+    "V1",
+    "two-photon"
+   ],
+   "cited_by": 200,
+   "id": "10.7554_eLife.49145",
+   "first_author": "Valerio Francioni",
+   "last_author": "Nathalie L. Rochefort",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "bAP",
+    "Ca spike"
+   ],
+   "lab_cluster": 8,
+   "lab_cluster_name": "Rochefort (single)",
+   "similar": [],
+   "lineage": []
+  },
+  {
+   "title": "Enhanced dendritic compartmentalization in human cortical neurons",
+   "year": 2018,
+   "venue": "Cell",
+   "doi": "10.1016/j.cell.2018.08.045",
+   "authors": [
+    "Lou Beaulieu-Laroche",
+    "Enrique H. S. Toloza",
+    "Marie-Sophie van der Goes",
+    "Mathieu Lafourcade",
+    "Derrick Barnagian",
+    "Ziv M. Williams",
+    "Emad N. Eskandar",
+    "Matthew P. Frosch",
+    "Sydney S. Cash",
+    "Mark T. Harnett"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "human tissue",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "passive integration"
+   },
+   "confidence": {
+    "article_type": 0.93,
+    "prep": 0.97,
+    "view": 0.86,
+    "phenomenon_primary": 0.9
+   },
+   "significance": "Showed human L5 dendrites are electrotonically more isolated than rodent ones, implying species differences in how much computation happens before the soma.",
+   "keywords": [
+    "human cortex",
+    "compartmentalization",
+    "cable properties"
+   ],
+   "cited_by": 400,
+   "id": "10.1016_j.cell.2018.08.045",
+   "first_author": "Lou Beaulieu-Laroche",
+   "last_author": "Mark T. Harnett",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "passive integration"
+   ],
+   "lab_cluster": 9,
+   "lab_cluster_name": "Harnett (single)",
+   "similar": [
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.166,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Voltage imaging and optogenetics reveal behaviour-dependent changes in hippocampal dynamics",
+   "year": 2019,
+   "venue": "Nature",
+   "doi": "10.1038/s41586-019-1166-7",
+   "authors": [
+    "Yoav Adam",
+    "Jeong Jun Kim",
+    "Shan Lou",
+    "Yongxin Zhao",
+    "Michael E. Xie",
+    "Daan Brinks",
+    "Hao Wu",
+    "Mohammed A. Mostajo-Radji",
+    "Simon Kheifets",
+    "Vicente Parot",
+    "Selmaan Chettih",
+    "Katherine J. Williams",
+    "Benjamin Gmeiner",
+    "Samouil L. Farhi",
+    "Linda Madisen",
+    "E. Josephine Buchanan",
+    "Ian Kinsella",
+    "Ding Zhou",
+    "Liam Paninski",
+    "Christopher D. Harvey",
+    "Hongkui Zeng",
+    "Paola Arlotta",
+    "Robert E. Campbell",
+    "Adam E. Cohen"
+   ],
+   "labels": {
+    "article_type": "methods / tool",
+    "prep": "awake in vivo",
+    "view": "not applicable",
+    "phenomenon_primary": "none / not applicable"
+   },
+   "confidence": {
+    "article_type": 0.88,
+    "prep": 0.95,
+    "view": 0.55,
+    "phenomenon_primary": 0.7
+   },
+   "significance": "Delivered all-optical voltage recording in behaving mice, making subthreshold and spike dynamics accessible where electrode access had been the limiting factor.",
+   "keywords": [
+    "voltage imaging",
+    "QuasAr",
+    "optopatch"
+   ],
+   "cited_by": 700,
+   "id": "10.1038_s41586-019-1166-7",
+   "first_author": "Yoav Adam",
+   "last_author": "Adam E. Cohen",
+   "needs_review": true,
+   "evidence": {},
+   "phenomena": [],
+   "lab_cluster": 2,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.1016_j.cell.2022.11.031",
+     "score": 0.75,
+     "title": "All-optical physiology resolves a synaptic basis of behavioral timescale plasticity",
+     "year": 2023
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "All-optical physiology resolves a synaptic basis of behavioral timescale plasticity",
+   "year": 2023,
+   "venue": "Cell",
+   "doi": "10.1016/j.cell.2022.11.031",
+   "authors": [
+    "Linlin Z. Fan",
+    "Simon Kheifets",
+    "Urs L. Böhm",
+    "Hao Wu",
+    "Kiryl D. Piatkevich",
+    "Michael E. Xie",
+    "Vicente Parot",
+    "Yooree Ha",
+    "Kathryn E. Evans",
+    "Edward S. Boyden",
+    "Adam E. Takesian",
+    "Adam E. Cohen"
+   ],
+   "labels": {
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "view": "synaptic plasticity centric",
+    "phenomenon_primary": "plateau potential"
+   },
+   "confidence": {
+    "article_type": 0.85,
+    "prep": 0.92,
+    "view": 0.71,
+    "phenomenon_primary": 0.79
+   },
+   "significance": "Combined voltage imaging with optogenetic input control to expose the synaptic mechanism behind behavioral timescale plasticity in single CA1 cells.",
+   "keywords": [
+    "all-optical",
+    "BTSP",
+    "voltage imaging"
+   ],
+   "cited_by": 250,
+   "id": "10.1016_j.cell.2022.11.031",
+   "first_author": "Linlin Z. Fan",
+   "last_author": "Adam E. Cohen",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential"
+   ],
+   "lab_cluster": 2,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.1038_s41586-019-1166-7",
+     "score": 0.75,
+     "title": "Voltage imaging and optogenetics reveal behaviour-dependent changes in hippocampal dynamics",
+     "year": 2019
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Illuminating dendritic function with computational models",
+   "year": 2020,
+   "venue": "Nature Reviews Neuroscience",
+   "doi": "10.1038/s41583-020-0301-7",
+   "authors": [
+    "Panayiota Poirazi",
+    "Athanasia Papoutsi"
+   ],
+   "labels": {
+    "article_type": "review / perspective",
+    "prep": "computational / modeling",
+    "view": "dendritic-local computation centric",
+    "phenomenon_primary": "branch-specific computation"
+   },
+   "confidence": {
+    "article_type": 0.96,
+    "prep": 0.97,
+    "view": 0.88,
+    "phenomenon_primary": 0.8
+   },
+   "significance": "Synthesized modeling work arguing single neurons implement multi-layer networks, framing the dendrite as the substrate of within-cell computation.",
+   "keywords": [
+    "two-layer model",
+    "review",
+    "compartmental model"
+   ],
+   "cited_by": 500,
+   "id": "10.1038_s41583-020-0301-7",
+   "first_author": "Panayiota Poirazi",
+   "last_author": "Athanasia Papoutsi",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "NMDA spike",
+    "branch-specific computation"
+   ],
+   "lab_cluster": 10,
+   "lab_cluster_name": "Papoutsi (single)",
+   "similar": [],
+   "lineage": []
+  }
+ ]
+};
+const $ = s => document.querySelector(s);
+
+const state = {
+  mode: "hier",
+  axes: DB.meta.axes.map(a => ({...a, on: true})),
+  sort: "year_desc",
+  q: "",
+  onlyFlag: false,
+  multi: {},        // axisId -> Set of required values (AND within an axis)
+  collapsed: new Set(),
+  open: new Set(),
+};
+(DB.meta.multi_axes || []).forEach(m => state.multi[m.id] = new Set());
+
+/* ── grouping ─────────────────────────────────────────── */
+const keyer = {
+  year: p => String(p.year ?? "n.d."),
+  lab:  p => p.lab_cluster_name || "unassigned",
+};
+
+function activeAxes(){ return state.axes.filter(a => a.on); }
+
+function filtered(){
+  const q = state.q.trim().toLowerCase();
+  return DB.papers.filter(p => {
+    if (state.onlyFlag && !p.needs_review) return false;
+    for (const [ax, want] of Object.entries(state.multi)){
+      if (!want.size) continue;
+      const have = new Set(p[ax] || []);
+      for (const v of want) if (!have.has(v)) return false;
+    }
+    if (!q) return true;
+    const hay = [p.title, p.significance, (p.authors||[]).join(" "),
+                 (p.keywords||[]).join(" "), p.venue,
+                 (p.phenomena||[]).join(" "),
+                 Object.values(p.labels||{}).join(" ")].join(" ").toLowerCase();
+    return hay.includes(q);
+  });
+}
+
+function sortPapers(list){
+  const s = state.sort;
+  return [...list].sort((a,b) =>
+    s === "year_desc" ? (b.year||0)-(a.year||0)
+  : s === "year_asc"  ? (a.year||0)-(b.year||0)
+  : s === "cites"     ? (b.cited_by||0)-(a.cited_by||0)
+  : a.title.localeCompare(b.title));
+}
+
+/* Recursive group-by over an ordered list of key functions.
+   Because the labels are stored FLAT, reordering this list re-pivots the
+   whole tree with no rebuild — that is the entire point of the schema. */
+function nest(papers, keys, depth = 0, path = ""){
+  if (depth >= keys.length) return {leaf: sortPapers(papers)};
+  const {fn, label, order: cmp} = keys[depth];
+  const buckets = new Map();
+  for (const p of papers){
+    const k = fn(p) ?? "—";
+    if (!buckets.has(k)) buckets.set(k, []);
+    buckets.get(k).push(p);
+  }
+  // Default: biggest group first — you want to see where the field's mass is.
+  // A level can override this (years read chronologically, not by size).
+  const order = [...buckets.keys()].sort(cmp || ((a,b) =>
+    buckets.get(b).length - buckets.get(a).length || String(a).localeCompare(String(b))));
+  return {
+    axis: label,
+    groups: order.map(k => ({
+      key: k, path: path + "/" + k, n: buckets.get(k).length,
+      child: nest(buckets.get(k), keys, depth+1, path + "/" + k),
+    })),
+  };
+}
+
+function keySpec(){
+  if (state.mode === "year") return [{fn: keyer.year, label: "Year",
+    order: (a,b) => state.sort === "year_asc" ? a.localeCompare(b) : b.localeCompare(a)}];
+  if (state.mode === "lab")  return [{fn: keyer.lab,  label: "Lab cluster"}];
+  if (state.mode === "flat") return [];
+  return activeAxes().map(a => ({fn: p => (p.labels||{})[a.id] || "—", label: a.label}));
+}
+
+/* ── render ───────────────────────────────────────────── */
+function esc(s){ return String(s ?? "").replace(/[&<>"]/g, c =>
+  ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function paperEl(p){
+  const el = document.createElement("div");
+  el.className = "p";
+  const open = state.open.has(p.id);
+  el.dataset.open = open;
+  const au = (p.authors||[]);
+  const byline = au.length > 2 ? `${au[0].split(" ").pop()} … ${au[au.length-1].split(" ").pop()}`
+               : au.map(a => a.split(" ").pop()).join(" & ");
+  el.innerHTML = `
+    <div class="t">${esc(p.title)}</div>
+    ${p.significance ? `<div class="s">${esc(p.significance)}</div>` : ""}
+    <div class="m">
+      <span class="yr">${esc(p.year ?? "n.d.")}</span>
+      <span>${esc(byline)}</span>
+      <span>${esc(p.venue||"")}</span>
+      ${p.cited_by ? `<span>${p.cited_by.toLocaleString()} cites</span>` : ""}
+      ${p.lab_cluster_name ? `<span class="tag">${esc(p.lab_cluster_name)}</span>` : ""}
+      ${(p.phenomena||[]).map(x => `<span class="tag ph">${esc(x)}</span>`).join("")}
+      ${p.needs_review ? `<span class="flag">● check</span>` : ""}
+      ${p.doi ? `<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener"
+         onclick="event.stopPropagation()">doi ↗</a>` : ""}
+    </div>`;
+  if (open) el.appendChild(detailEl(p));
+  el.onclick = () => {
+    state.open.has(p.id) ? state.open.delete(p.id) : state.open.add(p.id);
+    render();
+  };
+  return el;
+}
+
+function detailEl(p){
+  const d = document.createElement("div");
+  d.className = "det";
+  d.onclick = e => e.stopPropagation();
+  for (const ax of DB.meta.axes){
+    const row = document.createElement("div");
+    row.className = "row";
+    const c = (p.confidence||{})[ax.id];
+    row.innerHTML = `<span>${esc(ax.label)}</span>`;
+    const wrap = document.createElement("div");
+    const sel = document.createElement("select");
+    for (const v of ax.values){
+      const o = document.createElement("option");
+      o.value = o.textContent = v;
+      o.selected = (p.labels||{})[ax.id] === v;
+      sel.appendChild(o);
+    }
+    sel.onchange = () => {
+      p.labels = p.labels || {};
+      p.labels[ax.id] = sel.value;
+      (p.confidence = p.confidence || {})[ax.id] = 1.0;   // a human touched it
+      p.human_verified = true;
+      p.needs_review = false;
+      render();
+    };
+    wrap.style.display = "flex"; wrap.style.alignItems = "center";
+    wrap.appendChild(sel);
+    if (c !== undefined){
+      const s = document.createElement("span");
+      s.className = "conf"; s.textContent = "p=" + Number(c).toFixed(2);
+      if (c < 0.6) s.style.color = "var(--spike)";
+      wrap.appendChild(s);
+    }
+    row.appendChild(wrap);
+    d.appendChild(row);
+  }
+  if ((p.evidence||{}).view){
+    const e = document.createElement("div");
+    e.className = "au";
+    e.innerHTML = `<span style="color:var(--ink3)">evidence · </span>${esc(p.evidence.view)}`;
+    d.appendChild(e);
+  }
+  const au = document.createElement("div");
+  au.className = "au";
+  au.textContent = (p.authors||[]).join(", ");
+  d.appendChild(au);
+
+  if ((p.similar||[]).length){
+    const s = document.createElement("div");
+    s.className = "sim";
+    s.innerHTML = `<div class="hd">closest by weighted authorship</div>` +
+      p.similar.map(x => `<div class="r"><b>${x.score.toFixed(2)}</b>
+        <span>${esc(x.title)} <span style="color:var(--ink3)">${esc(x.year||"")}</span></span></div>`).join("");
+    d.appendChild(s);
+  }
+  if ((p.lineage||[]).length){
+    const l = document.createElement("div");
+    l.className = "lin";
+    l.textContent = "lineage · " + p.lineage.join(", ");
+    d.appendChild(l);
+  }
+
+  const ta = document.createElement("textarea");
+  ta.placeholder = "your note — exported with the file";
+  ta.value = p.note || "";
+  ta.oninput = () => { p.note = ta.value; };
+  d.appendChild(ta);
+  return d;
+}
+
+function treeEl(node, depth = 0){
+  const frag = document.createDocumentFragment();
+  if (node.leaf){
+    node.leaf.forEach(p => frag.appendChild(paperEl(p)));
+    return frag;
+  }
+  for (const g of node.groups){
+    const collapsed = state.collapsed.has(g.path);
+    const box = document.createElement("div");
+    box.className = "grp";
+    box.dataset.collapsed = collapsed;
+
+    // dendritic gutter: stroke tapers and lightens with distance from the soma
+    const w = Math.max(1, 4 - depth);
+    const dot = Math.min(11, 4 + Math.sqrt(g.n) * 1.9);
+
+    const h = document.createElement("div");
+    h.className = "grp-h";
+    h.innerHTML = `<span class="caret">${collapsed ? "▸" : "▾"}</span>
+      <span class="dot" style="width:${dot}px;height:${dot}px;opacity:${1 - depth*0.22}"></span>
+      <span class="nm" style="font-size:${16 - depth*1.4}px">${esc(g.key)}</span>
+      <span class="ct">n=${g.n}</span>
+      ${depth === 0 ? `<span class="ax">${esc(node.axis)}</span>` : ""}`;
+    h.onclick = () => {
+      state.collapsed.has(g.path) ? state.collapsed.delete(g.path) : state.collapsed.add(g.path);
+      render();
+    };
+    box.appendChild(h);
+
+    const kids = document.createElement("div");
+    kids.className = "kids";
+    kids.style.borderLeft = `${w}px solid var(--dendrite)`;
+    kids.style.opacity = 1;
+    kids.style.borderLeftColor = `color-mix(in srgb, var(--dendrite) ${100 - depth*22}%, var(--paper))`;
+    kids.appendChild(treeEl(g.child, depth + 1));
+    box.appendChild(kids);
+    frag.appendChild(box);
+  }
+  return frag;
+}
+
+function render(){
+  const ps = filtered();
+  const out = $("#out");
+  out.innerHTML = "";
+  if (!ps.length){
+    out.innerHTML = `<div class="empty">No papers match. Clear the filter to see all ${DB.papers.length}.</div>`;
+  } else {
+    out.appendChild(treeEl(nest(ps, keySpec())));
+  }
+  const flagged = DB.papers.filter(p => p.needs_review).length;
+  const labs = new Set(DB.papers.map(p => p.lab_cluster_name)).size;
+  const yrs = DB.papers.map(p => p.year).filter(Boolean);
+  $("#stats").innerHTML =
+    `<span><b>${ps.length}</b> shown / ${DB.papers.length}</span>
+     <span><b>${labs}</b> lab clusters</span>
+     <span>${Math.min(...yrs)}–${Math.max(...yrs)}</span>
+     <span${flagged ? ' style="color:var(--spike)"' : ""}><b>${flagged}</b> to check</span>
+     ${DB.meta.sample ? '<span style="color:var(--spike)">sample data</span>' : ""}`;
+  $("#axisBlk").style.display = state.mode === "hier" ? "" : "none";
+  renderAxes();
+  renderMulti(ps);
+}
+
+function renderMulti(shown){
+  const box = $("#multiBlk");
+  box.innerHTML = "";
+  for (const m of (DB.meta.multi_axes || [])){
+    // Counts reflect what is currently visible, so you can see how a filter narrows.
+    const n = {};
+    for (const p of shown) for (const v of (p[m.id] || [])) n[v] = (n[v]||0) + 1;
+    const h = document.createElement("h2");
+    h.textContent = m.label;
+    box.appendChild(h);
+    const wrap = document.createElement("div");
+    for (const v of m.values){
+      const b = document.createElement("button");
+      b.className = "chip";
+      b.setAttribute("aria-pressed", state.multi[m.id].has(v));
+      b.textContent = `${v} ${n[v] || 0}`;
+      b.onclick = () => {
+        state.multi[m.id].has(v) ? state.multi[m.id].delete(v) : state.multi[m.id].add(v);
+        state.collapsed.clear();
+        render();
+      };
+      wrap.appendChild(b);
+    }
+    box.appendChild(wrap);
+  }
+}
+
+function renderAxes(){
+  const box = $("#axes");
+  box.innerHTML = "";
+  state.axes.forEach((a, i) => {
+    const r = document.createElement("div");
+    r.className = "axis" + (a.on ? " on" : "");
+    const lab = document.createElement("label");
+    const cb = document.createElement("input");
+    cb.type = "checkbox"; cb.checked = a.on;
+    cb.onchange = () => { a.on = cb.checked; state.collapsed.clear(); render(); };
+    lab.append(cb, document.createTextNode(`${i+1}. ${a.label}`));
+    const up = document.createElement("button");
+    up.className = "mv"; up.textContent = "↑"; up.disabled = i === 0;
+    up.title = "move up one level";
+    up.onclick = () => { [state.axes[i-1], state.axes[i]] = [state.axes[i], state.axes[i-1]];
+                         state.collapsed.clear(); render(); };
+    const dn = document.createElement("button");
+    dn.className = "mv"; dn.textContent = "↓"; dn.disabled = i === state.axes.length-1;
+    dn.title = "move down one level";
+    dn.onclick = () => { [state.axes[i+1], state.axes[i]] = [state.axes[i], state.axes[i+1]];
+                         state.collapsed.clear(); render(); };
+    r.append(lab, up, dn);
+    box.appendChild(r);
+  });
+}
+
+/* ── controls ─────────────────────────────────────────── */
+$("#modes").onclick = e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state.mode = b.dataset.m;
+  [...$("#modes").children].forEach(x => x.setAttribute("aria-pressed", x === b));
+  state.collapsed.clear();
+  render();
+};
+$("#sort").onchange = e => { state.sort = e.target.value; render(); };
+$("#q").oninput = e => { state.q = e.target.value; render(); };
+$("#onlyFlag").onchange = e => { state.onlyFlag = e.target.checked; render(); };
+
+$("#saveBtn").onclick = () => {
+  const blob = new Blob([JSON.stringify(DB, null, 1)], {type: "application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "papers.json";
+  a.click();
+};
+$("#loadBtn").onclick = () => $("#file").click();
+$("#file").onchange = e => e.target.files[0] && loadFile(e.target.files[0]);
+
+function loadFile(f){
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const d = JSON.parse(r.result);
+      if (!d.papers) throw new Error("no papers array");
+      DB.papers = d.papers;
+      DB.meta = d.meta || DB.meta;
+      state.axes = (DB.meta.axes || []).map(a => ({...a, on: true}));
+      state.multi = {};
+      (DB.meta.multi_axes || []).forEach(m => state.multi[m.id] = new Set());
+      state.collapsed.clear(); state.open.clear();
+      render();
+    } catch(err){
+      alert("Could not read that file: " + err.message + "\nExpecting the papers.json written by build_db.py.");
+    }
+  };
+  r.readAsText(f);
+}
+
+const drop = $("#drop");
+addEventListener("dragover", e => { e.preventDefault(); drop.classList.add("on"); });
+addEventListener("dragleave", e => { if (e.relatedTarget === null) drop.classList.remove("on"); });
+addEventListener("drop", e => {
+  e.preventDefault(); drop.classList.remove("on");
+  const f = e.dataTransfer.files[0]; if (f) loadFile(f);
+});
+
+render();
+</script>
+</body>
+</html>

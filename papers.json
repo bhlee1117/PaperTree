@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-08-20 21:47",
+  "generated": "2026-08-20 22:05",
   "n": 201,
   "taxonomy": "eaf15191ae13",
   "lang": "English",
@@ -86,12 +86,12 @@
   ],
   "lineage": [
    {
-    "person": "Sonia Gasparini",
+    "person": "Mark Sheffield",
     "trained_in": [
-     "Magee + Cook"
+     "Dombeck"
     ],
     "now_leads": [
-     "Gasparini (single)"
+     "Sheffield"
     ],
     "as_first": 2,
     "as_last": 1
@@ -108,27 +108,48 @@
     "as_last": 3
    },
    {
-    "person": "Greg J. Stuart",
+    "person": "Tim Jarsky",
     "trained_in": [
-     "Häusser"
+     "Spruston"
     ],
     "now_leads": [
-     "Stuart"
+     "Jarsky (single)"
     ],
-    "as_first": 1,
-    "as_last": 4
+    "as_first": 2,
+    "as_last": 1
    },
    {
-    "person": "Mark T. Harnett",
+    "person": "Nelson Spruston",
     "trained_in": [
-     "Magee + Cook",
-     "Williams"
+     "Larkum + Sakmann"
     ],
     "now_leads": [
-     "Harnett"
+     "Spruston"
     ],
-    "as_first": 3,
-    "as_last": 2
+    "as_first": 1,
+    "as_last": 16
+   },
+   {
+    "person": "Attila Losonczy",
+    "trained_in": [
+     "Magee + Cook"
+    ],
+    "now_leads": [
+     "Losonczy + Rózsa"
+    ],
+    "as_first": 2,
+    "as_last": 7
+   },
+   {
+    "person": "Jeffrey C. Magee",
+    "trained_in": [
+     "Johnston"
+    ],
+    "now_leads": [
+     "Magee + Cook"
+    ],
+    "as_first": 4,
+    "as_last": 18
    },
    {
     "person": "Christopher D. Harvey",
@@ -143,26 +164,15 @@
     "as_last": 1
    },
    {
-    "person": "Jeffrey C. Magee",
+    "person": "Dax A. Hoffman",
     "trained_in": [
      "Johnston"
     ],
     "now_leads": [
-     "Magee + Cook"
+     "Kim + Hoffman"
     ],
-    "as_first": 4,
-    "as_last": 18
-   },
-   {
-    "person": "Attila Losonczy",
-    "trained_in": [
-     "Magee + Cook"
-    ],
-    "now_leads": [
-     "Losonczy + Rózsa"
-    ],
-    "as_first": 2,
-    "as_last": 7
+    "as_first": 1,
+    "as_last": 1
    },
    {
     "person": "Aaron D. Milstein",
@@ -176,12 +186,12 @@
     "as_last": 1
    },
    {
-    "person": "Mark Sheffield",
+    "person": "Sonia Gasparini",
     "trained_in": [
-     "Dombeck"
+     "Magee + Cook"
     ],
     "now_leads": [
-     "Sheffield"
+     "Gasparini (single)"
     ],
     "as_first": 2,
     "as_last": 1
@@ -198,37 +208,27 @@
     "as_last": 2
    },
    {
-    "person": "Nelson Spruston",
+    "person": "Mark T. Harnett",
     "trained_in": [
-     "Larkum + Sakmann"
+     "Magee + Cook",
+     "Williams"
     ],
     "now_leads": [
-     "Spruston"
+     "Harnett"
     ],
-    "as_first": 1,
-    "as_last": 16
+    "as_first": 3,
+    "as_last": 2
    },
    {
-    "person": "Tim Jarsky",
+    "person": "Greg J. Stuart",
     "trained_in": [
-     "Spruston"
+     "Häusser"
     ],
     "now_leads": [
-     "Jarsky (single)"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Dax A. Hoffman",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Kim + Hoffman"
+     "Stuart"
     ],
     "as_first": 1,
-    "as_last": 1
+    "as_last": 4
    }
   ],
   "weights": {
@@ -1040,12 +1040,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -1337,12 +1337,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -1496,12 +1496,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -2078,12 +2078,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -2928,12 +2928,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -3458,8 +3458,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -5282,12 +5282,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -5463,12 +5463,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -6450,8 +6450,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -6732,8 +6732,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -7170,8 +7170,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -7361,12 +7361,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -7534,8 +7534,8 @@
     }
    ],
    "lineage": [
-    "Mark T. Harnett",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -7944,12 +7944,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -8436,12 +8436,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -9090,12 +9090,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -9271,12 +9271,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -9883,12 +9883,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -10255,12 +10255,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -11009,8 +11009,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -12060,12 +12060,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -12197,12 +12197,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -12344,8 +12344,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -12498,8 +12498,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -12955,8 +12955,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -13549,12 +13549,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -13697,12 +13697,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -15622,8 +15622,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -16036,8 +16036,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -16193,12 +16193,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -16747,12 +16747,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -16907,8 +16907,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -21154,8 +21154,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -21386,8 +21386,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -22205,8 +22205,8 @@
     }
    ],
    "lineage": [
-    "Mark T. Harnett",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -22360,8 +22360,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -22526,8 +22526,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -22681,12 +22681,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -23539,8 +23539,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -23835,8 +23835,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -23991,12 +23991,12 @@
     }
    ],
    "lineage": [
-    "Sonia Gasparini",
     "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein"
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -24895,8 +24895,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -26101,8 +26101,8 @@
     }
    ],
    "lineage": [
-    "Nelson Spruston",
-    "Tim Jarsky"
+    "Tim Jarsky",
+    "Nelson Spruston"
    ]
   },
   {
@@ -27599,8 +27599,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -27794,11 +27794,6 @@
     "modality": "calcium imaging"
    },
    "phenomena": [],
-   "method_flags": [
-    "behavior",
-    "chronic/longitudinal",
-    "pharmacology"
-   ],
    "confidence": {
     "scope": 0.97,
     "article_type": 0.95,
@@ -27819,42 +27814,10 @@
     "synaptic plasticity"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
-   "similar": [
-    {
-     "id": "10.1038_nn.2428",
-     "score": 0.75,
-     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
-     "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
-    }
-   ],
-   "lineage": [
-    "Sonia Gasparini",
-    "Judit K. Makara",
-    "Mark T. Harnett",
-    "Jeffrey C. Magee",
-    "Attila Losonczy",
-    "Aaron D. Milstein"
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal",
+    "pharmacology"
    ],
    "claim_edges": [
     {
@@ -27908,6 +27871,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -27934,7 +27898,43 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Cook",
+   "similar": [
+    {
+     "id": "10.1038_nn.2428",
+     "score": 0.75,
+     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
+     "year": 2009
+    },
+    {
+     "id": "10.1016_j.cell.2024.09.041",
+     "score": 0.75,
+     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
+     "year": 2024
+    },
+    {
+     "id": "10.1038_nature11554",
+     "score": 0.75,
+     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
+     "year": 2012
+    },
+    {
+     "id": "10.1113_jphysiol.2002.020503",
+     "score": 0.75,
+     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
+     "year": 2002
+    }
+   ],
+   "lineage": [
+    "Judit K. Makara",
+    "Attila Losonczy",
+    "Jeffrey C. Magee",
+    "Aaron D. Milstein",
+    "Sonia Gasparini",
+    "Mark T. Harnett"
+   ]
   },
   {
    "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
@@ -27978,10 +27978,6 @@
     "Ca spike",
     "branch-specific computation"
    ],
-   "method_flags": [
-    "optogenetics",
-    "pharmacology"
-   ],
    "confidence": {
     "scope": 0.97,
     "article_type": 0.95,
@@ -28002,11 +27998,10 @@
     "CA1 pyramidal neuron"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 92,
-   "lab_cluster_name": "Cohen (single)",
-   "similar": [],
-   "lineage": [],
+   "method_flags": [
+    "optogenetics",
+    "pharmacology"
+   ],
    "claim_edges": [
     {
      "claim": "C1.1",
@@ -28099,6 +28094,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -28125,7 +28121,11 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 92,
+   "lab_cluster_name": "Cohen (single)",
+   "similar": [],
+   "lineage": []
   }
  ],
  "archive": [

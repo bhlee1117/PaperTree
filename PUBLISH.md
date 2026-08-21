@@ -80,6 +80,21 @@ Branch: main, Folder: /docs → Save**. Live at
 `https://<user>.github.io/PaperTree/` in a minute or two. After that,
 `./update.sh && ./publish.sh --go` refreshes it.
 
+Nothing to drag in. `build_atlas.py` bakes the data into `papertree.html`, and the page
+also tries to fetch an `atlas.json` sitting beside it — `publish.sh` puts both in `docs/`.
+Opened from disk the fetch is blocked and the baked copy is used, which is what makes the
+file work offline; served over HTTP the fetch wins, so the page shows the newest data even
+when the browser or GitHub's CDN is still holding a stale `index.html`. The header says
+which one you are looking at: `atlas.json · live`, or `sample data` if you opened the
+demo copy.
+
+Refreshing the site is the same two commands every time:
+
+```bash
+./update.sh          # rebuilds papers.json, atlas.json, papertree.html
+./publish.sh --go    # copies both into docs/, commits, pushes
+```
+
 `publish.sh` runs a dry run by default because the decision is the hard part, not the
 mechanics. It prints the repo's visibility, lists what is already tracked and would
 become public with it, and refuses outright if `.env` is in the history.

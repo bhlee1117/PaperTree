@@ -160,6 +160,32 @@ text{font-family:var(--mono);}
   border:1px solid var(--line2);color:var(--ink3);text-decoration:none}
 .cchip:hover{border-color:var(--accent);color:var(--accent)}
 .cchip.contested{border-color:#6B2A34;color:var(--con)}
+/* ── expanded paper detail (shared by both tabs) ──────── */
+.prow,.ev{cursor:pointer}
+.prow[data-open=true],.ev[data-open=true]{border-color:var(--accent)}
+.chev{font-family:var(--mono);font-size:9px;color:var(--ink3);float:right;margin-left:8px}
+.pdet{margin-top:11px;padding-top:11px;border-top:1px solid var(--line);cursor:default}
+.pdet .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:8px;margin-bottom:11px}
+.pdet .fld{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:7px 9px}
+.pdet .fld h6{margin:0 0 3px;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink3);font-weight:500}
+.pdet .fld div{font-size:12px;color:var(--ink)}
+.pdet .fld .cf{font-family:var(--mono);font-size:9.5px;color:var(--ink3);margin-left:5px}
+.pdet .fld .cf.low{color:var(--con)}
+.pdet h6.sec{margin:11px 0 4px;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink3);font-weight:500}
+.pdet .abs{color:var(--ink2);font-size:12.5px;line-height:1.55}
+.pdet .au{color:var(--ink2);font-size:12px;line-height:1.5}
+.pdet .au b{color:var(--ink);font-weight:600}
+.pdet .kv{font-family:var(--mono);font-size:11px;color:var(--ink2);display:flex;gap:9px;
+  flex-wrap:wrap;align-items:center}
+.pdet .ce{display:grid;grid-template-columns:44px 84px 1fr;gap:9px;align-items:baseline;
+  font-size:12px;padding:3px 0;border-bottom:1px solid var(--line)}
+.pdet .ce a{font-family:var(--mono);font-size:11px;color:var(--accent);text-decoration:none}
+.pdet .ce em{font-family:var(--mono);font-size:10px;font-style:normal;color:var(--ink3)}
+.pdet .ce span{color:var(--ink2)}
+.pdet .nb{font-size:12px;color:var(--ink2);padding:2px 0;display:flex;gap:8px}
+.pdet .nb b{font-family:var(--mono);font-size:10.5px;color:var(--accent);font-weight:500;min-width:34px}
 .drop{position:fixed;inset:0;background:rgba(255,61,138,.09);border:2px dashed var(--accent);z-index:99;
   display:none;place-items:center;font-family:var(--mono);color:var(--accent)}
 .drop.on{display:grid}
@@ -201,7 +227,7 @@ reindex();
 const ORDER = ["supports","qualifies","contradicts","assumes"];
 let LOADED = null;
 const S = {view:"claims", q:null, c:null, node:null, tau:0.15, win:5,
-  f:{}, yr:null, pq:"", sort:"year", labels:"auto"};   // f: facet -> Set of chosen values
+  f:{}, yr:null, pq:"", sort:"year", labels:"auto", open:new Set()};   // f: facet -> Set of chosen values
 const esc = s => String(s ?? "").replace(/[&<>"]/g, x => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]));
 const edgesOf = id => DB.edges.filter(e => e.claim === id);
 const paperOf = e => PP[e.paper_id] || null;
@@ -266,6 +292,7 @@ function viewClaims(){
   out.querySelectorAll("[data-goto]").forEach(a => a.onclick = ev => {
     ev.preventDefault(); const c = CL[a.dataset.goto];
     S.q = c.parent; S.c = c.id; render(); });
+  wireRows(out);
   requestAnimationFrame(wires);
 }
 
@@ -299,8 +326,10 @@ function claimDetail(c){
     h += `<div class="sh ${s}"><span>${s}</span><span>${g.length}</span></div>`;
     for (const e of g){
       const p = paperOf(e);
-      h += `<div class="ev ${s} ${p?"":"ghost"}">
-        <div class="t">${esc(titleOf(e))}</div>
+      const key = e.claim + "|" + e.key, op = p && S.open.has(p.id);
+      h += `<div class="ev ${s} ${p?"":"ghost"}" ${p?`data-open="${op}" data-pid="${esc(p.id)}"`:""}
+             style="${p?"":"cursor:default"}">
+        <div class="t">${p?`<span class="chev">${op?"▾":"▸"}</span>`:""}${esc(titleOf(e))}</div>
         ${e.condition?`<div class="c">${esc(e.condition)}</div>`:""}
         <div class="m">${p?`<span style="color:var(--ink2)">${p.year||""}</span>`:""}
           <span>${esc(e.strength)}</span>${e.region?`<span>${esc(e.region)}</span>`:""}
@@ -308,7 +337,8 @@ function claimDetail(c){
           ${(e.flags||[]).map(f=>`<span class="pill">${esc(f)}</span>`).join("")}
           <span class="pill">${e.source}</span>
           ${p&&p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">doi</a>`:""}
-          ${p?"":`<span style="color:var(--ink3)">not in Zotero</span>`}</div></div>`;
+          ${p?"":`<span style="color:var(--ink3)">not in Zotero</span>`}</div>
+        ${op?paperDetail(p):""}</div>`;
     }
   }
   return h;
@@ -337,6 +367,74 @@ function wires(){
   const cb = S.c && document.querySelector(`[data-c="${S.c}"]`);
   const first = document.querySelector("#pcol .cd");
   if (cb && first) draw(cb, first, true);
+}
+
+/* ── expanded paper detail, used by the claim tab and the papers tab ──
+   One renderer for both so a field added here shows up everywhere. Confidence is shown
+   next to each label because a label the model was unsure of should not read the same as
+   one you verified. */
+function paperDetail(p){
+  if (!p) return "";
+  const L = p.labels||{}, C = p.confidence||{};
+  const fld = (h, v) => v ? `<div class="fld"><h6>${h}</h6><div>${v}</div></div>` : "";
+  const lab = k => { if (!L[k]) return "";
+    const c = C[k]; const low = c !== undefined && c < 0.6;
+    return `${esc(L[k])}${c!==undefined?`<span class="cf ${low?"low":""}">${
+      c>=1?"verified":"p="+Number(c).toFixed(2)}</span>`:""}`; };
+  const au = (p.authors||[]).map((a,i,arr) =>
+    (i===0||i===arr.length-1) ? `<b>${esc(a)}</b>` : esc(a)).join(", ");
+  const ce = (p.claim_edges||[]);
+  const nb = (p.similar||[]).filter(x=>x.score>0.05).slice(0,4);
+  return `<div class="pdet">
+    <div class="grid">
+      ${fld("Scope", lab("scope"))}${fld("Article type", lab("article_type"))}
+      ${fld("Preparation", lab("prep"))}${fld("Modality", lab("modality"))}
+    </div>
+    <div class="kv">
+      ${p.venue?`<span>${esc(p.venue)}</span>`:""}
+      ${p.year?`<span>${p.year}</span>`:""}
+      ${p.cited_by?`<span>${p.cited_by} cites</span>`:""}
+      ${p.lab_cluster_name?`<span class="pill">${esc(p.lab_cluster_name)}</span>`:""}
+      ${(p.phenomena||[]).map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
+      ${(p.method_flags||[]).map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
+      ${p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener"
+         data-stop style="color:var(--accent);text-decoration:none">doi.org/${esc(p.doi)}</a>`:""}
+    </div>
+    ${p.abstract?`<h6 class="sec">Abstract</h6><div class="abs">${esc(p.abstract)}</div>`
+      :(p.tldr?`<h6 class="sec">TLDR</h6><div class="abs">${esc(p.tldr)}</div>`
+      :`<h6 class="sec">Abstract</h6><div class="abs" style="color:var(--ink3)">not in the record —
+         Zotero had none and OpenAlex returned none</div>`)}
+    <h6 class="sec">Authors (${(p.authors||[]).length}) · first and last in bold</h6>
+    <div class="au">${au||"—"}</div>
+    ${(p.keywords||[]).length?`<h6 class="sec">Keywords</h6>
+      <div class="kv">${p.keywords.map(k=>`<span class="pill">${esc(k)}</span>`).join("")}</div>`:""}
+    <h6 class="sec">Claims (${ce.length})</h6>
+    ${ce.length ? ce.map(e=>`<div class="ce">
+        <a href="#" data-jump="${esc(e.claim)}">${esc(e.claim)}</a>
+        <em>${esc(e.stance)} · ${esc(e.strength)}</em>
+        <span>${esc(e.condition||CL[e.claim]?.text||"")}${
+          e.quote?` <em>“${esc(e.quote)}”</em>`:""}${
+          e.needs_review?` <em style="color:var(--accent)">● check</em>`:""}</span></div>`).join("")
+      : `<div class="abs" style="color:var(--ink3)">none attached — it may need a claim node
+         that does not exist yet, see assign_claims.py --queue</div>`}
+    ${nb.length?`<h6 class="sec">Closest by weighted authorship</h6>`+nb.map(x=>
+      `<div class="nb"><b>${x.score.toFixed(2)}</b><span>${esc(x.title)}
+        <em style="color:var(--ink3)">${x.year||""}</em></span></div>`).join(""):""}
+    ${(p.lineage||[]).length?`<h6 class="sec">Lineage</h6>
+      <div class="kv">${p.lineage.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}</div>`:""}
+    ${p.note?`<h6 class="sec">Your note</h6><div class="abs">${esc(p.note)}</div>`:""}
+  </div>`;
+}
+
+/* Links and claim chips inside a row must not toggle the row. */
+function wireRows(root){
+  root.querySelectorAll("[data-open]").forEach(el => el.onclick = ev => {
+    if (ev.target.closest("a,[data-stop]")) return;
+    const id = el.dataset.pid;
+    S.open.has(id) ? S.open.delete(id) : S.open.add(id);
+    render(); });
+  root.querySelectorAll(".pdet a, [data-stop]").forEach(a =>
+    a.addEventListener("click", e => e.stopPropagation()));
 }
 
 /* ── view 3: all papers, faceted ──────────────────────── */
@@ -429,8 +527,9 @@ function viewPapers(){
 
   const rows = list.map(p => {
     const L = p.labels||{}, cs = claimsOfPaper(p.id);
-    return `<div class="prow">
-      <div class="t">${esc(p.title)}</div>
+    const op = S.open.has(p.id);
+    return `<div class="prow" data-open="${op}" data-pid="${esc(p.id)}">
+      <div class="t"><span class="chev">${op?"▾":"▸"}</span>${esc(p.title)}</div>
       ${p.significance?`<div class="s">${esc(p.significance)}</div>`:""}
       <div class="m">
         <span class="yy">${p.year||""}</span>
@@ -444,7 +543,7 @@ function viewPapers(){
             data-jump="${c}">${c}</a>`).join("")}
         ${(p.needs_review)?`<span style="color:var(--accent)">● check</span>`:""}
         ${p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">doi</a>`:""}
-      </div></div>`;
+      </div>${op?paperDetail(p):""}</div>`;
   }).join("") || `<div class="hint">Nothing matches. Clear a filter.</div>`;
 
   const active = Object.values(S.f).reduce((a,s)=>a+(s?s.size:0),0);
@@ -481,6 +580,7 @@ function viewPapers(){
     $("#copyd").textContent = `Copied ${d.split("\n").filter(Boolean).length}`;
     setTimeout(()=>{ const b=$("#copyd"); if(b) b.textContent="Copy DOIs"; }, 1400); };
   if ($("#clr")) $("#clr").onclick = () => { S.f={}; S.pq=""; S.yr=null; render(); };
+  wireRows($("#out"));
 }
 
 /* ── view 2: author–paper network ─────────────────────── */
@@ -628,8 +728,7 @@ function sidePanel(){
         <a href="#" data-jump="${e.claim}" style="color:var(--accent)">${e.claim}</a>
         <span>${e.stance}</span><span>${e.strength}</span></div></div>`).join("")
       :`<div class="lbl">Claims</div><p style="color:var(--ink3)">none attached</p>`}
-    ${p.doi?`<div class="lbl">Link</div><p><a href="https://doi.org/${esc(p.doi)}" target="_blank"
-       rel="noopener" style="color:var(--accent)">doi.org/${esc(p.doi)}</a></p>`:""}`;
+    ${paperDetail(p)}`;
 }
 
 function render(){
@@ -641,7 +740,8 @@ function render(){
     <span style="color:var(--con)"><b>${cont}</b> contested</span>
     <span style="color:var(--qual)"><b>${thinN}</b> thin</span>
     ${miss?`<span><b>${miss}</b> cited, not in Zotero</span>`:""}
-    ${LOADED?`<span style="color:var(--accent)">${esc(LOADED)} · refresh reverts</span>`
+    ${LOADED?`<span style="color:var(--accent)">${esc(LOADED)}${
+        LOADED.endsWith("live")?"":" · refresh reverts"}</span>`
             :(DB.meta&&DB.meta.sample?`<span style="color:var(--qual)">sample data</span>`:"")}`;
   document.querySelectorAll(".sub").forEach(b=>b.setAttribute("aria-selected", b.dataset.v===S.view));
   ({claims:viewClaims, net:viewNet, papers:viewPapers}[S.view] || viewClaims)();
@@ -676,4 +776,24 @@ addEventListener("dragleave", e => { if (e.relatedTarget===null) drop.classList.
 addEventListener("drop", e => { e.preventDefault(); drop.classList.remove("on");
   const f = e.dataTransfer.files[0]; if (f) load(f); });
 render();
+
+/* Prefer a live atlas.json sitting next to this page, fall back to the copy baked in.
+   Why both: opened from disk (file://) the fetch is blocked, and the baked copy is the
+   only thing that works — that is the offline case. Served over http it succeeds, so a
+   published page shows the newest data even when the browser or the CDN is still
+   holding a stale index.html. Nothing to drag in either way. */
+(async () => {
+  try {
+    const r = await fetch("atlas.json?v=" + Date.now(), {cache: "no-store"});
+    if (!r.ok) return;
+    const d = await r.json();
+    if (!d.claims || !d.edges) return;
+    const same = (d.meta||{}).generated && (d.meta||{}).generated === (DB.meta||{}).generated
+                 && d.papers.length === DB.papers.length;
+    if (same) return;
+    DB = d; reindex(); LOADED = "atlas.json · live";
+    S.q = S.c = S.node = null;
+    render();
+  } catch (e) { /* file:// or not published — the baked copy stands */ }
+})();
 </script></body></html>

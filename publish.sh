@@ -13,7 +13,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-SRC="dendrite_atlas.html"
+SRC="papertree.html"
 GO="${1:-}"
 
 [[ -f "$SRC" ]] || { echo "$SRC not built yet — run ./update.sh" >&2; exit 1; }
@@ -34,7 +34,8 @@ fi
 echo "repository   $SLUG   (branch $BRANCH)"
 echo "visibility   $VIS"
 echo "would publish"
-echo "    docs/index.html   <- $SRC  ($(du -h "$SRC" | cut -f1))"
+echo "    docs/index.html   <- $SRC   ($(du -h "$SRC" | cut -f1), data baked in)"
+[[ -f atlas.json ]] && echo "    docs/atlas.json   <- atlas.json  ($(du -h atlas.json | cut -f1), read live by the page)"
 echo "url          https://$USER.github.io/$REPO/"
 echo
 
@@ -68,8 +69,11 @@ fi
 
 mkdir -p docs
 cp "$SRC" docs/index.html
+# The page reads this if it is reachable, so a data-only change needs no new index.html.
+[[ -f atlas.json ]] && cp atlas.json docs/atlas.json
 touch docs/.nojekyll          # otherwise Jekyll eats files beginning with an underscore
 git add docs/index.html docs/.nojekyll
+[[ -f docs/atlas.json ]] && git add docs/atlas.json
 git commit -m "publish atlas $(date +%Y-%m-%d)" || echo "  (nothing changed)"
 git push origin "$BRANCH"
 

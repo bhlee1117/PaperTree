@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-08-20 22:05",
-  "n": 201,
+  "generated": "2026-08-20 22:23",
+  "n": 214,
   "taxonomy": "eaf15191ae13",
   "lang": "English",
   "axes": [
@@ -86,6 +86,17 @@
   ],
   "lineage": [
    {
+    "person": "Panayiota Poirazi",
+    "trained_in": [
+     "Papoutsi (single)"
+    ],
+    "now_leads": [
+     "Poirazi"
+    ],
+    "as_first": 1,
+    "as_last": 2
+   },
+   {
     "person": "Mark Sheffield",
     "trained_in": [
      "Dombeck"
@@ -94,62 +105,7 @@
      "Sheffield"
     ],
     "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Judit K. Makara",
-    "trained_in": [
-     "Magee + Cook"
-    ],
-    "now_leads": [
-     "Makara"
-    ],
-    "as_first": 1,
-    "as_last": 3
-   },
-   {
-    "person": "Tim Jarsky",
-    "trained_in": [
-     "Spruston"
-    ],
-    "now_leads": [
-     "Jarsky (single)"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Nelson Spruston",
-    "trained_in": [
-     "Larkum + Sakmann"
-    ],
-    "now_leads": [
-     "Spruston"
-    ],
-    "as_first": 1,
-    "as_last": 16
-   },
-   {
-    "person": "Attila Losonczy",
-    "trained_in": [
-     "Magee + Cook"
-    ],
-    "now_leads": [
-     "Losonczy + Rózsa"
-    ],
-    "as_first": 2,
-    "as_last": 7
-   },
-   {
-    "person": "Jeffrey C. Magee",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Magee + Cook"
-    ],
-    "as_first": 4,
-    "as_last": 18
+    "as_last": 2
    },
    {
     "person": "Christopher D. Harvey",
@@ -161,6 +117,29 @@
      "Harvey (single)"
     ],
     "as_first": 3,
+    "as_last": 1
+   },
+   {
+    "person": "Mark T. Harnett",
+    "trained_in": [
+     "Magee + Grienberger",
+     "Williams"
+    ],
+    "now_leads": [
+     "Harnett"
+    ],
+    "as_first": 3,
+    "as_last": 2
+   },
+   {
+    "person": "Tim Jarsky",
+    "trained_in": [
+     "Spruston"
+    ],
+    "now_leads": [
+     "Jarsky (single)"
+    ],
+    "as_first": 2,
     "as_last": 1
    },
    {
@@ -177,7 +156,7 @@
    {
     "person": "Aaron D. Milstein",
     "trained_in": [
-     "Magee + Cook"
+     "Magee + Grienberger"
     ],
     "now_leads": [
      "Romani + Milstein"
@@ -186,9 +165,54 @@
     "as_last": 1
    },
    {
+    "person": "Greg J. Stuart",
+    "trained_in": [
+     "Häusser",
+     "Spruston"
+    ],
+    "now_leads": [
+     "Stuart"
+    ],
+    "as_first": 2,
+    "as_last": 4
+   },
+   {
+    "person": "Attila Losonczy",
+    "trained_in": [
+     "Magee + Grienberger"
+    ],
+    "now_leads": [
+     "Losonczy + Rózsa"
+    ],
+    "as_first": 2,
+    "as_last": 7
+   },
+   {
+    "person": "Judit K. Makara",
+    "trained_in": [
+     "Magee + Grienberger"
+    ],
+    "now_leads": [
+     "Makara"
+    ],
+    "as_first": 1,
+    "as_last": 3
+   },
+   {
+    "person": "Nelson Spruston",
+    "trained_in": [
+     "Larkum + Sakmann"
+    ],
+    "now_leads": [
+     "Spruston"
+    ],
+    "as_first": 1,
+    "as_last": 17
+   },
+   {
     "person": "Sonia Gasparini",
     "trained_in": [
-     "Magee + Cook"
+     "Magee + Grienberger"
     ],
     "now_leads": [
      "Gasparini (single)"
@@ -208,27 +232,26 @@
     "as_last": 2
    },
    {
-    "person": "Mark T. Harnett",
+    "person": "Christine Grienberger",
     "trained_in": [
-     "Magee + Cook",
-     "Williams"
+     "Konnerth"
     ],
     "now_leads": [
-     "Harnett"
+     "Magee + Grienberger"
     ],
     "as_first": 3,
-    "as_last": 2
+    "as_last": 1
    },
    {
-    "person": "Greg J. Stuart",
+    "person": "Jeffrey C. Magee",
     "trained_in": [
-     "Häusser"
+     "Johnston"
     ],
     "now_leads": [
-     "Stuart"
+     "Magee + Grienberger"
     ],
-    "as_first": 1,
-    "as_last": 4
+    "as_first": 5,
+    "as_last": 18
    }
   ],
   "weights": {
@@ -351,7 +374,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 11,
+   "lab_cluster": 12,
    "lab_cluster_name": "Tank",
    "similar": [
     {
@@ -512,7 +535,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 12,
+   "lab_cluster": 13,
    "lab_cluster_name": "Lee",
    "similar": [
     {
@@ -655,7 +678,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 12,
+   "lab_cluster": 13,
    "lab_cluster_name": "Lee",
    "similar": [
     {
@@ -845,13 +868,15 @@
      "year": 2010
     },
     {
-     "id": "10.1038_s41586-022-05378-6",
-     "score": 0.397,
-     "title": "Entorhinal cortex directs learning-related changes in CA1 representations",
-     "year": 2022
+     "id": "10.1146_annurev-neuro-090919-022842",
+     "score": 0.467,
+     "title": "Synaptic Plasticity Forms and Functions",
+     "year": 2020
     }
    ],
-   "lineage": []
+   "lineage": [
+    "Christine Grienberger"
+   ]
   },
   {
    "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
@@ -1012,8 +1037,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -1025,27 +1062,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -1158,7 +1184,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 33,
+   "lab_cluster": 34,
    "lab_cluster_name": "Jónás (single)",
    "similar": [],
    "lineage": []
@@ -1309,8 +1335,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -1322,27 +1360,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -1468,7 +1495,7 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
     {
      "id": "10.1038_s41586-022-05378-6",
@@ -1477,31 +1504,32 @@
      "year": 2022
     },
     {
-     "id": "10.1038_s41593-025-01986-3",
-     "score": 0.75,
-     "title": "Formation of an expanding memory representation in the hippocampus",
-     "year": 2025
+     "id": "10.1146_annurev-neuro-090919-022842",
+     "score": 0.902,
+     "title": "Synaptic Plasticity Forms and Functions",
+     "year": 2020
     },
     {
-     "id": "10.1038_nn.2428",
+     "id": "10.1038_s41593-026-02214-2",
      "score": 0.75,
-     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
-     "year": 2009
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
     },
     {
-     "id": "10.1016_j.cell.2024.09.041",
+     "id": "10.1038_35044552",
      "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -1658,7 +1686,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 13,
+   "lab_cluster": 14,
    "lab_cluster_name": "Dombeck",
    "similar": [
     {
@@ -1680,10 +1708,10 @@
      "year": 2025
     },
     {
-     "id": "10.1038_nature08499",
-     "score": 0.227,
-     "title": "Intracellular dynamics of hippocampal place cells during virtual navigation",
-     "year": 2009
+     "id": "10.1523_JNEUROSCI.1332-25.2025",
+     "score": 0.425,
+     "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+     "year": 2025
     }
    ],
    "lineage": [
@@ -1808,7 +1836,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 11,
+   "lab_cluster": 12,
    "lab_cluster_name": "Tank",
    "similar": [
     {
@@ -1935,7 +1963,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 34,
+   "lab_cluster": 35,
    "lab_cluster_name": "Cossart (single)",
    "similar": [],
    "lineage": []
@@ -2050,8 +2078,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -2063,27 +2103,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -2205,7 +2234,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 35,
+   "lab_cluster": 36,
    "lab_cluster_name": "Bartos (single)",
    "similar": [],
    "lineage": []
@@ -2542,7 +2571,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 18,
+   "lab_cluster": 21,
    "lab_cluster_name": "Romani + Milstein",
    "similar": [
     {
@@ -2728,7 +2757,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 36,
+   "lab_cluster": 37,
    "lab_cluster_name": "Jarsky (single)",
    "similar": [
     {
@@ -2900,8 +2929,14 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1146_annurev-neuro-090919-022842",
+     "score": 0.987,
+     "title": "Synaptic Plasticity Forms and Functions",
+     "year": 2020
+    },
     {
      "id": "10.1038_nn.4486",
      "score": 0.914,
@@ -2909,31 +2944,26 @@
      "year": 2017
     },
     {
-     "id": "10.1152_jn.2001.86.1.528",
+     "id": "10.1038_s41593-026-02214-2",
      "score": 0.762,
-     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2001
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
     },
     {
-     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
+     "id": "10.1038_35044552",
      "score": 0.762,
-     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 0.762,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -3439,6 +3469,12 @@
      "year": 2018
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -3449,16 +3485,11 @@
      "score": 0.75,
      "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
      "year": 2018
-    },
-    {
-     "id": "10.1073_pnas.0707919104",
-     "score": 0.75,
-     "title": "Dendritic spikes induce single-burst long-term potentiation",
-     "year": 2007
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -3508,7 +3539,7 @@
    "needs_review": false,
    "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 19,
+   "lab_cluster": 22,
    "lab_cluster_name": "Gerstner + Pfister",
    "similar": [
     {
@@ -3573,7 +3604,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 37,
+   "lab_cluster": 38,
    "lab_cluster_name": "Südhof (single)",
    "similar": [],
    "lineage": []
@@ -3731,7 +3762,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 20,
+   "lab_cluster": 23,
    "lab_cluster_name": "Béı̈que",
    "similar": [
     {
@@ -3739,6 +3770,12 @@
      "score": 0.75,
      "title": "Correlated Synaptic Inputs Drive Dendritic Calcium Amplification and Cooperative Plasticity during Clustered Synapse Development",
      "year": 2016
+    },
+    {
+     "id": "10.1113_JP281510",
+     "score": 0.227,
+     "title": "Silences, spikes and bursts: Three-part knot of the neural code",
+     "year": 2023
     },
     {
      "id": "10.1073_pnas.1720995115",
@@ -3874,7 +3911,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 13,
+   "lab_cluster": 14,
    "lab_cluster_name": "Dombeck",
    "similar": [
     {
@@ -4015,7 +4052,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 21,
+   "lab_cluster": 24,
    "lab_cluster_name": "Han",
    "similar": [
     {
@@ -4152,7 +4189,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 20,
+   "lab_cluster": 23,
    "lab_cluster_name": "Béı̈que",
    "similar": [
     {
@@ -4277,7 +4314,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 14,
+   "lab_cluster": 15,
    "lab_cluster_name": "Svoboda",
    "similar": [
     {
@@ -4446,7 +4483,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 15,
+   "lab_cluster": 16,
    "lab_cluster_name": "Makara",
    "similar": [
     {
@@ -4588,7 +4625,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 22,
+   "lab_cluster": 25,
    "lab_cluster_name": "Kim + Hoffman",
    "similar": [
     {
@@ -4604,16 +4641,16 @@
      "year": 2018
     },
     {
-     "id": "10.1152_jn.2001.86.1.528",
+     "id": "10.1038_s41593-026-02214-2",
      "score": 0.311,
-     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2001
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
     },
     {
-     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
+     "id": "10.1038_35044552",
      "score": 0.311,
-     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
     }
    ],
    "lineage": [
@@ -4674,7 +4711,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 38,
+   "lab_cluster": 39,
    "lab_cluster_name": "Malinow (single)",
    "similar": [],
    "lineage": []
@@ -5139,7 +5176,9 @@
      "year": 2025
     }
    ],
-   "lineage": []
+   "lineage": [
+    "Christine Grienberger"
+   ]
   },
   {
    "title": "A critical role for CaMKII in behavioral timescale synaptic plasticity in hippocampal CA1 pyramidal neurons",
@@ -5254,8 +5293,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -5267,27 +5318,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -5435,8 +5475,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.762,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.762,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1152_jn.2001.86.1.528",
      "score": 0.762,
@@ -5448,27 +5500,16 @@
      "score": 0.762,
      "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
      "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 0.762,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
-    },
-    {
-     "id": "10.1038_s41593-025-01986-3",
-     "score": 0.75,
-     "title": "Formation of an expanding memory representation in the hippocampus",
-     "year": 2025
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -5597,7 +5638,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 15,
+   "lab_cluster": 16,
    "lab_cluster_name": "Makara",
    "similar": [
     {
@@ -5908,7 +5949,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 39,
+   "lab_cluster": 40,
    "lab_cluster_name": "Gerber (single)",
    "similar": [
     {
@@ -6037,7 +6078,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 14,
+   "lab_cluster": 15,
    "lab_cluster_name": "Svoboda",
    "similar": [
     {
@@ -6200,7 +6241,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 13,
+   "lab_cluster": 14,
    "lab_cluster_name": "Dombeck",
    "similar": [
     {
@@ -6222,10 +6263,10 @@
      "year": 2025
     },
     {
-     "id": "10.1038_nature08499",
-     "score": 0.24,
-     "title": "Intracellular dynamics of hippocampal place cells during virtual navigation",
-     "year": 2009
+     "id": "10.1523_JNEUROSCI.1332-25.2025",
+     "score": 0.449,
+     "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+     "year": 2025
     }
    ],
    "lineage": [
@@ -6283,7 +6324,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 23,
+   "lab_cluster": 26,
    "lab_cluster_name": "Yasuda",
    "similar": [
     {
@@ -6431,6 +6472,12 @@
      "year": 2021
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -6441,16 +6488,11 @@
      "score": 0.75,
      "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
      "year": 2018
-    },
-    {
-     "id": "10.1073_pnas.0707919104",
-     "score": 0.75,
-     "title": "Dendritic spikes induce single-burst long-term potentiation",
-     "year": 2007
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -6572,7 +6614,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 24,
+   "lab_cluster": 27,
    "lab_cluster_name": "Segev",
    "similar": [
     {
@@ -6733,6 +6775,7 @@
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -7145,6 +7188,12 @@
    "lab_cluster_name": "Spruston",
    "similar": [
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -7161,16 +7210,11 @@
      "score": 0.75,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1038_nature00854",
-     "score": 0.75,
-     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
-     "year": 2002
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -7333,8 +7377,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -7346,27 +7402,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -7505,7 +7550,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 25,
+   "lab_cluster": 28,
    "lab_cluster_name": "Williams",
    "similar": [
     {
@@ -7534,8 +7579,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Mark T. Harnett"
+    "Mark T. Harnett",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -7677,16 +7722,16 @@
      "year": 1995
     },
     {
-     "id": "10.1523_JNEUROSCI.1717-07.2007",
-     "score": 0.591,
-     "title": "Dendritic Spikes in Apical Dendrites of Neocortical Layer 2/3 Pyramidal Neurons",
-     "year": 2007
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.613,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
     },
     {
-     "id": "10.1126_science.aah6066",
-     "score": 0.428,
-     "title": "Active cortical dendrites modulate perception",
-     "year": 2016
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.613,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
     }
    ],
    "lineage": [
@@ -7805,7 +7850,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 26,
+   "lab_cluster": 29,
    "lab_cluster_name": "Siegelbaum",
    "similar": [
     {
@@ -7916,8 +7961,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 1.0,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 1.0,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1152_jn.2001.86.1.528",
      "score": 1.0,
@@ -7929,27 +7986,16 @@
      "score": 1.0,
      "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
      "year": 1998
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.762,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
-    },
-    {
-     "id": "10.1016_j.neuron.2006.03.016",
-     "score": 0.762,
-     "title": "Integrative Properties of Radial Oblique Dendrites in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2006
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -8078,7 +8124,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 40,
+   "lab_cluster": 41,
    "lab_cluster_name": "Basu (single)",
    "similar": [
     {
@@ -8092,6 +8138,18 @@
      "score": 0.236,
      "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
      "year": 2025
+    },
+    {
+     "id": "10.1038_s41583-020-0301-7",
+     "score": 0.203,
+     "title": "Illuminating dendritic function with computational models",
+     "year": 2020
+    },
+    {
+     "id": "10.1146_annurev-neuro-090325-115846",
+     "score": 0.158,
+     "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
+     "year": 2026
     }
    ],
    "lineage": []
@@ -8177,7 +8235,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 41,
+   "lab_cluster": 42,
    "lab_cluster_name": "Knierim (single)",
    "similar": [],
    "lineage": []
@@ -8269,7 +8327,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 42,
+   "lab_cluster": 43,
    "lab_cluster_name": "Schuman (single)",
    "similar": [],
    "lineage": []
@@ -8408,7 +8466,7 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
     {
      "id": "10.1038_nature06725",
@@ -8417,31 +8475,32 @@
      "year": 2008
     },
     {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.762,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.762,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
+    {
      "id": "10.1152_jn.2001.86.1.528",
      "score": 0.762,
      "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
      "year": 2001
-    },
-    {
-     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
-     "score": 0.762,
-     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 0.762,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -8737,7 +8796,9 @@
      "year": 2025
     }
    ],
-   "lineage": []
+   "lineage": [
+    "Christine Grienberger"
+   ]
   },
   {
    "title": "Cortico-cortical feedback engages active dendrites in visual cortex",
@@ -9062,8 +9123,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -9075,27 +9148,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -9243,7 +9305,7 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
     {
      "id": "10.1016_j.neuron.2006.03.016",
@@ -9258,25 +9320,26 @@
      "year": 2009
     },
     {
-     "id": "10.1038_s41593-025-01986-3",
+     "id": "10.1038_s41593-026-02214-2",
      "score": 0.75,
-     "title": "Formation of an expanding memory representation in the hippocampus",
-     "year": 2025
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
     },
     {
-     "id": "10.1016_j.cell.2024.09.041",
+     "id": "10.1038_35044552",
      "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -9573,7 +9636,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 14,
+   "lab_cluster": 15,
    "lab_cluster_name": "Svoboda",
    "similar": [
     {
@@ -9589,16 +9652,16 @@
      "year": 2008
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.236,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1073_pnas.0707919104",
      "score": 0.236,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1016_S0896-6273(00)80635-2",
-     "score": 0.236,
-     "title": "Dendritic Sodium Spikes Are Variable Triggers of Axonal Action Potentials in Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
     }
    ],
    "lineage": [
@@ -9726,7 +9789,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 16,
+   "lab_cluster": 17,
    "lab_cluster_name": "Yuste",
    "similar": [
     {
@@ -9855,8 +9918,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 1.0,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 1.0,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1152_jn.2001.86.1.528",
      "score": 1.0,
@@ -9868,27 +9943,16 @@
      "score": 1.0,
      "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
      "year": 1999
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.762,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
-    },
-    {
-     "id": "10.1016_j.neuron.2006.03.016",
-     "score": 0.762,
-     "title": "Integrative Properties of Radial Oblique Dendrites in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2006
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -10227,8 +10291,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 1.0,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 1.0,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1523_JNEUROSCI.18-19-07613.1998",
      "score": 1.0,
@@ -10240,27 +10316,16 @@
      "score": 1.0,
      "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
      "year": 1999
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.762,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
-    },
-    {
-     "id": "10.1016_j.neuron.2006.03.016",
-     "score": 0.762,
-     "title": "Integrative Properties of Radial Oblique Dendrites in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2006
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -10359,7 +10424,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 27,
+   "lab_cluster": 30,
    "lab_cluster_name": "Wilson",
    "similar": [
     {
@@ -10420,7 +10485,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 43,
+   "lab_cluster": 44,
    "lab_cluster_name": "Lipscombe (single)",
    "similar": [],
    "lineage": []
@@ -10551,7 +10616,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 44,
+   "lab_cluster": 45,
    "lab_cluster_name": "Sabatini (single)",
    "similar": [],
    "lineage": []
@@ -10681,14 +10746,20 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 28,
-   "lab_cluster_name": "Antic",
+   "lab_cluster": 18,
+   "lab_cluster_name": "Antic + Ikonomu",
    "similar": [
     {
      "id": "10.1152_jn.00734.2019",
      "score": 0.75,
      "title": "Local glutamate-mediated dendritic plateau potentials change the state of the cortical pyramidal neuron",
      "year": 2020
+    },
+    {
+     "id": "10.1002_jnr.22444",
+     "score": 0.614,
+     "title": "The decade of the dendritic NMDA spike",
+     "year": 2010
     }
    ],
    "lineage": []
@@ -10831,14 +10902,20 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 28,
-   "lab_cluster_name": "Antic",
+   "lab_cluster": 18,
+   "lab_cluster_name": "Antic + Ikonomu",
    "similar": [
     {
      "id": "10.1152_jn.00800.2016",
      "score": 0.75,
      "title": "The stochastic nature of action potential backpropagation in apical tuft dendrites",
      "year": 2017
+    },
+    {
+     "id": "10.1002_jnr.22444",
+     "score": 0.427,
+     "title": "The decade of the dendritic NMDA spike",
+     "year": 2010
     }
    ],
    "lineage": []
@@ -10984,6 +11061,12 @@
    "lab_cluster_name": "Spruston",
    "similar": [
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -11000,16 +11083,11 @@
      "score": 0.75,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1038_nature00854",
-     "score": 0.75,
-     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
-     "year": 2002
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -11141,7 +11219,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 45,
+   "lab_cluster": 46,
    "lab_cluster_name": "Tang (single)",
    "similar": [],
    "lineage": []
@@ -11418,7 +11496,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 46,
+   "lab_cluster": 47,
    "lab_cluster_name": "Lin (single)",
    "similar": [
     {
@@ -11492,7 +11570,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 47,
+   "lab_cluster": 48,
    "lab_cluster_name": "He (single)",
    "similar": [],
    "lineage": []
@@ -11609,7 +11687,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 21,
+   "lab_cluster": 24,
    "lab_cluster_name": "Han",
    "similar": [
     {
@@ -11731,7 +11809,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 48,
+   "lab_cluster": 49,
    "lab_cluster_name": "Mellor (single)",
    "similar": [
     {
@@ -11739,6 +11817,12 @@
      "score": 0.239,
      "title": "Few-shot learning of predictive features with dendrites and behavioural timescale synaptic plasticity in the hippocampus",
      "year": 2026
+    },
+    {
+     "id": "10.1523_JNEUROSCI.1332-25.2025",
+     "score": 0.098,
+     "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+     "year": 2025
     },
     {
      "id": "10.1038_s41586-021-04169-9",
@@ -11891,7 +11975,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 31,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -12032,8 +12116,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -12045,27 +12141,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -12169,8 +12254,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.648,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.648,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1152_jn.2001.86.1.528",
      "score": 0.648,
@@ -12182,27 +12279,16 @@
      "score": 0.648,
      "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
      "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 0.648,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.493,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -12325,6 +12411,12 @@
      "year": 1999
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -12335,16 +12427,11 @@
      "score": 0.75,
      "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
      "year": 2018
-    },
-    {
-     "id": "10.1073_pnas.0707919104",
-     "score": 0.75,
-     "title": "Dendritic spikes induce single-burst long-term potentiation",
-     "year": 2007
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -12491,14 +12578,15 @@
      "year": 2005
     },
     {
-     "id": "10.1038_s41593-018-0084-6",
+     "id": "10.1038_nn.4157",
      "score": 0.75,
-     "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
-     "year": 2018
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -12625,7 +12713,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 49,
+   "lab_cluster": 50,
    "lab_cluster_name": "Lüscher (single)",
    "similar": [
     {
@@ -12774,16 +12862,16 @@
      "year": 1999
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.656,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1073_pnas.0707919104",
      "score": 0.453,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1016_S0896-6273(00)80635-2",
-     "score": 0.453,
-     "title": "Dendritic Sodium Spikes Are Variable Triggers of Axonal Action Potentials in Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
     }
    ],
    "lineage": [
@@ -12936,6 +13024,12 @@
      "year": 2007
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -12946,16 +13040,11 @@
      "score": 0.75,
      "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
      "year": 2018
-    },
-    {
-     "id": "10.1073_pnas.0707919104",
-     "score": 0.75,
-     "title": "Dendritic spikes induce single-burst long-term potentiation",
-     "year": 2007
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -13083,7 +13172,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 50,
+   "lab_cluster": 51,
    "lab_cluster_name": "Both (single)",
    "similar": [],
    "lineage": []
@@ -13210,7 +13299,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 51,
+   "lab_cluster": 52,
    "lab_cluster_name": "London (single)",
    "similar": [
     {
@@ -13521,7 +13610,7 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
     {
      "id": "10.1113_jphysiol.2002.020503",
@@ -13530,31 +13619,32 @@
      "year": 2002
     },
     {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
+    {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
      "title": "Formation of an expanding memory representation in the hippocampus",
      "year": 2025
-    },
-    {
-     "id": "10.1038_nn.2428",
-     "score": 0.75,
-     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
-     "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -13669,7 +13759,7 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
     {
      "id": "10.1523_JNEUROSCI.2520-04.2004",
@@ -13678,31 +13768,32 @@
      "year": 2004
     },
     {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.762,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.762,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
+    {
      "id": "10.1152_jn.2001.86.1.528",
      "score": 0.762,
      "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
      "year": 2001
-    },
-    {
-     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
-     "score": 0.762,
-     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 0.762,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -13809,7 +13900,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 52,
+   "lab_cluster": 53,
    "lab_cluster_name": "Darnell (single)",
    "similar": [],
    "lineage": []
@@ -13926,7 +14017,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 53,
+   "lab_cluster": 54,
    "lab_cluster_name": "Spain (single)",
    "similar": [],
    "lineage": []
@@ -14072,8 +14163,8 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
-    "Dax A. Hoffman"
+    "Dax A. Hoffman",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -14229,15 +14320,15 @@
      "year": 1997
     },
     {
-     "id": "10.1152_jn.2001.86.1.528",
+     "id": "10.1038_s41593-026-02214-2",
      "score": 0.648,
-     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2001
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
-    "Dax A. Hoffman"
+    "Dax A. Hoffman",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -14347,7 +14438,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 54,
+   "lab_cluster": 55,
    "lab_cluster_name": "Boahen (single)",
    "similar": [],
    "lineage": []
@@ -14481,6 +14572,18 @@
    "lab_cluster_name": "Larkum + Sakmann",
    "similar": [
     {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.75,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.75,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
      "id": "10.1126_science.adx4358",
      "score": 0.75,
      "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
@@ -14490,18 +14593,6 @@
      "id": "10.1126_science.aax6239",
      "score": 0.75,
      "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
-     "year": 2020
-    },
-    {
-     "id": "10.1038_nature07663",
-     "score": 0.75,
-     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
-     "year": 2009
-    },
-    {
-     "id": "10.1038_s41593-020-0677-8",
-     "score": 0.75,
-     "title": "Active dendritic currents gate descending cortical outputs in perception",
      "year": 2020
     }
    ],
@@ -14610,7 +14701,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 31,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -14679,7 +14770,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 55,
+   "lab_cluster": 56,
    "lab_cluster_name": "Burrone (single)",
    "similar": [],
    "lineage": []
@@ -14986,7 +15077,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 11,
+   "lab_cluster": 12,
    "lab_cluster_name": "Tank",
    "similar": [
     {
@@ -15158,6 +15249,18 @@
    "lab_cluster_name": "Larkum + Sakmann",
    "similar": [
     {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.594,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.594,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
      "id": "10.1073_pnas.96.25.14600",
      "score": 0.591,
      "title": "Calcium electrogenesis in distal apical dendrites of layer 5 pyramidal cells at a critical frequency of back-propagating action potentials",
@@ -15168,18 +15271,6 @@
      "score": 0.591,
      "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
      "year": 1999
-    },
-    {
-     "id": "10.1126_science.aah6066",
-     "score": 0.415,
-     "title": "Active cortical dendrites modulate perception",
-     "year": 2016
-    },
-    {
-     "id": "10.1038_nature07663",
-     "score": 0.412,
-     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
-     "year": 2009
     }
    ],
    "lineage": [
@@ -15310,7 +15401,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 24,
+   "lab_cluster": 27,
    "lab_cluster_name": "Segev",
    "similar": [
     {
@@ -15473,7 +15564,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 56,
+   "lab_cluster": 57,
    "lab_cluster_name": "Jayant (single)",
    "similar": [],
    "lineage": []
@@ -15603,6 +15694,12 @@
      "year": 2018
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -15613,16 +15710,11 @@
      "score": 0.75,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1038_nature00854",
-     "score": 0.75,
-     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
-     "year": 2002
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -15683,7 +15775,7 @@
     "chronic/longitudinal"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 57,
+   "lab_cluster": 58,
    "lab_cluster_name": "Klausberger (single)",
    "similar": [],
    "lineage": []
@@ -15789,7 +15881,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 58,
+   "lab_cluster": 59,
    "lab_cluster_name": "Muller (single)",
    "similar": [],
    "lineage": []
@@ -15844,7 +15936,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 30,
+   "lab_cluster": 32,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -15904,7 +15996,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 30,
+   "lab_cluster": 32,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -16011,6 +16103,12 @@
    "lab_cluster_name": "Spruston",
    "similar": [
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -16027,16 +16125,11 @@
      "score": 0.75,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1038_nature00854",
-     "score": 0.75,
-     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
-     "year": 2002
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -16165,8 +16258,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -16178,27 +16283,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -16345,7 +16439,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 59,
+   "lab_cluster": 60,
    "lab_cluster_name": "Negrean (single)",
    "similar": [
     {
@@ -16517,7 +16611,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 23,
+   "lab_cluster": 26,
    "lab_cluster_name": "Yasuda",
    "similar": [
     {
@@ -16592,7 +16686,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 60,
+   "lab_cluster": 61,
    "lab_cluster_name": "Raimondo (single)",
    "similar": [],
    "lineage": []
@@ -16719,8 +16813,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
@@ -16732,27 +16838,16 @@
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
      "year": 2009
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -16900,15 +16995,15 @@
      "year": 2006
     },
     {
-     "id": "10.1038_82910",
+     "id": "10.1038_nn.4157",
      "score": 0.493,
-     "title": "Dendritic coincidence detection of EPSPs and action potentials",
-     "year": 2001
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -16967,7 +17062,7 @@
     "chronic/longitudinal"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 61,
+   "lab_cluster": 62,
    "lab_cluster_name": "Slutsky (single)",
    "similar": [],
    "lineage": []
@@ -17084,7 +17179,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 22,
+   "lab_cluster": 25,
    "lab_cluster_name": "Kim + Hoffman",
    "similar": [
     {
@@ -17402,7 +17497,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 62,
+   "lab_cluster": 63,
    "lab_cluster_name": "Lippincott‐Schwartz (single)",
    "similar": [],
    "lineage": []
@@ -17453,9 +17548,15 @@
    "needs_review": false,
    "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 63,
-   "lab_cluster_name": "Sprekeler (single)",
+   "lab_cluster": 33,
+   "lab_cluster_name": "Sprekeler + Naud",
    "similar": [
+    {
+     "id": "10.1113_JP281510",
+     "score": 0.453,
+     "title": "Silences, spikes and bursts: Three-part knot of the neural code",
+     "year": 2023
+    },
     {
      "id": "10.1101_2023.06.29.547097",
      "score": 0.21,
@@ -17952,7 +18053,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 12,
+   "lab_cluster": 13,
    "lab_cluster_name": "Lee",
    "similar": [
     {
@@ -18189,7 +18290,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 16,
+   "lab_cluster": 17,
    "lab_cluster_name": "Yuste",
    "similar": [
     {
@@ -18311,7 +18412,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 17,
+   "lab_cluster": 19,
    "lab_cluster_name": "Nusser",
    "similar": [
     {
@@ -18433,7 +18534,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 17,
+   "lab_cluster": 19,
    "lab_cluster_name": "Nusser",
    "similar": [
     {
@@ -18596,8 +18697,8 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
-    "Dax A. Hoffman"
+    "Dax A. Hoffman",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -18707,7 +18808,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 17,
+   "lab_cluster": 19,
    "lab_cluster_name": "Nusser",
    "similar": [
     {
@@ -18854,15 +18955,15 @@
      "year": 1997
     },
     {
-     "id": "10.1152_jn.2001.86.1.528",
+     "id": "10.1038_s41593-026-02214-2",
      "score": 0.648,
-     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2001
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
-    "Dax A. Hoffman"
+    "Dax A. Hoffman",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -19112,9 +19213,15 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 31,
+   "lab_cluster": 20,
    "lab_cluster_name": "Sheffield",
    "similar": [
+    {
+     "id": "10.1523_JNEUROSCI.1332-25.2025",
+     "score": 0.835,
+     "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+     "year": 2025
+    },
     {
      "id": "10.1038_s41467-026-72275-1",
      "score": 0.75,
@@ -19680,22 +19787,22 @@
      "year": 2020
     },
     {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.75,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.75,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
      "id": "10.1126_science.adx4358",
      "score": 0.75,
      "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
      "year": 2026
-    },
-    {
-     "id": "10.1126_science.aax6239",
-     "score": 0.75,
-     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
-     "year": 2020
-    },
-    {
-     "id": "10.1038_nature07663",
-     "score": 0.75,
-     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
-     "year": 2009
     }
    ],
    "lineage": [
@@ -20477,7 +20584,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 26,
+   "lab_cluster": 29,
    "lab_cluster_name": "Siegelbaum",
    "similar": [
     {
@@ -20686,7 +20793,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 32,
+   "lab_cluster": 11,
    "lab_cluster_name": "Poirazi",
    "similar": [
     {
@@ -20696,25 +20803,27 @@
      "year": 2026
     },
     {
-     "id": "10.1016_j.celrep.2022.111962",
-     "score": 0.236,
-     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
+     "id": "10.1146_annurev-neuro-090325-115846",
+     "score": 0.75,
+     "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
+     "year": 2026
+    },
+    {
+     "id": "The_dendritic_engram",
+     "score": 0.75,
+     "title": "The dendritic engram",
      "year": 2023
     },
     {
-     "id": "10.1016_j.neuron.2025.03.029",
-     "score": 0.155,
-     "title": "Distal tuft dendrites predict properties of new hippocampal place fields",
-     "year": 2025
-    },
-    {
-     "id": "10.1038_s41586-024-08325-9",
-     "score": 0.152,
-     "title": "Synaptic basis of feature selectivity in hippocampal neurons",
-     "year": 2024
+     "id": "10.1038_s41583-020-0301-7",
+     "score": 0.446,
+     "title": "Illuminating dendritic function with computational models",
+     "year": 2020
     }
    ],
-   "lineage": []
+   "lineage": [
+    "Panayiota Poirazi"
+   ]
   },
   {
    "title": "Distal tuft dendrites predict properties of new hippocampal place fields",
@@ -21129,6 +21238,12 @@
    "lab_cluster_name": "Spruston",
    "similar": [
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -21145,16 +21260,11 @@
      "score": 0.75,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1038_nature00854",
-     "score": 0.75,
-     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
-     "year": 2002
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -21285,22 +21395,22 @@
      "year": 2016
     },
     {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.75,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.75,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
      "id": "10.1126_science.adx4358",
      "score": 0.75,
      "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
      "year": 2026
-    },
-    {
-     "id": "10.1126_science.aax6239",
-     "score": 0.75,
-     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
-     "year": 2020
-    },
-    {
-     "id": "10.1038_nature07663",
-     "score": 0.75,
-     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
-     "year": 2009
     }
    ],
    "lineage": [
@@ -21367,6 +21477,12 @@
      "year": 2005
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -21377,16 +21493,11 @@
      "score": 0.75,
      "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
      "year": 2018
-    },
-    {
-     "id": "10.1073_pnas.0707919104",
-     "score": 0.75,
-     "title": "Dendritic spikes induce single-burst long-term potentiation",
-     "year": 2007
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -21519,6 +21630,18 @@
    "lab_cluster_name": "Larkum + Sakmann",
    "similar": [
     {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.75,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.75,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
      "id": "10.1126_science.adx4358",
      "score": 0.75,
      "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
@@ -21529,18 +21652,6 @@
      "score": 0.75,
      "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
      "year": 2020
-    },
-    {
-     "id": "10.1038_s41593-020-0677-8",
-     "score": 0.75,
-     "title": "Active dendritic currents gate descending cortical outputs in perception",
-     "year": 2020
-    },
-    {
-     "id": "10.1126_science.aah6066",
-     "score": 0.75,
-     "title": "Active cortical dendrites modulate perception",
-     "year": 2016
     }
    ],
    "lineage": [
@@ -22176,7 +22287,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 25,
+   "lab_cluster": 28,
    "lab_cluster_name": "Williams",
    "similar": [
     {
@@ -22205,8 +22316,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Mark T. Harnett"
+    "Mark T. Harnett",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -22353,15 +22464,15 @@
      "year": 2002
     },
     {
-     "id": "10.1038_82910",
+     "id": "10.1038_nn.4157",
      "score": 0.467,
-     "title": "Dendritic coincidence detection of EPSPs and action potentials",
-     "year": 2001
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -22519,14 +22630,15 @@
      "year": 2005
     },
     {
-     "id": "10.1038_s41593-018-0084-6",
+     "id": "10.1038_nn.4157",
      "score": 0.75,
-     "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
-     "year": 2018
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -22653,7 +22765,7 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
     {
      "id": "10.1038_nature06725",
@@ -22662,31 +22774,32 @@
      "year": 2008
     },
     {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
+    {
      "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
      "title": "Formation of an expanding memory representation in the hippocampus",
      "year": 2025
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -22821,6 +22934,18 @@
    "lab_cluster_name": "Larkum + Sakmann",
    "similar": [
     {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.75,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.75,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
      "id": "10.1126_science.adx4358",
      "score": 0.75,
      "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
@@ -22831,18 +22956,6 @@
      "score": 0.75,
      "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
      "year": 2009
-    },
-    {
-     "id": "10.1038_s41593-020-0677-8",
-     "score": 0.75,
-     "title": "Active dendritic currents gate descending cortical outputs in perception",
-     "year": 2020
-    },
-    {
-     "id": "10.1126_science.aah6066",
-     "score": 0.75,
-     "title": "Active cortical dendrites modulate perception",
-     "year": 2016
     }
    ],
    "lineage": [
@@ -23041,10 +23154,10 @@
      "year": 2012
     },
     {
-     "id": "10.1073_pnas.0707919104",
+     "id": "10.1038_nn.4157",
      "score": 0.237,
-     "title": "Dendritic spikes induce single-burst long-term potentiation",
-     "year": 2007
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": []
@@ -23532,15 +23645,15 @@
      "year": 2002
     },
     {
-     "id": "10.1038_82910",
+     "id": "10.1038_nn.4157",
      "score": 0.467,
-     "title": "Dendritic coincidence detection of EPSPs and action potentials",
-     "year": 2001
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -23810,6 +23923,12 @@
    "lab_cluster_name": "Spruston",
    "similar": [
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -23826,16 +23945,11 @@
      "score": 0.75,
      "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
      "year": 2002
-    },
-    {
-     "id": "10.1002_cne.21564",
-     "score": 0.75,
-     "title": "Distribution of bursting neurons in the CA1 region and the subiculum of the rat hippocampus",
-     "year": 2007
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -23963,8 +24077,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.648,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.648,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1152_jn.2001.86.1.528",
      "score": 0.648,
@@ -23976,27 +24102,16 @@
      "score": 0.648,
      "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
      "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 0.648,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.493,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -24331,7 +24446,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 18,
+   "lab_cluster": 21,
    "lab_cluster_name": "Romani + Milstein",
    "similar": [
     {
@@ -24876,6 +24991,12 @@
      "year": 2016
     },
     {
+     "id": "10.1038_nn.4157",
+     "score": 0.75,
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
+    },
+    {
      "id": "10.1113_jphysiol.2005.086793",
      "score": 0.75,
      "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
@@ -24886,16 +25007,11 @@
      "score": 0.75,
      "title": "Dendritic spikes induce single-burst long-term potentiation",
      "year": 2007
-    },
-    {
-     "id": "10.1038_nature00854",
-     "score": 0.75,
-     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
-     "year": 2002
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -25695,16 +25811,16 @@
      "year": 1995
     },
     {
-     "id": "10.1523_JNEUROSCI.1717-07.2007",
-     "score": 0.591,
-     "title": "Dendritic Spikes in Apical Dendrites of Neocortical Layer 2/3 Pyramidal Neurons",
-     "year": 2007
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.613,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
     },
     {
-     "id": "10.1126_science.aah6066",
-     "score": 0.428,
-     "title": "Active cortical dendrites modulate perception",
-     "year": 2016
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.613,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
     }
    ],
    "lineage": [
@@ -25822,7 +25938,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 27,
+   "lab_cluster": 30,
    "lab_cluster_name": "Wilson",
    "similar": [
     {
@@ -25946,9 +26062,15 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 31,
+   "lab_cluster": 20,
    "lab_cluster_name": "Sheffield",
    "similar": [
+    {
+     "id": "10.1523_JNEUROSCI.1332-25.2025",
+     "score": 0.75,
+     "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+     "year": 2025
+    },
     {
      "id": "10.1038_s41593-025-01894-6",
      "score": 0.75,
@@ -26094,14 +26216,15 @@
      "year": 2002
     },
     {
-     "id": "10.1038_s41593-018-0084-6",
+     "id": "10.1038_nn.4157",
      "score": 0.75,
-     "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
-     "year": 2018
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": [
     "Tim Jarsky",
+    "Greg J. Stuart",
     "Nelson Spruston"
    ]
   },
@@ -26392,6 +26515,12 @@
      "year": 2020
     },
     {
+     "id": "10.1523_JNEUROSCI.1332-25.2025",
+     "score": 0.238,
+     "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+     "year": 2025
+    },
+    {
      "id": "10.1038_s41586-021-04169-9",
      "score": 0.234,
      "title": "Local circuit amplification of spatial selectivity in the hippocampus",
@@ -26550,6 +26679,18 @@
    "lab_cluster_name": "Larkum + Sakmann",
    "similar": [
     {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 0.75,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 0.75,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
      "id": "10.1126_science.aax6239",
      "score": 0.75,
      "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
@@ -26560,18 +26701,6 @@
      "score": 0.75,
      "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
      "year": 2009
-    },
-    {
-     "id": "10.1038_s41593-020-0677-8",
-     "score": 0.75,
-     "title": "Active dendritic currents gate descending cortical outputs in perception",
-     "year": 2020
-    },
-    {
-     "id": "10.1126_science.aah6066",
-     "score": 0.75,
-     "title": "Active cortical dendrites modulate perception",
-     "year": 2016
     }
    ],
    "lineage": [
@@ -27059,7 +27188,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 32,
+   "lab_cluster": 11,
    "lab_cluster_name": "Poirazi",
    "similar": [
     {
@@ -27069,25 +27198,27 @@
      "year": 2025
     },
     {
-     "id": "10.1016_j.celrep.2022.111962",
-     "score": 0.236,
-     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
+     "id": "10.1146_annurev-neuro-090325-115846",
+     "score": 0.75,
+     "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
+     "year": 2026
+    },
+    {
+     "id": "The_dendritic_engram",
+     "score": 0.75,
+     "title": "The dendritic engram",
      "year": 2023
     },
     {
-     "id": "10.1016_j.neuron.2025.03.029",
-     "score": 0.155,
-     "title": "Distal tuft dendrites predict properties of new hippocampal place fields",
-     "year": 2025
-    },
-    {
-     "id": "10.1038_s41586-024-08325-9",
-     "score": 0.152,
-     "title": "Synaptic basis of feature selectivity in hippocampal neurons",
-     "year": 2024
+     "id": "10.1038_s41583-020-0301-7",
+     "score": 0.446,
+     "title": "Illuminating dendritic function with computational models",
+     "year": 2020
     }
    ],
-   "lineage": []
+   "lineage": [
+    "Panayiota Poirazi"
+   ]
   },
   {
    "title": "Distinct types of dendritic Ca2+ spikes in CA3 pyramidal neurons associated with neuronal activity changes during navigation",
@@ -27245,7 +27376,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 15,
+   "lab_cluster": 16,
    "lab_cluster_name": "Makara",
    "similar": [
     {
@@ -27412,7 +27543,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 16,
+   "lab_cluster": 17,
    "lab_cluster_name": "Yuste",
    "similar": [
     {
@@ -27592,15 +27723,15 @@
      "year": 2002
     },
     {
-     "id": "10.1038_82910",
+     "id": "10.1038_nn.4157",
      "score": 0.467,
-     "title": "Dendritic coincidence detection of EPSPs and action potentials",
-     "year": 2001
+     "title": "Dendritic integration: 60 years of progress",
+     "year": 2015
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -27651,7 +27782,7 @@
    "needs_review": false,
    "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 19,
+   "lab_cluster": 22,
    "lab_cluster_name": "Gerstner + Pfister",
    "similar": [
     {
@@ -27673,10 +27804,10 @@
      "year": 2020
     },
     {
-     "id": "10.1038_s41586-021-04169-9",
-     "score": 0.075,
-     "title": "Local circuit amplification of spatial selectivity in the hippocampus",
-     "year": 2021
+     "id": "10.1523_JNEUROSCI.1332-25.2025",
+     "score": 0.076,
+     "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+     "year": 2025
     }
    ],
    "lineage": []
@@ -27765,7 +27896,9 @@
      "year": 2025
     }
    ],
-   "lineage": []
+   "lineage": [
+    "Christine Grienberger"
+   ]
   },
   {
    "title": "Formation of an expanding memory representation in the hippocampus",
@@ -27900,8 +28033,20 @@
     "C7.4": "02732abf"
    },
    "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
+   "lab_cluster_name": "Magee + Grienberger",
    "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.75,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.75,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
     {
      "id": "10.1038_nn.2428",
      "score": 0.75,
@@ -27913,27 +28058,16 @@
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
      "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Jeffrey C. Magee",
+    "Mark T. Harnett",
     "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
     "Sonia Gasparini",
-    "Mark T. Harnett"
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
    ]
   },
   {
@@ -28126,6 +28260,1917 @@
    "lab_cluster_name": "Cohen (single)",
    "similar": [],
    "lineage": []
+  },
+  {
+   "title": "Synaptic Plasticity Forms and Functions",
+   "year": 2020,
+   "doi": "10.1146/annurev-neuro-090919-022842",
+   "authors": [
+    "Jeffrey C. Magee",
+    "Christine Grienberger"
+   ],
+   "venue": "Annual Review of Neuroscience",
+   "abstract": "Synaptic plasticity, the activity-dependent change in neuronal connection strength, has long been considered an important component of learning and memory. Computational and engineering work corroborate the power of learning through the directed adjustment of connection weights. Here we review the fundamental elements of four broadly categorized forms of synaptic plasticity and discuss their functional capabilities and limitations. Although standard, correlation-based, Hebbian synaptic plasticity has been the primary focus of neuroscientists for decades, it is inherently limited. Three-factor plasticity rules supplement Hebbian forms with neuromodulation and eligibility traces, while true supervised types go even further by adding objectives and instructive signals. Finally, a recently discovered hippocampal form of synaptic plasticity combines the above elements, while leaving behind the primary Hebbian requirement. We suggest that the effort to determine the neural basis of adaptive behavior could benefit from renewed experimental and theoretical investigation of more powerful directed types of synaptic plasticity.",
+   "zotero_tags": [
+    "Animals",
+    "dendrites",
+    "eligibility traces",
+    "Humans",
+    "learning",
+    "Learning/*physiology",
+    "memory",
+    "Memory/*physiology",
+    "neuromodulation",
+    "Neuronal Plasticity/*physiology",
+    "Neurons/physiology",
+    "synapses",
+    "Synapses/*physiology",
+    "Synaptic Transmission/*physiology"
+   ],
+   "zotero_extra": "Edition: 20200219",
+   "id": "10.1146_annurev-neuro-090919-022842",
+   "cited_by": 837,
+   "first_author": "Jeffrey C. Magee",
+   "last_author": "Christine Grienberger",
+   "tldr": "It is suggested that the effort to determine the neural basis of adaptive behavior could benefit from renewed experimental and theoretical investigation of more powerful directed types of synaptic plasticity.",
+   "labels": {
+    "scope": "synaptic physiology",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.82,
+    "article_type": 0.99,
+    "prep": 0.99,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "Review paper; no new experimental measurements reported.",
+    "prep": "No preparation described; purely review article."
+   },
+   "significance": "Reviewed four forms of synaptic plasticity from Hebbian to supervised rules, arguing directed plasticity types better explain adaptive behavior.",
+   "keywords": [
+    "synaptic plasticity",
+    "Hebbian learning",
+    "three-factor rules",
+    "neuromodulation",
+    "eligibility traces",
+    "supervised learning"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Grienberger",
+   "similar": [
+    {
+     "id": "10.1038_s41586-022-05378-6",
+     "score": 0.987,
+     "title": "Entorhinal cortex directs learning-related changes in CA1 representations",
+     "year": 2022
+    },
+    {
+     "id": "10.1038_nn.4486",
+     "score": 0.902,
+     "title": "Inhibitory suppression of heterogeneously tuned excitation enhances spatial coding in CA1 place cells",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 0.648,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_35044552",
+     "score": 0.648,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    }
+   ],
+   "lineage": [
+    "Mark T. Harnett",
+    "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Sonia Gasparini",
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
+   ]
+  },
+  {
+   "title": "Dendritic integration: 60 years of progress",
+   "year": 2015,
+   "doi": "10.1038/nn.4157",
+   "authors": [
+    "Greg J. Stuart",
+    "Nelson Spruston"
+   ],
+   "venue": "Nature Neuroscience",
+   "abstract": "Neurons receive synaptic input primarily onto their dendrites. This review focuses on how synaptic inputs are integrated by dendrites, with an emphasis on recent work in the intact brain. It describes the range of computations dendrites perform on their inputs, highlighting their critical role in information processing in the brain.",
+   "zotero_tags": [],
+   "zotero_extra": "Number: 12",
+   "id": "10.1038_nn.4157",
+   "cited_by": 535,
+   "first_author": "Greg J. Stuart",
+   "last_author": "Nelson Spruston",
+   "tldr": "Six decades of progress are reviewed, which collectively highlights the complex ways that single neurons integrate their inputs, emphasizing the critical role of dendrites in information processing in the brain.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [
+    "NMDA spike",
+    "Ca spike",
+    "Na spike",
+    "bAP",
+    "plateau potential",
+    "passive integration",
+    "branch-specific computation"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.99,
+    "prep": 0.95,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "Review paper; no new primary measurements reported.",
+    "prep": "No specific preparation; review synthesises existing literature."
+   },
+   "significance": "Synthesised 60 years of dendritic integration research, establishing the computational repertoire of dendrites and reframing their role in neural information processing.",
+   "keywords": [
+    "dendritic integration",
+    "synaptic computation",
+    "review",
+    "active dendrites",
+    "in vivo dendrites",
+    "nonlinear integration"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 1,
+   "lab_cluster_name": "Spruston",
+   "similar": [
+    {
+     "id": "10.1113_jphysiol.2005.086793",
+     "score": 0.75,
+     "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
+     "year": 2005
+    },
+    {
+     "id": "10.1038_s41593-018-0084-6",
+     "score": 0.75,
+     "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
+     "year": 2018
+    },
+    {
+     "id": "10.1073_pnas.0707919104",
+     "score": 0.75,
+     "title": "Dendritic spikes induce single-burst long-term potentiation",
+     "year": 2007
+    },
+    {
+     "id": "10.1038_nature00854",
+     "score": 0.75,
+     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
+     "year": 2002
+    }
+   ],
+   "lineage": [
+    "Tim Jarsky",
+    "Greg J. Stuart",
+    "Nelson Spruston"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "When strong, spatially concentrated, fast-onset drive is applied to dendrites",
+     "quote": "range of computations dendrites perform on their inputs",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Under conditions of sufficient impedance isolation between branches",
+     "quote": "how synaptic inputs are integrated by dendrites",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Both sub- and supra-linear integration occur depending on cell type, layer, stimulus",
+     "quote": "range of computations dendrites perform on their inputs",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "As of 2015, only correlational evidence existed; causal evidence was absent",
+     "quote": "emphasis on recent work in the intact brain",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.3",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Anaesthesia may degrade active dendritic membrane properties, confounding in vivo results",
+     "quote": "emphasis on recent work in the intact brain",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Review treats dendritic nonlinearity as supporting multi-layer computation",
+     "quote": "critical role in information processing in the brain",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+   "year": 2012,
+   "doi": "10.1016/j.tins.2012.11.006",
+   "authors": [
+    "Matthew E. Larkum"
+   ],
+   "venue": "Trends in Neurosciences",
+   "abstract": "A basic feature of intelligent systems such as the cerebral cortex is the ability to freely associate aspects of perceived experience with an internal representation of the world and make predictions about the future. Here, a hypothesis is presented that the extraordinary performance of the cortex derives from an associative mechanism built in at the cellular level to the basic cortical neuronal unit: the pyramidal cell. The mechanism is robustly triggered by coincident input to opposite poles of the neuron, is exquisitely matched to the large- and fine-scale architecture of the cortex, and is tightly controlled by local microcircuits of inhibitory neurons targeting subcellular compartments. This article explores the experimental evidence and the implications for how the cortex operates.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1016_j.tins.2012.11.006",
+   "cited_by": 811,
+   "first_author": "Matthew E. Larkum",
+   "last_author": "Matthew E. Larkum",
+   "tldr": "A hypothesis is presented that the extraordinary performance of the cortex derives from an associative mechanism built in at the cellular level to the basic cortical neuronal unit: the pyramidal cell.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [
+    "Ca spike",
+    "bAP",
+    "plateau potential",
+    "branch-specific computation"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.88,
+    "article_type": 0.95,
+    "prep": 0.95,
+    "modality": 0.95
+   },
+   "evidence": {
+    "modality": "Review synthesising existing experimental evidence; no new data",
+    "prep": "No new recordings described; hypothesis and review article"
+   },
+   "significance": "Proposed that coincidence detection at opposite poles of pyramidal cells provides a cellular mechanism for cortical association, reframing cortical computation around dendritic nonlinearities.",
+   "keywords": [
+    "pyramidal cell",
+    "dendritic computation",
+    "coincidence detection",
+    "cortical association",
+    "apical dendrite",
+    "inhibitory microcircuit"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 2,
+   "lab_cluster_name": "Larkum + Sakmann",
+   "similar": [
+    {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 1.0,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1126_science.adx4358",
+     "score": 0.75,
+     "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
+     "year": 2026
+    },
+    {
+     "id": "10.1126_science.aax6239",
+     "score": 0.75,
+     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
+     "year": 2020
+    },
+    {
+     "id": "10.1038_nature07663",
+     "score": 0.75,
+     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
+     "year": 2009
+    }
+   ],
+   "lineage": [
+    "Nelson Spruston"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In pyramidal cells with distinct apical and basal dendritic compartments",
+     "quote": "coincident input to opposite poles of the neuron",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In cortical pyramidal cells with apical-basal coincidence detection",
+     "quote": "associative mechanism built in at the cellular level to the basic cortical neuronal unit",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Hypothesis level; experimental evidence reviewed but not new data",
+     "quote": "explores the experimental evidence and the implications for how the cortex operates",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Takes dendritic spike initiation as established background for cortical association hypothesis",
+     "quote": "robustly triggered by coincident input to opposite poles of the neuron",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C5.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Top-down input to apical dendrites framed as target/association signal, not error signal",
+     "quote": "internal representation of the world and make predictions about the future",
+     "confidence": 0.62,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C5.2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Cellular association mechanism implicitly frames apical input as credit-assignment-like signal",
+     "quote": "associative mechanism built in at the cellular level",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "The dendritic engram",
+   "year": 2023,
+   "doi": "",
+   "authors": [
+    "George Kastellakis",
+    "Simone Tasciotti",
+    "Ioanna Pandi",
+    "Panayiota Poirazi"
+   ],
+   "venue": "Frontiers in Behavioral Neuroscience",
+   "abstract": "Accumulating evidence from a wide range of studies, including behavioral, cellular, molecular and computational findings, support a key role of dendrites in the encoding and recall of new memories. Dendrites can integrate synaptic inputs in non-linear ways, provide the substrate for local protein synthesis and facilitate the orchestration of signaling pathways that regulate local synaptic plasticity. These capabilities allow them to act as a second layer of computation within the neuron and serve as the fundamental unit of plasticity. As such, dendrites are integral parts of the memory engram, namely the physical representation of memories in the brain and are increasingly studied during learning tasks. Here, we review experimental and computational studies that support a novel, dendritic view of the memory engram that is centered on non-linear dendritic branches as elementary memory units. We highlight the potential implications of dendritic engrams for the learning and memory field and discuss future research directions.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "The_dendritic_engram",
+   "cited_by": 0,
+   "first_author": "George Kastellakis",
+   "last_author": "Panayiota Poirazi",
+   "tldr": "",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "computational / modeling",
+    "modality": "review"
+   },
+   "phenomena": [
+    "NMDA spike",
+    "Ca spike",
+    "plateau potential",
+    "branch-specific computation",
+    "passive integration"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.98,
+    "prep": 0.7,
+    "modality": 0.97
+   },
+   "evidence": {
+    "modality": "Review synthesises experimental and computational studies; no new data.",
+    "prep": "Covers computational and experimental literature; no single preparation."
+   },
+   "significance": "Proposed that nonlinear dendritic branches are elementary memory units, reframing the engram concept from cell-level to subcellular dendritic computation.",
+   "keywords": [
+    "dendritic engram",
+    "memory engram",
+    "nonlinear dendrites",
+    "local plasticity",
+    "dendritic computation",
+    "learning and memory"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 11,
+   "lab_cluster_name": "Poirazi",
+   "similar": [
+    {
+     "id": "10.1146_annurev-neuro-090325-115846",
+     "score": 0.75,
+     "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
+     "year": 2026
+    },
+    {
+     "id": "10.1016_j.celrep.2026.117793",
+     "score": 0.75,
+     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
+     "year": 2026
+    },
+    {
+     "id": "10.1101_2025.05.30.657022",
+     "score": 0.75,
+     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
+     "year": 2025
+    }
+   ],
+   "lineage": [
+    "Panayiota Poirazi"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "when synaptic inputs are spatially clustered on individual branches",
+     "quote": "non-linear dendritic branches as elementary memory units",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "in the context of memory encoding and recall",
+     "quote": "dendrites...serve as the fundamental unit of plasticity",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "as reviewed across experimental and computational studies",
+     "quote": "Dendrites can integrate synaptic inputs in non-linear ways",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "dendrites act as a second layer within the neuron",
+     "quote": "act as a second layer of computation within the neuron",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.1",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "condition": "if dendritic branches rather than synaptic weights are the memory unit",
+     "quote": "dendritic view of the memory engram...centered on non-linear dendritic branches",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "local dendritic plasticity mechanisms support engram persistence",
+     "quote": "local protein synthesis and facilitate the orchestration of signaling pathways that regulate local synaptic plasticity",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "dendritic events assumed to causally shape memory encoding and recall",
+     "quote": "dendrites are integral parts of the memory engram",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3a",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "NMDA-dependent nonlinearity assumed as basis for branch independence",
+     "quote": "non-linear dendritic branches as elementary memory units",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Silences, spikes and bursts: Three-part knot of the neural code",
+   "year": 2023,
+   "doi": "10.1113/JP281510",
+   "authors": [
+    "Zachary Friedenberger",
+    "Emerson F. Harkin",
+    "Katalin Tóth",
+    "Richard Naud"
+   ],
+   "venue": "The Journal of Physiology",
+   "abstract": "When a neuron breaks silence, it can emit action potentials in a number of patterns. Some responses are so sudden and intense that electrophysiologists felt the need to single them out, labelling action potentials emitted at a particularly high frequency with a metonym - bursts. Is there more to bursts than a figure of speech? After all, sudden bouts of high-frequency firing are expected to occur whenever inputs surge. The burst coding hypothesis advances that the neural code has three syllables: silences, spikes and bursts. We review evidence supporting this ternary code in terms of devoted mechanisms for burst generation, synaptic transmission and synaptic plasticity. We also review the learning and attention theories for which such a triad is beneficial.",
+   "zotero_tags": [],
+   "zotero_extra": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1113/JP281510",
+   "id": "10.1113_JP281510",
+   "cited_by": 55,
+   "first_author": "Zachary Friedenberger",
+   "last_author": "Richard Naud",
+   "tldr": "Evidence supporting the burst coding hypothesis that the neural code has three syllables: silences, spikes and bursts is reviewed in terms of devoted mechanisms for burst generation, synaptic transmission and synaptic plasticity.",
+   "labels": {
+    "scope": "circuit & behavior",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.72,
+    "article_type": 0.98,
+    "prep": 0.99,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "Review paper; no new measurements reported.",
+    "prep": "No experimental preparation described; purely review."
+   },
+   "significance": "Reviewed evidence for a ternary neural code of silences, spikes, and bursts, synthesising mechanisms and learning theories that make burst coding computationally advantageous.",
+   "keywords": [
+    "burst coding",
+    "neural code",
+    "burst generation",
+    "synaptic plasticity",
+    "attention",
+    "learning theory"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 33,
+   "lab_cluster_name": "Sprekeler + Naud",
+   "similar": [
+    {
+     "id": "10.1073_pnas.1720995115",
+     "score": 0.453,
+     "title": "Sparse bursts optimize information transmission in a multiplexed neural code",
+     "year": 2018
+    },
+    {
+     "id": "10.1101_2023.06.29.547097",
+     "score": 0.227,
+     "title": "Cellular Substrate of Eligibility Traces",
+     "year": 2023
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Nonlinear slow-timescale mechanisms in synaptic plasticity",
+   "year": 2023,
+   "doi": "10.1016/j.conb.2023.102778",
+   "authors": [
+    "Cian O’Donnell"
+   ],
+   "venue": "Current Opinion in Neurobiology",
+   "abstract": "Learning and memory rely on synapses changing their strengths in response to neural activity. However, there is a substantial gap between the timescales of neural electrical dynamics (1–100 ms) and organism behaviour during learning (seconds—minutes). What mechanisms bridge this timescale gap? What are the implications for theories of brain learning? Here I first cover experimental evidence for slow-timescale factors in plasticity induction. Then I review possible underlying cellular and synaptic mechanisms, and insights from recent computational models that incorporate such slow-timescale variables. I conclude that future progress in understanding brain learning across timescales will require both experimental and computational modelling studies that map out the nonlinearities implemented by both fast and slow plasticity mechanisms at synapses, and crucially, their joint interactions.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1016_j.conb.2023.102778",
+   "cited_by": 11,
+   "first_author": "Cian O’Donnell",
+   "last_author": "Cian O’Donnell",
+   "tldr": "It is concluded that future progress in understanding brain learning across timescales will require both experimental and computational modelling studies that map out the nonlinearities implemented by both fast and slow plasticity mechanisms at synapses, and crucially, their joint interactions.",
+   "labels": {
+    "scope": "synaptic physiology",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.78,
+    "article_type": 0.97,
+    "prep": 0.95,
+    "modality": 0.97
+   },
+   "evidence": {
+    "modality": "Review synthesises existing work; no new measurements reported.",
+    "prep": "No experimental preparation described; purely a review article."
+   },
+   "significance": "Argued that slow-timescale nonlinear synaptic mechanisms bridge neural and behavioural timescales, reshaping theoretical frameworks for brain learning.",
+   "keywords": [
+    "synaptic plasticity",
+    "slow timescales",
+    "nonlinear mechanisms",
+    "learning and memory",
+    "computational models",
+    "plasticity induction"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 93,
+   "lab_cluster_name": "O’Donnell (single)",
+   "similar": [],
+   "lineage": []
+  },
+  {
+   "title": "Are Dendrites Conceptually Useful?",
+   "year": 2022,
+   "doi": "10.1016/j.neuroscience.2022.03.008",
+   "authors": [
+    "Matthew E. Larkum"
+   ],
+   "venue": "Neuroscience",
+   "abstract": "This article presents the argument that, while understanding the brain will require a multi-level approach, there is nevertheless something fundamental about understanding the components of the brain. I argue here that the standard description of neurons is not merely too simplistic, but also misses the true nature of how they operate at the computational level. In particular, the humble point neuron, devoid of dendrites with their powerful computational properties, prevents conceptual progress at higher levels of understanding.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1016_j.neuroscience.2022.03.008",
+   "cited_by": 88,
+   "first_author": "Matthew E. Larkum",
+   "last_author": "Matthew E. Larkum",
+   "tldr": "The standard description of neurons is not merely too simplistic, but also misses the true nature of how they operate at the computational level, and the humble point neuron, devoid of dendrites, prevents conceptual progress at higher levels of understanding.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.97,
+    "prep": 0.99,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "No new data; argumentative synthesis of existing concepts",
+    "prep": "No experimental preparation described in abstract"
+   },
+   "significance": "Argued that dendritic computational properties are conceptually indispensable, challenging point-neuron models and reframing how neural computation should be understood.",
+   "keywords": [
+    "dendritic computation",
+    "point neuron critique",
+    "conceptual framework",
+    "neural computation",
+    "perspective",
+    "multi-level neuroscience"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 2,
+   "lab_cluster_name": "Larkum + Sakmann",
+   "similar": [
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 1.0,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
+     "id": "10.1126_science.adx4358",
+     "score": 0.75,
+     "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
+     "year": 2026
+    },
+    {
+     "id": "10.1126_science.aax6239",
+     "score": 0.75,
+     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
+     "year": 2020
+    },
+    {
+     "id": "10.1038_nature07663",
+     "score": 0.75,
+     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
+     "year": 2009
+    }
+   ],
+   "lineage": [
+    "Nelson Spruston"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Review perspective arguing dendrites are essential computational units",
+     "quote": "dendrites with their powerful computational properties, prevents conceptual progress",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Argument that point neuron model misses true computational nature of neurons",
+     "quote": "standard description of neurons is not merely too simplistic, but also misses the true nature",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Paper assumes dendritic properties have functional and behavioural relevance",
+     "quote": "something fundamental about understanding the components of the brain",
+     "confidence": 0.62,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Review argues dendritic nonlinearity matters broadly for computation, not only plasticity",
+     "quote": "dendrites with their powerful computational properties, prevents conceptual progress",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dendritic integration of excitatory synaptic input",
+   "year": 2000,
+   "doi": "10.1038/35044552",
+   "authors": [
+    "Jeffrey C. Magee"
+   ],
+   "venue": "Nature reviews. Neuroscience",
+   "abstract": "A fundamental function of nerve cells is the transformation of incoming synaptic information into specific patterns of action potential output. An important component of this transformation is synaptic integration — the combination of voltage deflections produced by a myriad of synaptic inputs into a singular change in membrane potential. There are three basic elements involved in integration: the amplitude of the unitary postsynaptic potential, the manner in which non-simultaneous unitary events add in time (temporal summation), and the addition of unitary events occurring simultaneously in separate regions of the dendritic arbor (spatial summation). This review discusses how passive and active dendritic properties, and the functional characteristics of the synapse, shape these three elements of synaptic integration.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_35044552",
+   "cited_by": 751,
+   "first_author": "Jeffrey C. Magee",
+   "last_author": "Jeffrey C. Magee",
+   "tldr": "This review discusses how passive and active dendritic properties, and the functional characteristics of the synapse, shape these three elements of synaptic integration.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [
+    "passive integration"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.99,
+    "prep": 0.95,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "Review synthesising existing work; no new recordings reported.",
+    "prep": "No preparation described; review article with no new experiments."
+   },
+   "significance": "Reviewed how passive and active dendritic properties shape temporal and spatial synaptic summation, establishing a framework for dendritic integration as a core neural computation.",
+   "keywords": [
+    "dendritic integration",
+    "synaptic summation",
+    "postsynaptic potential",
+    "active dendrites",
+    "passive properties",
+    "synaptic physiology"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Grienberger",
+   "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 1.0,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1152_jn.2001.86.1.528",
+     "score": 1.0,
+     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
+     "year": 2001
+    },
+    {
+     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
+     "score": 1.0,
+     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
+     "year": 1998
+    },
+    {
+     "id": "10.1038_9158",
+     "score": 1.0,
+     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Mark T. Harnett",
+    "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Sonia Gasparini",
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "when dendritic impedance and active properties allow local voltage compartmentalization",
+     "quote": "passive and active dendritic properties shape these three elements of synaptic integration",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "active dendritic properties enable supralinear spatial summation under some conditions",
+     "quote": "active dendritic properties shape... spatial summation",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3a",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "review takes branch-level compartmentalization as background context",
+     "quote": "unitary events occurring simultaneously in separate regions of the dendritic arbor",
+     "confidence": 0.55,
+     "source": "model",
+     "needs_review": true
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Illuminating dendritic function with computational models",
+   "year": 2020,
+   "doi": "10.1038/s41583-020-0301-7",
+   "authors": [
+    "Panayiota Poirazi",
+    "Athanasia Papoutsi"
+   ],
+   "venue": "Nature reviews. Neuroscience",
+   "abstract": "Dendrites have always fascinated researchers: from the artistic drawings by Ramon y Cajal to the beautiful recordings of today, neuroscientists have been striving to unravel the mysteries of these structures. Theoretical work in the 1960s predicted important dendritic effects on neuronal processing, establishing computational modelling as a powerful technique for their investigation. Since then, modelling of dendrites has been instrumental in driving neuroscience research in a targeted manner, providing experimentally testable predictions that range from the subcellular level to the systems level, and their relevance extends to fields beyond neuroscience, such as machine learning and artificial intelligence. Validation of modelling predictions often requires — and drives — new technological advances, thus closing the loop with theory-driven experimentation that moves the field forward. This Review features the most important, to our understanding, contributions of modelling of dendritic computations, including those pending experimental verification, and highlights studies of successful interactions between the modelling and experimental neuroscience communities.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41583-020-0301-7",
+   "cited_by": 312,
+   "first_author": "Panayiota Poirazi",
+   "last_author": "Athanasia Papoutsi",
+   "tldr": "The most important, to the authors' understanding, contributions of modelling of dendritic computations, including those pending experimental verification, are featured, and studies of successful interactions between the modelling and experimental neuroscience communities are highlighted.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "computational / modeling",
+    "modality": "review"
+   },
+   "phenomena": [
+    "NMDA spike",
+    "Ca spike",
+    "Na spike",
+    "bAP",
+    "plateau potential",
+    "passive integration",
+    "branch-specific computation"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.98,
+    "article_type": 0.98,
+    "prep": 0.95,
+    "modality": 0.97
+   },
+   "evidence": {
+    "modality": "Review synthesises existing modelling and experimental work; no new data",
+    "prep": "Focuses on computational modelling contributions; no new recordings reported"
+   },
+   "significance": "Surveyed how computational models of dendrites have driven experimental neuroscience, establishing modelling as indispensable for generating and validating mechanistic predictions across scales.",
+   "keywords": [
+    "dendritic computation",
+    "compartmental modelling",
+    "review",
+    "dendritic nonlinearities",
+    "theory-experiment loop",
+    "machine learning"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 94,
+   "lab_cluster_name": "Papoutsi (single)",
+   "similar": [
+    {
+     "id": "10.1016_j.celrep.2026.117793",
+     "score": 0.446,
+     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
+     "year": 2026
+    },
+    {
+     "id": "10.1101_2025.05.30.657022",
+     "score": 0.446,
+     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
+     "year": 2025
+    },
+    {
+     "id": "10.1016_j.celrep.2022.111962",
+     "score": 0.203,
+     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
+     "year": 2023
+    },
+    {
+     "id": "10.1126_science.aax6239",
+     "score": 0.116,
+     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
+     "year": 2020
+    }
+   ],
+   "lineage": [
+    "Panayiota Poirazi"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "as established by computational modeling predictions validated experimentally",
+     "quote": "modelling of dendrites has been instrumental in driving neuroscience research",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "based on modeling contributions reviewed, including multi-layer network analogies",
+     "quote": "contributions of modelling of dendritic computations, including those pending experimental verification",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "review takes supralinear dendritic integration as established background",
+     "quote": "modelling of dendrites has been instrumental in driving neuroscience research",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C5.2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "review discusses dendrite-based credit assignment as open modeling question",
+     "quote": "experimentally testable predictions that range from the subcellular level to the systems level",
+     "confidence": 0.55,
+     "source": "model",
+     "needs_review": true
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "The decade of the dendritic NMDA spike",
+   "year": 2010,
+   "doi": "10.1002/jnr.22444",
+   "authors": [
+    "Srdjan D. Antic",
+    "Wen‐Liang Zhou",
+    "Anna R. Moore",
+    "Shaina M. Short",
+    "Katerina D. Ikonomu"
+   ],
+   "venue": "Journal of Neuroscience Research",
+   "abstract": "In the field of cortical cellular physiology, much effort has been invested in understanding thick apical dendrites of pyramidal neurons and the regenerative sodium and calcium spikes that take place in the apical trunk. Here we focus on thin dendrites of pyramidal cells (basal, oblique, and tuft dendrites), and we discuss one relatively novel form of an electrical signal (\"NMDA spike\") that is specific for these branches. Basal, oblique, and apical tuft dendrites receive a high density of glutamatergic synaptic contacts. Synchronous activation of 10-50 neighboring glutamatergic synapses triggers a local dendritic regenerative potential, NMDA spike/plateau, which is characterized by significant local amplitude (40-50 mV) and an extraordinary duration (up to several hundred milliseconds). The NMDA plateau potential, when it is initiated in an apical tuft dendrite, is able to maintain a good portion of that tuft in a sustained depolarized state. However, if NMDA-dominated plateau potentials originate in proximal segments of basal dendrites, they regularly bring the neuronal cell body into a sustained depolarized state, which resembles a cortical Up state. At each dendritic initiation site (basal, oblique, and tuft) an NMDA spike creates favorable conditions for causal interactions of active synaptic inputs, including the spatial or temporal binding of information, as well as processes of short-term and long-term synaptic modifications (e.g., long-term potentiation or long-term depression). Because of their strong amplitudes and durations, local dendritic NMDA spikes make up the cellular substrate for multisite independent subunit computations that enrich the computational power and repertoire of cortical pyramidal cells. We propose that NMDA spikes are likely to play significant roles in cortical information processing in awake animals (spatiotemporal binding, working memory) and during slow-wave sleep (neuronal Up states, consolidation of memories).",
+   "zotero_tags": [],
+   "zotero_extra": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/jnr.22444",
+   "id": "10.1002_jnr.22444",
+   "cited_by": 243,
+   "first_author": "Srdjan D. Antic",
+   "last_author": "Katerina D. Ikonomu",
+   "tldr": "It is proposed that NMDA spikes are likely to play significant roles in cortical information processing in awake animals (spatiotemporal binding, working memory) and during slow‐wave sleep (neuronal Up states, consolidation of memories).",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [
+    "NMDA spike",
+    "Ca spike",
+    "Na spike",
+    "plateau potential",
+    "branch-specific computation"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.92,
+    "prep": 0.85,
+    "modality": 0.9
+   },
+   "evidence": {
+    "modality": "Review synthesising existing literature; no new recordings reported",
+    "prep": "No specific preparation described; review of prior work"
+   },
+   "significance": "Synthesised a decade of evidence that thin-dendrite NMDA spikes act as independent computational subunits, reframing pyramidal neurons as multi-layered integrators with implications for cortical memory and Up states.",
+   "keywords": [
+    "NMDA spike",
+    "thin dendrites",
+    "pyramidal neuron",
+    "plateau potential",
+    "dendritic computation",
+    "cortical Up states"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 18,
+   "lab_cluster_name": "Antic + Ikonomu",
+   "similar": [
+    {
+     "id": "10.1152_jn.00800.2016",
+     "score": 0.614,
+     "title": "The stochastic nature of action potential backpropagation in apical tuft dendrites",
+     "year": 2017
+    },
+    {
+     "id": "10.1152_jn.00734.2019",
+     "score": 0.427,
+     "title": "Local glutamate-mediated dendritic plateau potentials change the state of the cortical pyramidal neuron",
+     "year": 2020
+    }
+   ],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "thin dendrites of pyramidal cells receiving clustered glutamatergic input",
+     "quote": "NMDA spike creates favorable conditions for multisite independent subunit computations",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3a",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "NMDA spikes in thin basal, oblique, and tuft dendrites of pyramidal neurons",
+     "quote": "local dendritic regenerative potential, NMDA spike/plateau, which is characterized by significant local amplitude",
+     "confidence": 0.88,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "synchronous activation of 10-50 neighboring glutamatergic synapses in thin dendrites",
+     "quote": "Synchronous activation of 10-50 neighboring glutamatergic synapses triggers a local dendritic regenerative potential",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "NMDA spikes in thin dendrites enabling independent subunit computations in pyramidal cells",
+     "quote": "local dendritic NMDA spikes make up the cellular substrate for multisite independent subunit computations",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "NMDA spikes serve both plasticity and integration functions in thin dendrites",
+     "quote": "causal interactions of active synaptic inputs...short-term and long-term synaptic modifications",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
+   "year": 2025,
+   "doi": "10.1523/JNEUROSCI.1332-25.2025",
+   "authors": [
+    "Antoine D. Madar",
+    "Aaron D. Milstein",
+    "Thomas J. O’Dell",
+    "Anant Jain",
+    "Claudia Clopath",
+    "Mark Sheffield"
+   ],
+   "venue": "Journal of Neuroscience",
+   "abstract": "Hebbian synaptic plasticity is currently the main framework to relate neuronal activity, network structure, and learning and memory. However, recent experimental and computational modeling studies have revealed a new form of synaptic plasticity termed behavioral timescale synaptic plasticity (BTSP). It is triggered by dendritic plateau potentials associated with somatic burst firing, causes large changes in synaptic strength in a single shot, and operates on the timescale of seconds. Here we review the recent advances in our understanding of the circuit, cellular, and molecular mechanisms of BTSP, its prevalence in the brain, its role in shaping neuronal representations, and the emerging ideas regarding its contribution to different forms of learning.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1523_JNEUROSCI.1332-25.2025",
+   "cited_by": 3,
+   "first_author": "Antoine D. Madar",
+   "last_author": "Mark Sheffield",
+   "tldr": "Recent advances in the understanding of the circuit, cellular, and molecular mechanisms of BTSP are reviewed, its prevalence in the brain, its role in shaping neuronal representations, and the emerging ideas regarding its contribution to different forms of learning are reviewed.",
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [
+    "plateau potential"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.72,
+    "article_type": 0.98,
+    "prep": 0.95,
+    "modality": 0.98
+   },
+   "evidence": {
+    "modality": "Review paper; no new measurements reported.",
+    "prep": "No preparation described; review synthesises existing studies."
+   },
+   "significance": "Reviewed behavioral timescale synaptic plasticity mechanisms and prevalence, establishing BTSP as a distinct plasticity framework that challenges classical Hebbian accounts of learning and memory.",
+   "keywords": [
+    "BTSP",
+    "plateau potential",
+    "synaptic plasticity",
+    "hippocampus",
+    "learning and memory",
+    "dendritic burst"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 20,
+   "lab_cluster_name": "Sheffield",
+   "similar": [
+    {
+     "id": "10.1038_s41593-025-01894-6",
+     "score": 0.835,
+     "title": "Synaptic plasticity rules driving representational shifting in the hippocampus",
+     "year": 2025
+    },
+    {
+     "id": "10.1038_s41467-026-72275-1",
+     "score": 0.75,
+     "title": "Distinct CA3 inputs differentially shape the learning-dependent evolution of right CA1 spatial maps",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_nature13871",
+     "score": 0.449,
+     "title": "Calcium transient prevalence across the dendritic arbour predicts place field properties",
+     "year": 2014
+    },
+    {
+     "id": "10.1016_j.neuron.2017.09.029",
+     "score": 0.425,
+     "title": "Increased Prevalence of Calcium Transients across the Dendritic Arbor during Place Field Formation",
+     "year": 2017
+    }
+   ],
+   "lineage": [
+    "Mark Sheffield"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 place field formation driven by dendritic plateau potentials",
+     "quote": "its role in shaping neuronal representations, and the emerging ideas",
+     "confidence": 0.9,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Review acknowledges BTSP prevalence but leaves open other mechanisms",
+     "quote": "its prevalence in the brain, its role in shaping neuronal representations",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Dendritic plateau potentials linked to plasticity rather than integration per se",
+     "quote": "triggered by dendritic plateau potentials associated with somatic burst firing",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Classical synaptic weight stabilisation taken as the contrasting framework",
+     "quote": "Hebbian synaptic plasticity is currently the main framework",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "BTSP produces large single-shot synaptic changes as an alternative memory substrate",
+     "quote": "causes large changes in synaptic strength in a single shot",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "BTSP contribution to learning reviewed, implicating dendritic events in behaviour",
+     "quote": "its contribution to different forms of learning",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+   "year": 2026,
+   "doi": "10.1038/s41593-026-02214-2",
+   "authors": [
+    "Jeffrey C. Magee"
+   ],
+   "venue": "Nature Neuroscience",
+   "abstract": "Understanding how brains learn and remember remains among the most important challenges in science. Recent studies in the hippocampus implicate a new form of synaptic plasticity, named behavioral timescale synaptic plasticity (BTSP), in the generation of experience-based learning and memory. BTSP is a strong, bidirectional type of plasticity that affects synaptic weights over many seconds of time. It is induced by single dendritic plateau potentials, as opposed to many action potentials, and is thus capable of producing new place cells in one trial. Plateau potential initiation is controlled, at least in part, by local feedback inhibition and an instructive input from a higher-order brain region that potentially links the plasticity to current experience. The new credit assignment procedure in BTSP provides a nonstandard mechanism for memory storage and retrieval that could mitigate the need for widespread synapse stabilization. In addition, it may allow hippocampal networks both to form memories of specific behavioral episodes and to generalize on the basis of past episodes. Finally, recent BTSP investigations could provide a basis for future explorations into how brains learn and remember, ranging from the systems and cognitive levels down to the basic biochemical building blocks of learning and memory.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41593-026-02214-2",
+   "cited_by": 5,
+   "first_author": "Jeffrey C. Magee",
+   "last_author": "Jeffrey C. Magee",
+   "tldr": "The new credit assignment procedure in BTSP provides a nonstandard mechanism for memory storage and retrieval that could mitigate the need for widespread synapse stabilization and may allow hippocampal networks both to form memories of specific behavioral episodes and to generalize on the basis of past episodes.",
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [
+    "plateau potential"
+   ],
+   "method_flags": [],
+   "confidence": {
+    "scope": 0.88,
+    "article_type": 0.95,
+    "prep": 0.95,
+    "modality": 0.95
+   },
+   "evidence": {
+    "modality": "Review synthesises existing studies; no new measurements reported.",
+    "prep": "No experimental preparation described; review article only."
+   },
+   "significance": "BTSP was synthesised as a plateau-potential-driven, one-trial plasticity mechanism, establishing a new framework for how hippocampal circuits form and generalise episodic memories.",
+   "keywords": [
+    "BTSP",
+    "plateau potential",
+    "hippocampus",
+    "place cells",
+    "synaptic plasticity",
+    "credit assignment"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Grienberger",
+   "similar": [
+    {
+     "id": "10.1038_35044552",
+     "score": 1.0,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
+    {
+     "id": "10.1152_jn.2001.86.1.528",
+     "score": 1.0,
+     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
+     "year": 2001
+    },
+    {
+     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
+     "score": 1.0,
+     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
+     "year": 1998
+    },
+    {
+     "id": "10.1038_9158",
+     "score": 1.0,
+     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Mark T. Harnett",
+    "Aaron D. Milstein",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Sonia Gasparini",
+    "Christine Grienberger",
+    "Jeffrey C. Magee"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 place cells in rodents, single-trial learning via plateau potentials",
+     "quote": "BTSP in the generation of experience-based learning and memory",
+     "confidence": 0.95,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Review acknowledges BTSP is main but does not claim it is the only mechanism",
+     "quote": "implicate a new form of synaptic plasticity...in the generation of...memory",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.3",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Asymmetric rule in CA1 taken as established background",
+     "quote": "BTSP is a strong, bidirectional type of plasticity",
+     "confidence": 0.6,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.4",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "Plateau potentials in CA1 induced by single dendritic plateau events requiring coincident input",
+     "quote": "induced by single dendritic plateau potentials, as opposed to many action potentials",
+     "confidence": 0.82,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "Memory storage via BTSP credit assignment rather than stabilised weights",
+     "quote": "could mitigate the need for widespread synapse stabilization",
+     "confidence": 0.88,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.1",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "condition": "BTSP framework proposes alternative to stabilised synaptic weight storage",
+     "quote": "could mitigate the need for widespread synapse stabilization",
+     "confidence": 0.78,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C5.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Instructive input from higher-order region links plasticity to experience, consistent with target not error",
+     "quote": "instructive input from a higher-order brain region that potentially links the plasticity to current experience",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Dendritic plateau potentials assumed to causally shape place field formation and behaviour",
+     "quote": "plateau potential initiation is controlled...by local feedback inhibition and an instructive input",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3c",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Plateau potentials assumed to be compartmentalised dendritic events driving BTSP",
+     "quote": "induced by single dendritic plateau potentials",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
+   "year": 2026,
+   "doi": "10.1146/annurev-neuro-090325-115846",
+   "authors": [
+    "Spyridon Chavlis",
+    "Panayiota Poirazi"
+   ],
+   "venue": "Annual Review of Neuroscience",
+   "abstract": "The neuron is no longer viewed as a simple point-like integrator but as a sophisticated computational device whose power resides in its dendritic arbor. This review charts the paradigm shift driven by this new perspective. We synthesize recent in vivo findings from behaving animals, where active dendritic processes, from local nonlinear spikes to compartment-specific plasticity, are revealed to be fundamental for intelligence, including perception, action, and memory across key brain regions. We then explore how these biological mechanisms are formalized in theoretical and circuit models that explain complex neural computations at the network level. Finally, we highlight the potential of these findings for artificial intelligence, arguing that dendritic computation offers a compelling source of inspiration for future learning algorithms and hardware systems. This review solidifies dendritic computation as a cornerstone of modern neuroscience, linking cellular mechanisms to the principles of intelligent systems.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1146_annurev-neuro-090325-115846",
+   "cited_by": 0,
+   "first_author": "Spyridon Chavlis",
+   "last_author": "Panayiota Poirazi",
+   "tldr": "This review synthesizes recent in vivo findings from behaving animals, where active dendritic processes are revealed to be fundamental for intelligence, including perception, action, and memory across key brain regions, and links cellular mechanisms to the principles of intelligent systems.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "unclear",
+    "modality": "review"
+   },
+   "phenomena": [
+    "NMDA spike",
+    "Ca spike",
+    "Na spike",
+    "plateau potential",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "behavior"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.99,
+    "prep": 0.95,
+    "modality": 0.99
+   },
+   "evidence": {
+    "modality": "Review synthesises existing findings; no new measurements reported.",
+    "prep": "No preparation described; review of published in vivo and other studies."
+   },
+   "significance": "Synthesised evidence that active dendritic computations underlie perception, memory, and action, establishing dendritic computation as a unifying principle linking cellular mechanisms to intelligent systems.",
+   "keywords": [
+    "dendritic computation",
+    "active dendrites",
+    "in vivo cognition",
+    "nonlinear integration",
+    "neural computation",
+    "artificial intelligence"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 11,
+   "lab_cluster_name": "Poirazi",
+   "similar": [
+    {
+     "id": "The_dendritic_engram",
+     "score": 0.75,
+     "title": "The dendritic engram",
+     "year": 2023
+    },
+    {
+     "id": "10.1016_j.celrep.2026.117793",
+     "score": 0.75,
+     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
+     "year": 2026
+    },
+    {
+     "id": "10.1101_2025.05.30.657022",
+     "score": 0.75,
+     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
+     "year": 2025
+    },
+    {
+     "id": "10.1016_j.celrep.2022.111962",
+     "score": 0.158,
+     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
+     "year": 2023
+    }
+   ],
+   "lineage": [
+    "Panayiota Poirazi"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Review synthesizing in vivo findings across brain regions and cell types",
+     "quote": "active dendritic processes, from local nonlinear spikes to compartment-specific plasticity",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Review argues dendrites serve both plasticity and integration across cognition",
+     "quote": "active dendritic processes...are revealed to be fundamental for intelligence, including perception, action, and memory",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Synthesizing in vivo evidence from behaving animals across brain regions",
+     "quote": "active dendritic processes...are revealed to be fundamental for intelligence",
+     "confidence": 0.63,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Theoretical and circuit models formalizing dendritic nonlinearity reviewed",
+     "quote": "these biological mechanisms are formalized in theoretical and circuit models that explain complex neural computations",
+     "confidence": 0.68,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In vivo findings from behaving animals synthesized across perception, action, memory",
+     "quote": "active dendritic processes...are revealed to be fundamental for intelligence, including perception, action, and memory",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C5.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Review cites EC3/target-signal debate as open question without new data",
+     "quote": "dendritic computation as a cornerstone of modern neuroscience",
+     "confidence": 0.62,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C5.2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Review discusses backpropagation-like credit assignment as theoretical framework without testing it",
+     "quote": "these biological mechanisms are formalized in theoretical and circuit models",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
   }
  ],
  "archive": [

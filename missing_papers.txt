@@ -1,6 +1,5 @@
 	ariav_2003
 	bicknell_hausser_2021
-10.1146/annurev-neuro-090325-115846	chavlis_poirazi_2026
 	cichon_gan_2015
 10.1523/JNEUROSCI.1132-22.2022	fischer_2022
 10.7554/eLife.49145	francioni_2019
@@ -13,7 +12,6 @@
 	jia_2014
 	larkum_1999_pnas
 	longordo_2013
-10.1038/s41593-026-02214-2	magee_2026
 	maristany_2025
 	marr_1971
 	payeur_2021
@@ -22,7 +20,6 @@
 	qian_2025
 	schiller_1997
 	sheffield_dombeck_2015
-10.1038/nn.4157	stuart_spruston_2015
 	suzuki_larkum_2020
 	takahashi_magee_2009
 	urbanczik_senn_2014

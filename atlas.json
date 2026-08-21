@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-08-20 21:30",
+  "generated": "2026-08-20 21:47",
   "n": 201,
   "taxonomy": "eaf15191ae13",
   "lang": "English",
@@ -86,40 +86,6 @@
   ],
   "lineage": [
    {
-    "person": "Christopher D. Harvey",
-    "trained_in": [
-     "Svoboda",
-     "Tank"
-    ],
-    "now_leads": [
-     "Harvey (single)"
-    ],
-    "as_first": 3,
-    "as_last": 1
-   },
-   {
-    "person": "Stephen R. Williams",
-    "trained_in": [
-     "Stuart"
-    ],
-    "now_leads": [
-     "Williams"
-    ],
-    "as_first": 1,
-    "as_last": 2
-   },
-   {
-    "person": "Jeffrey C. Magee",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Magee + Cook"
-    ],
-    "as_first": 4,
-    "as_last": 17
-   },
-   {
     "person": "Sonia Gasparini",
     "trained_in": [
      "Magee + Cook"
@@ -140,72 +106,6 @@
     ],
     "as_first": 1,
     "as_last": 3
-   },
-   {
-    "person": "Attila Losonczy",
-    "trained_in": [
-     "Magee + Cook"
-    ],
-    "now_leads": [
-     "Losonczy + Rózsa"
-    ],
-    "as_first": 2,
-    "as_last": 7
-   },
-   {
-    "person": "Tim Jarsky",
-    "trained_in": [
-     "Spruston"
-    ],
-    "now_leads": [
-     "Jarsky (single)"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Nelson Spruston",
-    "trained_in": [
-     "Larkum + Sakmann"
-    ],
-    "now_leads": [
-     "Spruston"
-    ],
-    "as_first": 1,
-    "as_last": 16
-   },
-   {
-    "person": "Mark Sheffield",
-    "trained_in": [
-     "Dombeck"
-    ],
-    "now_leads": [
-     "Sheffield"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Aaron D. Milstein",
-    "trained_in": [
-     "Magee + Cook"
-    ],
-    "now_leads": [
-     "Romani + Milstein"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Dax A. Hoffman",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Kim + Hoffman"
-    ],
-    "as_first": 1,
-    "as_last": 1
    },
    {
     "person": "Greg J. Stuart",
@@ -229,6 +129,106 @@
     ],
     "as_first": 3,
     "as_last": 2
+   },
+   {
+    "person": "Christopher D. Harvey",
+    "trained_in": [
+     "Svoboda",
+     "Tank"
+    ],
+    "now_leads": [
+     "Harvey (single)"
+    ],
+    "as_first": 3,
+    "as_last": 1
+   },
+   {
+    "person": "Jeffrey C. Magee",
+    "trained_in": [
+     "Johnston"
+    ],
+    "now_leads": [
+     "Magee + Cook"
+    ],
+    "as_first": 4,
+    "as_last": 18
+   },
+   {
+    "person": "Attila Losonczy",
+    "trained_in": [
+     "Magee + Cook"
+    ],
+    "now_leads": [
+     "Losonczy + Rózsa"
+    ],
+    "as_first": 2,
+    "as_last": 7
+   },
+   {
+    "person": "Aaron D. Milstein",
+    "trained_in": [
+     "Magee + Cook"
+    ],
+    "now_leads": [
+     "Romani + Milstein"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
+    "person": "Mark Sheffield",
+    "trained_in": [
+     "Dombeck"
+    ],
+    "now_leads": [
+     "Sheffield"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
+    "person": "Stephen R. Williams",
+    "trained_in": [
+     "Stuart"
+    ],
+    "now_leads": [
+     "Williams"
+    ],
+    "as_first": 1,
+    "as_last": 2
+   },
+   {
+    "person": "Nelson Spruston",
+    "trained_in": [
+     "Larkum + Sakmann"
+    ],
+    "now_leads": [
+     "Spruston"
+    ],
+    "as_first": 1,
+    "as_last": 16
+   },
+   {
+    "person": "Tim Jarsky",
+    "trained_in": [
+     "Spruston"
+    ],
+    "now_leads": [
+     "Jarsky (single)"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
+    "person": "Dax A. Hoffman",
+    "trained_in": [
+     "Johnston"
+    ],
+    "now_leads": [
+     "Kim + Hoffman"
+    ],
+    "as_first": 1,
+    "as_last": 1
    }
   ],
   "weights": {
@@ -459,7 +459,7 @@
     "calcium": 4
    },
    "preps": {
-    "acute slice": 17,
+    "acute slice": 18,
     "awake in vivo": 4,
     "anesthetized in vivo": 2,
     "unclear": 2
@@ -534,14 +534,14 @@
     "other": 3
    },
    "preps": {
-    "acute slice": 19,
+    "acute slice": 20,
     "unclear": 3,
     "awake in vivo": 1,
     "dissociated culture": 1
    },
    "years": [
     1997,
-    2023
+    2025
    ],
    "inherits": {
     "C7.4": 2,
@@ -606,8 +606,8 @@
     "calcium": 2
    },
    "preps": {
+    "acute slice": 5,
     "awake in vivo": 2,
-    "acute slice": 4,
     "unclear": 1,
     "organotypic slice": 1
    },
@@ -671,12 +671,12 @@
     "calcium": 2
    },
    "preps": {
-    "acute slice": 1,
+    "acute slice": 2,
     "organotypic slice": 1
    },
    "years": [
     2008,
-    2024
+    2025
    ],
    "inherits": {
     "C7.4": 2,
@@ -1177,7 +1177,7 @@
     "model": 4
    },
    "preps": {
-    "acute slice": 13,
+    "acute slice": 14,
     "awake in vivo": 8,
     "dissociated culture": 2,
     "computational / modeling": 4,
@@ -1856,16 +1856,16 @@
     "supports": 5,
     "contradicts": 8,
     "assumes": 10,
-    "qualifies": 11
+    "qualifies": 10
    },
    "modalities": {
     "theory": 2,
     "patch": 4,
-    "calcium": 7,
+    "calcium": 6,
     "other": 3
    },
    "preps": {
-    "awake in vivo": 12,
+    "awake in vivo": 11,
     "acute slice": 2
    },
    "years": [
@@ -1873,7 +1873,7 @@
     2026
    ],
    "inherits": {
-    "C7.1": 7,
+    "C7.1": 6,
     "C7.4": 3
    },
    "direct_sources": 1
@@ -1912,13 +1912,13 @@
     }
    ],
    "n": {
-    "supports": 15,
+    "supports": 14,
     "qualifies": 4
    },
    "modalities": {
     "patch": 12,
     "review": 1,
-    "calcium": 4,
+    "calcium": 3,
     "model": 2
    },
    "preps": {
@@ -1932,10 +1932,10 @@
     2025
    ],
    "inherits": {
-    "C7.1": 4,
+    "C7.1": 3,
     "C7.4": 1
    },
-   "direct_sources": 4
+   "direct_sources": 3
   },
   {
    "id": "C7.1",
@@ -1987,7 +1987,7 @@
    "n": {
     "qualifies": 15,
     "contradicts": 3,
-    "assumes": 35,
+    "assumes": 36,
     "supports": 5
    },
    "modalities": {
@@ -2046,7 +2046,7 @@
    },
    "years": [
     1995,
-    2023
+    2025
    ],
    "inherits": {},
    "direct_sources": 0
@@ -2140,10 +2140,11 @@
     "review": 1
    },
    "preps": {
+    "acute slice": 1,
     "awake in vivo": 1
    },
    "years": [
-    2026,
+    2025,
     2026
    ],
    "inherits": {},
@@ -2202,7 +2203,7 @@
   {
    "claim": "C1.1",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "contradicts",
    "strength": "direct",
    "region": "CA1",
@@ -2264,7 +2265,7 @@
   {
    "claim": "C1.2",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "supports",
    "strength": "direct",
    "region": "CA1",
@@ -2278,7 +2279,7 @@
   {
    "claim": "C1.3",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "supports",
    "strength": "direct",
    "region": "CA1",
@@ -2328,7 +2329,7 @@
   {
    "claim": "C1.4",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "supports",
    "strength": "direct",
    "region": "CA1",
@@ -2378,7 +2379,7 @@
   {
    "claim": "C1.5",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "supports",
    "strength": "direct",
    "region": "CA1",
@@ -2488,7 +2489,7 @@
   {
    "claim": "C2.1",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "contradicts",
    "strength": "direct",
    "region": "CA1",
@@ -2658,7 +2659,7 @@
   {
    "claim": "C2.3b",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "contradicts",
    "strength": "direct",
    "region": "CA1",
@@ -2708,7 +2709,7 @@
   {
    "claim": "C2.3c",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "contradicts",
    "strength": "direct",
    "region": "CA1",
@@ -2722,7 +2723,7 @@
   {
    "claim": "C3.1",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "supports",
    "strength": "direct",
    "region": "CA1",
@@ -2922,7 +2923,7 @@
   {
    "claim": "C3.3",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "contradicts",
    "strength": "indirect",
    "region": "CA1",
@@ -3266,7 +3267,7 @@
   {
    "claim": "C6.1",
    "key": "vaidya_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41593-025-01986-3",
    "stance": "contradicts",
    "strength": "direct",
    "region": "CA1",
@@ -3278,7 +3279,7 @@
   {
    "claim": "C6.2",
    "key": "vaidya_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41593-025-01986-3",
    "stance": "supports",
    "strength": "direct",
    "region": "CA1",
@@ -3326,7 +3327,7 @@
   {
    "claim": "C7.1",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "contradicts",
    "strength": "indirect",
    "region": "CA1",
@@ -3364,7 +3365,7 @@
   {
    "claim": "C7.2",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "contradicts",
    "strength": "direct",
    "region": "CA1",
@@ -3414,7 +3415,7 @@
   {
    "claim": "C7.4",
    "key": "park_2025",
-   "paper_id": null,
+   "paper_id": "10.1038_s41467-025-55819-9",
    "stance": "qualifies",
    "strength": "direct",
    "region": "CA1",
@@ -4504,62 +4505,6 @@
    "flags": [],
    "condition": "upstream conjunctive code treated as input signal to CA1, not error signal",
    "quote": "gradual learning is required for the formation of a conjunctive population code, upstream of CA1",
-   "source": "model",
-   "needs_review": false
-  },
-  {
-   "claim": "C4.1",
-   "key": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "paper_id": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "stance": "supports",
-   "strength": "direct",
-   "region": null,
-   "modality": "calcium",
-   "flags": [],
-   "condition": "awake in vivo CA1 calcium imaging during reward learning over 7 days",
-   "quote": "initial formation of sustained PCs was associated with a higher rate and efficacy of BTSP",
-   "source": "model",
-   "needs_review": false
-  },
-  {
-   "claim": "C4.2",
-   "key": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "paper_id": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "stance": "qualifies",
-   "strength": "indirect",
-   "region": null,
-   "modality": "calcium",
-   "flags": [],
-   "condition": "BTSP stabilizes a subset of place cells; transient PCs without BTSP hallmarks also exist",
-   "quote": "unstable transient PCs were progressively replaced by sustained PCs",
-   "source": "model",
-   "needs_review": false
-  },
-  {
-   "claim": "C6.2",
-   "key": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "paper_id": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "stance": "supports",
-   "strength": "direct",
-   "region": null,
-   "modality": "calcium",
-   "flags": [],
-   "condition": "hippocampal CA1 during reward learning; sustained PCs show elevated activity and immediate retrieval",
-   "quote": "BTSP stabilizes particularly informative PCs, incorporating them into an expanding and readily retrievable representation",
-   "source": "model",
-   "needs_review": false
-  },
-  {
-   "claim": "C6.1",
-   "key": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "paper_id": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "stance": "qualifies",
-   "strength": "indirect",
-   "region": null,
-   "modality": "calcium",
-   "flags": [],
-   "condition": "memory persists via stabilised neuronal representations shaped by BTSP, not purely fixed weights",
-   "quote": "displays hallmarks of a long-lasting memory",
    "source": "model",
    "needs_review": false
   },
@@ -12980,6 +12925,48 @@
    "quote": "using recordings from synaptically coupled layer 5 pyramidal neurons",
    "source": "model",
    "needs_review": false
+  },
+  {
+   "claim": "C4.1",
+   "key": "10.1038_s41593-025-01986-3",
+   "paper_id": "10.1038_s41593-025-01986-3",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "calcium",
+   "flags": [],
+   "condition": "awake in vivo CA1 place cell tracking over 7 days in mice",
+   "quote": "accompanied by prominent signs of behavioral timescale synaptic plasticity (BTSP)",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C4.2",
+   "key": "10.1038_s41593-025-01986-3",
+   "paper_id": "10.1038_s41593-025-01986-3",
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": null,
+   "modality": "calcium",
+   "flags": [],
+   "condition": "BTSP accounts for most but not all place field formation events tracked",
+   "quote": "both the initial formation of PCs and their retrieval...were accompanied by prominent signs of BTSP",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C7.1",
+   "key": "10.1038_s41593-025-01986-3",
+   "paper_id": "10.1038_s41593-025-01986-3",
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": null,
+   "modality": "calcium",
+   "flags": [],
+   "condition": "calcium imaging used to track place cells and infer dendritic/synaptic events",
+   "quote": "we tracked the same population of hippocampal CA1 place cells",
+   "source": "model",
+   "needs_review": false
   }
  ],
  "papers": [
@@ -13757,6 +13744,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -13773,21 +13766,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -13900,7 +13887,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 34,
+   "lab_cluster": 33,
    "lab_cluster_name": "Jónás (single)",
    "similar": [],
    "lineage": []
@@ -14054,6 +14041,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -14070,21 +14063,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -14219,6 +14206,12 @@
      "year": 2022
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -14229,21 +14222,15 @@
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
      "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -14677,7 +14664,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 35,
+   "lab_cluster": 34,
    "lab_cluster_name": "Cossart (single)",
    "similar": [],
    "lineage": []
@@ -14795,6 +14782,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -14811,21 +14804,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -14947,7 +14934,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 36,
+   "lab_cluster": 35,
    "lab_cluster_name": "Bartos (single)",
    "similar": [],
    "lineage": []
@@ -15470,7 +15457,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 37,
+   "lab_cluster": 36,
    "lab_cluster_name": "Jarsky (single)",
    "similar": [
     {
@@ -15670,12 +15657,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -16200,164 +16187,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
-   ]
-  },
-  {
-   "title": "The formation of an expanding memory representation in the hippocampus",
-   "year": 2023,
-   "doi": "",
-   "authors": [
-    "S. P. Vaidya",
-    "R. A. Chitwood",
-    "J. C. Magee"
-   ],
-   "venue": "BioRxiv",
-   "abstract": "How episodic memories are stored within brains is poorly understood. While certain  memory-retaining neurons have been potentially identified1-3, it is unclear if they retain learned information4,5. Further, there is considerable evidence that neuronal activity is unstable and may require additional mechanisms to support robust memory6-11. To examine  these issues, we recorded the activity of a hippocampal CA1 neuronal population for 7 days as mice learned cued reward locations. These data and modelling results suggest that two place cell (PC) pools, distinguished by place field (PF) stability, are formed each day (transient: ~1.5 days; sustained: ~2 weeks)8. Notably, the proportions of these pools changed across the week as unstable transient PCs were progressively replaced by sustained PCs,  markedly enhancing the stability of the total representation. This growing stable  representation contained behaviorally relevant information and sustained PCs became active immediately at the start of each session. Finally, the initial formation of sustained PCs was associated with a higher rate and efficacy of behavioral timescale synaptic plasticity (BTSP) and these PCs showed elevated and more reliable activity. It, therefore, appears that BTSP stabilizes particularly informative PCs, incorporating them into an expanding and  readily retrievable representation that displays hallmarks of a long-lasting memory.",
-   "zotero_tags": [],
-   "zotero_extra": "",
-   "id": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "cited_by": 0,
-   "first_author": "S. P. Vaidya",
-   "last_author": "J. C. Magee",
-   "tldr": "",
-   "labels": {
-    "scope": "hippocampal coding & memory",
-    "article_type": "primary research",
-    "prep": "awake in vivo",
-    "modality": "calcium imaging"
-   },
-   "phenomena": [],
-   "confidence": {
-    "scope": 0.97,
-    "article_type": 0.92,
-    "prep": 0.92,
-    "modality": 0.82
-   },
-   "evidence": {
-    "modality": "recorded CA1 neuronal population activity over 7 days in mice",
-    "prep": "mice learned cued reward locations; awake behaving, 7-day recording"
-   },
-   "significance": "Showed BTSP selectively stabilises informative CA1 place cells into an expanding representation, reframing how hippocampal episodic memories consolidate over days.",
-   "keywords": [
-    "place cells",
-    "BTSP",
-    "memory consolidation",
-    "CA1",
-    "longitudinal imaging",
-    "representational stability"
-   ],
-   "needs_review": false,
-   "method_flags": [
-    "chronic/longitudinal",
-    "behavior"
-   ],
-   "claim_edges": [
-    {
-     "claim": "C4.1",
-     "stance": "supports",
-     "strength": "direct",
-     "condition": "awake in vivo CA1 calcium imaging during reward learning over 7 days",
-     "quote": "initial formation of sustained PCs was associated with a higher rate and efficacy of BTSP",
-     "confidence": 0.9,
-     "source": "model",
-     "needs_review": false
-    },
-    {
-     "claim": "C4.2",
-     "stance": "qualifies",
-     "strength": "indirect",
-     "condition": "BTSP stabilizes a subset of place cells; transient PCs without BTSP hallmarks also exist",
-     "quote": "unstable transient PCs were progressively replaced by sustained PCs",
-     "confidence": 0.75,
-     "source": "model",
-     "needs_review": false
-    },
-    {
-     "claim": "C6.2",
-     "stance": "supports",
-     "strength": "direct",
-     "condition": "hippocampal CA1 during reward learning; sustained PCs show elevated activity and immediate retrieval",
-     "quote": "BTSP stabilizes particularly informative PCs, incorporating them into an expanding and readily retrievable representation",
-     "confidence": 0.8,
-     "source": "model",
-     "needs_review": false
-    },
-    {
-     "claim": "C6.1",
-     "stance": "qualifies",
-     "strength": "indirect",
-     "condition": "memory persists via stabilised neuronal representations shaped by BTSP, not purely fixed weights",
-     "quote": "displays hallmarks of a long-lasting memory",
-     "confidence": 0.65,
-     "source": "model",
-     "needs_review": false
-    }
-   ],
-   "label_fp": "eaf15191ae13",
-   "claims_seen": {
-    "C1.1": "818466c1",
-    "C1.2": "1a4790b7",
-    "C1.3": "41a920c0",
-    "C1.4": "98fcbdae",
-    "C1.5": "e23f5c96",
-    "C2.1": "ce76be9a",
-    "C2.2": "0b4b9d11",
-    "C2.3a": "a02f0d8e",
-    "C2.3b": "734a51b0",
-    "C2.3c": "476b2113",
-    "C3.1": "e294843b",
-    "C3.2": "f49566c9",
-    "C3.3": "8540e1bb",
-    "C3.4": "24f6491d",
-    "C4.1": "61367806",
-    "C4.2": "5e5d7566",
-    "C4.3": "238279cd",
-    "C5.1": "12b8d1a6",
-    "C5.2": "a0e6b62b",
-    "C6.1": "5c836a34",
-    "C6.2": "b6872cc7",
-    "C7.1": "d13127a3",
-    "C7.2": "b06c803c",
-    "C7.3": "aa25d26c",
-    "C7.4": "02732abf"
-   },
-   "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
-   "similar": [
-    {
-     "id": "10.1038_nn.2428",
-     "score": 0.75,
-     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
-     "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
-    }
-   ],
-   "lineage": [
-    "Jeffrey C. Magee",
-    "Sonia Gasparini",
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -16471,7 +16302,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 38,
+   "lab_cluster": 37,
    "lab_cluster_name": "Südhof (single)",
    "similar": [],
    "lineage": []
@@ -17572,7 +17403,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 39,
+   "lab_cluster": 38,
    "lab_cluster_name": "Malinow (single)",
    "similar": [],
    "lineage": []
@@ -18155,6 +17986,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -18171,21 +18008,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -18354,19 +18185,19 @@
      "year": 1999
     },
     {
-     "id": "10.1038_nn.2428",
+     "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
-     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
-     "year": 2009
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -18806,7 +18637,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 40,
+   "lab_cluster": 39,
    "lab_cluster_name": "Gerber (single)",
    "similar": [
     {
@@ -19348,8 +19179,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -19630,8 +19461,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -20068,8 +19899,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -20234,6 +20065,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -20250,21 +20087,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -20432,8 +20263,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Mark T. Harnett"
+    "Mark T. Harnett",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -20842,12 +20673,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -20976,7 +20807,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 41,
+   "lab_cluster": 40,
    "lab_cluster_name": "Basu (single)",
    "similar": [
     {
@@ -21075,7 +20906,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 42,
+   "lab_cluster": 41,
    "lab_cluster_name": "Knierim (single)",
    "similar": [],
    "lineage": []
@@ -21167,7 +20998,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 43,
+   "lab_cluster": 42,
    "lab_cluster_name": "Schuman (single)",
    "similar": [],
    "lineage": []
@@ -21334,12 +21165,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -21963,6 +21794,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -21979,21 +21816,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -22156,25 +21987,25 @@
      "year": 2009
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1016_j.cell.2024.09.041",
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
      "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -22781,12 +22612,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -23153,12 +22984,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -23318,7 +23149,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 44,
+   "lab_cluster": 43,
    "lab_cluster_name": "Lipscombe (single)",
    "similar": [],
    "lineage": []
@@ -23449,16 +23280,9 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 28,
-   "lab_cluster_name": "Sabatini + Cohen",
-   "similar": [
-    {
-     "id": "Dendritic_excitations_govern_back-propagation_via_a_spike-ra",
-     "score": 0.352,
-     "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
-     "year": 2026
-    }
-   ],
+   "lab_cluster": 44,
+   "lab_cluster_name": "Sabatini (single)",
+   "similar": [],
    "lineage": []
   },
   {
@@ -23586,7 +23410,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 28,
    "lab_cluster_name": "Antic",
    "similar": [
     {
@@ -23736,7 +23560,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 28,
    "lab_cluster_name": "Antic",
    "similar": [
     {
@@ -23914,8 +23738,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -24796,7 +24620,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 30,
+   "lab_cluster": 29,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -24940,6 +24764,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -24956,21 +24786,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -25102,12 +24926,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -25249,8 +25073,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -25403,8 +25227,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -25860,8 +25684,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -26435,6 +26259,12 @@
      "year": 2002
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -26445,21 +26275,15 @@
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
      "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -26602,12 +26426,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -26834,84 +26658,6 @@
    "lab_cluster": 53,
    "lab_cluster_name": "Spain (single)",
    "similar": [],
-   "lineage": []
-  },
-  {
-   "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
-   "year": 2026,
-   "doi": "",
-   "authors": [
-    "Pojeong Park",
-    "David Wong-Campos",
-    "Daniel G Itkis",
-    "Byung Hun Lee",
-    "Yitong Qi",
-    "Hunter Davis",
-    "Jonathan B Grimm",
-    "Sarah E Plutkis",
-    "Luke D Lavis",
-    "Benjamin Antin",
-    "Amol Pasarkar",
-    "Liam Paninski",
-    "Adam E Cohen"
-   ],
-   "venue": "",
-   "abstract": "Dendrites on neurons support nonlinear electrical excitations, but the computational significance of these events is not well understood. We developed molecular, optical, and analytical tools to map sub-millisecond voltage dynamics throughout the dendritic trees of CA1 pyramidal neurons under diverse optogenetic and synaptic stimulus patterns, in acute brain slices. We observed history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes (dSpikes). Dendritic depolarization created a transient window for dSpike propagation, opened by A-type KV channel inactivation, and closed by slow NaV inactivation. Collisions of dSpikes with synaptic inputs triggered calcium channel and N-methyl-D-aspartate receptor (NMDAR)dependent plateau potentials, with accompanying complex spikes at the soma. This hierarchical ion channel network acts as a spike-rate accelerometer, providing an intuitive picture of how dendritic excitations shape associative plasticity rules.",
-   "zotero_tags": [],
-   "zotero_extra": "",
-   "id": "Dendritic_excitations_govern_back-propagation_via_a_spike-ra",
-   "cited_by": 0,
-   "first_author": "Pojeong Park",
-   "last_author": "Adam E Cohen",
-   "tldr": "",
-   "labels": {
-    "scope": "dendritic computation",
-    "article_type": "primary research",
-    "prep": "acute slice",
-    "modality": "voltage imaging"
-   },
-   "phenomena": [
-    "Na spike",
-    "bAP",
-    "plateau potential",
-    "Ca spike",
-    "branch-specific computation"
-   ],
-   "confidence": {
-    "scope": 0.97,
-    "article_type": 0.95,
-    "prep": 0.95,
-    "modality": 0.93
-   },
-   "evidence": {
-    "modality": "sub-millisecond voltage dynamics mapped optically throughout dendritic trees",
-    "prep": "acute brain slices stated explicitly in abstract"
-   },
-   "significance": "Dendritic Na+ spikes gate back-propagation via A-type K+ inactivation and trigger plateau potentials, establishing a spike-rate accelerometer mechanism that governs associative plasticity rules.",
-   "keywords": [
-    "dendritic spike",
-    "back-propagation",
-    "CA1 pyramidal",
-    "voltage imaging",
-    "plateau potential",
-    "KV channel inactivation"
-   ],
-   "needs_review": false,
-   "method_flags": [
-    "optogenetics",
-    "pharmacology"
-   ],
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 28,
-   "lab_cluster_name": "Sabatini + Cohen",
-   "similar": [
-    {
-     "id": "10.7554_eLife.76993",
-     "score": 0.352,
-     "title": "Dendritic branch structure compartmentalizes voltage-dependent calcium influx in cortical layer 2/3 pyramidal cells",
-     "year": 2022
-    }
-   ],
    "lineage": []
   },
   {
@@ -27593,7 +27339,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 30,
+   "lab_cluster": 29,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -28605,8 +28351,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -28827,7 +28573,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 31,
+   "lab_cluster": 30,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -28887,7 +28633,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 31,
+   "lab_cluster": 30,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -29019,8 +28765,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -29151,6 +28897,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -29167,21 +28919,15 @@
      "score": 0.75,
      "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
      "year": 2002
-    },
-    {
-     "id": "10.1523_JNEUROSCI.2520-04.2004",
-     "score": 0.75,
-     "title": "On the Initiation and Propagation of Dendritic Spikes in CA1 Pyramidal Neurons",
-     "year": 2004
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -29705,6 +29451,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -29721,21 +29473,15 @@
      "score": 0.75,
      "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
      "year": 2002
-    },
-    {
-     "id": "10.1523_JNEUROSCI.2520-04.2004",
-     "score": 0.75,
-     "title": "On the Initiation and Propagation of Dendritic Spikes in CA1 Pyramidal Neurons",
-     "year": 2004
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -29890,8 +29636,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -32095,7 +31841,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 32,
+   "lab_cluster": 31,
    "lab_cluster_name": "Sheffield",
    "similar": [
     {
@@ -33669,7 +33415,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 33,
+   "lab_cluster": 32,
    "lab_cluster_name": "Poirazi",
    "similar": [
     {
@@ -34137,8 +33883,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -34369,8 +34115,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -35188,8 +34934,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Mark T. Harnett"
+    "Mark T. Harnett",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -35343,8 +35089,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -35509,8 +35255,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -35645,6 +35391,12 @@
      "year": 2008
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1016_j.cell.2024.09.041",
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
@@ -35655,21 +35407,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -36522,8 +36268,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -36818,8 +36564,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -36974,12 +36720,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -37033,7 +36779,14 @@
    "label_fp": "eaf15191ae13",
    "lab_cluster": 83,
    "lab_cluster_name": "Peskin (single)",
-   "similar": [],
+   "similar": [
+    {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.149,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    }
+   ],
    "lineage": []
   },
   {
@@ -37871,8 +37624,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -38922,7 +38675,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 32,
+   "lab_cluster": 31,
    "lab_cluster_name": "Sheffield",
    "similar": [
     {
@@ -39077,8 +38830,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -40035,7 +39788,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 33,
+   "lab_cluster": 32,
    "lab_cluster_name": "Poirazi",
    "similar": [
     {
@@ -40575,8 +40328,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -40742,6 +40495,366 @@
     }
    ],
    "lineage": []
+  },
+  {
+   "title": "Formation of an expanding memory representation in the hippocampus",
+   "year": 2025,
+   "doi": "10.1038/s41593-025-01986-3",
+   "authors": [
+    "Sachin P Vaidya",
+    "Guanchun Li",
+    "Raymond A. Chitwood",
+    "Yiding Li",
+    "Jeffrey C. Magee"
+   ],
+   "venue": "Nature Neuroscience",
+   "abstract": "How brain networks connected by labile synapses store new information without catastrophically overwriting previous memories remains poorly understood. To examine this, we tracked the same population of hippocampal CA1 place cells (PCs) as mice learned a task for 7 days. We found evidence of memory formation as both the number of PCs maintaining a stable place field and the stability of individual PCs progressively increased across the week until most of the representation was composed of long-term stable PCs. The stable PCs disproportionately represented task-related learned information, were retrieved earlier within a behavioral session and showed a strong correlation with behavioral performance. Both the initial formation of PCs and their retrieval on subsequent days were accompanied by prominent signs of behavioral timescale synaptic plasticity (BTSP), suggesting that even stable PCs were re-formed by synaptic plasticity each session. Further experimental evidence supported by a cascade-type state model indicates that CA1 PCs increase their stability each day they are active, eventually forming a highly stable population. The results suggest that CA1 memory is implemented by an increase in the likelihood of new neuron-specific synaptic plasticity, as opposed to extensive long-term synaptic weight stabilization.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41593-025-01986-3",
+   "cited_by": 27,
+   "first_author": "Sachin P Vaidya",
+   "last_author": "Jeffrey C. Magee",
+   "tldr": "Multiday imaging of CA1 neurons during learning reveals that the representation stabilizes as the number of readily retrievable, information-rich and stable place cells increases and suggests novel mechanisms of hippocampal memory formation.",
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [],
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal",
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.95,
+    "prep": 0.92,
+    "modality": 0.88
+   },
+   "evidence": {
+    "modality": "tracked same CA1 place cell population over 7 days",
+    "prep": "mice learned a task across 7 days of awake behavior"
+   },
+   "significance": "Showed CA1 place cells progressively stabilize via repeated BTSP each session, reframing hippocampal memory as increasing plasticity likelihood rather than long-term synaptic weight preservation.",
+   "keywords": [
+    "place cells",
+    "BTSP",
+    "memory consolidation",
+    "CA1",
+    "longitudinal imaging",
+    "synaptic plasticity"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Cook",
+   "similar": [
+    {
+     "id": "10.1038_nn.2428",
+     "score": 0.75,
+     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
+     "year": 2009
+    },
+    {
+     "id": "10.1016_j.cell.2024.09.041",
+     "score": 0.75,
+     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
+     "year": 2024
+    },
+    {
+     "id": "10.1038_nature11554",
+     "score": 0.75,
+     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
+     "year": 2012
+    },
+    {
+     "id": "10.1113_jphysiol.2002.020503",
+     "score": 0.75,
+     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
+     "year": 2002
+    }
+   ],
+   "lineage": [
+    "Sonia Gasparini",
+    "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
+    "Aaron D. Milstein"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "awake in vivo CA1 place cell tracking over 7 days in mice",
+     "quote": "accompanied by prominent signs of behavioral timescale synaptic plasticity (BTSP)",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "BTSP accounts for most but not all place field formation events tracked",
+     "quote": "both the initial formation of PCs and their retrieval...were accompanied by prominent signs of BTSP",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.1",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "CA1 memory over multi-day learning in awake mice",
+     "quote": "as opposed to extensive long-term synaptic weight stabilization",
+     "confidence": 0.9,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 place cells stabilising over days via repeated BTSP re-formation",
+     "quote": "increase in the likelihood of new neuron-specific synaptic plasticity",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "calcium imaging used to track place cells and infer dendritic/synaptic events",
+     "quote": "we tracked the same population of hippocampal CA1 place cells",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
+   "year": 2025,
+   "doi": "10.1038/s41467-025-55819-9",
+   "authors": [
+    "Pojeong Park",
+    "J. David Wong-Campos",
+    "Daniel G. Itkis",
+    "Byung Hun Lee",
+    "Yitong Qi",
+    "Hunter C. Davis",
+    "Benjamin Antin",
+    "Amol Pasarkar",
+    "Jonathan B. Grimm",
+    "Sarah E. Plutkis",
+    "Katie L. Holland",
+    "Liam Paninski",
+    "Luke D. Lavis",
+    "Adam E. Cohen"
+   ],
+   "venue": "Nature Communications",
+   "abstract": "Dendrites on neurons support electrical excitations, but the computational significance of these events is not well understood. We developed molecular, optical, and computational tools for all-optical electrophysiology in dendrites. We mapped sub-millisecond voltage dynamics throughout the dendritic trees of CA1 pyramidal neurons under diverse optogenetic and synaptic stimulus patterns, in acute brain slices. Our data show history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes (dSpikes). Dendritic depolarization created a transient window for dSpike propagation, opened by A-type KV channel inactivation, and closed by slow NaV inactivation. Collisions of dSpikes with synaptic inputs triggered calcium channel and N-methyl-D-aspartate receptor (NMDAR)-dependent dendritic plateau potentials and accompanying complex spikes at the soma. This hierarchical ion channel network acts as a spike-rate accelerometer, providing an intuitive picture connecting dendritic biophysics to associative plasticity rules. Neural mechanisms mediating information flow and processing in dendrites are not fully understood. Here the authors developed techniques to map bioelectrical excitations in the dendrites of neurons in acute slices of mouse brain tissue. They developed a holistic picture of the roles of dendritic excitations in spike back-propagation.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41467-025-55819-9",
+   "cited_by": 27,
+   "first_author": "Pojeong Park",
+   "last_author": "Adam E. Cohen",
+   "tldr": "Techniques to map bioelectrical excitations in the dendrites of neurons in acute slices of mouse brain tissue are developed and a holistic picture of the roles of dendritic excitations in spike back-propagation is developed.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "voltage imaging"
+   },
+   "phenomena": [
+    "Na spike",
+    "bAP",
+    "plateau potential",
+    "Ca spike",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "optogenetics",
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.95,
+    "prep": 0.98,
+    "modality": 0.93
+   },
+   "evidence": {
+    "modality": "all-optical electrophysiology mapping sub-millisecond voltage dynamics in dendrites",
+    "prep": "acute brain slices of CA1 pyramidal neurons stated explicitly"
+   },
+   "significance": "Dendritic Na+ spikes and ion-channel gating form a spike-rate accelerometer in CA1, linking dendritic biophysics to associative plasticity rules via plateau potentials.",
+   "keywords": [
+    "all-optical electrophysiology",
+    "dendritic Na spike",
+    "back-propagation",
+    "plateau potential",
+    "KV channel inactivation",
+    "CA1 pyramidal neuron"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 92,
+   "lab_cluster_name": "Cohen (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Locally generated Na+ dSpikes precede somatic drive; result is in acute slice CA1",
+     "quote": "history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 pyramidal neurons in acute slice; prior dendritic depolarisation sets dSpike propagation window",
+     "quote": "Dendritic depolarization created a transient window for dSpike propagation",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.3",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 pyramidal neurons in acute slice at physiological temperature",
+     "quote": "opened by A-type KV channel inactivation, and closed by slow NaV inactivation",
+     "confidence": 0.97,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.4",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 pyramidal neurons in acute slice; dSpike collision with glutamatergic input required for plateau",
+     "quote": "Collisions of dSpikes with synaptic inputs triggered calcium channel and NMDAR-dependent dendritic plateau potentials",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.5",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "Na-mediated dSpikes in CA1 apical dendrites; dSpike footprint was cell-wide not branch-restricted",
+     "quote": "history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes",
+     "confidence": 0.78,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "Na-mediated dSpikes in CA1; TTX-sensitive spikes propagated across whole apical tree",
+     "quote": "locally generated Na+ spikes (dSpikes)",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Plateau potentials require dSpike-input collision; framework links biophysics to plasticity rules",
+     "quote": "providing an intuitive picture connecting dendritic biophysics to associative plasticity rules",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "Measurements taken at physiological temperature; room-temperature results differ significantly",
+     "quote": "We mapped sub-millisecond voltage dynamics throughout the dendritic trees",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.4",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "CheRiff optogenetic current (~130 pA) is far below currents needed to trigger local Na spikes in patch studies",
+     "quote": "diverse optogenetic and synaptic stimulus patterns, in acute brain slices",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
   }
  ],
  "sim_edges": [
@@ -40757,27 +40870,27 @@
   ],
   [
    0,
-   24,
+   23,
    0.218
   ],
   [
    0,
-   27,
+   26,
    0.353
   ],
   [
    0,
-   39,
+   38,
    0.385
   ],
   [
    0,
-   40,
+   39,
    0.24
   ],
   [
    0,
-   104,
+   102,
    0.75
   ],
   [
@@ -40787,22 +40900,22 @@
   ],
   [
    1,
-   128,
+   126,
    0.75
   ],
   [
    1,
-   129,
+   127,
    0.247
   ],
   [
    2,
-   77,
+   76,
    0.227
   ],
   [
    2,
-   128,
+   126,
    0.75
   ],
   [
@@ -40822,12 +40935,12 @@
   ],
   [
    3,
-   33,
+   32,
    0.75
   ],
   [
    3,
-   200,
+   198,
    0.75
   ],
   [
@@ -40857,13 +40970,13 @@
   ],
   [
    4,
-   20,
-   0.75
+   28,
+   0.215
   ],
   [
    4,
-   29,
-   0.215
+   33,
+   0.75
   ],
   [
    4,
@@ -40872,27 +40985,27 @@
   ],
   [
    4,
-   35,
-   0.75
-  ],
-  [
-   4,
-   37,
+   36,
    0.215
   ],
   [
    4,
-   48,
+   47,
    0.75
   ],
   [
    4,
-   49,
+   48,
    0.217
   ],
   [
    4,
-   56,
+   55,
+   0.75
+  ],
+  [
+   4,
+   59,
    0.75
   ],
   [
@@ -40902,37 +41015,37 @@
   ],
   [
    4,
-   61,
+   81,
    0.75
   ],
   [
    4,
-   82,
+   91,
    0.75
   ],
   [
    4,
-   92,
+   112,
    0.75
   ],
   [
    4,
-   114,
+   116,
    0.75
   ],
   [
    4,
-   118,
-   0.75
-  ],
-  [
-   4,
-   161,
+   159,
    0.224
   ],
   [
    4,
-   164,
+   162,
+   0.75
+  ],
+  [
+   4,
+   199,
    0.75
   ],
   [
@@ -40957,13 +41070,13 @@
   ],
   [
    6,
-   20,
-   0.75
+   28,
+   0.217
   ],
   [
    6,
-   29,
-   0.217
+   33,
+   0.75
   ],
   [
    6,
@@ -40972,27 +41085,27 @@
   ],
   [
    6,
-   35,
-   0.75
-  ],
-  [
-   6,
-   37,
+   36,
    0.217
   ],
   [
    6,
-   48,
+   47,
    0.75
   ],
   [
    6,
-   49,
+   48,
    0.219
   ],
   [
    6,
-   56,
+   55,
+   0.75
+  ],
+  [
+   6,
+   59,
    0.75
   ],
   [
@@ -41002,38 +41115,38 @@
   ],
   [
    6,
-   61,
+   81,
    0.75
   ],
   [
    6,
-   82,
+   112,
    0.75
   ],
   [
    6,
-   114,
+   116,
    0.75
   ],
   [
    6,
-   118,
-   0.75
-  ],
-  [
-   6,
-   161,
+   159,
    0.226
   ],
   [
    6,
-   164,
+   162,
    0.75
   ],
   [
    6,
-   176,
+   174,
    0.17
+  ],
+  [
+   6,
+   199,
+   0.75
   ],
   [
    7,
@@ -41052,13 +41165,13 @@
   ],
   [
    7,
-   20,
-   0.75
+   28,
+   0.217
   ],
   [
    7,
-   29,
-   0.217
+   33,
+   0.75
   ],
   [
    7,
@@ -41067,27 +41180,27 @@
   ],
   [
    7,
-   35,
-   0.75
-  ],
-  [
-   7,
-   37,
+   36,
    0.217
   ],
   [
    7,
-   48,
+   47,
    0.75
   ],
   [
    7,
-   49,
+   48,
    0.219
   ],
   [
    7,
-   56,
+   55,
+   0.75
+  ],
+  [
+   7,
+   59,
    0.75
   ],
   [
@@ -41097,57 +41210,57 @@
   ],
   [
    7,
-   61,
+   81,
    0.75
   ],
   [
    7,
-   82,
+   112,
    0.75
   ],
   [
    7,
-   114,
+   116,
    0.75
   ],
   [
    7,
-   118,
-   0.75
-  ],
-  [
-   7,
-   161,
+   159,
    0.226
   ],
   [
    7,
-   164,
+   162,
    0.75
   ],
   [
    7,
-   176,
+   174,
    0.17
   ],
   [
-   8,
-   24,
+   7,
+   199,
    0.75
   ],
   [
    8,
-   40,
+   23,
+   0.75
+  ],
+  [
+   8,
+   39,
    0.946
   ],
   [
    8,
-   137,
+   135,
    0.428
   ],
   [
    9,
-   104,
+   102,
    0.75
   ],
   [
@@ -41167,13 +41280,13 @@
   ],
   [
    11,
-   20,
-   0.75
+   28,
+   0.217
   ],
   [
    11,
-   29,
-   0.217
+   33,
+   0.75
   ],
   [
    11,
@@ -41182,28 +41295,28 @@
   ],
   [
    11,
-   35,
-   0.75
-  ],
-  [
-   11,
-   37,
+   36,
    0.217
   ],
   [
    11,
-   42,
+   41,
    0.365
   ],
   [
    11,
-   48,
+   47,
    0.75
   ],
   [
    11,
-   49,
+   48,
    0.22
+  ],
+  [
+   11,
+   59,
+   0.75
   ],
   [
    11,
@@ -41212,68 +41325,73 @@
   ],
   [
    11,
-   61,
-   0.75
-  ],
-  [
-   11,
-   63,
+   62,
    0.098
   ],
   [
    11,
-   74,
+   73,
    0.219
   ],
   [
    11,
-   82,
+   81,
    0.75
   ],
   [
    11,
-   108,
+   106,
    0.218
   ],
   [
    11,
-   113,
+   111,
    0.218
   ],
   [
    11,
-   114,
+   112,
    0.75
   ],
   [
    11,
-   118,
+   116,
    0.75
   ],
   [
    11,
-   153,
+   151,
    0.214
   ],
   [
    11,
-   161,
+   159,
    0.227
   ],
   [
    11,
-   164,
+   162,
    0.75
   ],
   [
    11,
-   167,
+   165,
    0.098
   ],
   [
    11,
-   181,
+   179,
    0.218
+  ],
+  [
+   11,
+   199,
+   0.75
+  ],
+  [
+   13,
+   30,
+   0.75
   ],
   [
    13,
@@ -41282,62 +41400,57 @@
   ],
   [
    13,
-   32,
-   0.75
-  ],
-  [
-   13,
-   80,
+   79,
    0.096
   ],
   [
    13,
-   115,
+   113,
    0.263
   ],
   [
    13,
-   122,
+   120,
    0.75
   ],
   [
    13,
-   140,
+   138,
    0.75
   ],
   [
    13,
-   150,
+   148,
    0.082
   ],
   [
    13,
-   151,
+   149,
    0.75
   ],
   [
    13,
-   164,
+   162,
    0.167
   ],
   [
    13,
-   183,
+   181,
    0.268
   ],
   [
    13,
-   191,
+   189,
    0.234
   ],
   [
    13,
-   194,
+   192,
    0.75
   ],
   [
    13,
-   195,
+   193,
    0.082
   ],
   [
@@ -41347,2597 +41460,2612 @@
   ],
   [
    14,
-   29,
+   28,
    0.097
   ],
   [
    14,
-   34,
+   33,
    0.277
   ],
   [
    14,
-   35,
+   34,
    0.237
   ],
   [
    14,
-   37,
+   36,
    0.097
   ],
   [
    14,
-   42,
+   41,
    0.185
   ],
   [
    14,
-   48,
+   47,
    0.215
   ],
   [
    14,
-   49,
+   48,
    0.098
   ],
   [
    14,
-   60,
+   59,
    0.216
   ],
   [
    14,
-   82,
+   81,
    0.561
   ],
   [
    14,
-   114,
+   112,
    0.217
   ],
   [
    14,
-   118,
+   116,
    0.579
   ],
   [
    14,
-   161,
+   159,
    0.101
   ],
   [
    14,
-   164,
+   162,
    0.217
   ],
   [
    14,
-   176,
+   174,
    0.411
   ],
   [
-   16,
-   20,
-   0.75
+   14,
+   199,
+   0.293
   ],
   [
    16,
-   29,
+   28,
    0.237
   ],
   [
    16,
-   34,
+   33,
    0.75
   ],
   [
    16,
-   37,
+   36,
    0.237
+  ],
+  [
+   16,
+   47,
+   0.75
   ],
   [
    16,
    48,
-   0.75
-  ],
-  [
-   16,
-   49,
    0.24
   ],
   [
    16,
-   60,
+   59,
    0.75
   ],
   [
    16,
-   82,
+   81,
    0.75
   ],
   [
    16,
-   114,
+   112,
    0.75
   ],
   [
    16,
-   118,
+   116,
    0.75
   ],
   [
    16,
-   161,
+   159,
    0.247
+  ],
+  [
+   16,
+   199,
+   0.75
   ],
   [
    18,
-   37,
+   36,
    0.75
   ],
   [
    19,
-   42,
-   0.846
-  ],
-  [
-   19,
-   63,
-   0.224
-  ],
-  [
-   19,
-   74,
-   0.75
-  ],
-  [
-   19,
-   108,
-   0.75
-  ],
-  [
-   19,
-   113,
-   0.75
-  ],
-  [
-   19,
-   153,
-   0.75
-  ],
-  [
-   19,
-   167,
-   0.224
-  ],
-  [
-   19,
-   181,
-   0.75
-  ],
-  [
-   20,
-   34,
-   0.75
-  ],
-  [
-   20,
-   48,
-   0.75
-  ],
-  [
-   20,
-   60,
-   0.75
-  ],
-  [
-   20,
-   82,
-   0.75
-  ],
-  [
-   20,
-   114,
-   0.75
-  ],
-  [
-   20,
-   118,
-   0.75
-  ],
-  [
-   21,
-   199,
-   0.453
-  ],
-  [
-   23,
-   26,
-   0.75
-  ],
-  [
-   23,
-   124,
-   0.21
-  ],
-  [
-   24,
-   40,
-   0.75
-  ],
-  [
-   25,
-   79,
-   0.75
-  ],
-  [
-   27,
-   39,
-   0.917
-  ],
-  [
-   27,
    41,
-   0.171
-  ],
-  [
-   27,
-   48,
-   0.217
-  ],
-  [
-   27,
-   63,
-   0.75
-  ],
-  [
-   28,
-   36,
-   0.75
-  ],
-  [
-   28,
-   61,
-   0.225
-  ],
-  [
-   28,
-   114,
-   0.169
-  ],
-  [
-   28,
-   164,
-   0.412
-  ],
-  [
-   28,
-   178,
-   0.238
-  ],
-  [
-   28,
-   196,
-   0.75
-  ],
-  [
-   29,
-   34,
-   0.217
-  ],
-  [
-   29,
-   35,
-   0.237
-  ],
-  [
-   29,
-   37,
-   0.154
-  ],
-  [
-   29,
-   48,
-   0.215
-  ],
-  [
-   29,
-   49,
-   0.098
-  ],
-  [
-   29,
-   56,
-   0.237
-  ],
-  [
-   29,
-   60,
-   0.4
-  ],
-  [
-   29,
-   61,
-   0.224
-  ],
-  [
-   29,
-   82,
-   0.215
-  ],
-  [
-   29,
-   92,
-   0.224
-  ],
-  [
-   29,
-   93,
-   0.237
-  ],
-  [
-   29,
-   114,
-   0.217
-  ],
-  [
-   29,
-   118,
-   0.217
-  ],
-  [
-   29,
-   121,
-   0.409
-  ],
-  [
-   29,
-   161,
-   0.101
-  ],
-  [
-   29,
-   164,
-   0.217
-  ],
-  [
-   31,
-   32,
-   0.75
-  ],
-  [
-   31,
-   115,
-   0.212
-  ],
-  [
-   31,
-   122,
-   0.75
-  ],
-  [
-   31,
-   140,
-   0.75
-  ],
-  [
-   31,
-   151,
-   0.75
-  ],
-  [
-   31,
-   183,
-   0.211
-  ],
-  [
-   31,
-   194,
-   0.75
-  ],
-  [
-   32,
-   115,
-   0.317
-  ],
-  [
-   32,
-   122,
-   0.75
-  ],
-  [
-   32,
-   140,
-   0.75
-  ],
-  [
-   32,
-   150,
-   0.151
-  ],
-  [
-   32,
-   151,
-   0.909
-  ],
-  [
-   32,
-   183,
-   0.366
-  ],
-  [
-   32,
-   194,
-   0.75
-  ],
-  [
-   32,
-   195,
-   0.151
-  ],
-  [
-   34,
-   37,
-   0.217
-  ],
-  [
-   34,
-   48,
-   0.75
-  ],
-  [
-   34,
-   49,
-   0.22
-  ],
-  [
-   34,
-   60,
-   0.75
-  ],
-  [
-   34,
-   82,
-   0.75
-  ],
-  [
-   34,
-   114,
-   0.75
-  ],
-  [
-   34,
-   118,
-   0.75
-  ],
-  [
-   34,
-   161,
-   0.227
-  ],
-  [
-   35,
-   37,
-   0.237
-  ],
-  [
-   35,
-   48,
-   0.75
-  ],
-  [
-   35,
-   49,
-   0.24
-  ],
-  [
-   35,
-   52,
-   0.762
-  ],
-  [
-   35,
-   56,
-   0.75
-  ],
-  [
-   35,
-   60,
-   0.75
-  ],
-  [
-   35,
-   61,
-   0.75
-  ],
-  [
-   35,
-   65,
-   0.762
-  ],
-  [
-   35,
-   68,
-   0.762
-  ],
-  [
-   35,
-   82,
-   0.75
-  ],
-  [
-   35,
-   83,
-   0.493
-  ],
-  [
-   35,
-   92,
-   0.75
-  ],
-  [
-   35,
-   93,
-   0.75
-  ],
-  [
-   35,
-   97,
-   0.186
-  ],
-  [
-   35,
-   98,
-   0.493
-  ],
-  [
-   35,
-   114,
-   0.75
-  ],
-  [
-   35,
-   161,
-   0.247
-  ],
-  [
-   35,
-   164,
-   0.75
-  ],
-  [
-   35,
-   173,
-   0.493
-  ],
-  [
-   36,
-   61,
-   0.224
-  ],
-  [
-   36,
-   114,
-   0.169
-  ],
-  [
-   36,
-   132,
-   0.101
-  ],
-  [
-   36,
-   134,
-   0.202
-  ],
-  [
-   36,
-   164,
-   0.411
-  ],
-  [
-   36,
-   196,
-   0.827
-  ],
-  [
-   37,
-   45,
-   0.75
-  ],
-  [
-   37,
-   48,
-   0.215
-  ],
-  [
-   37,
-   49,
-   0.098
-  ],
-  [
-   37,
-   56,
-   0.291
-  ],
-  [
-   37,
-   60,
-   0.216
-  ],
-  [
-   37,
-   61,
-   0.275
-  ],
-  [
-   37,
-   68,
-   0.311
-  ],
-  [
-   37,
-   82,
-   0.291
-  ],
-  [
-   37,
-   83,
-   0.202
-  ],
-  [
-   37,
-   92,
-   0.224
-  ],
-  [
-   37,
-   93,
-   0.237
-  ],
-  [
-   37,
-   114,
-   0.217
-  ],
-  [
-   37,
-   118,
-   0.217
-  ],
-  [
-   37,
-   161,
-   0.101
-  ],
-  [
-   37,
-   164,
-   0.238
-  ],
-  [
-   39,
-   48,
-   0.237
-  ],
-  [
-   39,
-   63,
-   0.75
-  ],
-  [
-   40,
-   137,
-   0.453
-  ],
-  [
-   42,
-   63,
-   0.217
-  ],
-  [
-   42,
-   74,
-   0.75
-  ],
-  [
-   42,
-   82,
-   0.185
-  ],
-  [
-   42,
-   108,
-   0.75
-  ],
-  [
-   42,
-   113,
-   0.75
-  ],
-  [
-   42,
-   153,
-   0.75
-  ],
-  [
-   42,
-   155,
-   0.75
-  ],
-  [
-   42,
-   167,
-   0.217
-  ],
-  [
-   42,
-   172,
-   0.75
-  ],
-  [
-   42,
-   176,
-   0.22
-  ],
-  [
-   42,
-   181,
-   0.75
-  ],
-  [
-   43,
-   90,
-   0.234
-  ],
-  [
-   43,
-   106,
-   0.75
-  ],
-  [
-   44,
-   47,
-   0.756
-  ],
-  [
-   44,
-   84,
-   0.776
-  ],
-  [
-   44,
-   85,
-   0.917
-  ],
-  [
-   44,
-   87,
-   0.415
-  ],
-  [
-   44,
-   88,
-   0.75
-  ],
-  [
-   44,
-   155,
-   0.75
-  ],
-  [
-   44,
-   163,
-   0.868
-  ],
-  [
-   44,
-   172,
-   0.75
-  ],
-  [
-   44,
-   189,
-   0.915
-  ],
-  [
-   45,
-   46,
-   0.75
-  ],
-  [
-   45,
-   67,
-   0.75
-  ],
-  [
-   45,
-   127,
-   0.414
-  ],
-  [
-   45,
-   138,
-   0.75
-  ],
-  [
-   45,
-   145,
-   0.75
-  ],
-  [
-   46,
-   67,
-   0.75
-  ],
-  [
-   46,
-   127,
-   0.428
-  ],
-  [
-   46,
-   138,
-   0.947
-  ],
-  [
-   46,
-   145,
-   0.75
-  ],
-  [
-   47,
-   84,
-   0.917
-  ],
-  [
-   47,
-   85,
-   0.75
-  ],
-  [
-   47,
-   87,
-   0.428
-  ],
-  [
-   47,
-   88,
-   0.75
-  ],
-  [
-   47,
-   155,
-   0.75
-  ],
-  [
-   47,
-   163,
-   0.75
-  ],
-  [
-   47,
-   172,
-   0.75
-  ],
-  [
-   47,
-   189,
-   0.75
-  ],
-  [
-   48,
-   49,
-   0.563
-  ],
-  [
-   48,
-   56,
-   0.75
-  ],
-  [
-   48,
-   60,
-   0.75
-  ],
-  [
-   48,
-   61,
-   0.75
-  ],
-  [
-   48,
-   63,
-   0.215
-  ],
-  [
-   48,
-   68,
-   0.75
-  ],
-  [
-   48,
-   82,
-   0.75
-  ],
-  [
-   48,
-   83,
-   0.448
-  ],
-  [
-   48,
-   92,
-   0.75
-  ],
-  [
-   48,
-   93,
-   0.75
-  ],
-  [
-   48,
-   103,
-   0.169
-  ],
-  [
-   48,
-   114,
-   0.75
-  ],
-  [
-   48,
-   118,
-   0.75
-  ],
-  [
-   48,
-   142,
-   0.184
-  ],
-  [
-   48,
-   161,
-   0.432
-  ],
-  [
-   48,
-   164,
-   0.75
-  ],
-  [
-   48,
-   193,
-   0.166
-  ],
-  [
-   49,
-   56,
-   0.24
-  ],
-  [
-   49,
-   60,
-   0.288
-  ],
-  [
-   49,
-   61,
-   0.227
-  ],
-  [
-   49,
-   68,
-   0.314
-  ],
-  [
-   49,
-   82,
-   0.217
-  ],
-  [
-   49,
-   92,
-   0.227
-  ],
-  [
-   49,
-   93,
-   0.24
-  ],
-  [
-   49,
-   103,
-   0.415
-  ],
-  [
-   49,
-   114,
-   0.571
-  ],
-  [
-   49,
-   118,
-   0.22
-  ],
-  [
-   49,
-   119,
-   0.453
-  ],
-  [
-   49,
-   142,
-   0.453
-  ],
-  [
-   49,
-   161,
-   0.97
-  ],
-  [
-   49,
-   164,
-   0.22
-  ],
-  [
-   49,
-   169,
-   0.414
-  ],
-  [
-   49,
-   193,
-   0.407
-  ],
-  [
-   50,
-   62,
-   0.15
-  ],
-  [
-   50,
-   87,
-   0.75
-  ],
-  [
-   50,
-   105,
-   0.591
-  ],
-  [
-   50,
-   156,
-   0.425
-  ],
-  [
-   50,
-   186,
-   0.895
-  ],
-  [
-   51,
-   148,
-   0.75
-  ],
-  [
-   52,
-   56,
-   0.762
-  ],
-  [
-   52,
-   61,
-   0.75
-  ],
-  [
-   52,
-   65,
-   1.0
-  ],
-  [
-   52,
-   68,
-   1.0
-  ],
-  [
-   52,
-   83,
-   0.648
-  ],
-  [
-   52,
-   92,
-   0.75
-  ],
-  [
-   52,
-   93,
-   0.762
-  ],
-  [
-   52,
-   97,
-   0.245
-  ],
-  [
-   52,
-   98,
-   0.648
-  ],
-  [
-   52,
-   135,
-   0.648
-  ],
-  [
-   52,
-   164,
-   0.75
-  ],
-  [
-   52,
-   173,
-   0.648
-  ],
-  [
-   53,
-   150,
-   0.236
-  ],
-  [
-   53,
-   195,
-   0.236
-  ],
-  [
-   56,
-   60,
-   0.75
-  ],
-  [
-   56,
-   61,
-   0.946
-  ],
-  [
-   56,
-   65,
-   0.762
-  ],
-  [
-   56,
-   68,
-   0.762
-  ],
-  [
-   56,
-   82,
-   0.75
-  ],
-  [
-   56,
-   83,
-   0.493
-  ],
-  [
-   56,
-   92,
-   0.75
-  ],
-  [
-   56,
-   93,
-   0.75
-  ],
-  [
-   56,
-   97,
-   0.186
-  ],
-  [
-   56,
-   98,
-   0.493
-  ],
-  [
-   56,
-   114,
-   0.75
-  ],
-  [
-   56,
-   135,
-   0.493
-  ],
-  [
-   56,
-   140,
-   0.443
-  ],
-  [
-   56,
-   161,
-   0.247
-  ],
-  [
-   56,
-   164,
-   0.75
-  ],
-  [
-   56,
-   173,
-   0.493
-  ],
-  [
-   57,
-   62,
-   0.75
-  ],
-  [
-   57,
-   87,
-   0.171
-  ],
-  [
-   57,
-   91,
-   0.75
-  ],
-  [
-   57,
-   104,
-   0.331
-  ],
-  [
-   59,
-   66,
-   0.75
-  ],
-  [
-   59,
-   76,
-   0.75
-  ],
-  [
-   60,
-   61,
-   0.75
-  ],
-  [
-   60,
-   82,
-   0.75
-  ],
-  [
-   60,
-   114,
-   0.75
-  ],
-  [
-   60,
-   118,
-   0.75
-  ],
-  [
-   60,
-   161,
-   0.276
-  ],
-  [
-   60,
-   164,
-   0.75
-  ],
-  [
-   61,
-   65,
-   0.75
-  ],
-  [
-   61,
-   68,
-   0.75
-  ],
-  [
-   61,
-   82,
-   0.75
-  ],
-  [
-   61,
-   83,
-   0.467
-  ],
-  [
-   61,
-   92,
-   0.75
-  ],
-  [
-   61,
-   93,
-   0.75
-  ],
-  [
-   61,
-   97,
-   0.176
-  ],
-  [
-   61,
-   98,
-   0.467
-  ],
-  [
-   61,
-   114,
-   0.75
-  ],
-  [
-   61,
-   140,
-   0.419
-  ],
-  [
-   61,
-   161,
-   0.234
-  ],
-  [
-   61,
-   164,
    0.846
   ],
   [
-   61,
-   173,
-   0.467
-  ],
-  [
+   19,
    62,
-   91,
-   0.75
+   0.224
   ],
   [
-   62,
-   100,
-   0.17
-  ],
-  [
-   62,
-   104,
-   0.296
-  ],
-  [
-   62,
-   105,
-   0.145
-  ],
-  [
-   62,
-   141,
-   0.171
-  ],
-  [
-   62,
-   156,
-   0.219
-  ],
-  [
-   62,
-   186,
-   0.15
-  ],
-  [
-   63,
-   74,
-   0.216
-  ],
-  [
-   63,
-   108,
-   0.215
-  ],
-  [
-   63,
-   113,
-   0.215
-  ],
-  [
-   63,
-   153,
-   0.218
-  ],
-  [
-   63,
-   155,
-   0.217
-  ],
-  [
-   63,
-   167,
-   0.097
-  ],
-  [
-   63,
-   172,
-   0.236
-  ],
-  [
-   63,
-   181,
-   0.215
-  ],
-  [
-   63,
-   190,
-   0.396
-  ],
-  [
-   64,
-   197,
-   0.859
-  ],
-  [
-   65,
-   68,
-   1.0
-  ],
-  [
-   65,
-   83,
-   0.648
-  ],
-  [
-   65,
-   92,
-   0.75
-  ],
-  [
-   65,
-   93,
-   0.762
-  ],
-  [
-   65,
-   97,
-   0.245
-  ],
-  [
-   65,
-   98,
-   0.648
-  ],
-  [
-   65,
-   135,
-   0.648
-  ],
-  [
-   65,
-   164,
-   0.75
-  ],
-  [
-   65,
-   173,
-   0.648
-  ],
-  [
-   66,
-   76,
-   0.75
-  ],
-  [
-   67,
-   127,
-   0.415
-  ],
-  [
-   67,
-   138,
-   0.75
-  ],
-  [
-   67,
-   145,
-   0.75
-  ],
-  [
-   68,
-   83,
-   0.648
-  ],
-  [
-   68,
-   92,
-   0.75
-  ],
-  [
-   68,
-   93,
-   0.762
-  ],
-  [
-   68,
-   97,
-   0.245
-  ],
-  [
-   68,
-   98,
-   0.648
-  ],
-  [
-   68,
-   114,
-   0.75
-  ],
-  [
-   68,
-   135,
-   0.648
-  ],
-  [
-   68,
-   164,
-   0.75
-  ],
-  [
-   68,
-   173,
-   0.648
-  ],
-  [
-   69,
-   187,
-   0.75
-  ],
-  [
-   71,
-   96,
-   0.352
-  ],
-  [
-   72,
+   19,
    73,
    0.75
   ],
   [
-   74,
-   88,
+   19,
+   106,
    0.75
   ],
   [
-   74,
-   108,
+   19,
+   111,
    0.75
   ],
   [
-   74,
-   113,
+   19,
+   151,
    0.75
   ],
   [
-   74,
-   153,
-   0.75
-  ],
-  [
-   74,
-   155,
-   0.75
-  ],
-  [
-   74,
-   167,
-   0.217
-  ],
-  [
-   74,
-   172,
-   0.75
-  ],
-  [
-   74,
-   181,
-   0.75
-  ],
-  [
-   74,
-   189,
-   0.75
-  ],
-  [
-   76,
-   184,
-   0.75
-  ],
-  [
-   80,
-   191,
-   0.239
-  ],
-  [
-   81,
-   101,
-   0.837
-  ],
-  [
-   82,
-   92,
-   0.75
-  ],
-  [
-   82,
-   108,
-   0.143
-  ],
-  [
-   82,
-   114,
-   0.75
-  ],
-  [
-   82,
-   118,
-   0.75
-  ],
-  [
-   82,
-   161,
+   19,
+   165,
    0.224
   ],
   [
-   82,
-   164,
+   19,
+   179,
    0.75
   ],
   [
-   82,
-   176,
-   0.411
-  ],
-  [
-   82,
-   181,
-   0.143
-  ],
-  [
-   83,
-   92,
-   0.467
-  ],
-  [
-   83,
-   93,
-   0.493
-  ],
-  [
-   83,
-   97,
-   0.158
-  ],
-  [
-   83,
-   98,
-   0.419
-  ],
-  [
-   83,
-   114,
-   0.451
-  ],
-  [
-   83,
-   135,
-   0.419
-  ],
-  [
-   83,
-   164,
+   20,
+   197,
    0.453
   ],
   [
-   83,
-   173,
-   0.419
-  ],
-  [
-   84,
-   85,
+   22,
+   25,
    0.75
   ],
   [
-   84,
-   87,
-   0.428
+   22,
+   122,
+   0.21
   ],
   [
-   84,
-   88,
+   23,
+   39,
    0.75
   ],
   [
-   84,
-   155,
+   24,
+   78,
    0.75
   ],
   [
-   84,
-   163,
-   0.75
+   26,
+   38,
+   0.917
   ],
   [
-   84,
-   172,
-   0.75
-  ],
-  [
-   84,
-   189,
-   0.75
-  ],
-  [
-   85,
-   87,
-   0.453
-  ],
-  [
-   85,
-   88,
-   0.75
-  ],
-  [
-   85,
-   155,
-   0.75
-  ],
-  [
-   85,
-   163,
-   0.946
-  ],
-  [
-   85,
-   172,
-   0.75
-  ],
-  [
-   85,
-   189,
-   0.914
-  ],
-  [
-   86,
-   156,
-   0.101
-  ],
-  [
-   87,
-   88,
-   0.415
-  ],
-  [
-   87,
-   105,
-   0.22
-  ],
-  [
-   87,
-   119,
-   0.24
-  ],
-  [
-   87,
-   155,
-   0.415
-  ],
-  [
-   87,
-   162,
-   0.227
-  ],
-  [
-   87,
-   163,
-   0.428
-  ],
-  [
-   87,
-   170,
-   0.227
-  ],
-  [
-   87,
-   172,
-   0.453
-  ],
-  [
-   87,
-   184,
-   0.204
-  ],
-  [
-   87,
-   186,
-   0.75
-  ],
-  [
-   87,
-   189,
-   0.414
-  ],
-  [
-   87,
-   198,
-   0.227
-  ],
-  [
-   88,
-   108,
-   0.75
-  ],
-  [
-   88,
-   113,
-   0.75
-  ],
-  [
-   88,
-   114,
-   0.157
-  ],
-  [
-   88,
-   155,
-   0.841
-  ],
-  [
-   88,
-   163,
-   0.75
-  ],
-  [
-   88,
-   167,
-   0.244
-  ],
-  [
-   88,
-   172,
-   0.75
-  ],
-  [
-   88,
-   189,
-   0.75
-  ],
-  [
-   90,
-   106,
-   0.226
-  ],
-  [
-   90,
-   143,
-   0.226
-  ],
-  [
-   91,
-   104,
-   0.375
-  ],
-  [
-   92,
-   93,
-   0.946
-  ],
-  [
-   92,
-   97,
-   0.176
-  ],
-  [
-   92,
-   98,
-   0.467
-  ],
-  [
-   92,
-   114,
-   0.75
-  ],
-  [
-   92,
-   135,
-   0.467
-  ],
-  [
-   92,
-   161,
-   0.234
-  ],
-  [
-   92,
-   164,
-   0.75
-  ],
-  [
-   92,
-   173,
-   0.467
-  ],
-  [
-   93,
-   97,
-   0.186
-  ],
-  [
-   93,
-   98,
-   0.493
-  ],
-  [
-   93,
-   114,
-   0.75
-  ],
-  [
-   93,
-   135,
-   0.493
-  ],
-  [
-   93,
-   164,
-   0.75
-  ],
-  [
-   93,
-   173,
-   0.493
-  ],
-  [
-   97,
-   98,
-   0.75
-  ],
-  [
-   97,
-   121,
-   0.414
-  ],
-  [
-   97,
-   133,
-   0.75
-  ],
-  [
-   97,
-   135,
-   0.75
-  ],
-  [
-   97,
-   164,
+   26,
+   40,
    0.171
   ],
   [
-   97,
-   173,
-   0.158
+   26,
+   47,
+   0.217
   ],
   [
-   98,
-   133,
+   26,
+   62,
    0.75
   ],
   [
-   98,
-   135,
-   1.0
+   27,
+   35,
+   0.75
   ],
   [
-   98,
-   164,
-   0.453
+   27,
+   60,
+   0.225
   ],
   [
-   98,
-   173,
-   0.419
+   27,
+   112,
+   0.169
   ],
   [
-   100,
-   105,
+   27,
+   162,
    0.412
   ],
   [
-   100,
-   141,
+   27,
+   176,
+   0.238
+  ],
+  [
+   27,
+   194,
    0.75
   ],
   [
-   100,
-   154,
+   28,
+   33,
+   0.217
+  ],
+  [
+   28,
+   34,
+   0.237
+  ],
+  [
+   28,
+   36,
+   0.154
+  ],
+  [
+   28,
+   47,
+   0.215
+  ],
+  [
+   28,
+   48,
+   0.098
+  ],
+  [
+   28,
+   55,
+   0.237
+  ],
+  [
+   28,
+   59,
+   0.4
+  ],
+  [
+   28,
+   60,
+   0.224
+  ],
+  [
+   28,
+   81,
+   0.215
+  ],
+  [
+   28,
+   91,
+   0.224
+  ],
+  [
+   28,
+   92,
+   0.237
+  ],
+  [
+   28,
+   112,
+   0.217
+  ],
+  [
+   28,
+   116,
+   0.217
+  ],
+  [
+   28,
+   119,
+   0.409
+  ],
+  [
+   28,
+   159,
+   0.101
+  ],
+  [
+   28,
+   162,
+   0.217
+  ],
+  [
+   28,
+   199,
+   0.217
+  ],
+  [
+   30,
+   31,
    0.75
   ],
   [
-   100,
-   156,
+   30,
+   113,
+   0.212
+  ],
+  [
+   30,
+   120,
    0.75
   ],
   [
-   100,
-   165,
+   30,
+   138,
    0.75
   ],
   [
-   100,
+   30,
+   149,
+   0.75
+  ],
+  [
+   30,
+   181,
+   0.211
+  ],
+  [
+   30,
    192,
    0.75
   ],
   [
-   103,
-   114,
-   0.414
-  ],
-  [
-   103,
-   142,
-   0.917
-  ],
-  [
-   103,
-   161,
-   0.428
-  ],
-  [
-   103,
-   169,
-   0.75
-  ],
-  [
-   103,
-   182,
-   0.75
-  ],
-  [
-   103,
-   193,
-   0.883
-  ],
-  [
-   105,
-   141,
-   0.415
-  ],
-  [
-   105,
-   156,
-   0.412
-  ],
-  [
-   105,
-   186,
-   0.591
-  ],
-  [
-   108,
+   31,
    113,
+   0.317
+  ],
+  [
+   31,
+   120,
    0.75
   ],
   [
-   108,
+   31,
+   138,
+   0.75
+  ],
+  [
+   31,
+   148,
+   0.151
+  ],
+  [
+   31,
+   149,
+   0.909
+  ],
+  [
+   31,
+   181,
+   0.366
+  ],
+  [
+   31,
+   192,
+   0.75
+  ],
+  [
+   31,
+   193,
+   0.151
+  ],
+  [
+   33,
+   36,
+   0.217
+  ],
+  [
+   33,
+   47,
+   0.75
+  ],
+  [
+   33,
+   48,
+   0.22
+  ],
+  [
+   33,
+   59,
+   0.75
+  ],
+  [
+   33,
+   81,
+   0.75
+  ],
+  [
+   33,
+   112,
+   0.75
+  ],
+  [
+   33,
+   116,
+   0.75
+  ],
+  [
+   33,
+   159,
+   0.227
+  ],
+  [
+   33,
+   199,
+   0.75
+  ],
+  [
+   34,
+   36,
+   0.237
+  ],
+  [
+   34,
+   47,
+   0.75
+  ],
+  [
+   34,
+   48,
+   0.24
+  ],
+  [
+   34,
+   51,
+   0.762
+  ],
+  [
+   34,
+   55,
+   0.75
+  ],
+  [
+   34,
+   59,
+   0.75
+  ],
+  [
+   34,
+   60,
+   0.75
+  ],
+  [
+   34,
+   64,
+   0.762
+  ],
+  [
+   34,
+   67,
+   0.762
+  ],
+  [
+   34,
+   81,
+   0.75
+  ],
+  [
+   34,
+   82,
+   0.493
+  ],
+  [
+   34,
+   91,
+   0.75
+  ],
+  [
+   34,
+   92,
+   0.75
+  ],
+  [
+   34,
+   95,
+   0.186
+  ],
+  [
+   34,
+   96,
+   0.493
+  ],
+  [
+   34,
+   112,
+   0.75
+  ],
+  [
+   34,
+   159,
+   0.247
+  ],
+  [
+   34,
+   162,
+   0.75
+  ],
+  [
+   34,
+   171,
+   0.493
+  ],
+  [
+   35,
+   60,
+   0.224
+  ],
+  [
+   35,
+   112,
+   0.169
+  ],
+  [
+   35,
+   130,
+   0.101
+  ],
+  [
+   35,
+   132,
+   0.202
+  ],
+  [
+   35,
+   162,
+   0.411
+  ],
+  [
+   35,
+   194,
+   0.827
+  ],
+  [
+   36,
+   44,
+   0.75
+  ],
+  [
+   36,
+   47,
+   0.215
+  ],
+  [
+   36,
+   48,
+   0.098
+  ],
+  [
+   36,
+   55,
+   0.291
+  ],
+  [
+   36,
+   59,
+   0.216
+  ],
+  [
+   36,
+   60,
+   0.275
+  ],
+  [
+   36,
+   67,
+   0.311
+  ],
+  [
+   36,
+   81,
+   0.291
+  ],
+  [
+   36,
+   82,
+   0.202
+  ],
+  [
+   36,
+   91,
+   0.224
+  ],
+  [
+   36,
+   92,
+   0.237
+  ],
+  [
+   36,
+   112,
+   0.217
+  ],
+  [
+   36,
+   116,
+   0.217
+  ],
+  [
+   36,
+   159,
+   0.101
+  ],
+  [
+   36,
+   162,
+   0.238
+  ],
+  [
+   38,
+   47,
+   0.237
+  ],
+  [
+   38,
+   62,
+   0.75
+  ],
+  [
+   39,
+   135,
+   0.453
+  ],
+  [
+   41,
+   62,
+   0.217
+  ],
+  [
+   41,
+   73,
+   0.75
+  ],
+  [
+   41,
+   81,
+   0.185
+  ],
+  [
+   41,
+   106,
+   0.75
+  ],
+  [
+   41,
+   111,
+   0.75
+  ],
+  [
+   41,
+   151,
+   0.75
+  ],
+  [
+   41,
    153,
    0.75
   ],
   [
-   108,
-   155,
+   41,
+   165,
+   0.217
+  ],
+  [
+   41,
+   170,
    0.75
   ],
   [
-   108,
+   41,
+   174,
+   0.22
+  ],
+  [
+   41,
+   179,
+   0.75
+  ],
+  [
+   42,
+   89,
+   0.234
+  ],
+  [
+   42,
+   104,
+   0.75
+  ],
+  [
+   43,
+   46,
+   0.756
+  ],
+  [
+   43,
+   83,
+   0.776
+  ],
+  [
+   43,
+   84,
+   0.917
+  ],
+  [
+   43,
+   86,
+   0.415
+  ],
+  [
+   43,
+   87,
+   0.75
+  ],
+  [
+   43,
+   153,
+   0.75
+  ],
+  [
+   43,
+   161,
+   0.868
+  ],
+  [
+   43,
+   170,
+   0.75
+  ],
+  [
+   43,
+   187,
+   0.915
+  ],
+  [
+   44,
+   45,
+   0.75
+  ],
+  [
+   44,
+   66,
+   0.75
+  ],
+  [
+   44,
+   125,
+   0.414
+  ],
+  [
+   44,
+   136,
+   0.75
+  ],
+  [
+   44,
+   143,
+   0.75
+  ],
+  [
+   45,
+   66,
+   0.75
+  ],
+  [
+   45,
+   125,
+   0.428
+  ],
+  [
+   45,
+   136,
+   0.947
+  ],
+  [
+   45,
+   143,
+   0.75
+  ],
+  [
+   46,
+   83,
+   0.917
+  ],
+  [
+   46,
+   84,
+   0.75
+  ],
+  [
+   46,
+   86,
+   0.428
+  ],
+  [
+   46,
+   87,
+   0.75
+  ],
+  [
+   46,
+   153,
+   0.75
+  ],
+  [
+   46,
+   161,
+   0.75
+  ],
+  [
+   46,
+   170,
+   0.75
+  ],
+  [
+   46,
+   187,
+   0.75
+  ],
+  [
+   47,
+   48,
+   0.563
+  ],
+  [
+   47,
+   55,
+   0.75
+  ],
+  [
+   47,
+   59,
+   0.75
+  ],
+  [
+   47,
+   60,
+   0.75
+  ],
+  [
+   47,
+   62,
+   0.215
+  ],
+  [
+   47,
+   67,
+   0.75
+  ],
+  [
+   47,
+   81,
+   0.75
+  ],
+  [
+   47,
+   82,
+   0.448
+  ],
+  [
+   47,
+   91,
+   0.75
+  ],
+  [
+   47,
+   92,
+   0.75
+  ],
+  [
+   47,
+   101,
+   0.169
+  ],
+  [
+   47,
+   112,
+   0.75
+  ],
+  [
+   47,
+   116,
+   0.75
+  ],
+  [
+   47,
+   140,
+   0.184
+  ],
+  [
+   47,
+   159,
+   0.432
+  ],
+  [
+   47,
+   162,
+   0.75
+  ],
+  [
+   47,
+   191,
+   0.166
+  ],
+  [
+   48,
+   55,
+   0.24
+  ],
+  [
+   48,
+   59,
+   0.288
+  ],
+  [
+   48,
+   60,
+   0.227
+  ],
+  [
+   48,
+   67,
+   0.314
+  ],
+  [
+   48,
+   81,
+   0.217
+  ],
+  [
+   48,
+   91,
+   0.227
+  ],
+  [
+   48,
+   92,
+   0.24
+  ],
+  [
+   48,
+   101,
+   0.415
+  ],
+  [
+   48,
+   112,
+   0.571
+  ],
+  [
+   48,
+   116,
+   0.22
+  ],
+  [
+   48,
+   117,
+   0.453
+  ],
+  [
+   48,
+   140,
+   0.453
+  ],
+  [
+   48,
+   159,
+   0.97
+  ],
+  [
+   48,
+   162,
+   0.22
+  ],
+  [
+   48,
    167,
-   0.216
+   0.414
   ],
   [
-   108,
-   172,
+   48,
+   191,
+   0.407
+  ],
+  [
+   48,
+   199,
+   0.219
+  ],
+  [
+   49,
+   61,
+   0.15
+  ],
+  [
+   49,
+   86,
    0.75
   ],
   [
-   108,
-   181,
+   49,
+   103,
+   0.591
+  ],
+  [
+   49,
+   154,
+   0.425
+  ],
+  [
+   49,
+   184,
+   0.895
+  ],
+  [
+   50,
+   146,
+   0.75
+  ],
+  [
+   51,
+   55,
+   0.762
+  ],
+  [
+   51,
+   60,
+   0.75
+  ],
+  [
+   51,
+   64,
    1.0
   ],
   [
-   108,
-   189,
+   51,
+   67,
+   1.0
+  ],
+  [
+   51,
+   82,
+   0.648
+  ],
+  [
+   51,
+   91,
    0.75
+  ],
+  [
+   51,
+   92,
+   0.762
+  ],
+  [
+   51,
+   95,
+   0.245
+  ],
+  [
+   51,
+   96,
+   0.648
+  ],
+  [
+   51,
+   133,
+   0.648
+  ],
+  [
+   51,
+   162,
+   0.75
+  ],
+  [
+   51,
+   171,
+   0.648
+  ],
+  [
+   52,
+   148,
+   0.236
+  ],
+  [
+   52,
+   193,
+   0.236
+  ],
+  [
+   55,
+   59,
+   0.75
+  ],
+  [
+   55,
+   60,
+   0.946
+  ],
+  [
+   55,
+   64,
+   0.762
+  ],
+  [
+   55,
+   67,
+   0.762
+  ],
+  [
+   55,
+   81,
+   0.75
+  ],
+  [
+   55,
+   82,
+   0.493
+  ],
+  [
+   55,
+   91,
+   0.75
+  ],
+  [
+   55,
+   92,
+   0.75
+  ],
+  [
+   55,
+   95,
+   0.186
+  ],
+  [
+   55,
+   96,
+   0.493
+  ],
+  [
+   55,
+   112,
+   0.75
+  ],
+  [
+   55,
+   133,
+   0.493
+  ],
+  [
+   55,
+   138,
+   0.443
+  ],
+  [
+   55,
+   159,
+   0.247
+  ],
+  [
+   55,
+   162,
+   0.75
+  ],
+  [
+   55,
+   171,
+   0.493
+  ],
+  [
+   56,
+   61,
+   0.75
+  ],
+  [
+   56,
+   86,
+   0.171
+  ],
+  [
+   56,
+   90,
+   0.75
+  ],
+  [
+   56,
+   102,
+   0.331
+  ],
+  [
+   58,
+   65,
+   0.75
+  ],
+  [
+   58,
+   75,
+   0.75
+  ],
+  [
+   59,
+   60,
+   0.75
+  ],
+  [
+   59,
+   81,
+   0.75
+  ],
+  [
+   59,
+   112,
+   0.75
+  ],
+  [
+   59,
+   116,
+   0.75
+  ],
+  [
+   59,
+   159,
+   0.276
+  ],
+  [
+   59,
+   162,
+   0.75
+  ],
+  [
+   59,
+   199,
+   0.75
+  ],
+  [
+   60,
+   64,
+   0.75
+  ],
+  [
+   60,
+   67,
+   0.75
+  ],
+  [
+   60,
+   81,
+   0.75
+  ],
+  [
+   60,
+   82,
+   0.467
+  ],
+  [
+   60,
+   91,
+   0.75
+  ],
+  [
+   60,
+   92,
+   0.75
+  ],
+  [
+   60,
+   95,
+   0.176
+  ],
+  [
+   60,
+   96,
+   0.467
+  ],
+  [
+   60,
+   112,
+   0.75
+  ],
+  [
+   60,
+   138,
+   0.419
+  ],
+  [
+   60,
+   159,
+   0.234
+  ],
+  [
+   60,
+   162,
+   0.846
+  ],
+  [
+   60,
+   171,
+   0.467
+  ],
+  [
+   61,
+   90,
+   0.75
+  ],
+  [
+   61,
+   98,
+   0.17
+  ],
+  [
+   61,
+   102,
+   0.296
+  ],
+  [
+   61,
+   103,
+   0.145
+  ],
+  [
+   61,
+   139,
+   0.171
+  ],
+  [
+   61,
+   154,
+   0.219
+  ],
+  [
+   61,
+   184,
+   0.15
+  ],
+  [
+   62,
+   73,
+   0.216
+  ],
+  [
+   62,
+   106,
+   0.215
+  ],
+  [
+   62,
+   111,
+   0.215
+  ],
+  [
+   62,
+   151,
+   0.218
+  ],
+  [
+   62,
+   153,
+   0.217
+  ],
+  [
+   62,
+   165,
+   0.097
+  ],
+  [
+   62,
+   170,
+   0.236
+  ],
+  [
+   62,
+   179,
+   0.215
+  ],
+  [
+   62,
+   188,
+   0.396
+  ],
+  [
+   63,
+   195,
+   0.859
+  ],
+  [
+   64,
+   67,
+   1.0
+  ],
+  [
+   64,
+   82,
+   0.648
+  ],
+  [
+   64,
+   91,
+   0.75
+  ],
+  [
+   64,
+   92,
+   0.762
+  ],
+  [
+   64,
+   95,
+   0.245
+  ],
+  [
+   64,
+   96,
+   0.648
+  ],
+  [
+   64,
+   133,
+   0.648
+  ],
+  [
+   64,
+   162,
+   0.75
+  ],
+  [
+   64,
+   171,
+   0.648
+  ],
+  [
+   65,
+   75,
+   0.75
+  ],
+  [
+   66,
+   125,
+   0.415
+  ],
+  [
+   66,
+   136,
+   0.75
+  ],
+  [
+   66,
+   143,
+   0.75
+  ],
+  [
+   67,
+   82,
+   0.648
+  ],
+  [
+   67,
+   91,
+   0.75
+  ],
+  [
+   67,
+   92,
+   0.762
+  ],
+  [
+   67,
+   95,
+   0.245
+  ],
+  [
+   67,
+   96,
+   0.648
+  ],
+  [
+   67,
+   112,
+   0.75
+  ],
+  [
+   67,
+   133,
+   0.648
+  ],
+  [
+   67,
+   162,
+   0.75
+  ],
+  [
+   67,
+   171,
+   0.648
+  ],
+  [
+   68,
+   185,
+   0.75
+  ],
+  [
+   70,
+   200,
+   0.139
+  ],
+  [
+   71,
+   72,
+   0.75
+  ],
+  [
+   73,
+   87,
+   0.75
+  ],
+  [
+   73,
+   106,
+   0.75
+  ],
+  [
+   73,
+   111,
+   0.75
+  ],
+  [
+   73,
+   151,
+   0.75
+  ],
+  [
+   73,
+   153,
+   0.75
+  ],
+  [
+   73,
+   165,
+   0.217
+  ],
+  [
+   73,
+   170,
+   0.75
+  ],
+  [
+   73,
+   179,
+   0.75
+  ],
+  [
+   73,
+   187,
+   0.75
+  ],
+  [
+   75,
+   182,
+   0.75
+  ],
+  [
+   79,
+   189,
+   0.239
+  ],
+  [
+   80,
+   99,
+   0.837
+  ],
+  [
+   81,
+   91,
+   0.75
+  ],
+  [
+   81,
+   106,
+   0.143
+  ],
+  [
+   81,
+   112,
+   0.75
+  ],
+  [
+   81,
+   116,
+   0.75
+  ],
+  [
+   81,
+   159,
+   0.224
+  ],
+  [
+   81,
+   162,
+   0.75
+  ],
+  [
+   81,
+   174,
+   0.411
+  ],
+  [
+   81,
+   179,
+   0.143
+  ],
+  [
+   81,
+   199,
+   0.75
+  ],
+  [
+   82,
+   91,
+   0.467
+  ],
+  [
+   82,
+   92,
+   0.493
+  ],
+  [
+   82,
+   95,
+   0.158
+  ],
+  [
+   82,
+   96,
+   0.419
+  ],
+  [
+   82,
+   112,
+   0.451
+  ],
+  [
+   82,
+   133,
+   0.419
+  ],
+  [
+   82,
+   162,
+   0.453
+  ],
+  [
+   82,
+   171,
+   0.419
+  ],
+  [
+   83,
+   84,
+   0.75
+  ],
+  [
+   83,
+   86,
+   0.428
+  ],
+  [
+   83,
+   87,
+   0.75
+  ],
+  [
+   83,
+   153,
+   0.75
+  ],
+  [
+   83,
+   161,
+   0.75
+  ],
+  [
+   83,
+   170,
+   0.75
+  ],
+  [
+   83,
+   187,
+   0.75
+  ],
+  [
+   84,
+   86,
+   0.453
+  ],
+  [
+   84,
+   87,
+   0.75
+  ],
+  [
+   84,
+   153,
+   0.75
+  ],
+  [
+   84,
+   161,
+   0.946
+  ],
+  [
+   84,
+   170,
+   0.75
+  ],
+  [
+   84,
+   187,
+   0.914
+  ],
+  [
+   85,
+   154,
+   0.101
+  ],
+  [
+   86,
+   87,
+   0.415
+  ],
+  [
+   86,
+   103,
+   0.22
+  ],
+  [
+   86,
+   117,
+   0.24
+  ],
+  [
+   86,
+   153,
+   0.415
+  ],
+  [
+   86,
+   160,
+   0.227
+  ],
+  [
+   86,
+   161,
+   0.428
+  ],
+  [
+   86,
+   168,
+   0.227
+  ],
+  [
+   86,
+   170,
+   0.453
+  ],
+  [
+   86,
+   182,
+   0.204
+  ],
+  [
+   86,
+   184,
+   0.75
+  ],
+  [
+   86,
+   187,
+   0.414
+  ],
+  [
+   86,
+   196,
+   0.227
+  ],
+  [
+   87,
+   106,
+   0.75
+  ],
+  [
+   87,
+   111,
+   0.75
+  ],
+  [
+   87,
+   112,
+   0.157
+  ],
+  [
+   87,
+   153,
+   0.841
+  ],
+  [
+   87,
+   161,
+   0.75
+  ],
+  [
+   87,
+   165,
+   0.244
+  ],
+  [
+   87,
+   170,
+   0.75
+  ],
+  [
+   87,
+   187,
+   0.75
+  ],
+  [
+   89,
+   104,
+   0.226
+  ],
+  [
+   89,
+   141,
+   0.226
+  ],
+  [
+   90,
+   102,
+   0.375
+  ],
+  [
+   91,
+   92,
+   0.946
+  ],
+  [
+   91,
+   95,
+   0.176
+  ],
+  [
+   91,
+   96,
+   0.467
+  ],
+  [
+   91,
+   112,
+   0.75
+  ],
+  [
+   91,
+   133,
+   0.467
+  ],
+  [
+   91,
+   159,
+   0.234
+  ],
+  [
+   91,
+   162,
+   0.75
+  ],
+  [
+   91,
+   171,
+   0.467
+  ],
+  [
+   92,
+   95,
+   0.186
+  ],
+  [
+   92,
+   96,
+   0.493
+  ],
+  [
+   92,
+   112,
+   0.75
+  ],
+  [
+   92,
+   133,
+   0.493
+  ],
+  [
+   92,
+   162,
+   0.75
+  ],
+  [
+   92,
+   171,
+   0.493
+  ],
+  [
+   95,
+   96,
+   0.75
+  ],
+  [
+   95,
+   119,
+   0.414
+  ],
+  [
+   95,
+   131,
+   0.75
+  ],
+  [
+   95,
+   133,
+   0.75
+  ],
+  [
+   95,
+   162,
+   0.171
+  ],
+  [
+   95,
+   171,
+   0.158
+  ],
+  [
+   96,
+   131,
+   0.75
+  ],
+  [
+   96,
+   133,
+   1.0
+  ],
+  [
+   96,
+   162,
+   0.453
+  ],
+  [
+   96,
+   171,
+   0.419
+  ],
+  [
+   98,
+   103,
+   0.412
+  ],
+  [
+   98,
+   139,
+   0.75
+  ],
+  [
+   98,
+   152,
+   0.75
+  ],
+  [
+   98,
+   154,
+   0.75
+  ],
+  [
+   98,
+   163,
+   0.75
+  ],
+  [
+   98,
+   190,
+   0.75
+  ],
+  [
+   101,
+   112,
+   0.414
+  ],
+  [
+   101,
+   140,
+   0.917
+  ],
+  [
+   101,
+   159,
+   0.428
+  ],
+  [
+   101,
+   167,
+   0.75
+  ],
+  [
+   101,
+   180,
+   0.75
+  ],
+  [
+   101,
+   191,
+   0.883
+  ],
+  [
+   103,
+   139,
+   0.415
+  ],
+  [
+   103,
+   154,
+   0.412
+  ],
+  [
+   103,
+   184,
+   0.591
+  ],
+  [
+   106,
+   111,
+   0.75
+  ],
+  [
+   106,
+   151,
+   0.75
+  ],
+  [
+   106,
+   153,
+   0.75
+  ],
+  [
+   106,
+   165,
+   0.216
+  ],
+  [
+   106,
+   170,
+   0.75
+  ],
+  [
+   106,
+   179,
+   1.0
+  ],
+  [
+   106,
+   187,
+   0.75
+  ],
+  [
+   109,
+   110,
+   1.0
   ],
   [
    111,
    112,
-   1.0
-  ],
-  [
-   113,
-   114,
    0.156
   ],
   [
-   113,
-   155,
+   111,
+   153,
    0.75
   ],
   [
-   113,
-   163,
+   111,
+   161,
    0.75
   ],
   [
-   113,
-   167,
+   111,
+   165,
    0.242
   ],
   [
-   113,
-   172,
+   111,
+   170,
    0.75
   ],
   [
-   113,
-   181,
+   111,
+   179,
    0.75
   ],
   [
-   113,
-   189,
+   111,
+   187,
    0.75
   ],
   [
-   114,
-   118,
+   112,
+   116,
    0.75
   ],
   [
-   114,
-   142,
+   112,
+   140,
    0.451
   ],
   [
-   114,
-   161,
+   112,
+   159,
    0.589
   ],
   [
-   114,
-   164,
+   112,
+   162,
    0.75
   ],
   [
-   114,
-   189,
+   112,
+   187,
    0.156
   ],
   [
-   114,
-   193,
+   112,
+   191,
    0.405
   ],
   [
-   115,
-   122,
+   113,
+   120,
    0.566
   ],
   [
-   115,
-   140,
+   113,
+   138,
    0.208
   ],
   [
-   115,
-   151,
+   113,
+   149,
    0.212
   ],
   [
-   115,
-   179,
+   113,
+   177,
    0.15
   ],
   [
-   115,
-   183,
+   113,
+   181,
    0.227
   ],
   [
-   115,
-   194,
+   113,
+   192,
    0.209
   ],
   [
-   118,
-   161,
+   116,
+   159,
    0.227
   ],
   [
-   119,
-   162,
+   116,
+   199,
    0.75
   ],
   [
-   119,
-   170,
+   117,
+   160,
    0.75
   ],
   [
-   119,
-   184,
+   117,
+   168,
+   0.75
+  ],
+  [
+   117,
+   182,
    0.493
   ],
   [
-   119,
-   198,
+   117,
+   196,
    0.75
   ],
   [
-   122,
-   140,
+   120,
+   138,
    0.75
   ],
   [
-   122,
-   150,
+   120,
+   148,
    0.152
   ],
   [
-   122,
-   151,
+   120,
+   149,
    0.75
   ],
   [
-   122,
-   183,
+   120,
+   181,
    0.638
   ],
   [
-   122,
-   194,
+   120,
+   192,
    0.75
   ],
   [
-   122,
-   195,
+   120,
+   193,
    0.152
   ],
   [
-   126,
-   138,
+   124,
+   136,
    0.102
   ],
   [
-   127,
-   138,
+   125,
+   136,
    0.415
   ],
   [
-   127,
-   145,
+   125,
+   143,
    0.491
   ],
   [
-   131,
-   132,
+   129,
+   130,
    0.75
   ],
   [
-   131,
-   134,
+   129,
+   132,
    0.914
   ],
   [
+   130,
    132,
-   134,
    0.759
   ],
   [
+   131,
    133,
-   135,
    0.75
   ],
   [
-   135,
-   173,
+   133,
+   171,
    0.419
   ],
   [
-   137,
-   188,
+   135,
+   186,
+   0.75
+  ],
+  [
+   136,
+   143,
    0.75
   ],
   [
    138,
-   145,
+   162,
+   0.167
+  ],
+  [
+   139,
+   152,
+   0.835
+  ],
+  [
+   139,
+   154,
+   0.75
+  ],
+  [
+   139,
+   163,
+   0.75
+  ],
+  [
+   139,
+   178,
+   0.17
+  ],
+  [
+   139,
+   190,
    0.75
   ],
   [
    140,
-   164,
-   0.167
-  ],
-  [
-   141,
-   154,
-   0.835
-  ],
-  [
-   141,
-   156,
-   0.75
-  ],
-  [
-   141,
-   165,
-   0.75
-  ],
-  [
-   141,
-   180,
-   0.17
-  ],
-  [
-   141,
-   192,
-   0.75
-  ],
-  [
-   142,
-   161,
+   159,
    0.467
   ],
   [
-   142,
-   169,
+   140,
+   167,
    0.75
   ],
   [
-   142,
-   182,
+   140,
+   180,
    0.75
   ],
   [
-   142,
-   193,
+   140,
+   191,
    0.898
   ],
   [
-   150,
-   151,
+   148,
+   149,
    0.155
   ],
   [
-   150,
-   195,
+   148,
+   193,
    1.0
   ],
   [
-   151,
-   183,
+   149,
+   181,
    0.236
   ],
   [
-   151,
-   194,
+   149,
+   192,
    0.75
   ],
   [
-   151,
-   195,
+   149,
+   193,
    0.155
   ],
   [
-   153,
-   167,
+   151,
+   165,
    0.212
   ],
   [
-   153,
-   181,
+   151,
+   179,
    0.75
   ],
   [
+   152,
    154,
-   156,
    0.75
   ],
   [
-   154,
-   165,
-   0.75
-  ],
-  [
-   154,
-   192,
-   0.75
-  ],
-  [
-   155,
+   152,
    163,
    0.75
   ],
   [
-   155,
-   167,
+   152,
+   190,
+   0.75
+  ],
+  [
+   153,
+   161,
+   0.75
+  ],
+  [
+   153,
+   165,
    0.217
   ],
   [
-   155,
-   172,
+   153,
+   170,
    0.75
   ],
   [
-   155,
-   181,
+   153,
+   179,
    0.75
   ],
   [
-   155,
-   189,
+   153,
+   187,
    0.75
   ],
   [
-   156,
-   165,
+   154,
+   163,
    0.75
   ],
   [
-   156,
-   186,
+   154,
+   184,
    0.425
   ],
   [
-   157,
-   160,
+   155,
+   158,
    0.725
   ],
   [
-   158,
-   197,
+   156,
+   195,
    0.097
   ],
   [
-   161,
-   164,
+   159,
+   162,
    0.227
   ],
   [
-   161,
-   169,
+   159,
+   167,
    0.427
   ],
   [
-   161,
-   182,
+   159,
+   180,
    0.425
   ],
   [
-   161,
-   193,
+   159,
+   191,
    0.419
   ],
   [
-   162,
-   170,
+   159,
+   199,
+   0.226
+  ],
+  [
+   160,
+   168,
    0.75
   ],
   [
-   162,
-   184,
+   160,
+   182,
    0.467
   ],
   [
-   162,
-   198,
+   160,
+   196,
    0.75
   ],
   [
-   163,
-   167,
+   161,
+   165,
    0.224
   ],
   [
-   163,
-   172,
+   161,
+   170,
    0.75
   ],
   [
-   163,
-   189,
+   161,
+   187,
    0.865
   ],
   [
-   164,
-   173,
+   162,
+   171,
    0.453
   ],
   [
-   165,
-   192,
+   163,
+   190,
    0.75
   ],
   [
-   167,
-   172,
+   165,
+   170,
    0.237
   ],
   [
-   167,
-   181,
+   165,
+   179,
    0.216
   ],
   [
-   167,
-   189,
+   165,
+   187,
    0.25
   ],
   [
-   169,
+   167,
+   180,
+   0.75
+  ],
+  [
+   167,
+   191,
+   0.75
+  ],
+  [
+   168,
    182,
-   0.75
-  ],
-  [
-   169,
-   193,
-   0.75
-  ],
-  [
-   170,
-   184,
    0.467
   ],
   [
-   170,
-   198,
+   168,
+   196,
    0.917
   ],
   [
-   172,
-   181,
+   170,
+   179,
+   0.75
+  ],
+  [
+   170,
+   187,
    0.75
   ],
   [
    172,
-   189,
-   0.75
+   199,
+   0.149
   ],
   [
-   178,
-   196,
+   176,
+   194,
    0.238
   ],
   [
-   179,
-   200,
+   177,
+   198,
    0.103
   ],
   [
-   182,
-   193,
+   180,
+   191,
    0.75
   ],
   [
-   183,
-   194,
+   181,
+   192,
    0.406
   ],
   [
-   184,
-   198,
+   182,
+   196,
    0.467
   ]
  ]

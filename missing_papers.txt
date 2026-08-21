@@ -16,7 +16,6 @@
 10.1038/s41593-026-02214-2	magee_2026
 	maristany_2025
 	marr_1971
-10.1038/s41467-025-55819-9	park_2025
 	payeur_2021
 	poirazi_2003
 	potez_larkum_2008
@@ -27,6 +26,5 @@
 	suzuki_larkum_2020
 	takahashi_magee_2009
 	urbanczik_senn_2014
-	vaidya_2025
 	voigts_harnett_2020
 	wybo_2019

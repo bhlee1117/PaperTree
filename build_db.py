@@ -713,11 +713,19 @@ assert {"label_fp", "claims_seen"} <= set(CARRY)
 
 
 def merge_existing(papers, path, force_relabel=()):
-    """Returns (papers, stats). Papers that already carry labels get them back."""
+    """Returns (papers, stats, archived).
+
+    Labels are looked up in BOTH the live library and the archive, because a Zotero
+    export is a snapshot of what you chose to export, not a statement that everything
+    else should be forgotten. Exporting a subset used to delete the labels of every
+    paper left out, so re-exporting the full library later re-paid for all of them.
+    Now they are set aside and come back for free."""
     if not os.path.exists(path):
         print(f"  no existing {path} — full build")
-        return papers, {"new": len(papers), "cached": 0, "dropped": 0, "repaired": 0}
-    old = {match_key(p): p for p in json.load(open(path))["papers"]}
+        return papers, {"new": len(papers), "cached": 0, "dropped": 0, "repaired": 0}, []
+    prev = json.load(open(path))
+    old = {match_key(p): p for p in prev.get("archive", [])}
+    old.update({match_key(p): p for p in prev["papers"]})   # live wins over archived
     new = cached = repaired = 0
     for p in papers:
         prev = old.pop(match_key(p), None)
@@ -741,10 +749,16 @@ def merge_existing(papers, path, force_relabel=()):
             new += 1
             continue
         cached += 1
-    print(f"  {cached} cached · {new} new · {repaired} retried · {len(old)} gone from Zotero")
-    for p in list(old.values())[:5]:
-        print(f"    - dropped: {(p.get('title') or '')[:60]}")
-    return papers, {"new": new, "cached": cached, "dropped": len(old), "repaired": repaired}
+    archived = list(old.values())
+    if archived:
+        print(f"  {cached} cached · {new} new · {repaired} retried · "
+              f"{len(archived)} not in this export (archived, not discarded)")
+        for p in archived[:3]:
+            print(f"    · {(p.get('title') or '')[:62]}")
+    else:
+        print(f"  {cached} cached · {new} new · {repaired} retried")
+    return (papers, {"new": new, "cached": cached, "dropped": len(archived),
+                     "repaired": repaired}, archived)
 
 
 def axes_fingerprint(lang="English"):
@@ -889,13 +903,14 @@ def main():
         add_tldr(papers)
 
     stats = {"new": len(papers), "cached": 0, "dropped": 0, "repaired": 0}
+    archived = []
     partial = a.out + ".partial"
     if os.path.exists(partial):
         print("found a checkpoint from an interrupted run — resuming")
-        papers, _ = merge_existing(papers, partial)
+        papers, _, _ = merge_existing(papers, partial)
     if a.merge:
         print("merging with existing database...")
-        papers, stats = merge_existing(papers, a.merge, a.relabel)
+        papers, stats, archived = merge_existing(papers, a.merge, a.relabel)
 
     if a.make_gold:
         make_gold(papers, a.gold)
@@ -953,7 +968,7 @@ def main():
                    "lineage": links,
                    "weights": {"last": W_LAST, "first": W_FIRST, "penultimate": W_PENULT,
                                "second": W_SECOND, "middle": W_MID, "tau": a.tau}},
-          "papers": papers}
+          "papers": papers, "archive": archived}
     json.dump(db, open(a.out, "w"), ensure_ascii=False, indent=1)
     if os.path.exists(partial):
         os.remove(partial)
@@ -969,6 +984,8 @@ def main():
         print(f"  ! {len(papers)-keyed} papers have no label fingerprint and will be "
               f"relabelled next run — this should be 0", file=sys.stderr)
     print(f"  {flagged} flagged for review · {verified} verified by you")
+    if archived:
+        print(f"  {len(archived)} archived — re-export them from Zotero and they return free")
     for l in links:
         print(f"  lineage: {l['person']} — {', '.join(l['trained_in'])} -> {', '.join(l['now_leads'])}")
 

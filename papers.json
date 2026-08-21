@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-08-20 21:30",
+  "generated": "2026-08-20 21:47",
   "n": 201,
   "taxonomy": "eaf15191ae13",
   "lang": "English",
@@ -86,40 +86,6 @@
   ],
   "lineage": [
    {
-    "person": "Christopher D. Harvey",
-    "trained_in": [
-     "Svoboda",
-     "Tank"
-    ],
-    "now_leads": [
-     "Harvey (single)"
-    ],
-    "as_first": 3,
-    "as_last": 1
-   },
-   {
-    "person": "Stephen R. Williams",
-    "trained_in": [
-     "Stuart"
-    ],
-    "now_leads": [
-     "Williams"
-    ],
-    "as_first": 1,
-    "as_last": 2
-   },
-   {
-    "person": "Jeffrey C. Magee",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Magee + Cook"
-    ],
-    "as_first": 4,
-    "as_last": 17
-   },
-   {
     "person": "Sonia Gasparini",
     "trained_in": [
      "Magee + Cook"
@@ -140,72 +106,6 @@
     ],
     "as_first": 1,
     "as_last": 3
-   },
-   {
-    "person": "Attila Losonczy",
-    "trained_in": [
-     "Magee + Cook"
-    ],
-    "now_leads": [
-     "Losonczy + Rózsa"
-    ],
-    "as_first": 2,
-    "as_last": 7
-   },
-   {
-    "person": "Tim Jarsky",
-    "trained_in": [
-     "Spruston"
-    ],
-    "now_leads": [
-     "Jarsky (single)"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Nelson Spruston",
-    "trained_in": [
-     "Larkum + Sakmann"
-    ],
-    "now_leads": [
-     "Spruston"
-    ],
-    "as_first": 1,
-    "as_last": 16
-   },
-   {
-    "person": "Mark Sheffield",
-    "trained_in": [
-     "Dombeck"
-    ],
-    "now_leads": [
-     "Sheffield"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Aaron D. Milstein",
-    "trained_in": [
-     "Magee + Cook"
-    ],
-    "now_leads": [
-     "Romani + Milstein"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Dax A. Hoffman",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Kim + Hoffman"
-    ],
-    "as_first": 1,
-    "as_last": 1
    },
    {
     "person": "Greg J. Stuart",
@@ -229,6 +129,106 @@
     ],
     "as_first": 3,
     "as_last": 2
+   },
+   {
+    "person": "Christopher D. Harvey",
+    "trained_in": [
+     "Svoboda",
+     "Tank"
+    ],
+    "now_leads": [
+     "Harvey (single)"
+    ],
+    "as_first": 3,
+    "as_last": 1
+   },
+   {
+    "person": "Jeffrey C. Magee",
+    "trained_in": [
+     "Johnston"
+    ],
+    "now_leads": [
+     "Magee + Cook"
+    ],
+    "as_first": 4,
+    "as_last": 18
+   },
+   {
+    "person": "Attila Losonczy",
+    "trained_in": [
+     "Magee + Cook"
+    ],
+    "now_leads": [
+     "Losonczy + Rózsa"
+    ],
+    "as_first": 2,
+    "as_last": 7
+   },
+   {
+    "person": "Aaron D. Milstein",
+    "trained_in": [
+     "Magee + Cook"
+    ],
+    "now_leads": [
+     "Romani + Milstein"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
+    "person": "Mark Sheffield",
+    "trained_in": [
+     "Dombeck"
+    ],
+    "now_leads": [
+     "Sheffield"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
+    "person": "Stephen R. Williams",
+    "trained_in": [
+     "Stuart"
+    ],
+    "now_leads": [
+     "Williams"
+    ],
+    "as_first": 1,
+    "as_last": 2
+   },
+   {
+    "person": "Nelson Spruston",
+    "trained_in": [
+     "Larkum + Sakmann"
+    ],
+    "now_leads": [
+     "Spruston"
+    ],
+    "as_first": 1,
+    "as_last": 16
+   },
+   {
+    "person": "Tim Jarsky",
+    "trained_in": [
+     "Spruston"
+    ],
+    "now_leads": [
+     "Jarsky (single)"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
+    "person": "Dax A. Hoffman",
+    "trained_in": [
+     "Johnston"
+    ],
+    "now_leads": [
+     "Kim + Hoffman"
+    ],
+    "as_first": 1,
+    "as_last": 1
    }
   ],
   "weights": {
@@ -1015,6 +1015,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -1031,21 +1037,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -1158,7 +1158,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 34,
+   "lab_cluster": 33,
    "lab_cluster_name": "Jónás (single)",
    "similar": [],
    "lineage": []
@@ -1312,6 +1312,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -1328,21 +1334,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -1477,6 +1477,12 @@
      "year": 2022
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -1487,21 +1493,15 @@
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
      "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -1935,7 +1935,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 35,
+   "lab_cluster": 34,
    "lab_cluster_name": "Cossart (single)",
    "similar": [],
    "lineage": []
@@ -2053,6 +2053,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -2069,21 +2075,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -2205,7 +2205,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 36,
+   "lab_cluster": 35,
    "lab_cluster_name": "Bartos (single)",
    "similar": [],
    "lineage": []
@@ -2728,7 +2728,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 37,
+   "lab_cluster": 36,
    "lab_cluster_name": "Jarsky (single)",
    "similar": [
     {
@@ -2928,12 +2928,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -3458,164 +3458,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
-   ]
-  },
-  {
-   "title": "The formation of an expanding memory representation in the hippocampus",
-   "year": 2023,
-   "doi": "",
-   "authors": [
-    "S. P. Vaidya",
-    "R. A. Chitwood",
-    "J. C. Magee"
-   ],
-   "venue": "BioRxiv",
-   "abstract": "How episodic memories are stored within brains is poorly understood. While certain  memory-retaining neurons have been potentially identified1-3, it is unclear if they retain learned information4,5. Further, there is considerable evidence that neuronal activity is unstable and may require additional mechanisms to support robust memory6-11. To examine  these issues, we recorded the activity of a hippocampal CA1 neuronal population for 7 days as mice learned cued reward locations. These data and modelling results suggest that two place cell (PC) pools, distinguished by place field (PF) stability, are formed each day (transient: ~1.5 days; sustained: ~2 weeks)8. Notably, the proportions of these pools changed across the week as unstable transient PCs were progressively replaced by sustained PCs,  markedly enhancing the stability of the total representation. This growing stable  representation contained behaviorally relevant information and sustained PCs became active immediately at the start of each session. Finally, the initial formation of sustained PCs was associated with a higher rate and efficacy of behavioral timescale synaptic plasticity (BTSP) and these PCs showed elevated and more reliable activity. It, therefore, appears that BTSP stabilizes particularly informative PCs, incorporating them into an expanding and  readily retrievable representation that displays hallmarks of a long-lasting memory.",
-   "zotero_tags": [],
-   "zotero_extra": "",
-   "id": "The_formation_of_an_expanding_memory_representation_in_the_h",
-   "cited_by": 0,
-   "first_author": "S. P. Vaidya",
-   "last_author": "J. C. Magee",
-   "tldr": "",
-   "labels": {
-    "scope": "hippocampal coding & memory",
-    "article_type": "primary research",
-    "prep": "awake in vivo",
-    "modality": "calcium imaging"
-   },
-   "phenomena": [],
-   "confidence": {
-    "scope": 0.97,
-    "article_type": 0.92,
-    "prep": 0.92,
-    "modality": 0.82
-   },
-   "evidence": {
-    "modality": "recorded CA1 neuronal population activity over 7 days in mice",
-    "prep": "mice learned cued reward locations; awake behaving, 7-day recording"
-   },
-   "significance": "Showed BTSP selectively stabilises informative CA1 place cells into an expanding representation, reframing how hippocampal episodic memories consolidate over days.",
-   "keywords": [
-    "place cells",
-    "BTSP",
-    "memory consolidation",
-    "CA1",
-    "longitudinal imaging",
-    "representational stability"
-   ],
-   "needs_review": false,
-   "method_flags": [
-    "chronic/longitudinal",
-    "behavior"
-   ],
-   "claim_edges": [
-    {
-     "claim": "C4.1",
-     "stance": "supports",
-     "strength": "direct",
-     "condition": "awake in vivo CA1 calcium imaging during reward learning over 7 days",
-     "quote": "initial formation of sustained PCs was associated with a higher rate and efficacy of BTSP",
-     "confidence": 0.9,
-     "source": "model",
-     "needs_review": false
-    },
-    {
-     "claim": "C4.2",
-     "stance": "qualifies",
-     "strength": "indirect",
-     "condition": "BTSP stabilizes a subset of place cells; transient PCs without BTSP hallmarks also exist",
-     "quote": "unstable transient PCs were progressively replaced by sustained PCs",
-     "confidence": 0.75,
-     "source": "model",
-     "needs_review": false
-    },
-    {
-     "claim": "C6.2",
-     "stance": "supports",
-     "strength": "direct",
-     "condition": "hippocampal CA1 during reward learning; sustained PCs show elevated activity and immediate retrieval",
-     "quote": "BTSP stabilizes particularly informative PCs, incorporating them into an expanding and readily retrievable representation",
-     "confidence": 0.8,
-     "source": "model",
-     "needs_review": false
-    },
-    {
-     "claim": "C6.1",
-     "stance": "qualifies",
-     "strength": "indirect",
-     "condition": "memory persists via stabilised neuronal representations shaped by BTSP, not purely fixed weights",
-     "quote": "displays hallmarks of a long-lasting memory",
-     "confidence": 0.65,
-     "source": "model",
-     "needs_review": false
-    }
-   ],
-   "label_fp": "eaf15191ae13",
-   "claims_seen": {
-    "C1.1": "818466c1",
-    "C1.2": "1a4790b7",
-    "C1.3": "41a920c0",
-    "C1.4": "98fcbdae",
-    "C1.5": "e23f5c96",
-    "C2.1": "ce76be9a",
-    "C2.2": "0b4b9d11",
-    "C2.3a": "a02f0d8e",
-    "C2.3b": "734a51b0",
-    "C2.3c": "476b2113",
-    "C3.1": "e294843b",
-    "C3.2": "f49566c9",
-    "C3.3": "8540e1bb",
-    "C3.4": "24f6491d",
-    "C4.1": "61367806",
-    "C4.2": "5e5d7566",
-    "C4.3": "238279cd",
-    "C5.1": "12b8d1a6",
-    "C5.2": "a0e6b62b",
-    "C6.1": "5c836a34",
-    "C6.2": "b6872cc7",
-    "C7.1": "d13127a3",
-    "C7.2": "b06c803c",
-    "C7.3": "aa25d26c",
-    "C7.4": "02732abf"
-   },
-   "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Cook",
-   "similar": [
-    {
-     "id": "10.1038_nn.2428",
-     "score": 0.75,
-     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
-     "year": 2009
-    },
-    {
-     "id": "10.1016_j.cell.2024.09.041",
-     "score": 0.75,
-     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
-     "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
-    }
-   ],
-   "lineage": [
-    "Jeffrey C. Magee",
-    "Sonia Gasparini",
-    "Judit K. Makara",
-    "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -3729,7 +3573,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 38,
+   "lab_cluster": 37,
    "lab_cluster_name": "Südhof (single)",
    "similar": [],
    "lineage": []
@@ -4830,7 +4674,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 39,
+   "lab_cluster": 38,
    "lab_cluster_name": "Malinow (single)",
    "similar": [],
    "lineage": []
@@ -5413,6 +5257,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -5429,21 +5279,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -5612,19 +5456,19 @@
      "year": 1999
     },
     {
-     "id": "10.1038_nn.2428",
+     "id": "10.1038_s41593-025-01986-3",
      "score": 0.75,
-     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
-     "year": 2009
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -6064,7 +5908,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 40,
+   "lab_cluster": 39,
    "lab_cluster_name": "Gerber (single)",
    "similar": [
     {
@@ -6606,8 +6450,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -6888,8 +6732,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -7326,8 +7170,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -7492,6 +7336,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -7508,21 +7358,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -7690,8 +7534,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Mark T. Harnett"
+    "Mark T. Harnett",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -8100,12 +7944,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -8234,7 +8078,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 41,
+   "lab_cluster": 40,
    "lab_cluster_name": "Basu (single)",
    "similar": [
     {
@@ -8333,7 +8177,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 42,
+   "lab_cluster": 41,
    "lab_cluster_name": "Knierim (single)",
    "similar": [],
    "lineage": []
@@ -8425,7 +8269,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 43,
+   "lab_cluster": 42,
    "lab_cluster_name": "Schuman (single)",
    "similar": [],
    "lineage": []
@@ -8592,12 +8436,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -9221,6 +9065,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -9237,21 +9087,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -9414,25 +9258,25 @@
      "year": 2009
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1016_j.cell.2024.09.041",
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
      "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -10039,12 +9883,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -10411,12 +10255,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -10576,7 +10420,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 44,
+   "lab_cluster": 43,
    "lab_cluster_name": "Lipscombe (single)",
    "similar": [],
    "lineage": []
@@ -10707,16 +10551,9 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 28,
-   "lab_cluster_name": "Sabatini + Cohen",
-   "similar": [
-    {
-     "id": "Dendritic_excitations_govern_back-propagation_via_a_spike-ra",
-     "score": 0.352,
-     "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
-     "year": 2026
-    }
-   ],
+   "lab_cluster": 44,
+   "lab_cluster_name": "Sabatini (single)",
+   "similar": [],
    "lineage": []
   },
   {
@@ -10844,7 +10681,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 28,
    "lab_cluster_name": "Antic",
    "similar": [
     {
@@ -10994,7 +10831,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 28,
    "lab_cluster_name": "Antic",
    "similar": [
     {
@@ -11172,8 +11009,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -12054,7 +11891,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 30,
+   "lab_cluster": 29,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -12198,6 +12035,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -12214,21 +12057,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -12360,12 +12197,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -12507,8 +12344,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -12661,8 +12498,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -13118,8 +12955,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -13693,6 +13530,12 @@
      "year": 2002
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -13703,21 +13546,15 @@
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
      "year": 2024
-    },
-    {
-     "id": "10.1038_nature11554",
-     "score": 0.75,
-     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
-     "year": 2012
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -13860,12 +13697,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -14092,84 +13929,6 @@
    "lab_cluster": 53,
    "lab_cluster_name": "Spain (single)",
    "similar": [],
-   "lineage": []
-  },
-  {
-   "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
-   "year": 2026,
-   "doi": "",
-   "authors": [
-    "Pojeong Park",
-    "David Wong-Campos",
-    "Daniel G Itkis",
-    "Byung Hun Lee",
-    "Yitong Qi",
-    "Hunter Davis",
-    "Jonathan B Grimm",
-    "Sarah E Plutkis",
-    "Luke D Lavis",
-    "Benjamin Antin",
-    "Amol Pasarkar",
-    "Liam Paninski",
-    "Adam E Cohen"
-   ],
-   "venue": "",
-   "abstract": "Dendrites on neurons support nonlinear electrical excitations, but the computational significance of these events is not well understood. We developed molecular, optical, and analytical tools to map sub-millisecond voltage dynamics throughout the dendritic trees of CA1 pyramidal neurons under diverse optogenetic and synaptic stimulus patterns, in acute brain slices. We observed history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes (dSpikes). Dendritic depolarization created a transient window for dSpike propagation, opened by A-type KV channel inactivation, and closed by slow NaV inactivation. Collisions of dSpikes with synaptic inputs triggered calcium channel and N-methyl-D-aspartate receptor (NMDAR)dependent plateau potentials, with accompanying complex spikes at the soma. This hierarchical ion channel network acts as a spike-rate accelerometer, providing an intuitive picture of how dendritic excitations shape associative plasticity rules.",
-   "zotero_tags": [],
-   "zotero_extra": "",
-   "id": "Dendritic_excitations_govern_back-propagation_via_a_spike-ra",
-   "cited_by": 0,
-   "first_author": "Pojeong Park",
-   "last_author": "Adam E Cohen",
-   "tldr": "",
-   "labels": {
-    "scope": "dendritic computation",
-    "article_type": "primary research",
-    "prep": "acute slice",
-    "modality": "voltage imaging"
-   },
-   "phenomena": [
-    "Na spike",
-    "bAP",
-    "plateau potential",
-    "Ca spike",
-    "branch-specific computation"
-   ],
-   "confidence": {
-    "scope": 0.97,
-    "article_type": 0.95,
-    "prep": 0.95,
-    "modality": 0.93
-   },
-   "evidence": {
-    "modality": "sub-millisecond voltage dynamics mapped optically throughout dendritic trees",
-    "prep": "acute brain slices stated explicitly in abstract"
-   },
-   "significance": "Dendritic Na+ spikes gate back-propagation via A-type K+ inactivation and trigger plateau potentials, establishing a spike-rate accelerometer mechanism that governs associative plasticity rules.",
-   "keywords": [
-    "dendritic spike",
-    "back-propagation",
-    "CA1 pyramidal",
-    "voltage imaging",
-    "plateau potential",
-    "KV channel inactivation"
-   ],
-   "needs_review": false,
-   "method_flags": [
-    "optogenetics",
-    "pharmacology"
-   ],
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 28,
-   "lab_cluster_name": "Sabatini + Cohen",
-   "similar": [
-    {
-     "id": "10.7554_eLife.76993",
-     "score": 0.352,
-     "title": "Dendritic branch structure compartmentalizes voltage-dependent calcium influx in cortical layer 2/3 pyramidal cells",
-     "year": 2022
-    }
-   ],
    "lineage": []
   },
   {
@@ -14851,7 +14610,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 30,
+   "lab_cluster": 29,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -15863,8 +15622,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -16085,7 +15844,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 31,
+   "lab_cluster": 30,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -16145,7 +15904,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 31,
+   "lab_cluster": 30,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -16277,8 +16036,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -16409,6 +16168,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -16425,21 +16190,15 @@
      "score": 0.75,
      "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
      "year": 2002
-    },
-    {
-     "id": "10.1523_JNEUROSCI.2520-04.2004",
-     "score": 0.75,
-     "title": "On the Initiation and Propagation of Dendritic Spikes in CA1 Pyramidal Neurons",
-     "year": 2004
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -16963,6 +16722,12 @@
    "lab_cluster_name": "Magee + Cook",
    "similar": [
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1038_nn.2428",
      "score": 0.75,
      "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
@@ -16979,21 +16744,15 @@
      "score": 0.75,
      "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
      "year": 2002
-    },
-    {
-     "id": "10.1523_JNEUROSCI.2520-04.2004",
-     "score": 0.75,
-     "title": "On the Initiation and Propagation of Dendritic Spikes in CA1 Pyramidal Neurons",
-     "year": 2004
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -17148,8 +16907,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -19353,7 +19112,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 32,
+   "lab_cluster": 31,
    "lab_cluster_name": "Sheffield",
    "similar": [
     {
@@ -20927,7 +20686,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 33,
+   "lab_cluster": 32,
    "lab_cluster_name": "Poirazi",
    "similar": [
     {
@@ -21395,8 +21154,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -21627,8 +21386,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -22446,8 +22205,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Mark T. Harnett"
+    "Mark T. Harnett",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -22601,8 +22360,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -22767,8 +22526,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -22903,6 +22662,12 @@
      "year": 2008
     },
     {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.75,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    },
+    {
      "id": "10.1016_j.cell.2024.09.041",
      "score": 0.75,
      "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
@@ -22913,21 +22678,15 @@
      "score": 0.75,
      "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
      "year": 2012
-    },
-    {
-     "id": "10.1113_jphysiol.2002.020503",
-     "score": 0.75,
-     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
-     "year": 2002
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -23780,8 +23539,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -24076,8 +23835,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -24232,12 +23991,12 @@
     }
    ],
    "lineage": [
-    "Jeffrey C. Magee",
     "Sonia Gasparini",
     "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
     "Attila Losonczy",
-    "Aaron D. Milstein",
-    "Mark T. Harnett"
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -24291,7 +24050,14 @@
    "label_fp": "eaf15191ae13",
    "lab_cluster": 83,
    "lab_cluster_name": "Peskin (single)",
-   "similar": [],
+   "similar": [
+    {
+     "id": "10.1038_s41593-025-01986-3",
+     "score": 0.149,
+     "title": "Formation of an expanding memory representation in the hippocampus",
+     "year": 2025
+    }
+   ],
    "lineage": []
   },
   {
@@ -25129,8 +24895,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -26180,7 +25946,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 32,
+   "lab_cluster": 31,
    "lab_cluster_name": "Sheffield",
    "similar": [
     {
@@ -26335,8 +26101,8 @@
     }
    ],
    "lineage": [
-    "Tim Jarsky",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Tim Jarsky"
    ]
   },
   {
@@ -27293,7 +27059,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 33,
+   "lab_cluster": 32,
    "lab_cluster_name": "Poirazi",
    "similar": [
     {
@@ -27833,8 +27599,8 @@
     }
    ],
    "lineage": [
-    "Stephen R. Williams",
-    "Greg J. Stuart"
+    "Greg J. Stuart",
+    "Stephen R. Williams"
    ]
   },
   {
@@ -27997,6 +27763,602 @@
      "score": 0.052,
      "title": "Glutamate indicators with increased sensitivity and tailored deactivation rates",
      "year": 2025
+    }
+   ],
+   "lineage": []
+  },
+  {
+   "title": "Formation of an expanding memory representation in the hippocampus",
+   "year": 2025,
+   "doi": "10.1038/s41593-025-01986-3",
+   "authors": [
+    "Sachin P Vaidya",
+    "Guanchun Li",
+    "Raymond A. Chitwood",
+    "Yiding Li",
+    "Jeffrey C. Magee"
+   ],
+   "venue": "Nature Neuroscience",
+   "abstract": "How brain networks connected by labile synapses store new information without catastrophically overwriting previous memories remains poorly understood. To examine this, we tracked the same population of hippocampal CA1 place cells (PCs) as mice learned a task for 7 days. We found evidence of memory formation as both the number of PCs maintaining a stable place field and the stability of individual PCs progressively increased across the week until most of the representation was composed of long-term stable PCs. The stable PCs disproportionately represented task-related learned information, were retrieved earlier within a behavioral session and showed a strong correlation with behavioral performance. Both the initial formation of PCs and their retrieval on subsequent days were accompanied by prominent signs of behavioral timescale synaptic plasticity (BTSP), suggesting that even stable PCs were re-formed by synaptic plasticity each session. Further experimental evidence supported by a cascade-type state model indicates that CA1 PCs increase their stability each day they are active, eventually forming a highly stable population. The results suggest that CA1 memory is implemented by an increase in the likelihood of new neuron-specific synaptic plasticity, as opposed to extensive long-term synaptic weight stabilization.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41593-025-01986-3",
+   "cited_by": 27,
+   "first_author": "Sachin P Vaidya",
+   "last_author": "Jeffrey C. Magee",
+   "tldr": "Multiday imaging of CA1 neurons during learning reveals that the representation stabilizes as the number of readily retrievable, information-rich and stable place cells increases and suggests novel mechanisms of hippocampal memory formation.",
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [],
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal",
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.95,
+    "prep": 0.92,
+    "modality": 0.88
+   },
+   "evidence": {
+    "modality": "tracked same CA1 place cell population over 7 days",
+    "prep": "mice learned a task across 7 days of awake behavior"
+   },
+   "significance": "Showed CA1 place cells progressively stabilize via repeated BTSP each session, reframing hippocampal memory as increasing plasticity likelihood rather than long-term synaptic weight preservation.",
+   "keywords": [
+    "place cells",
+    "BTSP",
+    "memory consolidation",
+    "CA1",
+    "longitudinal imaging",
+    "synaptic plasticity"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Cook",
+   "similar": [
+    {
+     "id": "10.1038_nn.2428",
+     "score": 0.75,
+     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
+     "year": 2009
+    },
+    {
+     "id": "10.1016_j.cell.2024.09.041",
+     "score": 0.75,
+     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
+     "year": 2024
+    },
+    {
+     "id": "10.1038_nature11554",
+     "score": 0.75,
+     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
+     "year": 2012
+    },
+    {
+     "id": "10.1113_jphysiol.2002.020503",
+     "score": 0.75,
+     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
+     "year": 2002
+    }
+   ],
+   "lineage": [
+    "Sonia Gasparini",
+    "Judit K. Makara",
+    "Mark T. Harnett",
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
+    "Aaron D. Milstein"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "awake in vivo CA1 place cell tracking over 7 days in mice",
+     "quote": "accompanied by prominent signs of behavioral timescale synaptic plasticity (BTSP)",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "BTSP accounts for most but not all place field formation events tracked",
+     "quote": "both the initial formation of PCs and their retrieval...were accompanied by prominent signs of BTSP",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.1",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "CA1 memory over multi-day learning in awake mice",
+     "quote": "as opposed to extensive long-term synaptic weight stabilization",
+     "confidence": 0.9,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 place cells stabilising over days via repeated BTSP re-formation",
+     "quote": "increase in the likelihood of new neuron-specific synaptic plasticity",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "calcium imaging used to track place cells and infer dendritic/synaptic events",
+     "quote": "we tracked the same population of hippocampal CA1 place cells",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
+   "year": 2025,
+   "doi": "10.1038/s41467-025-55819-9",
+   "authors": [
+    "Pojeong Park",
+    "J. David Wong-Campos",
+    "Daniel G. Itkis",
+    "Byung Hun Lee",
+    "Yitong Qi",
+    "Hunter C. Davis",
+    "Benjamin Antin",
+    "Amol Pasarkar",
+    "Jonathan B. Grimm",
+    "Sarah E. Plutkis",
+    "Katie L. Holland",
+    "Liam Paninski",
+    "Luke D. Lavis",
+    "Adam E. Cohen"
+   ],
+   "venue": "Nature Communications",
+   "abstract": "Dendrites on neurons support electrical excitations, but the computational significance of these events is not well understood. We developed molecular, optical, and computational tools for all-optical electrophysiology in dendrites. We mapped sub-millisecond voltage dynamics throughout the dendritic trees of CA1 pyramidal neurons under diverse optogenetic and synaptic stimulus patterns, in acute brain slices. Our data show history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes (dSpikes). Dendritic depolarization created a transient window for dSpike propagation, opened by A-type KV channel inactivation, and closed by slow NaV inactivation. Collisions of dSpikes with synaptic inputs triggered calcium channel and N-methyl-D-aspartate receptor (NMDAR)-dependent dendritic plateau potentials and accompanying complex spikes at the soma. This hierarchical ion channel network acts as a spike-rate accelerometer, providing an intuitive picture connecting dendritic biophysics to associative plasticity rules. Neural mechanisms mediating information flow and processing in dendrites are not fully understood. Here the authors developed techniques to map bioelectrical excitations in the dendrites of neurons in acute slices of mouse brain tissue. They developed a holistic picture of the roles of dendritic excitations in spike back-propagation.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41467-025-55819-9",
+   "cited_by": 27,
+   "first_author": "Pojeong Park",
+   "last_author": "Adam E. Cohen",
+   "tldr": "Techniques to map bioelectrical excitations in the dendrites of neurons in acute slices of mouse brain tissue are developed and a holistic picture of the roles of dendritic excitations in spike back-propagation is developed.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "voltage imaging"
+   },
+   "phenomena": [
+    "Na spike",
+    "bAP",
+    "plateau potential",
+    "Ca spike",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "optogenetics",
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.95,
+    "prep": 0.98,
+    "modality": 0.93
+   },
+   "evidence": {
+    "modality": "all-optical electrophysiology mapping sub-millisecond voltage dynamics in dendrites",
+    "prep": "acute brain slices of CA1 pyramidal neurons stated explicitly"
+   },
+   "significance": "Dendritic Na+ spikes and ion-channel gating form a spike-rate accelerometer in CA1, linking dendritic biophysics to associative plasticity rules via plateau potentials.",
+   "keywords": [
+    "all-optical electrophysiology",
+    "dendritic Na spike",
+    "back-propagation",
+    "plateau potential",
+    "KV channel inactivation",
+    "CA1 pyramidal neuron"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 92,
+   "lab_cluster_name": "Cohen (single)",
+   "similar": [],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Locally generated Na+ dSpikes precede somatic drive; result is in acute slice CA1",
+     "quote": "history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 pyramidal neurons in acute slice; prior dendritic depolarisation sets dSpike propagation window",
+     "quote": "Dendritic depolarization created a transient window for dSpike propagation",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.3",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 pyramidal neurons in acute slice at physiological temperature",
+     "quote": "opened by A-type KV channel inactivation, and closed by slow NaV inactivation",
+     "confidence": 0.97,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.4",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA1 pyramidal neurons in acute slice; dSpike collision with glutamatergic input required for plateau",
+     "quote": "Collisions of dSpikes with synaptic inputs triggered calcium channel and NMDAR-dependent dendritic plateau potentials",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.5",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "Na-mediated dSpikes in CA1 apical dendrites; dSpike footprint was cell-wide not branch-restricted",
+     "quote": "history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes",
+     "confidence": 0.78,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "Na-mediated dSpikes in CA1; TTX-sensitive spikes propagated across whole apical tree",
+     "quote": "locally generated Na+ spikes (dSpikes)",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "Plateau potentials require dSpike-input collision; framework links biophysics to plasticity rules",
+     "quote": "providing an intuitive picture connecting dendritic biophysics to associative plasticity rules",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "Measurements taken at physiological temperature; room-temperature results differ significantly",
+     "quote": "We mapped sub-millisecond voltage dynamics throughout the dendritic trees",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.4",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "CheRiff optogenetic current (~130 pA) is far below currents needed to trigger local Na spikes in patch studies",
+     "quote": "diverse optogenetic and synaptic stimulus patterns, in acute brain slices",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  }
+ ],
+ "archive": [
+  {
+   "title": "The formation of an expanding memory representation in the hippocampus",
+   "year": 2023,
+   "doi": "",
+   "authors": [
+    "S. P. Vaidya",
+    "R. A. Chitwood",
+    "J. C. Magee"
+   ],
+   "venue": "BioRxiv",
+   "abstract": "How episodic memories are stored within brains is poorly understood. While certain  memory-retaining neurons have been potentially identified1-3, it is unclear if they retain learned information4,5. Further, there is considerable evidence that neuronal activity is unstable and may require additional mechanisms to support robust memory6-11. To examine  these issues, we recorded the activity of a hippocampal CA1 neuronal population for 7 days as mice learned cued reward locations. These data and modelling results suggest that two place cell (PC) pools, distinguished by place field (PF) stability, are formed each day (transient: ~1.5 days; sustained: ~2 weeks)8. Notably, the proportions of these pools changed across the week as unstable transient PCs were progressively replaced by sustained PCs,  markedly enhancing the stability of the total representation. This growing stable  representation contained behaviorally relevant information and sustained PCs became active immediately at the start of each session. Finally, the initial formation of sustained PCs was associated with a higher rate and efficacy of behavioral timescale synaptic plasticity (BTSP) and these PCs showed elevated and more reliable activity. It, therefore, appears that BTSP stabilizes particularly informative PCs, incorporating them into an expanding and  readily retrievable representation that displays hallmarks of a long-lasting memory.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "The_formation_of_an_expanding_memory_representation_in_the_h",
+   "cited_by": 0,
+   "first_author": "S. P. Vaidya",
+   "last_author": "J. C. Magee",
+   "tldr": "",
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "phenomena": [],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.92,
+    "prep": 0.92,
+    "modality": 0.82
+   },
+   "evidence": {
+    "modality": "recorded CA1 neuronal population activity over 7 days in mice",
+    "prep": "mice learned cued reward locations; awake behaving, 7-day recording"
+   },
+   "significance": "Showed BTSP selectively stabilises informative CA1 place cells into an expanding representation, reframing how hippocampal episodic memories consolidate over days.",
+   "keywords": [
+    "place cells",
+    "BTSP",
+    "memory consolidation",
+    "CA1",
+    "longitudinal imaging",
+    "representational stability"
+   ],
+   "needs_review": false,
+   "method_flags": [
+    "chronic/longitudinal",
+    "behavior"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "awake in vivo CA1 calcium imaging during reward learning over 7 days",
+     "quote": "initial formation of sustained PCs was associated with a higher rate and efficacy of BTSP",
+     "confidence": 0.9,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.2",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "BTSP stabilizes a subset of place cells; transient PCs without BTSP hallmarks also exist",
+     "quote": "unstable transient PCs were progressively replaced by sustained PCs",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "hippocampal CA1 during reward learning; sustained PCs show elevated activity and immediate retrieval",
+     "quote": "BTSP stabilizes particularly informative PCs, incorporating them into an expanding and readily retrievable representation",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C6.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "memory persists via stabilised neuronal representations shaped by BTSP, not purely fixed weights",
+     "quote": "displays hallmarks of a long-lasting memory",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "label_fp": "eaf15191ae13",
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   },
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Cook",
+   "similar": [
+    {
+     "id": "10.1038_nn.2428",
+     "score": 0.75,
+     "title": "Experience-dependent compartmentalized dendritic plasticity in rat hippocampal CA1 pyramidal neurons",
+     "year": 2009
+    },
+    {
+     "id": "10.1016_j.cell.2024.09.041",
+     "score": 0.75,
+     "title": "Mechanisms of memory-supporting neuronal dynamics in hippocampal area CA3",
+     "year": 2024
+    },
+    {
+     "id": "10.1038_nature11554",
+     "score": 0.75,
+     "title": "Synaptic amplification by dendritic spines enhances input cooperativity",
+     "year": 2012
+    },
+    {
+     "id": "10.1113_jphysiol.2002.020503",
+     "score": 0.75,
+     "title": "Phosphorylation-dependent differences in the activation properties of distal and proximal dendritic Na+ channels in rat CA1 hippocampal neurons",
+     "year": 2002
+    }
+   ],
+   "lineage": [
+    "Jeffrey C. Magee",
+    "Sonia Gasparini",
+    "Judit K. Makara",
+    "Attila Losonczy",
+    "Aaron D. Milstein",
+    "Mark T. Harnett"
+   ]
+  },
+  {
+   "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
+   "year": 2026,
+   "doi": "",
+   "authors": [
+    "Pojeong Park",
+    "David Wong-Campos",
+    "Daniel G Itkis",
+    "Byung Hun Lee",
+    "Yitong Qi",
+    "Hunter Davis",
+    "Jonathan B Grimm",
+    "Sarah E Plutkis",
+    "Luke D Lavis",
+    "Benjamin Antin",
+    "Amol Pasarkar",
+    "Liam Paninski",
+    "Adam E Cohen"
+   ],
+   "venue": "",
+   "abstract": "Dendrites on neurons support nonlinear electrical excitations, but the computational significance of these events is not well understood. We developed molecular, optical, and analytical tools to map sub-millisecond voltage dynamics throughout the dendritic trees of CA1 pyramidal neurons under diverse optogenetic and synaptic stimulus patterns, in acute brain slices. We observed history-dependent spike back-propagation in distal dendrites, driven by locally generated Na+ spikes (dSpikes). Dendritic depolarization created a transient window for dSpike propagation, opened by A-type KV channel inactivation, and closed by slow NaV inactivation. Collisions of dSpikes with synaptic inputs triggered calcium channel and N-methyl-D-aspartate receptor (NMDAR)dependent plateau potentials, with accompanying complex spikes at the soma. This hierarchical ion channel network acts as a spike-rate accelerometer, providing an intuitive picture of how dendritic excitations shape associative plasticity rules.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "Dendritic_excitations_govern_back-propagation_via_a_spike-ra",
+   "cited_by": 0,
+   "first_author": "Pojeong Park",
+   "last_author": "Adam E Cohen",
+   "tldr": "",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "voltage imaging"
+   },
+   "phenomena": [
+    "Na spike",
+    "bAP",
+    "plateau potential",
+    "Ca spike",
+    "branch-specific computation"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.95,
+    "prep": 0.95,
+    "modality": 0.93
+   },
+   "evidence": {
+    "modality": "sub-millisecond voltage dynamics mapped optically throughout dendritic trees",
+    "prep": "acute brain slices stated explicitly in abstract"
+   },
+   "significance": "Dendritic Na+ spikes gate back-propagation via A-type K+ inactivation and trigger plateau potentials, establishing a spike-rate accelerometer mechanism that governs associative plasticity rules.",
+   "keywords": [
+    "dendritic spike",
+    "back-propagation",
+    "CA1 pyramidal",
+    "voltage imaging",
+    "plateau potential",
+    "KV channel inactivation"
+   ],
+   "needs_review": false,
+   "method_flags": [
+    "optogenetics",
+    "pharmacology"
+   ],
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 28,
+   "lab_cluster_name": "Sabatini + Cohen",
+   "similar": [
+    {
+     "id": "10.7554_eLife.76993",
+     "score": 0.352,
+     "title": "Dendritic branch structure compartmentalizes voltage-dependent calcium influx in cortical layer 2/3 pyramidal cells",
+     "year": 2022
     }
    ],
    "lineage": []

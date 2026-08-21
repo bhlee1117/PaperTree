@@ -104,3 +104,27 @@ the export only really needs to carry DOIs. Point a weekly cron job at it:
 ```
 
 Read `update.log` before trusting a run you did not watch.
+
+
+## Re-exporting from Zotero
+
+Papers are matched by DOI, falling back to a normalised title. Re-exporting the same
+items — same file or a fresh one, CSV or BibTeX — matches them and costs nothing.
+
+Two things break the match, and both are worth knowing:
+
+**No DOI.** Those papers match on title. If the title changes at all, even a fixed typo
+or a metadata refresh from the publisher, it is a different paper as far as the cache is
+concerned and gets relabelled. Adding the DOI in Zotero fixes it permanently.
+
+**Exporting a subset used to destroy work.** Papers absent from an export are no longer
+discarded; they move to an `archive` section of papers.json and come back free when you
+export them again. Before this, going from 270 papers to a 12-paper test export deleted
+the labels and claim assignments for the other 258, and re-exporting the full library
+re-paid for all of them at roughly $3. The run now says so explicitly:
+
+    6 cached · 0 new · 0 retried · 8 not in this export (archived, not discarded)
+    8 archived — re-export them from Zotero and they return free
+
+Measured: 14 papers labelled cold, then exported as 6, then re-exported as 14 — the last
+run makes zero API calls.

@@ -120,6 +120,46 @@ text{font-family:var(--mono);}
 .node.on circle{stroke:var(--ink);stroke-width:2}
 .link{fill:none;stroke:var(--line2);stroke-width:1.2}
 .link.on{stroke:var(--accent);stroke-width:1.8}
+/* ── papers browser ───────────────────────────────────── */
+.pwrap{display:grid;grid-template-columns:246px minmax(0,1fr);gap:26px;align-items:start}
+@media(max-width:940px){.pwrap{grid-template-columns:1fr}.facets{position:static!important}}
+.facets{position:sticky;top:12px;max-height:calc(100vh - 190px);overflow:auto;padding-right:6px}
+.fg{margin-bottom:16px}
+.fg h5{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink3);margin:0 0 6px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.fo{display:flex;align-items:center;gap:7px;width:100%;text-align:left;font:inherit;font-size:12px;
+  background:none;border:none;padding:3px 4px;border-radius:5px;color:var(--ink2);cursor:pointer}
+.fo:hover{background:var(--panel);color:var(--ink)}
+.fo[aria-pressed=true]{color:var(--ink);background:var(--panel2)}
+.fo .bx{width:11px;height:11px;border:1px solid var(--line2);border-radius:3px;flex:none}
+.fo[aria-pressed=true] .bx{background:var(--accent);border-color:var(--accent)}
+.fo .n{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--ink3)}
+.fo.zero{opacity:.38}
+.yrow{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;color:var(--ink3)}
+.yrow input{flex:1;accent-color:var(--accent)}
+.ptools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.ptools input[type=search]{flex:1;min-width:190px;font:inherit;font-size:12.5px;background:var(--panel);
+  border:1px solid var(--line);border-radius:7px;padding:7px 11px;color:var(--ink)}
+.ptools input[type=search]:focus{outline:none;border-color:var(--accent)}
+.ptools select{font:inherit;font-family:var(--mono);font-size:11px;background:var(--panel);
+  border:1px solid var(--line);border-radius:7px;padding:7px 9px;color:var(--ink2)}
+.ptools .cnt{font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.ptools button{font:inherit;font-family:var(--mono);font-size:11px;background:var(--panel);
+  border:1px solid var(--line);border-radius:7px;padding:7px 11px;color:var(--ink2);cursor:pointer}
+.ptools button:hover{border-color:var(--accent);color:var(--ink)}
+.prow{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:11px 14px;margin-bottom:7px}
+.prow:hover{border-color:var(--line2)}
+.prow .t{font-size:13.5px;font-weight:500;line-height:1.35;color:var(--ink)}
+.prow .s{color:var(--ink2);font-size:12.5px;margin-top:4px;line-height:1.45}
+.prow .m{font-family:var(--mono);font-size:9.5px;color:var(--ink3);margin-top:7px;
+  display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.prow .m .yy{color:var(--ink2)}
+.prow .m a{color:var(--ink3);text-decoration:none;border-bottom:1px solid var(--line2)}
+.prow .m a:hover{color:var(--accent)}
+.cchip{font-family:var(--mono);font-size:9.5px;padding:1px 6px;border-radius:9px;cursor:pointer;
+  border:1px solid var(--line2);color:var(--ink3);text-decoration:none}
+.cchip:hover{border-color:var(--accent);color:var(--accent)}
+.cchip.contested{border-color:#6B2A34;color:var(--con)}
 .drop{position:fixed;inset:0;background:rgba(255,61,138,.09);border:2px dashed var(--accent);z-index:99;
   display:none;place-items:center;font-family:var(--mono);color:var(--accent)}
 .drop.on{display:grid}
@@ -143,6 +183,7 @@ text{font-family:var(--mono);}
 <div class="subs" role="tablist">
   <button class="sub" role="tab" data-v="claims" aria-selected="true">Claim tree</button>
   <button class="sub" role="tab" data-v="net" aria-selected="false">Author–paper network</button>
+  <button class="sub" role="tab" data-v="papers" aria-selected="false">All papers</button>
 </div>
 <div class="canvas" id="canvas"><svg id="wires"></svg><div id="out"></div></div>
 <div class="bar">
@@ -159,7 +200,8 @@ const reindex = () => { CL = Object.fromEntries(DB.claims.map(c => [c.id, c]));
 reindex();
 const ORDER = ["supports","qualifies","contradicts","assumes"];
 let LOADED = null;
-const S = {view:"claims", q:null, c:null, node:null, tau:0.15, win:5};
+const S = {view:"claims", q:null, c:null, node:null, tau:0.15, win:5,
+  f:{}, yr:null, pq:"", sort:"year", labels:"auto"};   // f: facet -> Set of chosen values
 const esc = s => String(s ?? "").replace(/[&<>"]/g, x => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]));
 const edgesOf = id => DB.edges.filter(e => e.claim === id);
 const paperOf = e => PP[e.paper_id] || null;
@@ -297,6 +339,150 @@ function wires(){
   if (cb && first) draw(cb, first, true);
 }
 
+/* ── view 3: all papers, faceted ──────────────────────── */
+/* Claims attached to a paper come from DB.edges, not paper.claim_edges, because that is
+   the only place human-authored edges live. Filtering on `contested` off claim_edges
+   alone would miss every claim whose evidence you wrote by hand. */
+const claimsOfPaper = (() => {
+  const m = new Map();
+  for (const e of DB.edges) if (e.paper_id)
+    (m.get(e.paper_id) || m.set(e.paper_id, new Set()).get(e.paper_id)).add(e.claim);
+  return id => [...(m.get(id) || [])];
+})();
+
+const AXES = () => (DB.meta.axes || []).map(a => ({...a, multi:false}))
+  .concat((DB.meta.multi_axes || []).map(a => ({...a, multi:true})));
+
+function facetDefs(){
+  const labs = [...new Set(DB.papers.map(p => p.lab_cluster_name).filter(Boolean))]
+    .sort((a,b) => a.localeCompare(b));
+  return AXES().map(a => ({
+      key:a.id, label:a.label, values:a.values,
+      get: p => a.multi ? (p[a.id] || []) : [(p.labels||{})[a.id]].filter(Boolean)
+    }))
+    .concat([{key:"lab", label:"Author family", values:labs,
+              get: p => [p.lab_cluster_name].filter(Boolean)},
+             {key:"flag", label:"Status",
+              values:["on a contested claim","on a thin claim","no claim attached",
+                      "needs review","not labelled"],
+              get: p => {
+                const cs = claimsOfPaper(p.id), out = [];
+                if (cs.some(c => (CL[c]||{}).status === "contested")) out.push("on a contested claim");
+                if (cs.some(c => CL[c] && thin(CL[c]))) out.push("on a thin claim");
+                if (!cs.length) out.push("no claim attached");
+                if (p.needs_review || (p.claim_edges||[]).some(e=>e.needs_review)) out.push("needs review");
+                if (!p.labels || !Object.keys(p.labels).length) out.push("not labelled");
+                return out; }}]);
+}
+
+const yrBounds = () => { const y = DB.papers.map(p=>p.year).filter(Boolean);
+  return y.length ? [Math.min(...y), Math.max(...y)] : [1990, 2026]; };
+
+function passes(p, defs, skip){
+  for (const d of defs){
+    if (d.key === skip) continue;
+    const want = S.f[d.key];
+    if (!want || !want.size) continue;
+    const have = d.get(p);
+    if (!have.some(v => want.has(v))) return false;     // OR within a facet
+  }
+  const [a,b] = S.yr || yrBounds();
+  if (p.year && (p.year < a || p.year > b)) return false;
+  const q = S.pq.trim().toLowerCase();
+  if (q && !(p.title+" "+(p.authors||[]).join(" ")+" "+(p.significance||"")+" "+
+             (p.venue||"")+" "+claimsOfPaper(p.id).join(" ")).toLowerCase().includes(q)) return false;
+  return true;
+}
+
+function viewPapers(){
+  const defs = facetDefs();
+  const [lo,hi] = yrBounds();
+  if (!S.yr) S.yr = [lo,hi];
+  const shown = DB.papers.filter(p => passes(p, defs, null));
+
+  let fh = "";
+  for (const d of defs){
+    // counts are computed with this facet's own filter lifted, so the numbers tell you
+    // what selecting a value would give you rather than what you already selected
+    const pool = DB.papers.filter(p => passes(p, defs, d.key));
+    const n = {}; for (const p of pool) for (const v of d.get(p)) n[v] = (n[v]||0)+1;
+    const vals = (d.values||[]).filter(v => n[v] || (S.f[d.key]||new Set()).has(v));
+    if (!vals.length) continue;
+    fh += `<div class="fg"><h5>${esc(d.label)}</h5>` + vals.map(v =>
+      `<button class="fo ${n[v]?"":"zero"}" data-f="${esc(d.key)}" data-v="${esc(v)}"
+        aria-pressed="${(S.f[d.key]||new Set()).has(v)}">
+        <span class="bx"></span><span>${esc(v)}</span><span class="n">${n[v]||0}</span></button>`).join("")
+      + `</div>`;
+  }
+  fh += `<div class="fg"><h5>Year</h5>
+    <div class="yrow"><span>${S.yr[0]}</span>
+      <input type="range" id="y0" min="${lo}" max="${hi}" value="${S.yr[0]}"></div>
+    <div class="yrow"><span>${S.yr[1]}</span>
+      <input type="range" id="y1" min="${lo}" max="${hi}" value="${S.yr[1]}"></div></div>`;
+
+  const cmp = {year:(a,b)=>(b.year||0)-(a.year||0),
+               year_asc:(a,b)=>(a.year||0)-(b.year||0),
+               cites:(a,b)=>(b.cited_by||0)-(a.cited_by||0),
+               claims:(a,b)=>claimsOfPaper(b.id).length-claimsOfPaper(a.id).length,
+               title:(a,b)=>a.title.localeCompare(b.title)}[S.sort];
+  const list = [...shown].sort(cmp);
+
+  const rows = list.map(p => {
+    const L = p.labels||{}, cs = claimsOfPaper(p.id);
+    return `<div class="prow">
+      <div class="t">${esc(p.title)}</div>
+      ${p.significance?`<div class="s">${esc(p.significance)}</div>`:""}
+      <div class="m">
+        <span class="yy">${p.year||""}</span>
+        <span>${esc(p.venue||"")}</span>
+        ${p.lab_cluster_name?`<span class="pill">${esc(p.lab_cluster_name)}</span>`:""}
+        ${["scope","prep","modality","article_type"].filter(k=>L[k])
+           .map(k=>`<span class="pill">${esc(L[k])}</span>`).join("")}
+        ${(p.phenomena||[]).map(x=>`<span class="pill">${esc(x)}</span>`).join("")}
+        ${p.cited_by?`<span>${p.cited_by} cites</span>`:""}
+        ${cs.map(c=>`<a href="#" class="cchip ${(CL[c]||{}).status==="contested"?"contested":""}"
+            data-jump="${c}">${c}</a>`).join("")}
+        ${(p.needs_review)?`<span style="color:var(--accent)">● check</span>`:""}
+        ${p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">doi</a>`:""}
+      </div></div>`;
+  }).join("") || `<div class="hint">Nothing matches. Clear a filter.</div>`;
+
+  const active = Object.values(S.f).reduce((a,s)=>a+(s?s.size:0),0);
+  $("#out").innerHTML = `<div class="pwrap">
+    <div class="facets">${fh}</div>
+    <div><div class="ptools">
+      <input type="search" id="pq" placeholder="title, author, venue, claim id…" value="${esc(S.pq)}">
+      <select id="psort">
+        ${[["year","newest"],["year_asc","oldest"],["cites","most cited"],
+           ["claims","most claims"],["title","title A–Z"]].map(([v,t])=>
+          `<option value="${v}" ${S.sort===v?"selected":""}>${t}</option>`).join("")}
+      </select>
+      <span class="cnt">${list.length} of ${DB.papers.length}</span>
+      <button id="copyd">Copy DOIs</button>
+      ${active||S.pq?`<button id="clr">Clear ${active?active+" filters":"search"}</button>`:""}
+    </div>${rows}</div></div>`;
+
+  $("#out").querySelectorAll("[data-f]").forEach(b => b.onclick = () => {
+    const k = b.dataset.f, v = b.dataset.v;
+    const set = S.f[k] || (S.f[k] = new Set());
+    set.has(v) ? set.delete(v) : set.add(v);
+    render(); });
+  const yb = (id,i) => { const el=$("#"+id); el.oninput = () => {
+    S.yr[i] = +el.value;
+    if (S.yr[0] > S.yr[1]) S.yr[1-i] = S.yr[i];
+    render(); }; };
+  yb("y0",0); yb("y1",1);
+  const pq = $("#pq"); pq.oninput = () => { S.pq = pq.value; render();
+    const e=$("#pq"); e.focus(); e.setSelectionRange(e.value.length,e.value.length); };
+  $("#psort").onchange = e => { S.sort = e.target.value; render(); };
+  $("#copyd").onclick = () => {
+    const d = list.map(p=>p.doi).filter(Boolean).join("\n");
+    navigator.clipboard ? navigator.clipboard.writeText(d) : 0;
+    $("#copyd").textContent = `Copied ${d.split("\n").filter(Boolean).length}`;
+    setTimeout(()=>{ const b=$("#copyd"); if(b) b.textContent="Copy DOIs"; }, 1400); };
+  if ($("#clr")) $("#clr").onclick = () => { S.f={}; S.pq=""; S.yr=null; render(); };
+}
+
 /* ── view 2: author–paper network ─────────────────────── */
 function buildTree(){
   const P = DB.papers.map((p,i)=>({...p, i})).filter(p=>p.year);
@@ -337,7 +523,12 @@ const PAL = ["#FF3D8A","#34D399","#60A5FA","#FBBF24","#A78BFA","#F472B6","#2DD4B
 function viewNet(){
   const T = buildTree(), {P,parent,x} = T;
   const yrs = P.map(p=>p.year), y0 = Math.min(...yrs), y1 = Math.max(...yrs);
-  const CW = 30, RH = 26, L = 58, TOP = 26;
+  /* Column width shrinks as the forest widens. At 260 papers a fixed 34px made the
+     canvas 6000px across; the label pass below absorbs the extra crowding by hiding
+     more labels rather than letting them collide. */
+  const span0 = Math.max(T.span, 1);
+  const CW = span0 > 70 ? Math.max(15, Math.round(2600/span0)) : 34;
+  const RH = 28, L = 62, TOP = 26, CHW = 5.35;
   const W = L + Math.max(T.span,1)*CW + 300, H = TOP + (y1-y0+1)*RH + 40;
   const px = k => L + x[k]*CW + CW/2, py = k => TOP + (P[k].year-y0)*RH;
   const nRoot = T.roots.length, nLink = parent.filter(p=>p>=0).length;
@@ -352,15 +543,48 @@ function viewNet(){
   parent.forEach((pa,k)=>{ if (pa<0) return;
     const on = S.node===P[k].id || S.node===P[pa].id;
     links += `<path class="link ${on?"on":""}" d="M${px(pa)},${py(pa)} C${px(pa)},${(py(pa)+py(k))/2} ${px(k)},${(py(pa)+py(k))/2} ${px(k)},${py(k)}"/>`; });
-  let nodes = "";
+  /* Labels are placed per year row, left to right, and skipped when they would run into
+     the previous one. Papers from the same year in different subtrees land at arbitrary
+     x, so nothing but an explicit collision pass keeps them legible. Every node keeps a
+     native <title>, so a suppressed label is still readable on hover, and the selected
+     node always gets its label drawn last with a plate behind it. */
+  const rad = k => 3.5 + Math.min(3.5, Math.sqrt((P[k].cited_by||0))/22);
+  const text = k => ((P[k].last_author||"").split(" ").pop()||"") + " " + (P[k].year||"");
+  const byYear = new Map();
+  P.forEach((p,k)=>{ const a = byYear.get(p.year) || byYear.set(p.year,[]).get(p.year); a.push(k); });
+  const showLab = new Set();
+  for (const [,ks] of byYear){
+    ks.sort((a,b)=>px(a)-px(b));
+    let end = -1e9;
+    for (const k of ks){
+      const start = px(k) + rad(k) + 4;
+      if (start > end + 7 && S.labels !== "none"){
+        showLab.add(k);
+        end = start + text(k).length*CHW;
+      } else {
+        end = Math.max(end, px(k) + rad(k));
+      }
+    }
+  }
+  let nodes = "", selLab = "";
   P.forEach((p,k)=>{
-    const on = S.node===p.id, c = PAL[(p.lab_cluster||0)%PAL.length];
-    const r = 3.5 + Math.min(3.5, Math.sqrt((p.cited_by||0))/22);
-    const lab = ((p.last_author||"").split(" ").pop()||"") + " " + (p.year||"");
+    const on = S.node===p.id, c = PAL[(p.lab_cluster||0)%PAL.length], r = rad(k);
+    const tip = `${p.title}\n${(p.authors||[]).slice(0,4).join(", ")}${(p.authors||[]).length>4?" et al.":""} · ${p.year||""}`;
     nodes += `<g class="node ${on?"on":""}" data-p="${esc(p.id)}">
+      <title>${esc(tip)}</title>
       <circle cx="${px(k)}" cy="${py(k)}" r="${r.toFixed(1)}" fill="${c}"/>
-      <text class="nlab ${on?"on":""}" x="${px(k)+r+4}" y="${py(k)+3}">${esc(lab)}</text></g>`;
+      ${showLab.has(k) && !on ? `<text class="nlab" x="${px(k)+r+4}" y="${py(k)+3}">${esc(text(k))}</text>` : ""}
+    </g>`;
+    if (on){
+      const w = text(k).length*CHW + 8;
+      selLab = `<g pointer-events="none">
+        <rect x="${px(k)+r+2}" y="${py(k)-6}" width="${w}" height="13" rx="3"
+              fill="var(--bg)" opacity=".88"/>
+        <text class="nlab on" x="${px(k)+r+6}" y="${py(k)+3}">${esc(text(k))}</text></g>`;
+    }
   });
+  nodes += selLab;
+  const hidden = P.length - showLab.size - (S.node?1:0);
 
   $("#out").innerHTML = `
     <div class="ctrls">
@@ -368,7 +592,12 @@ function viewNet(){
         <b id="tauv">${S.tau.toFixed(2)}</b></label>
       <label>window <input type="range" id="win" min="2" max="12" value="${S.win}">
         <b id="winv">±${S.win}y</b></label>
-      <span>${nLink} links · ${nRoot} roots · ${P.length} papers</span>
+      <label>labels <select id="lbl">
+        ${[["auto","auto"],["none","off"]].map(([v,t])=>
+          `<option value="${v}" ${S.labels===v?"selected":""}>${t}</option>`).join("")}
+      </select></label>
+      <span>${nLink} links · ${nRoot} roots · ${P.length} papers${
+        hidden>0?` · ${hidden} labels hidden, hover to read`:""}</span>
     </div>
     <div class="netwrap">
       <div class="netscroll"><svg width="${W}" height="${H}">${g}${links}${nodes}</svg></div>
@@ -378,6 +607,7 @@ function viewNet(){
     S[key] = scale(+el.value); $("#"+id+"v").textContent = fmt(S[key]); render(); }; };
   bind("tau","tau", v=>v.toFixed(2), v=>v/100);
   bind("win","win", v=>"±"+v+"y", v=>v);
+  $("#lbl").onchange = e => { S.labels = e.target.value; render(); };
   $("#out").querySelectorAll("[data-p]").forEach(n => n.onclick = () => {
     S.node = S.node===n.dataset.p ? null : n.dataset.p; render(); });
 }
@@ -414,7 +644,7 @@ function render(){
     ${LOADED?`<span style="color:var(--accent)">${esc(LOADED)} · refresh reverts</span>`
             :(DB.meta&&DB.meta.sample?`<span style="color:var(--qual)">sample data</span>`:"")}`;
   document.querySelectorAll(".sub").forEach(b=>b.setAttribute("aria-selected", b.dataset.v===S.view));
-  S.view==="claims" ? viewClaims() : viewNet();
+  ({claims:viewClaims, net:viewNet, papers:viewPapers}[S.view] || viewClaims)();
   document.querySelectorAll("[data-jump]").forEach(a => a.onclick = ev => {
     ev.preventDefault(); const c = CL[a.dataset.jump];
     if (!c) return; S.view="claims"; S.q=c.parent; S.c=c.id; render(); });

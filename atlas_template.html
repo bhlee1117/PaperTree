@@ -126,7 +126,14 @@ text{font-family:var(--mono);}
 .facets{position:sticky;top:12px;max-height:calc(100vh - 190px);overflow:auto;padding-right:6px}
 .fg{margin-bottom:16px}
 .fg h5{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink3);margin:0 0 6px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+  color:var(--ink3);margin:0 0 6px;padding-bottom:4px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+.fg h5 button{font:inherit;font-family:var(--mono);font-size:9px;letter-spacing:.06em;
+  background:none;border:none;color:var(--accent);cursor:pointer;padding:0;text-transform:none}
+.fg h5 button:hover{text-decoration:underline}
+.ptools button:disabled{opacity:.4;cursor:default;border-color:var(--line)}
+.ptools button:disabled:hover{border-color:var(--line);color:var(--ink2)}
+.ptools .clr{border-color:var(--accent);color:var(--accent)}
 .fo{display:flex;align-items:center;gap:7px;width:100%;text-align:left;font:inherit;font-size:12px;
   background:none;border:none;padding:3px 4px;border-radius:5px;color:var(--ink2);cursor:pointer}
 .fo:hover{background:var(--panel);color:var(--ink)}
@@ -506,13 +513,17 @@ function viewPapers(){
     const n = {}; for (const p of pool) for (const v of d.get(p)) n[v] = (n[v]||0)+1;
     const vals = (d.values||[]).filter(v => n[v] || (S.f[d.key]||new Set()).has(v));
     if (!vals.length) continue;
-    fh += `<div class="fg"><h5>${esc(d.label)}</h5>` + vals.map(v =>
+    const picked = (S.f[d.key]||new Set()).size;
+    fh += `<div class="fg"><h5><span>${esc(d.label)}</span>${
+      picked?`<button data-clrf="${esc(d.key)}">clear ${picked}</button>`:""}</h5>` + vals.map(v =>
       `<button class="fo ${n[v]?"":"zero"}" data-f="${esc(d.key)}" data-v="${esc(v)}"
         aria-pressed="${(S.f[d.key]||new Set()).has(v)}">
         <span class="bx"></span><span>${esc(v)}</span><span class="n">${n[v]||0}</span></button>`).join("")
       + `</div>`;
   }
-  fh += `<div class="fg"><h5>Year</h5>
+  const yrDirty = S.yr[0] !== lo || S.yr[1] !== hi;
+  fh += `<div class="fg"><h5><span>Year</span>${
+    yrDirty?`<button data-clryr="1">reset</button>`:""}</h5>
     <div class="yrow"><span>${S.yr[0]}</span>
       <input type="range" id="y0" min="${lo}" max="${hi}" value="${S.yr[0]}"></div>
     <div class="yrow"><span>${S.yr[1]}</span>
@@ -547,6 +558,9 @@ function viewPapers(){
   }).join("") || `<div class="hint">Nothing matches. Clear a filter.</div>`;
 
   const active = Object.values(S.f).reduce((a,s)=>a+(s?s.size:0),0);
+  /* Year counts. Narrowing the range is a filter like any other, and a Clear button that
+     ignores it leaves the list quietly restricted with nothing on screen saying so. */
+  const nDirty = active + (S.pq.trim()?1:0) + (yrDirty?1:0);
   $("#out").innerHTML = `<div class="pwrap">
     <div class="facets" data-keep="facets">${fh}</div>
     <div><div class="ptools">
@@ -558,7 +572,9 @@ function viewPapers(){
       </select>
       <span class="cnt">${list.length} of ${DB.papers.length}</span>
       <button id="copyd">Copy DOIs</button>
-      ${active||S.pq?`<button id="clr">Clear ${active?active+" filters":"search"}</button>`:""}
+      <button id="clr" class="${nDirty?"clr":""}" ${nDirty?"":"disabled"}
+        title="reset every filter, the search box and the year range">
+        ${nDirty?`Clear all (${nDirty})`:"Clear all"}</button>
     </div>${rows}</div></div>`;
 
   $("#out").querySelectorAll("[data-f]").forEach(b => b.onclick = () => {
@@ -579,7 +595,11 @@ function viewPapers(){
     navigator.clipboard ? navigator.clipboard.writeText(d) : 0;
     $("#copyd").textContent = `Copied ${d.split("\n").filter(Boolean).length}`;
     setTimeout(()=>{ const b=$("#copyd"); if(b) b.textContent="Copy DOIs"; }, 1400); };
-  if ($("#clr")) $("#clr").onclick = () => { S.f={}; S.pq=""; S.yr=null; render(); };
+  $("#clr").onclick = () => { S.f={}; S.pq=""; S.yr=null; render(); };
+  $("#out").querySelectorAll("[data-clrf]").forEach(b => b.onclick = ev => {
+    ev.stopPropagation(); S.f[b.dataset.clrf] = new Set(); render(); });
+  $("#out").querySelectorAll("[data-clryr]").forEach(b => b.onclick = ev => {
+    ev.stopPropagation(); S.yr = null; render(); });
   wireRows($("#out"));
 }
 

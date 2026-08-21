@@ -548,7 +548,7 @@ function viewPapers(){
 
   const active = Object.values(S.f).reduce((a,s)=>a+(s?s.size:0),0);
   $("#out").innerHTML = `<div class="pwrap">
-    <div class="facets">${fh}</div>
+    <div class="facets" data-keep="facets">${fh}</div>
     <div><div class="ptools">
       <input type="search" id="pq" placeholder="title, author, venue, claim id…" value="${esc(S.pq)}">
       <select id="psort">
@@ -620,7 +620,7 @@ function buildTree(){
 const PAL = ["#FF3D8A","#34D399","#60A5FA","#FBBF24","#A78BFA","#F472B6","#2DD4BF",
              "#FB7185","#93C5FD","#FCD34D","#C4B5FD","#5EEAD4"];
 
-function viewNet(){
+function paintNet(){
   const T = buildTree(), {P,parent,x} = T;
   const yrs = P.map(p=>p.year), y0 = Math.min(...yrs), y1 = Math.max(...yrs);
   /* Column width shrinks as the forest widens. At 260 papers a fixed 34px made the
@@ -686,6 +686,25 @@ function viewNet(){
   nodes += selLab;
   const hidden = P.length - showLab.size - (S.node?1:0);
 
+  /* Only the canvas, the side panel and the counter are rewritten. The controls survive,
+     which is what lets a range input keep mouse capture — rebuilding the slider mid-drag
+     destroys the element you are dragging and the gesture dies on the first pixel. */
+  $("#netcount").innerHTML = `${nLink} links · ${nRoot} roots · ${P.length} papers${
+    hidden>0?` · ${hidden} labels hidden, hover to read`:""}`;
+  const pane = $("#netpane");
+  const keep = [pane.scrollLeft, pane.scrollTop];
+  pane.innerHTML = `<svg width="${W}" height="${H}">${g}${links}${nodes}</svg>`;
+  pane.scrollLeft = keep[0]; pane.scrollTop = keep[1];
+  $("#side").innerHTML = sidePanel();
+  pane.querySelectorAll("[data-p]").forEach(n => n.onclick = () => {
+    S.node = S.node===n.dataset.p ? null : n.dataset.p; paintNet(); });
+  wireRows($("#side"));
+  $("#side").querySelectorAll("[data-jump]").forEach(a => a.onclick = ev => {
+    ev.preventDefault(); const c = CL[a.dataset.jump];
+    if (!c) return; S.view="claims"; S.q=c.parent; S.c=c.id; render(); });
+}
+
+function viewNet(){
   $("#out").innerHTML = `
     <div class="ctrls">
       <label>similarity ≥ <input type="range" id="tau" min="8" max="80" value="${S.tau*100}">
@@ -696,20 +715,18 @@ function viewNet(){
         ${[["auto","auto"],["none","off"]].map(([v,t])=>
           `<option value="${v}" ${S.labels===v?"selected":""}>${t}</option>`).join("")}
       </select></label>
-      <span>${nLink} links · ${nRoot} roots · ${P.length} papers${
-        hidden>0?` · ${hidden} labels hidden, hover to read`:""}</span>
+      <span id="netcount"></span>
     </div>
     <div class="netwrap">
-      <div class="netscroll"><svg width="${W}" height="${H}">${g}${links}${nodes}</svg></div>
-      <div class="side" id="side">${sidePanel()}</div>
+      <div class="netscroll" data-keep="net" id="netpane"></div>
+      <div class="side" id="side"></div>
     </div>`;
   const bind = (id, key, fmt, scale) => { const el = $("#"+id); el.oninput = () => {
-    S[key] = scale(+el.value); $("#"+id+"v").textContent = fmt(S[key]); render(); }; };
+    S[key] = scale(+el.value); $("#"+id+"v").textContent = fmt(S[key]); paintNet(); }; };
   bind("tau","tau", v=>v.toFixed(2), v=>v/100);
   bind("win","win", v=>"±"+v+"y", v=>v);
-  $("#lbl").onchange = e => { S.labels = e.target.value; render(); };
-  $("#out").querySelectorAll("[data-p]").forEach(n => n.onclick = () => {
-    S.node = S.node===n.dataset.p ? null : n.dataset.p; render(); });
+  $("#lbl").onchange = e => { S.labels = e.target.value; paintNet(); };
+  paintNet();
 }
 
 function sidePanel(){
@@ -731,7 +748,25 @@ function sidePanel(){
     ${paperDetail(p)}`;
 }
 
+/* render() replaces #out wholesale, which resets every scroll position in it. Save
+   them keyed by a stable name, restore after. Containers opt in with data-keep. */
+const SCROLL = {win:[0,0], el:{}};
+function saveScroll(){
+  SCROLL.win = [scrollX, scrollY];
+  document.querySelectorAll("[data-keep]").forEach(el =>
+    SCROLL.el[el.dataset.keep] = [el.scrollLeft, el.scrollTop]);
+  SCROLL.focus = document.activeElement && document.activeElement.id || null;
+}
+function restoreScroll(){
+  document.querySelectorAll("[data-keep]").forEach(el => {
+    const v = SCROLL.el[el.dataset.keep];
+    if (v){ el.scrollLeft = v[0]; el.scrollTop = v[1]; } });
+  try { scrollTo(SCROLL.win[0], SCROLL.win[1]); } catch(e) {}
+  if (SCROLL.focus){ const f = document.getElementById(SCROLL.focus); if (f) f.focus(); }
+}
+
 function render(){
+  saveScroll();
   const cont = DB.claims.filter(c=>c.status==="contested").length;
   const thinN = DB.claims.filter(thin).length;
   const miss = new Set(DB.edges.filter(e=>!e.paper_id).map(e=>e.key)).size;
@@ -745,6 +780,7 @@ function render(){
             :(DB.meta&&DB.meta.sample?`<span style="color:var(--qual)">sample data</span>`:"")}`;
   document.querySelectorAll(".sub").forEach(b=>b.setAttribute("aria-selected", b.dataset.v===S.view));
   ({claims:viewClaims, net:viewNet, papers:viewPapers}[S.view] || viewClaims)();
+  restoreScroll();
   document.querySelectorAll("[data-jump]").forEach(a => a.onclick = ev => {
     ev.preventDefault(); const c = CL[a.dataset.jump];
     if (!c) return; S.view="claims"; S.q=c.parent; S.c=c.id; render(); });

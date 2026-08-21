@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-08-20 22:38",
+  "generated": "2026-08-20 22:49",
   "n": 217,
   "taxonomy": "eaf15191ae13",
   "lang": "English",
@@ -86,39 +86,6 @@
   ],
   "lineage": [
    {
-    "person": "Mark Sheffield",
-    "trained_in": [
-     "Dombeck"
-    ],
-    "now_leads": [
-     "Sheffield"
-    ],
-    "as_first": 2,
-    "as_last": 2
-   },
-   {
-    "person": "Dax A. Hoffman",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Kim + Hoffman"
-    ],
-    "as_first": 1,
-    "as_last": 1
-   },
-   {
-    "person": "Stephen R. Williams",
-    "trained_in": [
-     "Stuart"
-    ],
-    "now_leads": [
-     "Williams"
-    ],
-    "as_first": 1,
-    "as_last": 2
-   },
-   {
     "person": "Tim Jarsky",
     "trained_in": [
      "Spruston"
@@ -130,27 +97,15 @@
     "as_last": 1
    },
    {
-    "person": "Greg J. Stuart",
+    "person": "Panayiota Poirazi",
     "trained_in": [
-     "Häusser",
-     "Spruston"
+     "Papoutsi (single)"
     ],
     "now_leads": [
-     "Stuart"
+     "Poirazi"
     ],
-    "as_first": 2,
-    "as_last": 4
-   },
-   {
-    "person": "Aaron D. Milstein",
-    "trained_in": [
-     "Magee + Grienberger"
-    ],
-    "now_leads": [
-     "Romani + Milstein"
-    ],
-    "as_first": 2,
-    "as_last": 1
+    "as_first": 1,
+    "as_last": 2
    },
    {
     "person": "Christine Grienberger",
@@ -161,6 +116,17 @@
      "Magee + Grienberger"
     ],
     "as_first": 3,
+    "as_last": 1
+   },
+   {
+    "person": "Dax A. Hoffman",
+    "trained_in": [
+     "Johnston"
+    ],
+    "now_leads": [
+     "Kim + Hoffman"
+    ],
+    "as_first": 1,
     "as_last": 1
    },
    {
@@ -175,6 +141,28 @@
     "as_last": 18
    },
    {
+    "person": "Stephen R. Williams",
+    "trained_in": [
+     "Stuart"
+    ],
+    "now_leads": [
+     "Williams"
+    ],
+    "as_first": 1,
+    "as_last": 2
+   },
+   {
+    "person": "Sonia Gasparini",
+    "trained_in": [
+     "Magee + Grienberger"
+    ],
+    "now_leads": [
+     "Gasparini (single)"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
     "person": "Mark T. Harnett",
     "trained_in": [
      "Magee + Grienberger",
@@ -187,15 +175,38 @@
     "as_last": 2
    },
    {
-    "person": "Judit K. Makara",
+    "person": "Nelson Spruston",
     "trained_in": [
-     "Magee + Grienberger"
+     "Larkum + Sakmann"
     ],
     "now_leads": [
-     "Makara"
+     "Spruston"
     ],
     "as_first": 1,
-    "as_last": 3
+    "as_last": 17
+   },
+   {
+    "person": "Mark Sheffield",
+    "trained_in": [
+     "Dombeck"
+    ],
+    "now_leads": [
+     "Sheffield"
+    ],
+    "as_first": 2,
+    "as_last": 2
+   },
+   {
+    "person": "Greg J. Stuart",
+    "trained_in": [
+     "Häusser",
+     "Spruston"
+    ],
+    "now_leads": [
+     "Stuart"
+    ],
+    "as_first": 2,
+    "as_last": 4
    },
    {
     "person": "Christopher D. Harvey",
@@ -210,28 +221,6 @@
     "as_last": 1
    },
    {
-    "person": "Sonia Gasparini",
-    "trained_in": [
-     "Magee + Grienberger"
-    ],
-    "now_leads": [
-     "Gasparini (single)"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Nelson Spruston",
-    "trained_in": [
-     "Larkum + Sakmann"
-    ],
-    "now_leads": [
-     "Spruston"
-    ],
-    "as_first": 1,
-    "as_last": 17
-   },
-   {
     "person": "Attila Losonczy",
     "trained_in": [
      "Magee + Grienberger"
@@ -243,15 +232,26 @@
     "as_last": 7
    },
    {
-    "person": "Panayiota Poirazi",
+    "person": "Judit K. Makara",
     "trained_in": [
-     "Papoutsi (single)"
+     "Magee + Grienberger"
     ],
     "now_leads": [
-     "Poirazi"
+     "Makara"
     ],
     "as_first": 1,
-    "as_last": 2
+    "as_last": 3
+   },
+   {
+    "person": "Aaron D. Milstein",
+    "trained_in": [
+     "Magee + Grienberger"
+    ],
+    "now_leads": [
+     "Romani + Milstein"
+    ],
+    "as_first": 2,
+    "as_last": 1
    }
   ],
   "weights": {
@@ -1065,13 +1065,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -1363,13 +1363,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -1523,13 +1523,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -2106,13 +2106,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -2957,13 +2957,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -3489,8 +3489,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -5321,13 +5321,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -5503,13 +5503,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -6492,8 +6492,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -6775,8 +6775,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -7214,8 +7214,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -7405,13 +7405,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -7989,13 +7989,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -8494,13 +8494,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -9151,13 +9151,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -9333,13 +9333,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -9946,13 +9946,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -10319,13 +10319,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -11087,8 +11087,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -12144,13 +12144,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -12282,13 +12282,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -12431,8 +12431,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -12586,8 +12586,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -13044,8 +13044,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -13638,13 +13638,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -13787,13 +13787,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -15714,8 +15714,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -16129,8 +16129,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -16286,13 +16286,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -16841,13 +16841,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -21264,8 +21264,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -21497,8 +21497,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -22638,8 +22638,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -22793,13 +22793,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -23949,8 +23949,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -24105,13 +24105,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -25011,8 +25011,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -26224,8 +26224,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -28061,13 +28061,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -28370,13 +28370,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -28552,8 +28552,8 @@
    ],
    "lineage": [
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Nelson Spruston",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -29313,13 +29313,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {
@@ -29997,13 +29997,13 @@
     }
    ],
    "lineage": [
-    "Aaron D. Milstein",
     "Christine Grienberger",
     "Jeffrey C. Magee",
-    "Mark T. Harnett",
-    "Judit K. Makara",
     "Sonia Gasparini",
-    "Attila Losonczy"
+    "Mark T. Harnett",
+    "Attila Losonczy",
+    "Judit K. Makara",
+    "Aaron D. Milstein"
    ]
   },
   {

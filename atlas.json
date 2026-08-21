@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-08-20 22:23",
-  "n": 214,
+  "generated": "2026-08-20 22:31",
+  "n": 217,
   "taxonomy": "eaf15191ae13",
   "lang": "English",
   "axes": [
@@ -86,6 +86,61 @@
   ],
   "lineage": [
    {
+    "person": "Jeffrey C. Magee",
+    "trained_in": [
+     "Johnston"
+    ],
+    "now_leads": [
+     "Magee + Grienberger"
+    ],
+    "as_first": 5,
+    "as_last": 18
+   },
+   {
+    "person": "Stephen R. Williams",
+    "trained_in": [
+     "Stuart"
+    ],
+    "now_leads": [
+     "Williams"
+    ],
+    "as_first": 1,
+    "as_last": 2
+   },
+   {
+    "person": "Nelson Spruston",
+    "trained_in": [
+     "Larkum + Sakmann"
+    ],
+    "now_leads": [
+     "Spruston"
+    ],
+    "as_first": 1,
+    "as_last": 17
+   },
+   {
+    "person": "Tim Jarsky",
+    "trained_in": [
+     "Spruston"
+    ],
+    "now_leads": [
+     "Jarsky (single)"
+    ],
+    "as_first": 2,
+    "as_last": 1
+   },
+   {
+    "person": "Attila Losonczy",
+    "trained_in": [
+     "Magee + Grienberger"
+    ],
+    "now_leads": [
+     "Losonczy + Rózsa"
+    ],
+    "as_first": 2,
+    "as_last": 7
+   },
+   {
     "person": "Panayiota Poirazi",
     "trained_in": [
      "Papoutsi (single)"
@@ -95,29 +150,6 @@
     ],
     "as_first": 1,
     "as_last": 2
-   },
-   {
-    "person": "Mark Sheffield",
-    "trained_in": [
-     "Dombeck"
-    ],
-    "now_leads": [
-     "Sheffield"
-    ],
-    "as_first": 2,
-    "as_last": 2
-   },
-   {
-    "person": "Christopher D. Harvey",
-    "trained_in": [
-     "Svoboda",
-     "Tank"
-    ],
-    "now_leads": [
-     "Harvey (single)"
-    ],
-    "as_first": 3,
-    "as_last": 1
    },
    {
     "person": "Mark T. Harnett",
@@ -132,15 +164,49 @@
     "as_last": 2
    },
    {
-    "person": "Tim Jarsky",
+    "person": "Aaron D. Milstein",
     "trained_in": [
-     "Spruston"
+     "Magee + Grienberger"
     ],
     "now_leads": [
-     "Jarsky (single)"
+     "Romani + Milstein"
     ],
     "as_first": 2,
     "as_last": 1
+   },
+   {
+    "person": "Christopher D. Harvey",
+    "trained_in": [
+     "Svoboda",
+     "Tank"
+    ],
+    "now_leads": [
+     "Harvey (single)"
+    ],
+    "as_first": 3,
+    "as_last": 1
+   },
+   {
+    "person": "Christine Grienberger",
+    "trained_in": [
+     "Konnerth"
+    ],
+    "now_leads": [
+     "Magee + Grienberger"
+    ],
+    "as_first": 3,
+    "as_last": 1
+   },
+   {
+    "person": "Mark Sheffield",
+    "trained_in": [
+     "Dombeck"
+    ],
+    "now_leads": [
+     "Sheffield"
+    ],
+    "as_first": 2,
+    "as_last": 2
    },
    {
     "person": "Dax A. Hoffman",
@@ -154,12 +220,23 @@
     "as_last": 1
    },
    {
-    "person": "Aaron D. Milstein",
+    "person": "Judit K. Makara",
     "trained_in": [
      "Magee + Grienberger"
     ],
     "now_leads": [
-     "Romani + Milstein"
+     "Makara"
+    ],
+    "as_first": 1,
+    "as_last": 3
+   },
+   {
+    "person": "Sonia Gasparini",
+    "trained_in": [
+     "Magee + Grienberger"
+    ],
+    "now_leads": [
+     "Gasparini (single)"
     ],
     "as_first": 2,
     "as_last": 1
@@ -175,83 +252,6 @@
     ],
     "as_first": 2,
     "as_last": 4
-   },
-   {
-    "person": "Attila Losonczy",
-    "trained_in": [
-     "Magee + Grienberger"
-    ],
-    "now_leads": [
-     "Losonczy + Rózsa"
-    ],
-    "as_first": 2,
-    "as_last": 7
-   },
-   {
-    "person": "Judit K. Makara",
-    "trained_in": [
-     "Magee + Grienberger"
-    ],
-    "now_leads": [
-     "Makara"
-    ],
-    "as_first": 1,
-    "as_last": 3
-   },
-   {
-    "person": "Nelson Spruston",
-    "trained_in": [
-     "Larkum + Sakmann"
-    ],
-    "now_leads": [
-     "Spruston"
-    ],
-    "as_first": 1,
-    "as_last": 17
-   },
-   {
-    "person": "Sonia Gasparini",
-    "trained_in": [
-     "Magee + Grienberger"
-    ],
-    "now_leads": [
-     "Gasparini (single)"
-    ],
-    "as_first": 2,
-    "as_last": 1
-   },
-   {
-    "person": "Stephen R. Williams",
-    "trained_in": [
-     "Stuart"
-    ],
-    "now_leads": [
-     "Williams"
-    ],
-    "as_first": 1,
-    "as_last": 2
-   },
-   {
-    "person": "Christine Grienberger",
-    "trained_in": [
-     "Konnerth"
-    ],
-    "now_leads": [
-     "Magee + Grienberger"
-    ],
-    "as_first": 3,
-    "as_last": 1
-   },
-   {
-    "person": "Jeffrey C. Magee",
-    "trained_in": [
-     "Johnston"
-    ],
-    "now_leads": [
-     "Magee + Grienberger"
-    ],
-    "as_first": 5,
-    "as_last": 18
    }
   ],
   "weights": {
@@ -395,7 +395,7 @@
    "n": {
     "supports": 28,
     "qualifies": 2,
-    "contradicts": 1,
+    "contradicts": 3,
     "assumes": 2
    },
    "modalities": {
@@ -471,19 +471,19 @@
    ],
    "n": {
     "contradicts": 3,
-    "qualifies": 12,
-    "supports": 14,
+    "qualifies": 13,
+    "supports": 15,
     "assumes": 1
    },
    "modalities": {
     "patch": 18,
-    "voltage": 2,
+    "voltage": 4,
     "other": 2,
     "calcium": 4
    },
    "preps": {
     "acute slice": 18,
-    "awake in vivo": 4,
+    "awake in vivo": 6,
     "anesthetized in vivo": 2,
     "unclear": 2
    },
@@ -492,12 +492,12 @@
     2026
    ],
    "inherits": {
-    "C7.4": 2,
-    "C7.3": 2,
+    "C7.4": 3,
+    "C7.3": 3,
     "C7.1": 4,
     "C7.2": 4
    },
-   "direct_sources": 17
+   "direct_sources": 19
   },
   {
    "id": "C1.3",
@@ -781,7 +781,7 @@
    "n": {
     "supports": 82,
     "qualifies": 11,
-    "contradicts": 3,
+    "contradicts": 4,
     "assumes": 6
    },
    "modalities": {
@@ -888,8 +888,8 @@
     }
    ],
    "n": {
-    "supports": 6,
-    "qualifies": 21,
+    "supports": 8,
+    "qualifies": 22,
     "contradicts": 8,
     "assumes": 4
    },
@@ -898,10 +898,10 @@
     "review": 1,
     "patch": 3,
     "other": 1,
-    "voltage": 6
+    "voltage": 9
    },
    "preps": {
-    "awake in vivo": 23,
+    "awake in vivo": 26,
     "acute slice": 1,
     "anesthetized in vivo": 1
    },
@@ -911,11 +911,11 @@
    ],
    "inherits": {
     "C7.1": 16,
-    "C7.4": 8,
+    "C7.4": 9,
     "C7.2": 1,
-    "C7.3": 1
+    "C7.3": 2
    },
-   "direct_sources": 18
+   "direct_sources": 21
   },
   {
    "id": "C2.3a",
@@ -1018,22 +1018,22 @@
     }
    ],
    "n": {
-    "supports": 9,
-    "contradicts": 3,
-    "qualifies": 16,
+    "supports": 10,
+    "contradicts": 4,
+    "qualifies": 17,
     "assumes": 2
    },
    "modalities": {
     "patch": 15,
     "review": 1,
     "calcium": 6,
-    "voltage": 3
+    "voltage": 5
    },
    "preps": {
     "unclear": 2,
     "anesthetized in vivo": 2,
     "acute slice": 13,
-    "awake in vivo": 4,
+    "awake in vivo": 6,
     "organotypic slice": 1,
     "human tissue": 1
    },
@@ -1042,12 +1042,12 @@
     2026
    ],
    "inherits": {
-    "C7.3": 2,
+    "C7.3": 3,
     "C7.1": 6,
-    "C7.4": 4,
+    "C7.4": 5,
     "C7.2": 4
    },
-   "direct_sources": 11
+   "direct_sources": 13
   },
   {
    "id": "C2.3c",
@@ -1188,12 +1188,12 @@
     }
    ],
    "n": {
-    "supports": 24,
+    "supports": 25,
     "contradicts": 5,
     "qualifies": 10
    },
    "modalities": {
-    "voltage": 1,
+    "voltage": 2,
     "patch": 15,
     "review": 5,
     "calcium": 8,
@@ -1203,7 +1203,7 @@
    "preps": {
     "acute slice": 14,
     "unclear": 5,
-    "awake in vivo": 8,
+    "awake in vivo": 9,
     "dissociated culture": 2,
     "computational / modeling": 5
    },
@@ -1216,7 +1216,7 @@
     "C7.1": 8,
     "C7.2": 1
    },
-   "direct_sources": 14
+   "direct_sources": 15
   },
   {
    "id": "C3.2",
@@ -1286,20 +1286,20 @@
    "n": {
     "supports": 46,
     "contradicts": 3,
-    "qualifies": 14,
+    "qualifies": 15,
     "assumes": 4
    },
    "modalities": {
     "patch": 30,
     "calcium": 13,
     "review": 5,
-    "voltage": 5,
+    "voltage": 6,
     "model": 4,
     "other": 3
    },
    "preps": {
     "anesthetized in vivo": 1,
-    "awake in vivo": 16,
+    "awake in vivo": 17,
     "unclear": 8,
     "acute slice": 28,
     "computational / modeling": 5,
@@ -1457,7 +1457,7 @@
     "supports": 30,
     "qualifies": 1,
     "contradicts": 1,
-    "assumes": 4
+    "assumes": 5
    },
    "modalities": {
     "calcium": 16,
@@ -1538,7 +1538,7 @@
     }
    ],
    "n": {
-    "supports": 29,
+    "supports": 30,
     "assumes": 16,
     "qualifies": 20
    },
@@ -1548,10 +1548,10 @@
     "review": 2,
     "other": 7,
     "model": 3,
-    "voltage": 4
+    "voltage": 5
    },
    "preps": {
-    "awake in vivo": 35,
+    "awake in vivo": 36,
     "unclear": 3,
     "acute slice": 7,
     "computational / modeling": 2,
@@ -2014,7 +2014,7 @@
     }
    ],
    "n": {
-    "qualifies": 15,
+    "qualifies": 18,
     "contradicts": 3,
     "assumes": 36,
     "supports": 5
@@ -2024,10 +2024,10 @@
     "review": 1,
     "other": 2,
     "calcium": 7,
-    "voltage": 5
+    "voltage": 8
    },
    "preps": {
-    "awake in vivo": 8,
+    "awake in vivo": 11,
     "acute slice": 8,
     "unclear": 3
    },
@@ -2036,10 +2036,11 @@
     2026
    ],
    "inherits": {
-    "C7.4": 6,
-    "C7.2": 1
+    "C7.4": 7,
+    "C7.2": 1,
+    "C7.3": 1
    },
-   "direct_sources": 14
+   "direct_sources": 15
   },
   {
    "id": "C7.2",
@@ -2116,21 +2117,25 @@
    "n": {
     "contradicts": 4,
     "assumes": 3,
-    "qualifies": 1,
+    "qualifies": 2,
     "supports": 1
    },
    "modalities": {
-    "patch": 2
+    "patch": 2,
+    "voltage": 1
    },
    "preps": {
-    "anesthetized in vivo": 2
+    "anesthetized in vivo": 2,
+    "awake in vivo": 1
    },
    "years": [
     1995,
-    2025
+    2026
    ],
-   "inherits": {},
-   "direct_sources": 1
+   "inherits": {
+    "C7.4": 1
+   },
+   "direct_sources": 2
   },
   {
    "id": "C7.4",
@@ -2162,23 +2167,25 @@
     }
    ],
    "n": {
-    "qualifies": 3
+    "qualifies": 4
    },
    "modalities": {
-    "voltage": 2,
+    "voltage": 3,
     "review": 1
    },
    "preps": {
     "acute slice": 1,
     "unclear": 1,
-    "awake in vivo": 1
+    "awake in vivo": 2
    },
    "years": [
     2015,
     2026
    ],
-   "inherits": {},
-   "direct_sources": 2
+   "inherits": {
+    "C7.3": 1
+   },
+   "direct_sources": 3
   }
  ],
  "edges": [
@@ -13585,6 +13592,310 @@
    "quote": "these biological mechanisms are formalized in theoretical and circuit models",
    "source": "model",
    "needs_review": false
+  },
+  {
+   "claim": "C1.1",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In awake behaving mice using voltage imaging of CA1 dendrites",
+   "quote": "fast dendritic spikes almost always started from bAPs",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C1.2",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In CA1 in vivo; prior dendritic depolarisation (plateau) shapes bAP propagation outcomes",
+   "quote": "fast spikes sometimes triggered slower apical dendritic plateau depolarizations",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.2",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "Voltage imaging (not calcium) in awake CA1; compartments largely correlated but distinct",
+   "quote": "dynamics were largely captured by 2 or 3 electrical compartments: basal, soma, and apical",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.3b",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In vivo CA1 voltage imaging; fast dendritic Na spikes propagate widely from bAPs",
+   "quote": "fast dendritic spikes almost always started from bAPs",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C3.1",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In awake behaving CA1; dendritic nonlinearities primarily mediate plasticity-relevant complex spikes",
+   "quote": "suggest a primary role of dendritic nonlinearities in mediating activity-dependent plasticity",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C3.2",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In vivo CA1; integration is complex, producing both simple and complex spikes context-dependently",
+   "quote": "biophysics of dendritic excitability determined the distribution of simple and complex spikes",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C4.1",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "supports",
+   "strength": "indirect",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In vivo CA1 during navigation; plateau potentials drive complex spikes relevant to place field plasticity",
+   "quote": "fast spikes sometimes triggered slower apical dendritic plateau depolarizations, which drove complex spikes",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C7.1",
+   "key": "10.64898_2026.01.03.696606",
+   "paper_id": "10.64898_2026.01.03.696606",
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "Voltage imaging directly measures membrane potential, bypassing GCaMP limitations noted elsewhere",
+   "quote": "high-speed voltage imaging through a chronically implanted microprism to map membrane potential dynamics",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C7.1",
+   "key": "10.64898_2026.01.18.700189",
+   "paper_id": "10.64898_2026.01.18.700189",
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In CA2 pyramidal neurons in vivo; subthreshold voltage poorly reported by Ca2+",
+   "quote": "voltage→Ca2+ mapping during natural behavior remains poorly defined",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.2",
+   "key": "10.64898_2026.01.18.700189",
+   "paper_id": "10.64898_2026.01.18.700189",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "CA2 pyramidal neurons in behaving mice; Ca2+ dominated by bAPs",
+   "quote": "dominated by back-propagating action potentials: simple spikes primarily drove somatic and proximal Ca2+",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.3b",
+   "key": "10.64898_2026.01.18.700189",
+   "paper_id": "10.64898_2026.01.18.700189",
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "Complex spikes show branch-selective Ca2+ propagation in CA2 in vivo",
+   "quote": "complex spikes produced larger somatic Ca2+ signals and propagated farther into distal dendrites, sometimes in a branch-selective manner",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C1.1",
+   "key": "10.64898_2026.01.18.700189",
+   "paper_id": "10.64898_2026.01.18.700189",
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [],
+   "condition": "In CA2 in vivo during behavior; dendrite-restricted events without somatic spikes are rare",
+   "quote": "Dendrite-restricted co-activation of voltage and Ca2+ without concurrent somatic events was rare",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C1.2",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "In L2/3 pyramidal neurons in vivo; prior spiking history modulates bAP propagation",
+   "quote": "strong spiking-history-dependent modulation of bAP propagation into distal dendrites",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.2",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "Awake and anesthetized mice, voltage imaging of L2/3 pyramidal neurons",
+   "quote": "broadly correlated membrane voltage throughout the dendritic arbor",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.3b",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "L2/3 pyramidal neurons in vivo with voltage imaging, not calcium",
+   "quote": "only weak signatures of electrical compartmentalization within individual dendritic branches",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C7.1",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "Voltage imaging directly measures membrane potential, bypassing calcium indicator limitations",
+   "quote": "dual-plane structured illumination voltage imaging for simultaneous monitoring of dendritic and somatic voltage",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C7.3",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "Paper compares anesthetized vs awake conditions explicitly",
+   "quote": "simultaneous monitoring of dendritic and somatic voltage response dynamics in cortical layer 2/3 pyramidal neurons in anesthetized and awake mice",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C7.4",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "Targeted channelrhodopsin used as synaptic proxy; limitations noted",
+   "quote": "combine targeted channelrhodopsin activation with dual-plane structured illumination voltage imaging",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.1",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "L2/3 pyramidal neurons in vivo; voltage imaging rather than calcium",
+   "quote": "only weak signatures of electrical compartmentalization within individual dendritic branches",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C3.4",
+   "key": "10.1038_s41593-026-02339-4",
+   "paper_id": "10.1038_s41593-026-02339-4",
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics",
+    "anesthetized"
+   ],
+   "condition": "Paper frames dendritic bAP filtering as relevant to plasticity and bursting regulation",
+   "quote": "dendritic filtering of bAPs may have a critical role in the regulation of bursting and in activity-dependent plasticity",
+   "source": "model",
+   "needs_review": false
   }
  ],
  "papers": [
@@ -13698,7 +14009,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 12,
+   "lab_cluster": 13,
    "lab_cluster_name": "Tank",
    "similar": [
     {
@@ -13859,7 +14170,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 13,
+   "lab_cluster": 14,
    "lab_cluster_name": "Lee",
    "similar": [
     {
@@ -14002,7 +14313,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 13,
+   "lab_cluster": 14,
    "lab_cluster_name": "Lee",
    "similar": [
     {
@@ -14389,13 +14700,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -14508,7 +14819,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 34,
+   "lab_cluster": 35,
    "lab_cluster_name": "Jónás (single)",
    "similar": [],
    "lineage": []
@@ -14687,13 +14998,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -14847,13 +15158,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -15010,7 +15321,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 14,
+   "lab_cluster": 15,
    "lab_cluster_name": "Dombeck",
    "similar": [
     {
@@ -15160,7 +15471,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 12,
+   "lab_cluster": 13,
    "lab_cluster_name": "Tank",
    "similar": [
     {
@@ -15287,7 +15598,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 35,
+   "lab_cluster": 36,
    "lab_cluster_name": "Cossart (single)",
    "similar": [],
    "lineage": []
@@ -15430,13 +15741,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -15558,7 +15869,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 36,
+   "lab_cluster": 37,
    "lab_cluster_name": "Bartos (single)",
    "similar": [],
    "lineage": []
@@ -15895,7 +16206,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 21,
+   "lab_cluster": 22,
    "lab_cluster_name": "Romani + Milstein",
    "similar": [
     {
@@ -16081,7 +16392,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 37,
+   "lab_cluster": 38,
    "lab_cluster_name": "Jarsky (single)",
    "similar": [
     {
@@ -16281,13 +16592,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -16812,9 +17123,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -16863,7 +17174,7 @@
    "needs_review": false,
    "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 22,
+   "lab_cluster": 23,
    "lab_cluster_name": "Gerstner + Pfister",
    "similar": [
     {
@@ -16928,7 +17239,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 38,
+   "lab_cluster": 39,
    "lab_cluster_name": "Südhof (single)",
    "similar": [],
    "lineage": []
@@ -17086,7 +17397,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 23,
+   "lab_cluster": 24,
    "lab_cluster_name": "Béı̈que",
    "similar": [
     {
@@ -17235,7 +17546,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 14,
+   "lab_cluster": 15,
    "lab_cluster_name": "Dombeck",
    "similar": [
     {
@@ -17376,7 +17687,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 24,
+   "lab_cluster": 25,
    "lab_cluster_name": "Han",
    "similar": [
     {
@@ -17513,7 +17824,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 23,
+   "lab_cluster": 24,
    "lab_cluster_name": "Béı̈que",
    "similar": [
     {
@@ -17638,7 +17949,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 15,
+   "lab_cluster": 16,
    "lab_cluster_name": "Svoboda",
    "similar": [
     {
@@ -17807,7 +18118,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 16,
+   "lab_cluster": 17,
    "lab_cluster_name": "Makara",
    "similar": [
     {
@@ -17949,7 +18260,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 25,
+   "lab_cluster": 26,
    "lab_cluster_name": "Kim + Hoffman",
    "similar": [
     {
@@ -18035,7 +18346,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 39,
+   "lab_cluster": 40,
    "lab_cluster_name": "Malinow (single)",
    "similar": [],
    "lineage": []
@@ -18645,13 +18956,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -18827,13 +19138,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -18962,7 +19273,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 16,
+   "lab_cluster": 17,
    "lab_cluster_name": "Makara",
    "similar": [
     {
@@ -19273,7 +19584,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 40,
+   "lab_cluster": 41,
    "lab_cluster_name": "Gerber (single)",
    "similar": [
     {
@@ -19402,7 +19713,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 15,
+   "lab_cluster": 16,
    "lab_cluster_name": "Svoboda",
    "similar": [
     {
@@ -19565,7 +19876,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 14,
+   "lab_cluster": 15,
    "lab_cluster_name": "Dombeck",
    "similar": [
     {
@@ -19648,7 +19959,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 26,
+   "lab_cluster": 27,
    "lab_cluster_name": "Yasuda",
    "similar": [
     {
@@ -19815,9 +20126,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -19938,7 +20249,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 27,
+   "lab_cluster": 28,
    "lab_cluster_name": "Segev",
    "similar": [
     {
@@ -20098,9 +20409,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -20537,9 +20848,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -20729,13 +21040,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -20874,7 +21185,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 28,
+   "lab_cluster": 29,
    "lab_cluster_name": "Williams",
    "similar": [
     {
@@ -20903,8 +21214,8 @@
     }
    ],
    "lineage": [
-    "Mark T. Harnett",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -21174,7 +21485,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 30,
    "lab_cluster_name": "Siegelbaum",
    "similar": [
     {
@@ -21313,13 +21624,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -21448,7 +21759,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 41,
+   "lab_cluster": 42,
    "lab_cluster_name": "Basu (single)",
    "similar": [
     {
@@ -21559,7 +21870,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 42,
+   "lab_cluster": 43,
    "lab_cluster_name": "Knierim (single)",
    "similar": [],
    "lineage": []
@@ -21651,7 +21962,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 43,
+   "lab_cluster": 44,
    "lab_cluster_name": "Schuman (single)",
    "similar": [],
    "lineage": []
@@ -21818,13 +22129,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -22475,13 +22786,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -22657,13 +22968,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -22960,7 +23271,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 15,
+   "lab_cluster": 16,
    "lab_cluster_name": "Svoboda",
    "similar": [
     {
@@ -23113,7 +23424,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 17,
+   "lab_cluster": 18,
    "lab_cluster_name": "Yuste",
    "similar": [
     {
@@ -23270,13 +23581,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -23643,13 +23954,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -23748,7 +24059,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 30,
+   "lab_cluster": 31,
    "lab_cluster_name": "Wilson",
    "similar": [
     {
@@ -23809,7 +24120,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 44,
+   "lab_cluster": 45,
    "lab_cluster_name": "Lipscombe (single)",
    "similar": [],
    "lineage": []
@@ -23940,7 +24251,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 45,
+   "lab_cluster": 46,
    "lab_cluster_name": "Sabatini (single)",
    "similar": [],
    "lineage": []
@@ -24070,7 +24381,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 18,
+   "lab_cluster": 19,
    "lab_cluster_name": "Antic + Ikonomu",
    "similar": [
     {
@@ -24226,7 +24537,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 18,
+   "lab_cluster": 19,
    "lab_cluster_name": "Antic + Ikonomu",
    "similar": [
     {
@@ -24410,9 +24721,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -24543,7 +24854,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 46,
+   "lab_cluster": 47,
    "lab_cluster_name": "Tang (single)",
    "similar": [],
    "lineage": []
@@ -24820,7 +25131,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 47,
+   "lab_cluster": 48,
    "lab_cluster_name": "Lin (single)",
    "similar": [
     {
@@ -24894,7 +25205,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 48,
+   "lab_cluster": 49,
    "lab_cluster_name": "He (single)",
    "similar": [],
    "lineage": []
@@ -25011,7 +25322,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 24,
+   "lab_cluster": 25,
    "lab_cluster_name": "Han",
    "similar": [
     {
@@ -25133,7 +25444,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 49,
+   "lab_cluster": 50,
    "lab_cluster_name": "Mellor (single)",
    "similar": [
     {
@@ -25299,7 +25610,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 31,
+   "lab_cluster": 32,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -25468,13 +25779,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -25606,13 +25917,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -25754,9 +26065,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -25909,9 +26220,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -26037,7 +26348,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 50,
+   "lab_cluster": 51,
    "lab_cluster_name": "Lüscher (single)",
    "similar": [
     {
@@ -26367,9 +26678,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -26496,7 +26807,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 51,
+   "lab_cluster": 52,
    "lab_cluster_name": "Both (single)",
    "similar": [],
    "lineage": []
@@ -26623,7 +26934,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 52,
+   "lab_cluster": 53,
    "lab_cluster_name": "London (single)",
    "similar": [
     {
@@ -26962,13 +27273,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -27111,13 +27422,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -27224,7 +27535,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 53,
+   "lab_cluster": 54,
    "lab_cluster_name": "Darnell (single)",
    "similar": [],
    "lineage": []
@@ -27341,7 +27652,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 54,
+   "lab_cluster": 55,
    "lab_cluster_name": "Spain (single)",
    "similar": [],
    "lineage": []
@@ -27487,8 +27798,8 @@
     }
    ],
    "lineage": [
-    "Dax A. Hoffman",
-    "Jeffrey C. Magee"
+    "Jeffrey C. Magee",
+    "Dax A. Hoffman"
    ]
   },
   {
@@ -27651,8 +27962,8 @@
     }
    ],
    "lineage": [
-    "Dax A. Hoffman",
-    "Jeffrey C. Magee"
+    "Jeffrey C. Magee",
+    "Dax A. Hoffman"
    ]
   },
   {
@@ -27762,7 +28073,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 55,
+   "lab_cluster": 56,
    "lab_cluster_name": "Boahen (single)",
    "similar": [],
    "lineage": []
@@ -28025,7 +28336,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 31,
+   "lab_cluster": 32,
    "lab_cluster_name": "Mehta",
    "similar": [
     {
@@ -28094,7 +28405,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 56,
+   "lab_cluster": 57,
    "lab_cluster_name": "Burrone (single)",
    "similar": [],
    "lineage": []
@@ -28401,7 +28712,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 12,
+   "lab_cluster": 13,
    "lab_cluster_name": "Tank",
    "similar": [
     {
@@ -28725,7 +29036,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 27,
+   "lab_cluster": 28,
    "lab_cluster_name": "Segev",
    "similar": [
     {
@@ -28888,7 +29199,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 57,
+   "lab_cluster": 58,
    "lab_cluster_name": "Jayant (single)",
    "similar": [],
    "lineage": []
@@ -29037,9 +29348,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -29099,7 +29410,7 @@
     "chronic/longitudinal"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 58,
+   "lab_cluster": 59,
    "lab_cluster_name": "Klausberger (single)",
    "similar": [],
    "lineage": []
@@ -29205,7 +29516,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 59,
+   "lab_cluster": 60,
    "lab_cluster_name": "Muller (single)",
    "similar": [],
    "lineage": []
@@ -29260,7 +29571,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 32,
+   "lab_cluster": 33,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -29320,7 +29631,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 32,
+   "lab_cluster": 33,
    "lab_cluster_name": "Scanziani",
    "similar": [
     {
@@ -29452,9 +29763,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -29610,13 +29921,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -29763,7 +30074,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 60,
+   "lab_cluster": 61,
    "lab_cluster_name": "Negrean (single)",
    "similar": [
     {
@@ -29935,7 +30246,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 26,
+   "lab_cluster": 27,
    "lab_cluster_name": "Yasuda",
    "similar": [
     {
@@ -30010,7 +30321,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 61,
+   "lab_cluster": 62,
    "lab_cluster_name": "Raimondo (single)",
    "similar": [],
    "lineage": []
@@ -30165,13 +30476,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -30326,8 +30637,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -30386,7 +30697,7 @@
     "chronic/longitudinal"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 62,
+   "lab_cluster": 63,
    "lab_cluster_name": "Slutsky (single)",
    "similar": [],
    "lineage": []
@@ -30503,7 +30814,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 25,
+   "lab_cluster": 26,
    "lab_cluster_name": "Kim + Hoffman",
    "similar": [
     {
@@ -30821,7 +31132,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 63,
+   "lab_cluster": 64,
    "lab_cluster_name": "Lippincott‐Schwartz (single)",
    "similar": [],
    "lineage": []
@@ -30872,7 +31183,7 @@
    "needs_review": false,
    "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 33,
+   "lab_cluster": 34,
    "lab_cluster_name": "Sprekeler + Naud",
    "similar": [
     {
@@ -30991,7 +31302,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 64,
+   "lab_cluster": 65,
    "lab_cluster_name": "Ponomarenko (single)",
    "similar": [],
    "lineage": []
@@ -31096,7 +31407,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 65,
+   "lab_cluster": 66,
    "lab_cluster_name": "Lisman (single)",
    "similar": [
     {
@@ -31377,7 +31688,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 13,
+   "lab_cluster": 14,
    "lab_cluster_name": "Lee",
    "similar": [
     {
@@ -31492,7 +31803,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 66,
+   "lab_cluster": 67,
    "lab_cluster_name": "Brecht (single)",
    "similar": [
     {
@@ -31614,7 +31925,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 17,
+   "lab_cluster": 18,
    "lab_cluster_name": "Yuste",
    "similar": [
     {
@@ -31736,7 +32047,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 19,
+   "lab_cluster": 20,
    "lab_cluster_name": "Nusser",
    "similar": [
     {
@@ -31858,7 +32169,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 19,
+   "lab_cluster": 20,
    "lab_cluster_name": "Nusser",
    "similar": [
     {
@@ -32021,8 +32332,8 @@
     }
    ],
    "lineage": [
-    "Dax A. Hoffman",
-    "Jeffrey C. Magee"
+    "Jeffrey C. Magee",
+    "Dax A. Hoffman"
    ]
   },
   {
@@ -32132,7 +32443,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 19,
+   "lab_cluster": 20,
    "lab_cluster_name": "Nusser",
    "similar": [
     {
@@ -32286,8 +32597,8 @@
     }
    ],
    "lineage": [
-    "Dax A. Hoffman",
-    "Jeffrey C. Magee"
+    "Jeffrey C. Magee",
+    "Dax A. Hoffman"
    ]
   },
   {
@@ -32402,7 +32713,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 67,
+   "lab_cluster": 68,
    "lab_cluster_name": "Bischofberger (single)",
    "similar": [],
    "lineage": []
@@ -32537,7 +32848,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 20,
+   "lab_cluster": 21,
    "lab_cluster_name": "Sheffield",
    "similar": [
     {
@@ -32821,7 +33132,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 68,
+   "lab_cluster": 69,
    "lab_cluster_name": "Richardson (single)",
    "similar": [],
    "lineage": []
@@ -33329,7 +33640,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 69,
+   "lab_cluster": 70,
    "lab_cluster_name": "Adam (single)",
    "similar": [
     {
@@ -33395,7 +33706,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 70,
+   "lab_cluster": 71,
    "lab_cluster_name": "Bowie (single)",
    "similar": [],
    "lineage": []
@@ -33632,7 +33943,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 71,
+   "lab_cluster": 72,
    "lab_cluster_name": "Soltész (single)",
    "similar": [
     {
@@ -33759,7 +34070,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 72,
+   "lab_cluster": 73,
    "lab_cluster_name": "Harvey (single)",
    "similar": [
     {
@@ -33908,7 +34219,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 29,
+   "lab_cluster": 30,
    "lab_cluster_name": "Siegelbaum",
    "similar": [
     {
@@ -33975,7 +34286,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 73,
+   "lab_cluster": 74,
    "lab_cluster_name": "Freeman (single)",
    "similar": [],
    "lineage": []
@@ -34435,7 +34746,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 74,
+   "lab_cluster": 75,
    "lab_cluster_name": "Giocomo (single)",
    "similar": [],
    "lineage": []
@@ -34587,9 +34898,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -34820,9 +35131,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -35096,7 +35407,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 75,
+   "lab_cluster": 76,
    "lab_cluster_name": "Canavier (single)",
    "similar": [],
    "lineage": []
@@ -35207,7 +35518,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 76,
+   "lab_cluster": 77,
    "lab_cluster_name": "Golshani (single)",
    "similar": [
     {
@@ -35352,7 +35663,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 77,
+   "lab_cluster": 78,
    "lab_cluster_name": "Komiyama (single)",
    "similar": [],
    "lineage": []
@@ -35467,7 +35778,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 78,
+   "lab_cluster": 79,
    "lab_cluster_name": "Gasparini (single)",
    "similar": [
     {
@@ -35611,7 +35922,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 28,
+   "lab_cluster": 29,
    "lab_cluster_name": "Williams",
    "similar": [
     {
@@ -35640,8 +35951,8 @@
     }
    ],
    "lineage": [
-    "Mark T. Harnett",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Mark T. Harnett"
    ]
   },
   {
@@ -35795,8 +36106,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -35961,9 +36272,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -36117,13 +36428,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -36335,7 +36646,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 79,
+   "lab_cluster": 80,
    "lab_cluster_name": "Moghaddam (single)",
    "similar": [],
    "lineage": []
@@ -36456,7 +36767,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 80,
+   "lab_cluster": 81,
    "lab_cluster_name": "Nicholson (single)",
    "similar": [
     {
@@ -36632,7 +36943,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 81,
+   "lab_cluster": 82,
    "lab_cluster_name": "Oberlaender (single)",
    "similar": [],
    "lineage": []
@@ -36976,8 +37287,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -37116,7 +37427,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 82,
+   "lab_cluster": 83,
    "lab_cluster_name": "Holtmaat (single)",
    "similar": [],
    "lineage": []
@@ -37272,9 +37583,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -37429,13 +37740,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -37487,7 +37798,7 @@
     "pharmacology"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 83,
+   "lab_cluster": 84,
    "lab_cluster_name": "Peskin (single)",
    "similar": [
     {
@@ -37635,7 +37946,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 84,
+   "lab_cluster": 85,
    "lab_cluster_name": "Chamberland (single)",
    "similar": [],
    "lineage": []
@@ -37770,7 +38081,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 21,
+   "lab_cluster": 22,
    "lab_cluster_name": "Romani + Milstein",
    "similar": [
     {
@@ -37864,7 +38175,7 @@
     "behavior"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 85,
+   "lab_cluster": 86,
    "lab_cluster_name": "Plesnila (single)",
    "similar": [],
    "lineage": []
@@ -37990,7 +38301,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 86,
+   "lab_cluster": 87,
    "lab_cluster_name": "Ujfalussy (single)",
    "similar": [
     {
@@ -38086,7 +38397,7 @@
    "needs_review": false,
    "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 87,
+   "lab_cluster": 88,
    "lab_cluster_name": "Podgorski (single)",
    "similar": [
     {
@@ -38169,7 +38480,7 @@
     "room temperature"
    ],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 88,
+   "lab_cluster": 89,
    "lab_cluster_name": "Oertner (single)",
    "similar": [
     {
@@ -38334,9 +38645,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -38982,7 +39293,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 89,
+   "lab_cluster": 90,
    "lab_cluster_name": "Bonhoeffer (single)",
    "similar": [],
    "lineage": []
@@ -39262,7 +39573,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 30,
+   "lab_cluster": 31,
    "lab_cluster_name": "Wilson",
    "similar": [
     {
@@ -39386,7 +39697,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 20,
+   "lab_cluster": 21,
    "lab_cluster_name": "Sheffield",
    "similar": [
     {
@@ -39547,9 +39858,9 @@
     }
    ],
    "lineage": [
+    "Nelson Spruston",
     "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
+    "Greg J. Stuart"
    ]
   },
   {
@@ -39696,7 +40007,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 90,
+   "lab_cluster": 91,
    "lab_cluster_name": "Kerlin (single)",
    "similar": [],
    "lineage": []
@@ -39829,7 +40140,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 91,
+   "lab_cluster": 92,
    "lab_cluster_name": "Clopath (single)",
    "similar": [
     {
@@ -40700,7 +41011,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 16,
+   "lab_cluster": 17,
    "lab_cluster_name": "Makara",
    "similar": [
     {
@@ -40867,7 +41178,7 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 17,
+   "lab_cluster": 18,
    "lab_cluster_name": "Yuste",
    "similar": [
     {
@@ -41054,8 +41365,8 @@
     }
    ],
    "lineage": [
-    "Greg J. Stuart",
-    "Stephen R. Williams"
+    "Stephen R. Williams",
+    "Greg J. Stuart"
    ]
   },
   {
@@ -41106,7 +41417,7 @@
    "needs_review": false,
    "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 22,
+   "lab_cluster": 23,
    "lab_cluster_name": "Gerstner + Pfister",
    "similar": [
     {
@@ -41385,13 +41696,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -41580,9 +41891,28 @@
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
    },
-   "lab_cluster": 92,
-   "lab_cluster_name": "Cohen (single)",
-   "similar": [],
+   "lab_cluster": 12,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.64898_2026.01.03.696606",
+     "score": 0.768,
+     "title": "Fast dendritic excitations primarily mediate back-propagation in CA1 pyramidal neurons during behavior",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_s41593-026-02339-4",
+     "score": 0.75,
+     "title": "Voltage dynamics of cortical dendrites in vivo",
+     "year": 2026
+    },
+    {
+     "id": "10.64898_2026.01.18.700189",
+     "score": 0.75,
+     "title": "A dendrite-resolved, in vivo transfer function from spike patterns to dendritic Ca2+",
+     "year": 2026
+    }
+   ],
    "lineage": []
   },
   {
@@ -41624,7 +41954,6 @@
     "modality": "review"
    },
    "phenomena": [],
-   "method_flags": [],
    "confidence": {
     "scope": 0.82,
     "article_type": 0.99,
@@ -41645,6 +41974,7 @@
     "supervised learning"
    ],
    "needs_review": false,
+   "method_flags": [],
    "label_fp": "eaf15191ae13",
    "lab_cluster": 0,
    "lab_cluster_name": "Magee + Grienberger",
@@ -41675,13 +42005,13 @@
     }
    ],
    "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
     "Mark T. Harnett",
     "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
     "Christine Grienberger",
-    "Jeffrey C. Magee"
+    "Judit K. Makara",
+    "Sonia Gasparini"
    ]
   },
   {
@@ -41716,7 +42046,6 @@
     "passive integration",
     "branch-specific computation"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.97,
     "article_type": 0.99,
@@ -41737,40 +42066,7 @@
     "nonlinear integration"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 1,
-   "lab_cluster_name": "Spruston",
-   "similar": [
-    {
-     "id": "10.1113_jphysiol.2005.086793",
-     "score": 0.75,
-     "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
-     "year": 2005
-    },
-    {
-     "id": "10.1038_s41593-018-0084-6",
-     "score": 0.75,
-     "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
-     "year": 2018
-    },
-    {
-     "id": "10.1073_pnas.0707919104",
-     "score": 0.75,
-     "title": "Dendritic spikes induce single-burst long-term potentiation",
-     "year": 2007
-    },
-    {
-     "id": "10.1038_nature00854",
-     "score": 0.75,
-     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
-     "year": 2002
-    }
-   ],
-   "lineage": [
-    "Tim Jarsky",
-    "Greg J. Stuart",
-    "Nelson Spruston"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C1.1",
@@ -41833,6 +42129,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -41859,7 +42156,40 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 1,
+   "lab_cluster_name": "Spruston",
+   "similar": [
+    {
+     "id": "10.1113_jphysiol.2005.086793",
+     "score": 0.75,
+     "title": "Factors mediating powerful voltage attenuation along CA1 pyramidal neuron dendrites",
+     "year": 2005
+    },
+    {
+     "id": "10.1038_s41593-018-0084-6",
+     "score": 0.75,
+     "title": "Single excitatory axons form clustered synapses onto CA1 pyramidal cell dendrites",
+     "year": 2018
+    },
+    {
+     "id": "10.1073_pnas.0707919104",
+     "score": 0.75,
+     "title": "Dendritic spikes induce single-burst long-term potentiation",
+     "year": 2007
+    },
+    {
+     "id": "10.1038_nature00854",
+     "score": 0.75,
+     "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
+     "year": 2002
+    }
+   ],
+   "lineage": [
+    "Nelson Spruston",
+    "Tim Jarsky",
+    "Greg J. Stuart"
+   ]
   },
   {
    "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
@@ -41889,7 +42219,6 @@
     "plateau potential",
     "branch-specific computation"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.88,
     "article_type": 0.95,
@@ -41910,38 +42239,7 @@
     "inhibitory microcircuit"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 2,
-   "lab_cluster_name": "Larkum + Sakmann",
-   "similar": [
-    {
-     "id": "10.1016_j.neuroscience.2022.03.008",
-     "score": 1.0,
-     "title": "Are Dendrites Conceptually Useful?",
-     "year": 2022
-    },
-    {
-     "id": "10.1126_science.adx4358",
-     "score": 0.75,
-     "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
-     "year": 2026
-    },
-    {
-     "id": "10.1126_science.aax6239",
-     "score": 0.75,
-     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
-     "year": 2020
-    },
-    {
-     "id": "10.1038_nature07663",
-     "score": 0.75,
-     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
-     "year": 2009
-    }
-   ],
-   "lineage": [
-    "Nelson Spruston"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C2.1",
@@ -42004,6 +42302,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -42030,7 +42329,38 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 2,
+   "lab_cluster_name": "Larkum + Sakmann",
+   "similar": [
+    {
+     "id": "10.1016_j.neuroscience.2022.03.008",
+     "score": 1.0,
+     "title": "Are Dendrites Conceptually Useful?",
+     "year": 2022
+    },
+    {
+     "id": "10.1126_science.adx4358",
+     "score": 0.75,
+     "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
+     "year": 2026
+    },
+    {
+     "id": "10.1126_science.aax6239",
+     "score": 0.75,
+     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
+     "year": 2020
+    },
+    {
+     "id": "10.1038_nature07663",
+     "score": 0.75,
+     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
+     "year": 2009
+    }
+   ],
+   "lineage": [
+    "Nelson Spruston"
+   ]
   },
   {
    "title": "The dendritic engram",
@@ -42064,7 +42394,6 @@
     "branch-specific computation",
     "passive integration"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.95,
     "article_type": 0.98,
@@ -42085,32 +42414,7 @@
     "learning and memory"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 11,
-   "lab_cluster_name": "Poirazi",
-   "similar": [
-    {
-     "id": "10.1146_annurev-neuro-090325-115846",
-     "score": 0.75,
-     "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
-     "year": 2026
-    },
-    {
-     "id": "10.1016_j.celrep.2026.117793",
-     "score": 0.75,
-     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
-     "year": 2026
-    },
-    {
-     "id": "10.1101_2025.05.30.657022",
-     "score": 0.75,
-     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
-     "year": 2025
-    }
-   ],
-   "lineage": [
-    "Panayiota Poirazi"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C2.1",
@@ -42193,6 +42497,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -42219,7 +42524,32 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 11,
+   "lab_cluster_name": "Poirazi",
+   "similar": [
+    {
+     "id": "10.1146_annurev-neuro-090325-115846",
+     "score": 0.75,
+     "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
+     "year": 2026
+    },
+    {
+     "id": "10.1016_j.celrep.2026.117793",
+     "score": 0.75,
+     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
+     "year": 2026
+    },
+    {
+     "id": "10.1101_2025.05.30.657022",
+     "score": 0.75,
+     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
+     "year": 2025
+    }
+   ],
+   "lineage": [
+    "Panayiota Poirazi"
+   ]
   },
   {
    "title": "Silences, spikes and bursts: Three-part knot of the neural code",
@@ -42247,7 +42577,6 @@
     "modality": "review"
    },
    "phenomena": [],
-   "method_flags": [],
    "confidence": {
     "scope": 0.72,
     "article_type": 0.98,
@@ -42268,8 +42597,9 @@
     "learning theory"
    ],
    "needs_review": false,
+   "method_flags": [],
    "label_fp": "eaf15191ae13",
-   "lab_cluster": 33,
+   "lab_cluster": 34,
    "lab_cluster_name": "Sprekeler + Naud",
    "similar": [
     {
@@ -42310,7 +42640,6 @@
     "modality": "review"
    },
    "phenomena": [],
-   "method_flags": [],
    "confidence": {
     "scope": 0.78,
     "article_type": 0.97,
@@ -42331,6 +42660,7 @@
     "plasticity induction"
    ],
    "needs_review": false,
+   "method_flags": [],
    "label_fp": "eaf15191ae13",
    "lab_cluster": 93,
    "lab_cluster_name": "O’Donnell (single)",
@@ -42360,7 +42690,6 @@
     "modality": "review"
    },
    "phenomena": [],
-   "method_flags": [],
    "confidence": {
     "scope": 0.95,
     "article_type": 0.97,
@@ -42381,38 +42710,7 @@
     "multi-level neuroscience"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 2,
-   "lab_cluster_name": "Larkum + Sakmann",
-   "similar": [
-    {
-     "id": "10.1016_j.tins.2012.11.006",
-     "score": 1.0,
-     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
-     "year": 2012
-    },
-    {
-     "id": "10.1126_science.adx4358",
-     "score": 0.75,
-     "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
-     "year": 2026
-    },
-    {
-     "id": "10.1126_science.aax6239",
-     "score": 0.75,
-     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
-     "year": 2020
-    },
-    {
-     "id": "10.1038_nature07663",
-     "score": 0.75,
-     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
-     "year": 2009
-    }
-   ],
-   "lineage": [
-    "Nelson Spruston"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C2.1",
@@ -42455,6 +42753,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -42481,7 +42780,38 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 2,
+   "lab_cluster_name": "Larkum + Sakmann",
+   "similar": [
+    {
+     "id": "10.1016_j.tins.2012.11.006",
+     "score": 1.0,
+     "title": "A cellular mechanism for cortical associations: an organizing principle for the cerebral cortex",
+     "year": 2012
+    },
+    {
+     "id": "10.1126_science.adx4358",
+     "score": 0.75,
+     "title": "Tuft dendrites in frontal motor cortex enable flexible learning",
+     "year": 2026
+    },
+    {
+     "id": "10.1126_science.aax6239",
+     "score": 0.75,
+     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
+     "year": 2020
+    },
+    {
+     "id": "10.1038_nature07663",
+     "score": 0.75,
+     "title": "Dendritic encoding of sensory stimuli controlled by deep cortical interneurons",
+     "year": 2009
+    }
+   ],
+   "lineage": [
+    "Nelson Spruston"
+   ]
   },
   {
    "title": "Dendritic integration of excitatory synaptic input",
@@ -42508,7 +42838,6 @@
    "phenomena": [
     "passive integration"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.97,
     "article_type": 0.99,
@@ -42529,44 +42858,7 @@
     "synaptic physiology"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Grienberger",
-   "similar": [
-    {
-     "id": "10.1038_s41593-026-02214-2",
-     "score": 1.0,
-     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
-     "year": 2026
-    },
-    {
-     "id": "10.1152_jn.2001.86.1.528",
-     "score": 1.0,
-     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2001
-    },
-    {
-     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
-     "score": 1.0,
-     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 1.0,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
-    }
-   ],
-   "lineage": [
-    "Mark T. Harnett",
-    "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
-    "Christine Grienberger",
-    "Jeffrey C. Magee"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C2.1",
@@ -42599,6 +42891,7 @@
      "needs_review": true
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -42625,7 +42918,44 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Grienberger",
+   "similar": [
+    {
+     "id": "10.1038_s41593-026-02214-2",
+     "score": 1.0,
+     "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
+     "year": 2026
+    },
+    {
+     "id": "10.1152_jn.2001.86.1.528",
+     "score": 1.0,
+     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
+     "year": 2001
+    },
+    {
+     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
+     "score": 1.0,
+     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
+     "year": 1998
+    },
+    {
+     "id": "10.1038_9158",
+     "score": 1.0,
+     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
+    "Mark T. Harnett",
+    "Aaron D. Milstein",
+    "Christine Grienberger",
+    "Judit K. Makara",
+    "Sonia Gasparini"
+   ]
   },
   {
    "title": "Illuminating dendritic function with computational models",
@@ -42659,7 +42989,6 @@
     "passive integration",
     "branch-specific computation"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.98,
     "article_type": 0.98,
@@ -42680,38 +43009,7 @@
     "machine learning"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 94,
-   "lab_cluster_name": "Papoutsi (single)",
-   "similar": [
-    {
-     "id": "10.1016_j.celrep.2026.117793",
-     "score": 0.446,
-     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
-     "year": 2026
-    },
-    {
-     "id": "10.1101_2025.05.30.657022",
-     "score": 0.446,
-     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
-     "year": 2025
-    },
-    {
-     "id": "10.1016_j.celrep.2022.111962",
-     "score": 0.203,
-     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
-     "year": 2023
-    },
-    {
-     "id": "10.1126_science.aax6239",
-     "score": 0.116,
-     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
-     "year": 2020
-    }
-   ],
-   "lineage": [
-    "Panayiota Poirazi"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C2.1",
@@ -42754,6 +43052,7 @@
      "needs_review": true
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -42780,7 +43079,38 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 94,
+   "lab_cluster_name": "Papoutsi (single)",
+   "similar": [
+    {
+     "id": "10.1016_j.celrep.2026.117793",
+     "score": 0.446,
+     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
+     "year": 2026
+    },
+    {
+     "id": "10.1101_2025.05.30.657022",
+     "score": 0.446,
+     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
+     "year": 2025
+    },
+    {
+     "id": "10.1016_j.celrep.2022.111962",
+     "score": 0.203,
+     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
+     "year": 2023
+    },
+    {
+     "id": "10.1126_science.aax6239",
+     "score": 0.116,
+     "title": "Dendritic action potentials and computation in human layer 2/3 cortical neurons",
+     "year": 2020
+    }
+   ],
+   "lineage": [
+    "Panayiota Poirazi"
+   ]
   },
   {
    "title": "The decade of the dendritic NMDA spike",
@@ -42815,7 +43145,6 @@
     "plateau potential",
     "branch-specific computation"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.97,
     "article_type": 0.92,
@@ -42836,24 +43165,7 @@
     "cortical Up states"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 18,
-   "lab_cluster_name": "Antic + Ikonomu",
-   "similar": [
-    {
-     "id": "10.1152_jn.00800.2016",
-     "score": 0.614,
-     "title": "The stochastic nature of action potential backpropagation in apical tuft dendrites",
-     "year": 2017
-    },
-    {
-     "id": "10.1152_jn.00734.2019",
-     "score": 0.427,
-     "title": "Local glutamate-mediated dendritic plateau potentials change the state of the cortical pyramidal neuron",
-     "year": 2020
-    }
-   ],
-   "lineage": [],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C2.1",
@@ -42906,6 +43218,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -42932,7 +43245,24 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 19,
+   "lab_cluster_name": "Antic + Ikonomu",
+   "similar": [
+    {
+     "id": "10.1152_jn.00800.2016",
+     "score": 0.614,
+     "title": "The stochastic nature of action potential backpropagation in apical tuft dendrites",
+     "year": 2017
+    },
+    {
+     "id": "10.1152_jn.00734.2019",
+     "score": 0.427,
+     "title": "Local glutamate-mediated dendritic plateau potentials change the state of the cortical pyramidal neuron",
+     "year": 2020
+    }
+   ],
+   "lineage": []
   },
   {
    "title": "Behavioral Timescale Synaptic Plasticity: A Burst in the Field of Learning and Memory",
@@ -42964,7 +43294,6 @@
    "phenomena": [
     "plateau potential"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.72,
     "article_type": 0.98,
@@ -42985,38 +43314,7 @@
     "dendritic burst"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 20,
-   "lab_cluster_name": "Sheffield",
-   "similar": [
-    {
-     "id": "10.1038_s41593-025-01894-6",
-     "score": 0.835,
-     "title": "Synaptic plasticity rules driving representational shifting in the hippocampus",
-     "year": 2025
-    },
-    {
-     "id": "10.1038_s41467-026-72275-1",
-     "score": 0.75,
-     "title": "Distinct CA3 inputs differentially shape the learning-dependent evolution of right CA1 spatial maps",
-     "year": 2026
-    },
-    {
-     "id": "10.1038_nature13871",
-     "score": 0.449,
-     "title": "Calcium transient prevalence across the dendritic arbour predicts place field properties",
-     "year": 2014
-    },
-    {
-     "id": "10.1016_j.neuron.2017.09.029",
-     "score": 0.425,
-     "title": "Increased Prevalence of Calcium Transients across the Dendritic Arbor during Place Field Formation",
-     "year": 2017
-    }
-   ],
-   "lineage": [
-    "Mark Sheffield"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C4.1",
@@ -43079,6 +43377,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -43105,7 +43404,38 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 21,
+   "lab_cluster_name": "Sheffield",
+   "similar": [
+    {
+     "id": "10.1038_s41593-025-01894-6",
+     "score": 0.835,
+     "title": "Synaptic plasticity rules driving representational shifting in the hippocampus",
+     "year": 2025
+    },
+    {
+     "id": "10.1038_s41467-026-72275-1",
+     "score": 0.75,
+     "title": "Distinct CA3 inputs differentially shape the learning-dependent evolution of right CA1 spatial maps",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_nature13871",
+     "score": 0.449,
+     "title": "Calcium transient prevalence across the dendritic arbour predicts place field properties",
+     "year": 2014
+    },
+    {
+     "id": "10.1016_j.neuron.2017.09.029",
+     "score": 0.425,
+     "title": "Increased Prevalence of Calcium Transients across the Dendritic Arbor during Place Field Formation",
+     "year": 2017
+    }
+   ],
+   "lineage": [
+    "Mark Sheffield"
+   ]
   },
   {
    "title": "Behavioral timescale synaptic plasticity: properties, elements and functions",
@@ -43132,7 +43462,6 @@
    "phenomena": [
     "plateau potential"
    ],
-   "method_flags": [],
    "confidence": {
     "scope": 0.88,
     "article_type": 0.95,
@@ -43153,44 +43482,7 @@
     "credit assignment"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 0,
-   "lab_cluster_name": "Magee + Grienberger",
-   "similar": [
-    {
-     "id": "10.1038_35044552",
-     "score": 1.0,
-     "title": "Dendritic integration of excitatory synaptic input",
-     "year": 2000
-    },
-    {
-     "id": "10.1152_jn.2001.86.1.528",
-     "score": 1.0,
-     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
-     "year": 2001
-    },
-    {
-     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
-     "score": 1.0,
-     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
-     "year": 1998
-    },
-    {
-     "id": "10.1038_9158",
-     "score": 1.0,
-     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
-     "year": 1999
-    }
-   ],
-   "lineage": [
-    "Mark T. Harnett",
-    "Aaron D. Milstein",
-    "Attila Losonczy",
-    "Judit K. Makara",
-    "Sonia Gasparini",
-    "Christine Grienberger",
-    "Jeffrey C. Magee"
-   ],
+   "method_flags": [],
    "claim_edges": [
     {
      "claim": "C4.1",
@@ -43283,6 +43575,7 @@
      "needs_review": false
     }
    ],
+   "label_fp": "eaf15191ae13",
    "claims_seen": {
     "C1.1": "818466c1",
     "C1.2": "1a4790b7",
@@ -43309,7 +43602,44 @@
     "C7.2": "b06c803c",
     "C7.3": "aa25d26c",
     "C7.4": "02732abf"
-   }
+   },
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Grienberger",
+   "similar": [
+    {
+     "id": "10.1038_35044552",
+     "score": 1.0,
+     "title": "Dendritic integration of excitatory synaptic input",
+     "year": 2000
+    },
+    {
+     "id": "10.1152_jn.2001.86.1.528",
+     "score": 1.0,
+     "title": "Dendritic Mechanisms of Phase Precession in Hippocampal CA1 Pyramidal Neurons",
+     "year": 2001
+    },
+    {
+     "id": "10.1523_JNEUROSCI.18-19-07613.1998",
+     "score": 1.0,
+     "title": "Dendritic Hyperpolarization-Activated Currents Modify the Integrative Properties of Hippocampal CA1 Pyramidal Neurons",
+     "year": 1998
+    },
+    {
+     "id": "10.1038_9158",
+     "score": 1.0,
+     "title": "Dendritic Ih normalizes temporal summation in hippocampal CA1 neurons",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Jeffrey C. Magee",
+    "Attila Losonczy",
+    "Mark T. Harnett",
+    "Aaron D. Milstein",
+    "Christine Grienberger",
+    "Judit K. Makara",
+    "Sonia Gasparini"
+   ]
   },
   {
    "title": "A Dendro-Centric View of Cognition in the Behaving Brain",
@@ -43341,9 +43671,6 @@
     "plateau potential",
     "branch-specific computation"
    ],
-   "method_flags": [
-    "behavior"
-   ],
    "confidence": {
     "scope": 0.97,
     "article_type": 0.99,
@@ -43364,37 +43691,8 @@
     "artificial intelligence"
    ],
    "needs_review": false,
-   "label_fp": "eaf15191ae13",
-   "lab_cluster": 11,
-   "lab_cluster_name": "Poirazi",
-   "similar": [
-    {
-     "id": "The_dendritic_engram",
-     "score": 0.75,
-     "title": "The dendritic engram",
-     "year": 2023
-    },
-    {
-     "id": "10.1016_j.celrep.2026.117793",
-     "score": 0.75,
-     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
-     "year": 2026
-    },
-    {
-     "id": "10.1101_2025.05.30.657022",
-     "score": 0.75,
-     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
-     "year": 2025
-    },
-    {
-     "id": "10.1016_j.celrep.2022.111962",
-     "score": 0.158,
-     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
-     "year": 2023
-    }
-   ],
-   "lineage": [
-    "Panayiota Poirazi"
+   "method_flags": [
+    "behavior"
    ],
    "claim_edges": [
     {
@@ -43463,6 +43761,587 @@
      "strength": "assumed",
      "condition": "Review discusses backpropagation-like credit assignment as theoretical framework without testing it",
      "quote": "these biological mechanisms are formalized in theoretical and circuit models",
+     "confidence": 0.65,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "label_fp": "eaf15191ae13",
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   },
+   "lab_cluster": 11,
+   "lab_cluster_name": "Poirazi",
+   "similar": [
+    {
+     "id": "The_dendritic_engram",
+     "score": 0.75,
+     "title": "The dendritic engram",
+     "year": 2023
+    },
+    {
+     "id": "10.1016_j.celrep.2026.117793",
+     "score": 0.75,
+     "title": "Clustered inputs engage dendritic nonlinearities and calcium signaling to support efficient place-field formation in CA1 pyramidal neurons",
+     "year": 2026
+    },
+    {
+     "id": "10.1101_2025.05.30.657022",
+     "score": 0.75,
+     "title": "From Morphology to Computation: How Synaptic Organization Shapes Place Fields in CA1 Pyramidal Neurons",
+     "year": 2025
+    },
+    {
+     "id": "10.1016_j.celrep.2022.111962",
+     "score": 0.158,
+     "title": "Lateral entorhinal cortex inputs modulate hippocampal dendritic excitability by recruiting a local disinhibitory microcircuit",
+     "year": 2023
+    }
+   ],
+   "lineage": [
+    "Panayiota Poirazi"
+   ]
+  },
+  {
+   "title": "Fast dendritic excitations primarily mediate back-propagation in CA1 pyramidal neurons during behavior",
+   "year": 2026,
+   "doi": "10.64898/2026.01.03.696606",
+   "authors": [
+    "Byung Hun Lee",
+    "Pojeong Park",
+    "Xiang Wu",
+    "J. David Wong-Campos",
+    "Junjie Xu",
+    "Marley Xiong",
+    "Yitong Qi",
+    "Yi-Chieh Huang",
+    "Daniel G. Itkis",
+    "Sarah E. Plutkis",
+    "Luke D. Lavis",
+    "Adam E. Cohen"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "abstract": "Abstract Dendrites integrate synaptic inputs to trigger action potentials, and dendrites carry back-propagating action potentials (bAPs) to synapses where these signals contribute to plasticity. Despite strong evidence for a rich repertoire of nonlinear dendritic excitations, the in vivo roles of these excitations in dendritic integration and back-propagation remain uncertain. Here, we used high-speed voltage imaging through a chronically implanted microprism to map membrane potential dynamics from basal to apical dendrites of CA1 neurons in mice navigating in a virtual reality environment. Despite complex dendritic branch morphology, the dynamics were largely captured by 2 or 3 electrical compartments: basal, soma, and apical. Fast dendritic spikes almost always started from bAPs, indicating that dendritic spikes are primarily a consequence rather than a cause of somatic spiking. These fast spikes sometimes triggered slower apical dendritic plateau depolarizations, which drove complex spikes at the soma. We found that the biophysics of dendritic excitability determined the distribution of simple and complex spikes across a place field. Our results show how CA1 pyramidal neurons convert synaptic inputs to spiking outputs and suggest a primary role of dendritic nonlinearities in mediating activity-dependent plasticity.",
+   "zotero_tags": [],
+   "zotero_extra": "ISSN: 2692-8205 Pages: 2026.01.03.696606 Section: New Results",
+   "id": "10.64898_2026.01.03.696606",
+   "cited_by": 5,
+   "first_author": "Byung Hun Lee",
+   "last_author": "Adam E. Cohen",
+   "tldr": "High-speed voltage imaging through a chronically implanted microprism is used to map membrane potential dynamics from basal to apical dendrites of CA1 neurons in mice navigating in a virtual reality environment and suggests a primary role of dendritic nonlinearities in mediating activity-dependent plasticity.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "voltage imaging"
+   },
+   "phenomena": [
+    "bAP",
+    "Na spike",
+    "plateau potential",
+    "Ca spike",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "chronic/longitudinal",
+    "behavior"
+   ],
+   "confidence": {
+    "scope": 0.93,
+    "article_type": 0.98,
+    "prep": 0.97,
+    "modality": 0.97
+   },
+   "evidence": {
+    "modality": "high-speed voltage imaging via chronically implanted microprism",
+    "prep": "mice navigating in virtual reality environment, awake behaving"
+   },
+   "significance": "Showed that dendritic spikes in CA1 primarily follow rather than cause somatic firing, reframing dendritic nonlinearities as mediators of plasticity rather than drivers of computation.",
+   "keywords": [
+    "voltage imaging",
+    "CA1 dendrites",
+    "back-propagation",
+    "place cells",
+    "dendritic spikes",
+    "plateau potential"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 12,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.64898_2026.01.18.700189",
+     "score": 0.777,
+     "title": "A dendrite-resolved, in vivo transfer function from spike patterns to dendritic Ca2+",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_s41467-025-55819-9",
+     "score": 0.768,
+     "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
+     "year": 2025
+    },
+    {
+     "id": "10.1038_s41593-026-02339-4",
+     "score": 0.75,
+     "title": "Voltage dynamics of cortical dendrites in vivo",
+     "year": 2026
+    }
+   ],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "In awake behaving mice using voltage imaging of CA1 dendrites",
+     "quote": "fast dendritic spikes almost always started from bAPs",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "In CA1 in vivo; prior dendritic depolarisation (plateau) shapes bAP propagation outcomes",
+     "quote": "fast spikes sometimes triggered slower apical dendritic plateau depolarizations",
+     "confidence": 0.78,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Voltage imaging (not calcium) in awake CA1; compartments largely correlated but distinct",
+     "quote": "dynamics were largely captured by 2 or 3 electrical compartments: basal, soma, and apical",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "In vivo CA1 voltage imaging; fast dendritic Na spikes propagate widely from bAPs",
+     "quote": "fast dendritic spikes almost always started from bAPs",
+     "confidence": 0.82,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "In awake behaving CA1; dendritic nonlinearities primarily mediate plasticity-relevant complex spikes",
+     "quote": "suggest a primary role of dendritic nonlinearities in mediating activity-dependent plasticity",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "In vivo CA1; integration is complex, producing both simple and complex spikes context-dependently",
+     "quote": "biophysics of dendritic excitability determined the distribution of simple and complex spikes",
+     "confidence": 0.7,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "In vivo CA1 during navigation; plateau potentials drive complex spikes relevant to place field plasticity",
+     "quote": "fast spikes sometimes triggered slower apical dendritic plateau depolarizations, which drove complex spikes",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Voltage imaging directly measures membrane potential, bypassing GCaMP limitations noted elsewhere",
+     "quote": "high-speed voltage imaging through a chronically implanted microprism to map membrane potential dynamics",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "A dendrite-resolved, in vivo transfer function from spike patterns to dendritic Ca2+",
+   "year": 2026,
+   "doi": "10.64898/2026.01.18.700189",
+   "authors": [
+    "Xiang Wu",
+    "Byung Hun Lee",
+    "Pojeong Park",
+    "J. David Wong-Campos",
+    "Junjie Xu",
+    "Sarah E. Plutkis",
+    "Luke D. Lavis",
+    "Adam E. Cohen"
+   ],
+   "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+   "abstract": "Abstract Dendrites transform local electrical activity into intracellular Ca 2+ signals that drive plasticity 1,2 , yet the voltage→Ca 2+ mapping during natural behavior remains poorly defined. Here, we measure this transfer function via simultaneous voltage and Ca 2+ imaging throughout the dendritic arbors of hippocampal CA2 pyramidal neurons in behaving mice. Dendritic Ca 2+ exhibited a hierarchical activation pattern dominated by back-propagating action potentials: simple spikes primarily drove somatic and proximal Ca 2+ , whereas complex spikes produced larger somatic Ca 2+ signals and propagated farther into distal dendrites, sometimes in a branch-selective manner. Dendrite-restricted co-activation of voltage and Ca 2+ without concurrent somatic events was rare. A biophysics-inspired model accurately predicted local Ca 2+ transients from local voltage waveforms. Our data and model provide a quantitative understanding of when – and why – dendritic Ca 2+ signals in CA2 pyramidal cells arise during behavior.",
+   "zotero_tags": [],
+   "zotero_extra": "ISSN: 2692-8205 Pages: 2026.01.18.700189 Section: New Results",
+   "id": "10.64898_2026.01.18.700189",
+   "cited_by": 3,
+   "first_author": "Xiang Wu",
+   "last_author": "Adam E. Cohen",
+   "tldr": "The data and model provide a quantitative understanding of when – and why – dendritic Ca2+ signals in CA2 pyramidal cells arise during behavior and accurately predicted local Ca2+ transients from local voltage waveforms.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "voltage imaging"
+   },
+   "phenomena": [
+    "bAP",
+    "Ca spike",
+    "branch-specific computation",
+    "plateau potential"
+   ],
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal"
+   ],
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.97,
+    "prep": 0.95,
+    "modality": 0.82
+   },
+   "evidence": {
+    "modality": "simultaneous voltage and Ca2+ imaging throughout dendritic arbors",
+    "prep": "behaving mice with dendrite-resolved in vivo imaging"
+   },
+   "significance": "Simultaneous dendritic voltage and calcium imaging in behaving mice established a quantitative transfer function linking spike patterns to branch-specific Ca2+ signals in CA2 pyramidal neurons.",
+   "keywords": [
+    "dendritic calcium",
+    "voltage imaging",
+    "CA2 pyramidal neuron",
+    "back-propagating action potential",
+    "transfer function",
+    "in vivo dual imaging"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 12,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.64898_2026.01.03.696606",
+     "score": 0.777,
+     "title": "Fast dendritic excitations primarily mediate back-propagation in CA1 pyramidal neurons during behavior",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_s41593-026-02339-4",
+     "score": 0.75,
+     "title": "Voltage dynamics of cortical dendrites in vivo",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_s41467-025-55819-9",
+     "score": 0.75,
+     "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
+     "year": 2025
+    }
+   ],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C7.1",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "In CA2 pyramidal neurons in vivo; subthreshold voltage poorly reported by Ca2+",
+     "quote": "voltage→Ca2+ mapping during natural behavior remains poorly defined",
+     "confidence": 0.92,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "CA2 pyramidal neurons in behaving mice; Ca2+ dominated by bAPs",
+     "quote": "dominated by back-propagating action potentials: simple spikes primarily drove somatic and proximal Ca2+",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Complex spikes show branch-selective Ca2+ propagation in CA2 in vivo",
+     "quote": "complex spikes produced larger somatic Ca2+ signals and propagated farther into distal dendrites, sometimes in a branch-selective manner",
+     "confidence": 0.8,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C1.1",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "In CA2 in vivo during behavior; dendrite-restricted events without somatic spikes are rare",
+     "quote": "Dendrite-restricted co-activation of voltage and Ca2+ without concurrent somatic events was rare",
+     "confidence": 0.88,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_seen": {
+    "C1.1": "818466c1",
+    "C1.2": "1a4790b7",
+    "C1.3": "41a920c0",
+    "C1.4": "98fcbdae",
+    "C1.5": "e23f5c96",
+    "C2.1": "ce76be9a",
+    "C2.2": "0b4b9d11",
+    "C2.3a": "a02f0d8e",
+    "C2.3b": "734a51b0",
+    "C2.3c": "476b2113",
+    "C3.1": "e294843b",
+    "C3.2": "f49566c9",
+    "C3.3": "8540e1bb",
+    "C3.4": "24f6491d",
+    "C4.1": "61367806",
+    "C4.2": "5e5d7566",
+    "C4.3": "238279cd",
+    "C5.1": "12b8d1a6",
+    "C5.2": "a0e6b62b",
+    "C6.1": "5c836a34",
+    "C6.2": "b6872cc7",
+    "C7.1": "d13127a3",
+    "C7.2": "b06c803c",
+    "C7.3": "aa25d26c",
+    "C7.4": "02732abf"
+   }
+  },
+  {
+   "title": "Voltage dynamics of cortical dendrites in vivo",
+   "year": 2026,
+   "doi": "10.1038/s41593-026-02339-4",
+   "authors": [
+    "David Wong-Campos",
+    "Pojeong Park",
+    "Byung Hun Lee",
+    "Hunter C. Davis",
+    "Yitong Qi",
+    "He Tian",
+    "Daniel G. Itkis",
+    "Doyeon Kim",
+    "Jonathan B. Grimm",
+    "Sarah E. Plutkis",
+    "Luke D. Lavis",
+    "Adam E. Cohen"
+   ],
+   "venue": "Nature Neuroscience",
+   "abstract": "Voltage dynamics in dendrites, which result both from integrating synaptic inputs and back-propagating action potentials (bAPs) from the soma, contribute to plasticity. Mapping these dynamics in the dendritic arbors of live animals is crucial for understanding neuronal computation and plasticity rules. Here we combine targeted channelrhodopsin activation with dual-plane structured illumination voltage imaging for simultaneous monitoring of dendritic and somatic voltage response dynamics in cortical layer 2/3 pyramidal neurons in anesthetized and awake mice. We examined the integration of synaptic inputs and compared the dynamics of optogenetically evoked, spontaneous and sensory-evoked subthreshold and bAP dynamics. Our measurements revealed a broadly correlated membrane voltage throughout the dendritic arbor and only weak signatures of electrical compartmentalization within individual dendritic branches. However, we observed strong spiking-history-dependent modulation of bAP propagation into distal dendrites. We propose that this dendritic filtering of bAPs may have a critical role in the regulation of bursting and in activity-dependent plasticity.",
+   "zotero_tags": [],
+   "zotero_extra": "",
+   "id": "10.1038_s41593-026-02339-4",
+   "cited_by": 0,
+   "first_author": "David Wong-Campos",
+   "last_author": "Adam E. Cohen",
+   "tldr": "Simultaneous voltage imaging of soma and dendrites in layer 2/3 cortical neurons in live mice reveals rich dynamics of spike back-propagation, with amplitude shaped by spiking history, dendrite location and behavioral state.",
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "voltage imaging"
+   },
+   "phenomena": [
+    "bAP",
+    "passive integration",
+    "branch-specific computation"
+   ],
+   "method_flags": [
+    "optogenetics",
+    "anesthetized",
+    "behavior",
+    "pharmacology"
+   ],
+   "confidence": {
+    "scope": 0.97,
+    "article_type": 0.98,
+    "prep": 0.85,
+    "modality": 0.98
+   },
+   "evidence": {
+    "modality": "dual-plane structured illumination voltage imaging of dendrites and soma",
+    "prep": "measurements in anesthetized and awake mice stated explicitly"
+   },
+   "significance": "In vivo voltage imaging revealed broadly correlated dendritic membrane potential and history-dependent bAP filtering, reframing how dendritic compartmentalization and burst plasticity are understood.",
+   "keywords": [
+    "voltage imaging",
+    "dendrites",
+    "back-propagating action potentials",
+    "cortical pyramidal neurons",
+    "in vivo",
+    "burst modulation"
+   ],
+   "needs_review": false,
+   "label_fp": "eaf15191ae13",
+   "lab_cluster": 12,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.64898_2026.01.18.700189",
+     "score": 0.75,
+     "title": "A dendrite-resolved, in vivo transfer function from spike patterns to dendritic Ca2+",
+     "year": 2026
+    },
+    {
+     "id": "10.64898_2026.01.03.696606",
+     "score": 0.75,
+     "title": "Fast dendritic excitations primarily mediate back-propagation in CA1 pyramidal neurons during behavior",
+     "year": 2026
+    },
+    {
+     "id": "10.1038_s41467-025-55819-9",
+     "score": 0.75,
+     "title": "Dendritic excitations govern back-propagation via a spike-rate accelerometer",
+     "year": 2025
+    }
+   ],
+   "lineage": [],
+   "claim_edges": [
+    {
+     "claim": "C1.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "In L2/3 pyramidal neurons in vivo; prior spiking history modulates bAP propagation",
+     "quote": "strong spiking-history-dependent modulation of bAP propagation into distal dendrites",
+     "confidence": 0.82,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "Awake and anesthetized mice, voltage imaging of L2/3 pyramidal neurons",
+     "quote": "broadly correlated membrane voltage throughout the dendritic arbor",
+     "confidence": 0.88,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "L2/3 pyramidal neurons in vivo with voltage imaging, not calcium",
+     "quote": "only weak signatures of electrical compartmentalization within individual dendritic branches",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.1",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "condition": "Voltage imaging directly measures membrane potential, bypassing calcium indicator limitations",
+     "quote": "dual-plane structured illumination voltage imaging for simultaneous monitoring of dendritic and somatic voltage",
+     "confidence": 0.78,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.3",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Paper compares anesthetized vs awake conditions explicitly",
+     "quote": "simultaneous monitoring of dendritic and somatic voltage response dynamics in cortical layer 2/3 pyramidal neurons in anesthetized and awake mice",
+     "confidence": 0.75,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C7.4",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "Targeted channelrhodopsin used as synaptic proxy; limitations noted",
+     "quote": "combine targeted channelrhodopsin activation with dual-plane structured illumination voltage imaging",
+     "confidence": 0.72,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.1",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "L2/3 pyramidal neurons in vivo; voltage imaging rather than calcium",
+     "quote": "only weak signatures of electrical compartmentalization within individual dendritic branches",
+     "confidence": 0.83,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.4",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "Paper frames dendritic bAP filtering as relevant to plasticity and bursting regulation",
+     "quote": "dendritic filtering of bAPs may have a critical role in the regulation of bursting and in activity-dependent plasticity",
      "confidence": 0.65,
      "source": "model",
      "needs_review": false
@@ -47229,6 +48108,21 @@
    0.75
   ],
   [
+   200,
+   214,
+   0.775
+  ],
+  [
+   200,
+   215,
+   0.75
+  ],
+  [
+   200,
+   216,
+   0.75
+  ],
+  [
    201,
    212,
    0.648
@@ -47252,6 +48146,21 @@
    209,
    213,
    0.493
+  ],
+  [
+   214,
+   215,
+   0.791
+  ],
+  [
+   214,
+   216,
+   0.75
+  ],
+  [
+   215,
+   216,
+   0.75
   ]
  ]
 }

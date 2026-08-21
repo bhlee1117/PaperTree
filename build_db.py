@@ -281,7 +281,7 @@ def _get(url, params, tries=4):
     return None
 
 
-def enrich(items):
+def enrich(items, cache_only=False):
     """Zotero is the seed list; OpenAlex is the metadata source of truth.
     Zotero's own abstract is kept only as a fallback — it is often empty or
     truncated depending on how the item was imported."""
@@ -293,6 +293,13 @@ def enrich(items):
     if found:
         print(f"  {len(found)} from cache")
     dois = [d for d in dois if d not in found]
+    if cache_only:
+        # Dry runs read the cache but never the network, so the estimate reflects the
+        # abstracts the real run will actually have rather than only what Zotero holds.
+        if dois:
+            print(f"  {len(dois)} not cached — the real run will fetch these, so the "
+                  f"figures below are a floor")
+        dois = []
     for k in range(0, len(dois), 40):
         params = {"filter": "doi:" + "|".join(dois[k:k + 40]), "per-page": 50}
         if MAILTO:
@@ -303,7 +310,7 @@ def enrich(items):
         print(f"  enriched {len(found)}")
         save_cache(found)
         time.sleep(0.3)
-    if dois and not found:
+    if dois and not found and not cache_only:
         print("  ! OpenAlex returned nothing for any DOI — network blocked, or the API is down.\n"
               "    Falling back to Zotero's own fields. Author IDs, reference lists and citation\n"
               "    counts will be missing, so clustering will be weaker. Re-run later, or pass\n"
@@ -341,7 +348,7 @@ def enrich(items):
             p["author_ids"] = p["authors"]
             p["cited_by"] = 0
             p["refs"] = []
-            if it["doi"]:
+            if it["doi"] and not cache_only:
                 print(f"  ! no OpenAlex record: {it['doi']}", file=sys.stderr)
         p["first_author"] = p["authors"][0] if p["authors"] else ""
         p["last_author"] = p["authors"][-1] if p["authors"] else ""
@@ -461,6 +468,7 @@ def save_partial(papers, path):
 
 
 def label_papers(papers, lang="English", checkpoint=None, every=20):
+    fp = axes_fingerprint(lang)
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         sys.exit("ANTHROPIC_API_KEY not set (or pass --no-label)")
@@ -478,6 +486,7 @@ def label_papers(papers, lang="English", checkpoint=None, every=20):
             p["evidence"] = {}
             p["significance"] = p.get("tldr", "") or "(no abstract — label this one from the PDF)"
             p["needs_review"] = True
+            p["label_fp"] = fp
             print(f"  [{i}/{len(papers)}] SKIP no abstract · {p['title'][:48]}")
             continue
         prev_lab = dict(p.get("labels") or {})
@@ -509,6 +518,7 @@ def label_papers(papers, lang="English", checkpoint=None, every=20):
                     p["labels"][ax] = prev_lab[ax]
                     p["confidence"][ax] = 1.0
         p["needs_review"] = min([float(x) for x in p["confidence"].values()] or [1]) < 0.6
+        p["label_fp"] = fp
         print(f"  [{i}/{len(papers)}] {p['title'][:56]}")
         if checkpoint and i % every == 0:
             save_partial(papers, checkpoint)
@@ -691,7 +701,15 @@ def find_lineage(papers):
 # comes from Zotero's Extra field and is refreshed from the export every time.
 CARRY = ("labels", "phenomena", "confidence", "evidence", "significance",
          "keywords", "needs_review", "human_verified", "note", "tldr",
-         "method_flags", "claim_edges", "claims_verified")
+         "method_flags", "claim_edges", "claims_verified",
+         # The cache KEYS must survive the merge too. Leaving them out meant every run
+         # rebuilt each paper from the Zotero row, found no fingerprint, and re-labelled
+         # and re-assigned the whole library at full price while reporting nothing wrong.
+         "label_fp", "claims_seen", "claims_done")
+
+# Anything a stage writes to remember its own work belongs here. If you add a new
+# fingerprint, add it to CARRY in the same commit.
+assert {"label_fp", "claims_seen"} <= set(CARRY)
 
 
 def merge_existing(papers, path, force_relabel=()):
@@ -729,15 +747,18 @@ def merge_existing(papers, path, force_relabel=()):
     return papers, {"new": new, "cached": cached, "dropped": len(old), "repaired": repaired}
 
 
-def axes_fingerprint():
-    """Identity of the current taxonomy. Stored in the database so that a cached label
-    can be recognised as belonging to a different question set."""
+def axes_fingerprint(lang="English"):
+    """Identity of everything the labelling call produces: the axes, their allowed
+    values, and the output language. Stored per paper so a cached label can be
+    recognised as an answer to a different question — including the case where only
+    the language changed, which leaves the axes identical and the prose stale."""
     spec = {k: sorted(v["values"]) for k, v in TAXONOMY.items()}
     spec.update({"multi:" + k: sorted(v["values"]) for k, v in MULTI.items()})
+    spec["lang"] = lang
     return hashlib.sha1(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:12]
 
 
-def needs_call(p):
+def needs_call(p, fp=None):
     """A cached label is only reusable if it answers the CURRENT questions.
 
     This check exists because of a real failure: after two axes were retired and one
@@ -748,15 +769,17 @@ def needs_call(p):
     """
     if not p.get("labels") or not p.get("confidence"):
         return True
-    return set(p["labels"]) != set(TAXONOMY)
+    if set(p["labels"]) != set(TAXONOMY):
+        return True
+    return bool(fp) and p.get("label_fp") != fp
 
 
-def estimate(papers):
-    todo = [p for p in papers if needs_call(p) and len(p.get("abstract", "")) >= 120]
+def estimate(papers, fp=None):
+    todo = [p for p in papers if needs_call(p, fp) and len(p.get("abstract", "")) >= 120]
     tok = sum(1200 + min(len(p.get("abstract", "")), 5000) // 4 for p in todo)
     print(f"\n  would label {len(todo)} papers · ~{tok:,} input tokens "
           f"· roughly ${tok/1e6*3 + len(todo)*400/1e6*15:.2f} on Sonnet")
-    noabs = [p for p in papers if needs_call(p) and len(p.get("abstract", "")) < 120]
+    noabs = [p for p in papers if needs_call(p, fp) and len(p.get("abstract", "")) < 120]
     if noabs:
         print(f"  {len(noabs)} have no usable abstract and will be flagged, not labelled:")
         for p in noabs[:8]:
@@ -843,10 +866,16 @@ def main():
         sys.exit("no items found")
 
     if a.dry_run and not a.no_enrich:
-        print("  (dry run: skipping OpenAlex — estimating from Zotero's own abstracts)")
-        a.no_enrich = True
+        print("  (dry run: reading the OpenAlex cache, not the network)")
+        items = read_zotero(a.zotero) if False else items
+        papers = enrich(items, cache_only=True)
+        for p in papers:
+            p.setdefault("tldr", "")
+        a._prebuilt = papers
 
-    if a.no_enrich:
+    if getattr(a, "_prebuilt", None) is not None:
+        papers = a._prebuilt
+    elif a.no_enrich:
         papers = [dict(it,
                        id=(it["doi"] or it["title"][:60]).replace("/", "_").replace(" ", "_"),
                        author_ids=it["authors"], cited_by=0, refs=[],
@@ -872,6 +901,12 @@ def main():
         make_gold(papers, a.gold)
         return
 
+    FP = axes_fingerprint(a.lang)
+    lang_only = [p for p in papers if p.get("labels")
+                 and set(p["labels"]) == set(TAXONOMY) and p.get("label_fp") != FP]
+    if lang_only:
+        print(f"\n  ! {len(lang_only)} papers were labelled under different settings "
+              f"(language or axis values) and will be redone")
     stale = [p for p in papers if p.get("labels") and set(p["labels"]) != set(TAXONOMY)]
     if stale:
         old = sorted({a for p in stale for a in p["labels"]} - set(TAXONOMY))
@@ -881,7 +916,7 @@ def main():
         if new: print(f"      new axes missing:     {', '.join(new)}")
         print("      hand-verified axes that still exist are preserved")
 
-    todo = estimate(papers)
+    todo = estimate(papers, FP)
     if a.dry_run:
         print("\n  dry run — nothing was sent to the API")
         return
@@ -892,9 +927,9 @@ def main():
             p.setdefault("phenomena", []); p.setdefault("method_flags", [])
             p.setdefault("significance", p.get("tldr", ""))
             p["needs_review"] = True
-    elif todo or any(needs_call(p) for p in papers):
+    elif todo or any(needs_call(p, FP) for p in papers):
         print("labelling...")
-        label_papers([p for p in papers if needs_call(p)], a.lang,
+        label_papers([p for p in papers if needs_call(p, FP)], a.lang,
                      checkpoint=a.out + ".partial")
     else:
         print("labelling: nothing new")
@@ -910,7 +945,7 @@ def main():
         p.pop("refs", None); p.pop("author_ids", None)
 
     db = {"meta": {"generated": time.strftime("%Y-%m-%d %H:%M"), "n": len(papers),
-                   "taxonomy": axes_fingerprint(),
+                   "taxonomy": FP, "lang": a.lang,
                    "axes": [{"id": k, "label": v["label"], "values": list(v["values"])}
                             for k, v in TAXONOMY.items()],
                    "multi_axes": [{"id": k, "label": v["label"], "values": v["values"]}
@@ -927,7 +962,12 @@ def main():
     flagged = sum(1 for p in papers if p.get("needs_review"))
     verified = sum(1 for p in papers if p.get("human_verified"))
     print(f"\nwrote {a.out}  ·  {len(papers)} papers  ·  {nc} clusters")
+    n_new = sum(1 for p in papers if p.get("label_fp") == FP and needs_call(p) is False)
     print(f"  {stats['cached']} reused · {stats['new']} newly labelled · {stats['dropped']} dropped")
+    keyed = sum(1 for p in papers if p.get("label_fp"))
+    if keyed < len(papers):
+        print(f"  ! {len(papers)-keyed} papers have no label fingerprint and will be "
+              f"relabelled next run — this should be 0", file=sys.stderr)
     print(f"  {flagged} flagged for review · {verified} verified by you")
     for l in links:
         print(f"  lineage: {l['person']} — {', '.join(l['trained_in'])} -> {', '.join(l['now_leads'])}")

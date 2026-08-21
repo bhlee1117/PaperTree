@@ -45,6 +45,10 @@ fi
 if [[ -z "${ANTHROPIC_API_KEY:-}" && -f .env ]]; then
   set -a; . ./.env; set +a
 fi
+# Output language for the one-sentence significance. Set ATLAS_LANG in .env to change
+# it; changing it invalidates the cached prose, so those papers get relabelled.
+LANG_OUT="${ATLAS_LANG:-English}"
+
 if [[ -z "${ANTHROPIC_API_KEY:-}" ]]; then
   echo "ANTHROPIC_API_KEY is not set." >&2
   echo "Either add it to your ~/.zshrc, or put this in $(pwd)/.env :" >&2
@@ -53,7 +57,7 @@ if [[ -z "${ANTHROPIC_API_KEY:-}" ]]; then
 fi
 
 if [[ -n "$CHECK" ]]; then
-  exec "$PY" build_db.py --zotero "$CSV" --merge "$DB" --dry-run
+  exec "$PY" build_db.py --zotero "$CSV" --merge "$DB" --lang "$LANG_OUT" --dry-run
 fi
 
 # Keep the last 10 versions. The expensive thing in this file is not the API
@@ -68,7 +72,8 @@ if [[ -f "$DB" ]]; then
 fi
 
 # Write to a temp file first, so a crash mid-run cannot leave a truncated DB.
-"$PY" build_db.py --zotero "$CSV" --merge "$DB" --out "$DB.tmp" --check-gold
+"$PY" build_db.py --zotero "$CSV" --merge "$DB" --out "$DB.tmp" \
+    --lang "$LANG_OUT" --check-gold
 mv "$DB.tmp" "$DB"
 
 # Stages 2 and 3 run through the same interpreter, which is the whole reason they are
@@ -82,5 +87,5 @@ if [[ -f claims.yaml ]]; then
 fi
 
 echo
-echo "Done. Open dendrite_atlas.html and drop in atlas.json."
+echo "Done. Open papertree.html — your data is already in it."
 echo "Tick 'only flagged for review' and work through the new ones."

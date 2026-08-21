@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PaperTree</title>
+<style>
+:root{
+  --bg:#0A0C0E; --grid:rgba(255,255,255,.045); --panel:#13171A; --panel2:#1A2024;
+  --line:#252B30; --line2:#333A40; --ink:#E9EDEA; --ink2:#96A09B; --ink3:#5E6864;
+  --accent:#FF3D8A; --sup:#34D399; --qual:#FBBF24; --con:#FB7185; --asm:#707A85;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg)}
+body{color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;font-feature-settings:"cv02","cv03","cv04"}
+::selection{background:var(--accent);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:5px;border:3px solid var(--bg)}
+
+/* ── chrome ───────────────────────────────────────────── */
+header{padding:20px 26px 0;border-bottom:1px solid var(--line)}
+.brandrow{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:600;letter-spacing:-.024em}
+.brand span{color:var(--accent)}
+.stats{font-family:var(--mono);font-size:11px;color:var(--ink3);display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
+.stats b{color:var(--ink2);font-weight:500}
+.topics{display:flex;gap:6px;margin-top:16px}
+.topic{font:inherit;font-size:13px;font-weight:500;background:var(--panel);color:var(--ink2);
+  border:1px solid var(--line);border-bottom:none;border-radius:7px 7px 0 0;padding:8px 16px;cursor:pointer}
+.topic[aria-selected=true]{background:var(--panel2);color:var(--ink);border-color:var(--line2)}
+.topic.add{background:none;border-style:dashed;color:var(--ink3)}
+.subs{display:flex;gap:2px;padding:0 26px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.sub{font:inherit;font-size:12.5px;background:none;border:none;border-bottom:2px solid transparent;
+  color:var(--ink3);padding:11px 14px;cursor:pointer;font-weight:500}
+.sub:hover{color:var(--ink2)}
+.sub[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* ── grid canvas ──────────────────────────────────────── */
+.canvas{position:relative;min-height:calc(100vh - 150px);padding:26px;overflow:auto;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:34px 34px}
+#wires{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:visible}
+.rail{position:relative;z-index:1;display:grid;grid-template-columns:300px 348px minmax(320px,1fr);
+  gap:52px;align-items:start}
+@media(max-width:1100px){.rail{grid-template-columns:1fr}#wires{display:none}}
+.colh{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink3);margin:0 0 10px 2px}
+
+.box{display:block;width:100%;text-align:left;font:inherit;background:var(--panel);
+  border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:9px;cursor:pointer;
+  color:var(--ink2);transition:border-color .12s,background .12s,transform .12s}
+.box:hover{border-color:var(--line2);color:var(--ink);transform:translateX(2px)}
+.box[aria-selected=true]{background:var(--panel2);border-color:var(--accent);color:var(--ink)}
+.box .k{font-family:var(--mono);font-size:9.5px;color:var(--ink3);letter-spacing:.08em}
+.box[aria-selected=true] .k{color:var(--accent)}
+.box .h{font-size:13.5px;line-height:1.35;margin-top:3px;font-weight:500}
+.box .sub2{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:6px;
+  display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.pill{font-family:var(--mono);font-size:9.5px;padding:1px 6px;border-radius:9px;border:1px solid var(--line2);color:var(--ink3)}
+.pill.settled{color:var(--sup);border-color:#1E5F4A}
+.pill.contested{color:var(--con);border-color:#6B2A34}
+.pill.open{color:var(--qual);border-color:#6B5216}
+.tal{font-family:var(--mono);font-size:10px;letter-spacing:.02em}
+.tal .s{color:var(--sup)}.tal .c{color:var(--con)}.tal .a{color:var(--asm)}
+.warnp{color:var(--con);font-size:10.5px;font-family:var(--mono);margin-top:5px}
+.hint{color:var(--ink3);font-size:12.5px;padding:16px 2px;font-style:italic}
+
+/* claim detail */
+.cd{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:16px 18px;margin-bottom:14px}
+.cd .ct{font-size:16.5px;font-weight:600;line-height:1.35;letter-spacing:-.01em;color:var(--ink)}
+.cd .cn{color:var(--ink2);font-size:12.5px;line-height:1.55;margin-top:9px;
+  border-left:2px solid var(--line2);padding-left:11px}
+.diag{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px;margin-top:13px}
+.dc{background:var(--panel2);border:1px solid var(--line);border-radius:7px;padding:8px 10px;font-family:var(--mono);font-size:10px}
+.dc h5{margin:0 0 5px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+.dc .r{color:var(--ink2);display:flex;gap:6px;align-items:center;padding:1px 0}
+.dc .r i{height:6px;background:var(--accent);opacity:.55;border-radius:1px;flex:none}
+.dc.bad{border-color:#6B2A34}.dc.bad .r{color:var(--con)}
+.dc a{color:var(--accent);text-decoration:none}
+.sh{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  margin:16px 0 6px;display:flex;justify-content:space-between;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.sh.supports{color:var(--sup)}.sh.qualifies{color:var(--qual)}
+.sh.contradicts{color:var(--con)}.sh.assumes{color:var(--asm)}
+.ev{background:var(--panel);border:1px solid var(--line);border-left-width:2px;border-radius:7px;
+  padding:9px 12px;margin-bottom:6px}
+.ev.supports{border-left-color:var(--sup)}.ev.qualifies{border-left-color:var(--qual)}
+.ev.contradicts{border-left-color:var(--con)}.ev.assumes{border-left-color:var(--asm)}
+.ev .t{font-size:13px;font-weight:500;line-height:1.35;color:var(--ink)}
+.ev .c{color:var(--ink2);font-size:12px;margin-top:3px}
+.ev .m{font-family:var(--mono);font-size:9.5px;color:var(--ink3);margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+.ev .m a{color:var(--ink3);text-decoration:none;border-bottom:1px solid var(--line2)}
+.ev .m a:hover{color:var(--accent)}
+.ev.ghost{opacity:.55;border-style:dashed}
+
+/* ── network ──────────────────────────────────────────── */
+.netwrap{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+@media(max-width:1100px){.netwrap{grid-template-columns:1fr}}
+.netscroll{overflow:auto;border:1px solid var(--line);border-radius:11px;background:var(--panel);
+  max-height:calc(100vh - 230px)}
+.ctrls{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-bottom:12px;
+  font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.ctrls label{display:flex;gap:8px;align-items:center}
+.ctrls input[type=range]{width:118px;accent-color:var(--accent)}
+.ctrls b{color:var(--ink);font-weight:500}
+.side{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px 16px;
+  position:sticky;top:12px}
+.side h4{margin:0 0 4px;font-size:14px;line-height:1.35;font-weight:600}
+.side .meta{font-family:var(--mono);font-size:10px;color:var(--ink3);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.side p{color:var(--ink2);font-size:12.5px;line-height:1.5;margin:0 0 10px}
+.side .lbl{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);margin:11px 0 4px}
+text{font-family:var(--mono);}
+.nlab{font-size:9px;fill:var(--ink3)}
+.nlab.on{fill:var(--ink)}
+.ylab{font-size:9.5px;fill:var(--ink3)}
+.node{cursor:pointer}
+.node circle{stroke:var(--bg);stroke-width:1.5}
+.node.on circle{stroke:var(--ink);stroke-width:2}
+.link{fill:none;stroke:var(--line2);stroke-width:1.2}
+.link.on{stroke:var(--accent);stroke-width:1.8}
+.drop{position:fixed;inset:0;background:rgba(255,61,138,.09);border:2px dashed var(--accent);z-index:99;
+  display:none;place-items:center;font-family:var(--mono);color:var(--accent)}
+.drop.on{display:grid}
+.bar{position:fixed;right:18px;bottom:16px;display:flex;gap:8px;z-index:20}
+.bar button{font:inherit;font-family:var(--mono);font-size:11px;background:var(--panel2);color:var(--ink2);
+  border:1px solid var(--line2);border-radius:7px;padding:7px 12px;cursor:pointer}
+.bar button:hover{border-color:var(--accent);color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="drop" id="drop">drop atlas.json</div>
+<header>
+  <div class="brandrow">
+    <div class="brand">Paper<span>Tree</span></div>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="topics" role="tablist">
+    <button class="topic" role="tab" aria-selected="true">Dendritic computation</button>
+    <button class="topic add" role="tab" aria-selected="false" disabled title="one topic per atlas.json">+</button>
+  </div>
+</header>
+<div class="subs" role="tablist">
+  <button class="sub" role="tab" data-v="claims" aria-selected="true">Claim tree</button>
+  <button class="sub" role="tab" data-v="net" aria-selected="false">Author–paper network</button>
+</div>
+<div class="canvas" id="canvas"><svg id="wires"></svg><div id="out"></div></div>
+<div class="bar">
+  <button id="loadBtn">Load atlas.json</button>
+  <button id="saveBtn">Export</button>
+  <input type="file" id="file" accept=".json" hidden>
+</div>
+<script>
+let DB = /*__DATA__*/;
+const $ = s => document.querySelector(s);
+let CL, PP;
+const reindex = () => { CL = Object.fromEntries(DB.claims.map(c => [c.id, c]));
+                        PP = Object.fromEntries(DB.papers.map(p => [p.id, p])); };
+reindex();
+const ORDER = ["supports","qualifies","contradicts","assumes"];
+let LOADED = null;
+const S = {view:"claims", q:null, c:null, node:null, tau:0.15, win:5};
+const esc = s => String(s ?? "").replace(/[&<>"]/g, x => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]));
+const edgesOf = id => DB.edges.filter(e => e.claim === id);
+const paperOf = e => PP[e.paper_id] || null;
+const pretty = k => { const m = String(k).match(/^([a-z_]+?)_(\d{4})/i); if (!m) return k;
+  return m[1].split("_").filter(x=>x!=="et"&&x!=="al").map(x=>x[0].toUpperCase()+x.slice(1)).join(" & ")+" "+m[2]; };
+const titleOf = e => { const p = paperOf(e); return p ? p.title : pretty(e.key); };
+
+/* A claim is thin when its positive case rests on one source, or when all of that case
+   shares one modality or one preparation. The second test is why the factual label axes
+   were kept when the interpretive ones were retired. */
+function thin(c){
+  const sup = edgesOf(c.id).filter(e => e.stance==="supports"||e.stance==="qualifies");
+  if (!sup.length) return null;
+  if (c.direct_sources <= 1) return `${c.direct_sources} direct source`;
+  const mods = new Set(sup.map(e=>e.modality).filter(Boolean));
+  if (mods.size===1 && sup.length>2) return `all support is ${[...mods][0]}`;
+  const preps = new Set(sup.map(e=>(paperOf(e)?.labels||{}).prep).filter(Boolean));
+  if (preps.size===1 && sup.length>2) return `all support is ${[...preps][0]}`;
+  return null;
+}
+const tally = c => { const n=c.n||{};
+  return `<span class="tal"><span class="s">+${n.supports||0}</span> <span class="c">−${n.contradicts||0}</span>`+
+         (n.assumes?` <span class="a">~${n.assumes}</span>`:"")+`</span>`; };
+
+/* ── view 1: claim tree ───────────────────────────────── */
+function viewClaims(){
+  const out = $("#out");
+  const qs = DB.questions.map(q => {
+    const cs = DB.claims.filter(c => c.parent === q.id);
+    const n = cs.reduce((a,c)=>a+Object.values(c.n||{}).reduce((x,y)=>x+y,0),0);
+    const cont = cs.filter(c=>c.status==="contested").length;
+    return {...q, cs, n, cont};
+  });
+  let h = `<div class="rail"><div><div class="colh">Questions</div>`;
+  for (const q of qs)
+    h += `<button class="box" data-q="${q.id}" aria-selected="${S.q===q.id}">
+      <div class="k">${q.id}</div>
+      <div class="h">${esc(q.text.replace(/^"|"$/g,""))}</div>
+      <div class="sub2"><span>${q.cs.length} claims</span><span>${q.n} edges</span>
+        ${q.cont?`<span class="pill contested">${q.cont} contested</span>`:""}</div></button>`;
+  h += `</div><div id="ccol">`;
+  if (!S.q) h += `<div class="hint">Pick a question.</div>`;
+  else {
+    h += `<div class="colh">Claims in ${S.q}</div>`;
+    for (const c of DB.claims.filter(c=>c.parent===S.q)){
+      const t = thin(c);
+      h += `<button class="box" data-c="${c.id}" aria-selected="${S.c===c.id}">
+        <div class="k">${c.id} ${tally(c)}</div>
+        <div class="h">${esc(c.text.trim())}</div>
+        <div class="sub2"><span class="pill ${c.status}">${c.status}</span>
+          ${c.years?`<span>${c.years[0]}–${c.years[1]}</span>`:""}</div>
+        ${t?`<div class="warnp">▲ ${esc(t)}</div>`:""}</button>`;
+    }
+  }
+  h += `</div><div id="pcol">`;
+  h += S.c ? claimDetail(CL[S.c]) : `<div class="hint">Pick a claim to see the papers under it.</div>`;
+  out.innerHTML = h + `</div></div>`;
+  out.querySelectorAll("[data-q]").forEach(b => b.onclick = () => {
+    S.q = S.q===b.dataset.q ? null : b.dataset.q; S.c = null; render(); });
+  out.querySelectorAll("[data-c]").forEach(b => b.onclick = () => {
+    S.c = S.c===b.dataset.c ? null : b.dataset.c; render(); });
+  out.querySelectorAll("[data-goto]").forEach(a => a.onclick = ev => {
+    ev.preventDefault(); const c = CL[a.dataset.goto];
+    S.q = c.parent; S.c = c.id; render(); });
+  requestAnimationFrame(wires);
+}
+
+function bars(o){
+  const mx = Math.max(...Object.values(o||{}),1);
+  const rows = Object.entries(o||{}).sort((a,b)=>b[1]-a[1]);
+  return rows.length ? rows.map(([k,v])=>
+    `<div class="r"><i style="width:${5+40*v/mx}px"></i>${esc(k)} ${v}</div>`).join("")
+    : `<div class="r" style="color:var(--ink3)">—</div>`;
+}
+
+function claimDetail(c){
+  const es = edgesOf(c.id), t = thin(c), inh = Object.entries(c.inherits||{});
+  let h = `<div class="colh">Evidence</div><div class="cd">
+    <div class="ct">${esc(c.text.trim())}</div>
+    ${c.note?`<div class="cn">${esc(c.note.trim())}</div>`:""}
+    <div class="diag">
+      <div class="dc ${t?"bad":""}"><h5>Evidence base</h5>
+        <div class="r">${es.length} edges · ${c.direct_sources} direct</div>
+        <div class="r">${c.years?c.years[0]+"–"+c.years[1]:"—"}</div>
+        ${t?`<div class="r">▲ ${esc(t)}</div>`:""}</div>
+      <div class="dc"><h5>Modality</h5>${bars(c.modalities)}</div>
+      <div class="dc"><h5>Preparation</h5>${bars(c.preps)}</div>
+      ${inh.length?`<div class="dc bad"><h5>Inherited caveats</h5>`+inh.map(([k,v])=>
+        `<div class="r"><a href="#" data-goto="${k}">${k}</a> ${v} edges</div>`).join("")+`</div>`:""}
+    </div></div>`;
+  for (const s of ORDER){
+    const g = es.filter(e=>e.stance===s);
+    if (!g.length) continue;
+    g.sort((a,b)=>(paperOf(b)?.year||0)-(paperOf(a)?.year||0));
+    h += `<div class="sh ${s}"><span>${s}</span><span>${g.length}</span></div>`;
+    for (const e of g){
+      const p = paperOf(e);
+      h += `<div class="ev ${s} ${p?"":"ghost"}">
+        <div class="t">${esc(titleOf(e))}</div>
+        ${e.condition?`<div class="c">${esc(e.condition)}</div>`:""}
+        <div class="m">${p?`<span style="color:var(--ink2)">${p.year||""}</span>`:""}
+          <span>${esc(e.strength)}</span>${e.region?`<span>${esc(e.region)}</span>`:""}
+          ${e.modality?`<span class="pill">${esc(e.modality)}</span>`:""}
+          ${(e.flags||[]).map(f=>`<span class="pill">${esc(f)}</span>`).join("")}
+          <span class="pill">${e.source}</span>
+          ${p&&p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">doi</a>`:""}
+          ${p?"":`<span style="color:var(--ink3)">not in Zotero</span>`}</div></div>`;
+    }
+  }
+  return h;
+}
+
+/* connectors drawn from measured geometry, so they follow the boxes on any reflow */
+function wires(){
+  const svg = $("#wires"), cv = $("#canvas");
+  svg.innerHTML = "";
+  if (S.view !== "claims" || innerWidth <= 1100) return;
+  const R = el => { const a = el.getBoundingClientRect(), b = cv.getBoundingClientRect();
+    return {l:a.left-b.left+cv.scrollLeft, t:a.top-b.top+cv.scrollTop, w:a.width, h:a.height}; };
+  const draw = (from, to, on) => {
+    const a = R(from), b = R(to);
+    const x1 = a.l+a.w, y1 = a.t+a.h/2, x2 = b.l, y2 = b.t+b.h/2, dx = Math.max(26,(x2-x1)*.55);
+    const p = document.createElementNS("http://www.w3.org/2000/svg","path");
+    p.setAttribute("d",`M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}`);
+    p.setAttribute("fill","none");
+    p.setAttribute("stroke", on ? "var(--accent)" : "var(--line2)");
+    p.setAttribute("stroke-width", on ? 1.6 : 1);
+    p.setAttribute("opacity", on ? .95 : .4);
+    svg.appendChild(p);
+  };
+  const qb = S.q && document.querySelector(`[data-q="${S.q}"]`);
+  if (qb) document.querySelectorAll("[data-c]").forEach(cb => draw(qb, cb, cb.dataset.c===S.c));
+  const cb = S.c && document.querySelector(`[data-c="${S.c}"]`);
+  const first = document.querySelector("#pcol .cd");
+  if (cb && first) draw(cb, first, true);
+}
+
+/* ── view 2: author–paper network ─────────────────────── */
+function buildTree(){
+  const P = DB.papers.map((p,i)=>({...p, i})).filter(p=>p.year);
+  const idx = new Map(P.map((p,k)=>[p.i,k]));
+  const adj = new Map(P.map((_,k)=>[k,[]]));
+  for (const [i,j,s] of (DB.sim_edges||[])){
+    if (s < S.tau) continue;
+    const a = idx.get(i), b = idx.get(j);
+    if (a===undefined||b===undefined) continue;
+    adj.get(a).push([b,s]); adj.get(b).push([a,s]);
+  }
+  const order = P.map((_,k)=>k).sort((a,b)=>P[a].year-P[b].year);
+  const parent = new Array(P.length).fill(-1);
+  for (const k of order){
+    let best = null;
+    for (const [o,s] of adj.get(k)){
+      const dy = P[k].year - P[o].year;
+      if (dy > 0 && dy <= S.win && (!best || s > best[1])) best = [o,s];
+    }
+    if (best) parent[k] = best[0];
+  }
+  const kids = new Map(P.map((_,k)=>[k,[]]));
+  const roots = [];
+  parent.forEach((pa,k) => pa>=0 ? kids.get(pa).push(k) : roots.push(k));
+  roots.sort((a,b)=>P[a].year-P[b].year || P[a].lab_cluster-P[b].lab_cluster);
+  let slot = 0; const x = new Array(P.length).fill(0);
+  const walk = k => { kids.get(k).sort((a,b)=>P[a].year-P[b].year);
+    if (!kids.get(k).length){ x[k] = slot++; return; }
+    kids.get(k).forEach(walk); x[k] = (x[kids.get(k)[0]] + x[kids.get(k).slice(-1)[0]])/2;
+    if (kids.get(k).length===1) x[k] = x[kids.get(k)[0]] - .5; };
+  roots.forEach(walk);
+  return {P, parent, kids, roots, x, span: slot};
+}
+
+const PAL = ["#FF3D8A","#34D399","#60A5FA","#FBBF24","#A78BFA","#F472B6","#2DD4BF",
+             "#FB7185","#93C5FD","#FCD34D","#C4B5FD","#5EEAD4"];
+
+function viewNet(){
+  const T = buildTree(), {P,parent,x} = T;
+  const yrs = P.map(p=>p.year), y0 = Math.min(...yrs), y1 = Math.max(...yrs);
+  const CW = 30, RH = 26, L = 58, TOP = 26;
+  const W = L + Math.max(T.span,1)*CW + 300, H = TOP + (y1-y0+1)*RH + 40;
+  const px = k => L + x[k]*CW + CW/2, py = k => TOP + (P[k].year-y0)*RH;
+  const nRoot = T.roots.length, nLink = parent.filter(p=>p>=0).length;
+
+  let g = "";
+  for (let yr=y0; yr<=y1; yr++){
+    const yy = TOP + (yr-y0)*RH;
+    g += `<line x1="${L-8}" y1="${yy}" x2="${W}" y2="${yy}" stroke="var(--grid)"/>`;
+    if (yr%5===0||yr===y0||yr===y1) g += `<text class="ylab" x="4" y="${yy+3}">${yr}</text>`;
+  }
+  let links = "";
+  parent.forEach((pa,k)=>{ if (pa<0) return;
+    const on = S.node===P[k].id || S.node===P[pa].id;
+    links += `<path class="link ${on?"on":""}" d="M${px(pa)},${py(pa)} C${px(pa)},${(py(pa)+py(k))/2} ${px(k)},${(py(pa)+py(k))/2} ${px(k)},${py(k)}"/>`; });
+  let nodes = "";
+  P.forEach((p,k)=>{
+    const on = S.node===p.id, c = PAL[(p.lab_cluster||0)%PAL.length];
+    const r = 3.5 + Math.min(3.5, Math.sqrt((p.cited_by||0))/22);
+    const lab = ((p.last_author||"").split(" ").pop()||"") + " " + (p.year||"");
+    nodes += `<g class="node ${on?"on":""}" data-p="${esc(p.id)}">
+      <circle cx="${px(k)}" cy="${py(k)}" r="${r.toFixed(1)}" fill="${c}"/>
+      <text class="nlab ${on?"on":""}" x="${px(k)+r+4}" y="${py(k)+3}">${esc(lab)}</text></g>`;
+  });
+
+  $("#out").innerHTML = `
+    <div class="ctrls">
+      <label>similarity ≥ <input type="range" id="tau" min="8" max="80" value="${S.tau*100}">
+        <b id="tauv">${S.tau.toFixed(2)}</b></label>
+      <label>window <input type="range" id="win" min="2" max="12" value="${S.win}">
+        <b id="winv">±${S.win}y</b></label>
+      <span>${nLink} links · ${nRoot} roots · ${P.length} papers</span>
+    </div>
+    <div class="netwrap">
+      <div class="netscroll"><svg width="${W}" height="${H}">${g}${links}${nodes}</svg></div>
+      <div class="side" id="side">${sidePanel()}</div>
+    </div>`;
+  const bind = (id, key, fmt, scale) => { const el = $("#"+id); el.oninput = () => {
+    S[key] = scale(+el.value); $("#"+id+"v").textContent = fmt(S[key]); render(); }; };
+  bind("tau","tau", v=>v.toFixed(2), v=>v/100);
+  bind("win","win", v=>"±"+v+"y", v=>v);
+  $("#out").querySelectorAll("[data-p]").forEach(n => n.onclick = () => {
+    S.node = S.node===n.dataset.p ? null : n.dataset.p; render(); });
+}
+
+function sidePanel(){
+  const p = PP[S.node];
+  if (!p) return `<div class="hint" style="padding:0">Each paper hangs from its most
+    author-similar predecessor within the window. Unconnected papers are roots — a new
+    line, or a gap in the library. Click a node.</div>`;
+  const cl = (p.claim_edges||[]);
+  return `<h4>${esc(p.title)}</h4>
+    <div class="meta"><span>${p.year||""}</span><span>${esc(p.venue||"")}</span>
+      <span class="pill">${esc(p.lab_cluster_name||"")}</span></div>
+    ${p.significance?`<p>${esc(p.significance)}</p>`:""}
+    <div class="lbl">Authors</div><p style="font-size:11.5px">${esc((p.authors||[]).join(", "))}</p>
+    ${cl.length?`<div class="lbl">Claims</div>`+cl.map(e=>
+      `<div class="ev ${e.stance}" style="margin-bottom:4px"><div class="m" style="margin:0">
+        <a href="#" data-jump="${e.claim}" style="color:var(--accent)">${e.claim}</a>
+        <span>${e.stance}</span><span>${e.strength}</span></div></div>`).join("")
+      :`<div class="lbl">Claims</div><p style="color:var(--ink3)">none attached</p>`}
+    ${p.doi?`<div class="lbl">Link</div><p><a href="https://doi.org/${esc(p.doi)}" target="_blank"
+       rel="noopener" style="color:var(--accent)">doi.org/${esc(p.doi)}</a></p>`:""}`;
+}
+
+function render(){
+  const cont = DB.claims.filter(c=>c.status==="contested").length;
+  const thinN = DB.claims.filter(thin).length;
+  const miss = new Set(DB.edges.filter(e=>!e.paper_id).map(e=>e.key)).size;
+  $("#stats").innerHTML = `<span><b>${DB.papers.length}</b> papers</span>
+    <span><b>${DB.claims.length}</b> claims</span><span><b>${DB.edges.length}</b> edges</span>
+    <span style="color:var(--con)"><b>${cont}</b> contested</span>
+    <span style="color:var(--qual)"><b>${thinN}</b> thin</span>
+    ${miss?`<span><b>${miss}</b> cited, not in Zotero</span>`:""}
+    ${LOADED?`<span style="color:var(--accent)">${esc(LOADED)} · refresh reverts</span>`
+            :(DB.meta&&DB.meta.sample?`<span style="color:var(--qual)">sample data</span>`:"")}`;
+  document.querySelectorAll(".sub").forEach(b=>b.setAttribute("aria-selected", b.dataset.v===S.view));
+  S.view==="claims" ? viewClaims() : viewNet();
+  document.querySelectorAll("[data-jump]").forEach(a => a.onclick = ev => {
+    ev.preventDefault(); const c = CL[a.dataset.jump];
+    if (!c) return; S.view="claims"; S.q=c.parent; S.c=c.id; render(); });
+  if (S.view!=="claims") $("#wires").innerHTML="";
+}
+
+document.querySelector(".subs").onclick = e => { const b = e.target.closest(".sub");
+  if (b) { S.view = b.dataset.v; render(); } };
+addEventListener("resize", () => { clearTimeout(window._w);
+  window._w = setTimeout(wires, 90); });
+$("#saveBtn").onclick = () => { const b = new Blob([JSON.stringify(DB,null,1)],{type:"application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download="atlas.json"; a.click(); };
+$("#loadBtn").onclick = () => $("#file").click();
+$("#file").onchange = e => e.target.files[0] && load(e.target.files[0]);
+/* Do NOT reload here. This file carries its data inline, so location.reload() re-reads
+   the page from disk and silently throws away whatever was just dropped in — which
+   looks exactly like "nothing happened". Swap the data and re-render instead. */
+function load(f){ const r = new FileReader(); r.onload = () => {
+  try { const d = JSON.parse(r.result);
+    if (!d.claims || !d.edges) throw new Error("not an atlas.json");
+    DB = d; reindex(); LOADED = f.name;
+    S.q = S.c = S.node = null;
+    render();
+  } catch(err){ alert("Could not read that file: "+err.message); } };
+  r.readAsText(f); }
+const drop = $("#drop");
+addEventListener("dragover", e => { e.preventDefault(); drop.classList.add("on"); });
+addEventListener("dragleave", e => { if (e.relatedTarget===null) drop.classList.remove("on"); });
+addEventListener("drop", e => { e.preventDefault(); drop.classList.remove("on");
+  const f = e.dataTransfer.files[0]; if (f) load(f); });
+render();
+</script></body></html>

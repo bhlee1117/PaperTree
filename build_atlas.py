@@ -17,8 +17,9 @@ Also computes, per claim, the diagnostics that the surviving taxonomy exists to 
 what preparations the evidence comes from, what modalities, what years, and which
 methodological caveats it inherits from Q7.
 """
-import json, re, sys, collections
+import itertools, json, os, re, sys, collections
 import yaml
+import build_db as B
 
 
 def slug(name, year):
@@ -113,10 +114,55 @@ def main():
             "direct_sources": len({e["key"] for e in sup if e["strength"] == "direct"}),
         })
 
+    # 4. author-similarity graph for the network view.
+    # Stored as raw pairs rather than a precomputed tree so the viewer can retune the
+    # similarity floor and the year window without a rebuild — those two knobs are the
+    # whole point of the view, and a baked-in tree would hide what they do.
+    W = [B.author_weights(p.get("authors") or []) for p in papers]
+    sim_edges = []
+    for i, j in itertools.combinations(range(len(papers)), 2):
+        a, b = papers[i], papers[j]
+        if not (a.get("year") and b.get("year")):
+            continue
+        if abs(a["year"] - b["year"]) > 12:      # nothing beyond the widest usable window
+            continue
+        sc = B.wcosine(W[i], W[j])
+        la, lb = B.surname(a.get("last_author", "")), B.surname(b.get("last_author", ""))
+        if la and la == lb:
+            sc = max(sc, 0.75)
+        if sc >= 0.08:
+            sim_edges.append([i, j, round(sc, 3)])
+    print(f"  {len(sim_edges)} author-similarity pairs within 12 years")
+
     out = {"meta": {**db.get("meta", {}), **{k: v for k, v in cdoc["meta"].items()}},
            "questions": cdoc["questions"], "claims": claims,
-           "edges": edges, "papers": papers}
+           "edges": edges, "papers": papers, "sim_edges": sim_edges}
     json.dump(out, open("atlas.json", "w"), ensure_ascii=False, indent=1)
+
+    # Bake the data straight into a standalone page. Dragging atlas.json in still works,
+    # but nobody should have to remember it — and the built-in copy being the sample was
+    # the difference between "my library" and "someone else's demo" on every open.
+    tpl = "atlas_template.html"
+    if os.path.exists(tpl):
+        html = open(tpl, encoding="utf-8").read()
+        blob = json.dumps(out, ensure_ascii=False)
+        open("papertree.html", "w", encoding="utf-8").write(html.replace("/*__DATA__*/", blob))
+        print(f"wrote papertree.html · {len(blob)//1024} KB of data baked in")
+    else:
+        print(f"  ! {tpl} not found — atlas.json written, but no standalone page built")
+
+    # Which cited works are not yet in Zotero. This is a reading list, not an error.
+    if unresolved:
+        doi_of = {}
+        for c in cdoc["claims"]:
+            for e in c.get("evidence", []):
+                if e.get("doi"):
+                    doi_of[e["key"]] = e["doi"]
+        with open("missing_papers.txt", "w") as f:
+            for k in sorted({k for _, k in unresolved}):
+                f.write(f"{doi_of.get(k, '')}\t{k}\n")
+        print(f"  wrote missing_papers.txt · {len({k for _,k in unresolved})} works cited "
+              f"by claims.yaml but absent from Zotero")
 
     n = collections.Counter(e["source"] for e in edges)
     print(f"wrote atlas.json · {len(claims)} claims · {len(edges)} edges {dict(n)}")

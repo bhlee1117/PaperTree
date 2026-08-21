@@ -104,6 +104,14 @@ header{padding:20px 26px 0;border-bottom:1px solid var(--line)}
 .ctrls label{display:flex;gap:8px;align-items:center}
 .ctrls input[type=range]{width:118px;accent-color:var(--accent)}
 .ctrls b{color:var(--ink);font-weight:500}
+.zoom{display:flex;gap:0;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+.zoom button{font:inherit;font-family:var(--mono);font-size:12px;background:var(--panel);
+  border:none;border-right:1px solid var(--line);color:var(--ink2);cursor:pointer;
+  padding:5px 10px;line-height:1.2}
+.zoom button:last-child{border-right:none}
+.zoom button:hover:not(:disabled){background:var(--panel2);color:var(--ink)}
+.zoom button:disabled{opacity:.35;cursor:default}
+.zoom .lvl{min-width:46px;text-align:center;color:var(--ink);cursor:default}
 .side{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px 16px;
   position:sticky;top:12px}
 .side h4{margin:0 0 4px;font-size:14px;line-height:1.35;font-weight:600}
@@ -233,7 +241,7 @@ const reindex = () => { CL = Object.fromEntries(DB.claims.map(c => [c.id, c]));
 reindex();
 const ORDER = ["supports","qualifies","contradicts","assumes"];
 let LOADED = null;
-const S = {view:"claims", q:null, c:null, node:null, tau:0.15, win:5,
+const S = {view:"claims", q:null, c:null, node:null, tau:0.15, win:5, zoom:1,
   f:{}, yr:null, pq:"", sort:"year", labels:"auto", open:new Set()};   // f: facet -> Set of chosen values
 const esc = s => String(s ?? "").replace(/[&<>"]/g, x => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]));
 const edgesOf = id => DB.edges.filter(e => e.claim === id);
@@ -640,6 +648,30 @@ function buildTree(){
 const PAL = ["#FF3D8A","#34D399","#60A5FA","#FBBF24","#A78BFA","#F472B6","#2DD4BF",
              "#FB7185","#93C5FD","#FCD34D","#C4B5FD","#5EEAD4"];
 
+/* Zoom only rewrites the svg's width and height; the viewBox is fixed, so the browser
+   rescales the existing drawing and nothing is recomputed. Doing it as a repaint would
+   throw away the scroll position on every click of the button, which is the thing that
+   makes a zoom control annoying to use. */
+function setZoom(z){
+  z = Math.max(0.2, Math.min(4, z));
+  const pane = $("#netpane"), svg = pane && pane.querySelector("svg");
+  if (!svg) { S.zoom = z; return; }
+  const old = S.zoom;
+  // hold the middle of the visible area still while the drawing grows around it
+  const cx = (pane.scrollLeft + pane.clientWidth / 2) / old;
+  const cy = (pane.scrollTop + pane.clientHeight / 2) / old;
+  S.zoom = z;
+  svg.setAttribute("width",  (+svg.dataset.w * z).toFixed(0));
+  svg.setAttribute("height", (+svg.dataset.h * z).toFixed(0));
+  // clamp: when the drawing is smaller than the pane there is nothing to scroll to
+  pane.scrollLeft = Math.max(0, cx * z - pane.clientWidth / 2);
+  pane.scrollTop  = Math.max(0, cy * z - pane.clientHeight / 2);
+  const lvl = $("#zlvl"); if (lvl) lvl.textContent = Math.round(z * 100) + "%";
+  const zi = $("#zin"), zo = $("#zout");
+  if (zi) zi.disabled = z >= 4;
+  if (zo) zo.disabled = z <= 0.2;
+}
+
 function paintNet(){
   const T = buildTree(), {P,parent,x} = T;
   const yrs = P.map(p=>p.year), y0 = Math.min(...yrs), y1 = Math.max(...yrs);
@@ -713,12 +745,14 @@ function paintNet(){
     hidden>0?` · ${hidden} labels hidden, hover to read`:""}`;
   const pane = $("#netpane");
   const keep = [pane.scrollLeft, pane.scrollTop];
-  pane.innerHTML = `<svg width="${W}" height="${H}">${g}${links}${nodes}</svg>`;
+  pane.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${(W*S.zoom).toFixed(0)}"
+    height="${(H*S.zoom).toFixed(0)}" data-w="${W}" data-h="${H}">${g}${links}${nodes}</svg>`;
   pane.scrollLeft = keep[0]; pane.scrollTop = keep[1];
   $("#side").innerHTML = sidePanel();
   pane.querySelectorAll("[data-p]").forEach(n => n.onclick = () => {
     S.node = S.node===n.dataset.p ? null : n.dataset.p; paintNet(); });
   wireRows($("#side"));
+  const lvl = $("#zlvl"); if (lvl) lvl.textContent = Math.round(S.zoom * 100) + "%";
   $("#side").querySelectorAll("[data-jump]").forEach(a => a.onclick = ev => {
     ev.preventDefault(); const c = CL[a.dataset.jump];
     if (!c) return; S.view="claims"; S.q=c.parent; S.c=c.id; render(); });
@@ -735,6 +769,12 @@ function viewNet(){
         ${[["auto","auto"],["none","off"]].map(([v,t])=>
           `<option value="${v}" ${S.labels===v?"selected":""}>${t}</option>`).join("")}
       </select></label>
+      <span class="zoom">
+        <button id="zout" title="zoom out">−</button>
+        <button class="lvl" id="zlvl" disabled></button>
+        <button id="zin" title="zoom in">+</button>
+        <button id="zfit" title="fit to width">fit</button>
+      </span>
       <span id="netcount"></span>
     </div>
     <div class="netwrap">
@@ -746,6 +786,10 @@ function viewNet(){
   bind("tau","tau", v=>v.toFixed(2), v=>v/100);
   bind("win","win", v=>"±"+v+"y", v=>v);
   $("#lbl").onchange = e => { S.labels = e.target.value; paintNet(); };
+  $("#zin").onclick  = () => setZoom(S.zoom * 1.25);
+  $("#zout").onclick = () => setZoom(S.zoom / 1.25);
+  $("#zfit").onclick = () => { const p = $("#netpane"), svg = p.querySelector("svg");
+    setZoom((p.clientWidth - 12) / +svg.dataset.w); };
   paintNet();
 }
 

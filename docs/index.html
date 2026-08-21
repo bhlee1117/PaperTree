@@ -1,0 +1,5108 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PaperTree</title>
+<style>
+:root{
+  --bg:#0A0C0E; --grid:rgba(255,255,255,.045); --panel:#13171A; --panel2:#1A2024;
+  --line:#252B30; --line2:#333A40; --ink:#E9EDEA; --ink2:#96A09B; --ink3:#5E6864;
+  --accent:#FF3D8A; --sup:#34D399; --qual:#FBBF24; --con:#FB7185; --asm:#707A85;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg)}
+body{color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;font-feature-settings:"cv02","cv03","cv04"}
+::selection{background:var(--accent);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:5px;border:3px solid var(--bg)}
+
+/* ── chrome ───────────────────────────────────────────── */
+header{padding:20px 26px 0;border-bottom:1px solid var(--line)}
+.brandrow{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:600;letter-spacing:-.024em}
+.brand span{color:var(--accent)}
+.stats{font-family:var(--mono);font-size:11px;color:var(--ink3);display:flex;gap:14px;flex-wrap:wrap;margin-left:auto}
+.stats b{color:var(--ink2);font-weight:500}
+.topics{display:flex;gap:6px;margin-top:16px}
+.topic{font:inherit;font-size:13px;font-weight:500;background:var(--panel);color:var(--ink2);
+  border:1px solid var(--line);border-bottom:none;border-radius:7px 7px 0 0;padding:8px 16px;cursor:pointer}
+.topic[aria-selected=true]{background:var(--panel2);color:var(--ink);border-color:var(--line2)}
+.topic.add{background:none;border-style:dashed;color:var(--ink3)}
+.subs{display:flex;gap:2px;padding:0 26px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.sub{font:inherit;font-size:12.5px;background:none;border:none;border-bottom:2px solid transparent;
+  color:var(--ink3);padding:11px 14px;cursor:pointer;font-weight:500}
+.sub:hover{color:var(--ink2)}
+.sub[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* ── grid canvas ──────────────────────────────────────── */
+.canvas{position:relative;min-height:calc(100vh - 150px);padding:26px;overflow:auto;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:34px 34px}
+#wires{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:visible}
+.rail{position:relative;z-index:1;display:grid;grid-template-columns:300px 348px minmax(320px,1fr);
+  gap:52px;align-items:start}
+@media(max-width:1100px){.rail{grid-template-columns:1fr}#wires{display:none}}
+.colh{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink3);margin:0 0 10px 2px}
+
+.box{display:block;width:100%;text-align:left;font:inherit;background:var(--panel);
+  border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-bottom:9px;cursor:pointer;
+  color:var(--ink2);transition:border-color .12s,background .12s,transform .12s}
+.box:hover{border-color:var(--line2);color:var(--ink);transform:translateX(2px)}
+.box[aria-selected=true]{background:var(--panel2);border-color:var(--accent);color:var(--ink)}
+.box .k{font-family:var(--mono);font-size:9.5px;color:var(--ink3);letter-spacing:.08em}
+.box[aria-selected=true] .k{color:var(--accent)}
+.box .h{font-size:13.5px;line-height:1.35;margin-top:3px;font-weight:500}
+.box .sub2{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:6px;
+  display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.pill{font-family:var(--mono);font-size:9.5px;padding:1px 6px;border-radius:9px;border:1px solid var(--line2);color:var(--ink3)}
+.pill.settled{color:var(--sup);border-color:#1E5F4A}
+.pill.contested{color:var(--con);border-color:#6B2A34}
+.pill.open{color:var(--qual);border-color:#6B5216}
+.tal{font-family:var(--mono);font-size:10px;letter-spacing:.02em}
+.tal .s{color:var(--sup)}.tal .c{color:var(--con)}.tal .a{color:var(--asm)}
+.warnp{color:var(--con);font-size:10.5px;font-family:var(--mono);margin-top:5px}
+.hint{color:var(--ink3);font-size:12.5px;padding:16px 2px;font-style:italic}
+
+/* claim detail */
+.cd{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:16px 18px;margin-bottom:14px}
+.cd .ct{font-size:16.5px;font-weight:600;line-height:1.35;letter-spacing:-.01em;color:var(--ink)}
+.cd .cn{color:var(--ink2);font-size:12.5px;line-height:1.55;margin-top:9px;
+  border-left:2px solid var(--line2);padding-left:11px}
+.diag{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px;margin-top:13px}
+.dc{background:var(--panel2);border:1px solid var(--line);border-radius:7px;padding:8px 10px;font-family:var(--mono);font-size:10px}
+.dc h5{margin:0 0 5px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:500}
+.dc .r{color:var(--ink2);display:flex;gap:6px;align-items:center;padding:1px 0}
+.dc .r i{height:6px;background:var(--accent);opacity:.55;border-radius:1px;flex:none}
+.dc.bad{border-color:#6B2A34}.dc.bad .r{color:var(--con)}
+.dc a{color:var(--accent);text-decoration:none}
+.sh{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  margin:16px 0 6px;display:flex;justify-content:space-between;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.sh.supports{color:var(--sup)}.sh.qualifies{color:var(--qual)}
+.sh.contradicts{color:var(--con)}.sh.assumes{color:var(--asm)}
+.ev{background:var(--panel);border:1px solid var(--line);border-left-width:2px;border-radius:7px;
+  padding:9px 12px;margin-bottom:6px}
+.ev.supports{border-left-color:var(--sup)}.ev.qualifies{border-left-color:var(--qual)}
+.ev.contradicts{border-left-color:var(--con)}.ev.assumes{border-left-color:var(--asm)}
+.ev .t{font-size:13px;font-weight:500;line-height:1.35;color:var(--ink)}
+.ev .c{color:var(--ink2);font-size:12px;margin-top:3px}
+.ev .m{font-family:var(--mono);font-size:9.5px;color:var(--ink3);margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+.ev .m a{color:var(--ink3);text-decoration:none;border-bottom:1px solid var(--line2)}
+.ev .m a:hover{color:var(--accent)}
+.ev.ghost{opacity:.55;border-style:dashed}
+
+/* ── network ──────────────────────────────────────────── */
+.netwrap{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+@media(max-width:1100px){.netwrap{grid-template-columns:1fr}}
+.netscroll{overflow:auto;border:1px solid var(--line);border-radius:11px;background:var(--panel);
+  max-height:calc(100vh - 230px)}
+.ctrls{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-bottom:12px;
+  font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.ctrls label{display:flex;gap:8px;align-items:center}
+.ctrls input[type=range]{width:118px;accent-color:var(--accent)}
+.ctrls b{color:var(--ink);font-weight:500}
+.side{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:15px 16px;
+  position:sticky;top:12px}
+.side h4{margin:0 0 4px;font-size:14px;line-height:1.35;font-weight:600}
+.side .meta{font-family:var(--mono);font-size:10px;color:var(--ink3);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.side p{color:var(--ink2);font-size:12.5px;line-height:1.5;margin:0 0 10px}
+.side .lbl{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);margin:11px 0 4px}
+text{font-family:var(--mono);}
+.nlab{font-size:9px;fill:var(--ink3)}
+.nlab.on{fill:var(--ink)}
+.ylab{font-size:9.5px;fill:var(--ink3)}
+.node{cursor:pointer}
+.node circle{stroke:var(--bg);stroke-width:1.5}
+.node.on circle{stroke:var(--ink);stroke-width:2}
+.link{fill:none;stroke:var(--line2);stroke-width:1.2}
+.link.on{stroke:var(--accent);stroke-width:1.8}
+.drop{position:fixed;inset:0;background:rgba(255,61,138,.09);border:2px dashed var(--accent);z-index:99;
+  display:none;place-items:center;font-family:var(--mono);color:var(--accent)}
+.drop.on{display:grid}
+.bar{position:fixed;right:18px;bottom:16px;display:flex;gap:8px;z-index:20}
+.bar button{font:inherit;font-family:var(--mono);font-size:11px;background:var(--panel2);color:var(--ink2);
+  border:1px solid var(--line2);border-radius:7px;padding:7px 12px;cursor:pointer}
+.bar button:hover{border-color:var(--accent);color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="drop" id="drop">drop atlas.json</div>
+<header>
+  <div class="brandrow">
+    <div class="brand">Paper<span>Tree</span></div>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="topics" role="tablist">
+    <button class="topic" role="tab" aria-selected="true">Dendritic computation</button>
+    <button class="topic add" role="tab" aria-selected="false" disabled title="one topic per atlas.json">+</button>
+  </div>
+</header>
+<div class="subs" role="tablist">
+  <button class="sub" role="tab" data-v="claims" aria-selected="true">Claim tree</button>
+  <button class="sub" role="tab" data-v="net" aria-selected="false">Author–paper network</button>
+</div>
+<div class="canvas" id="canvas"><svg id="wires"></svg><div id="out"></div></div>
+<div class="bar">
+  <button id="loadBtn">Load atlas.json</button>
+  <button id="saveBtn">Export</button>
+  <input type="file" id="file" accept=".json" hidden>
+</div>
+<script>
+const DB = {
+ "meta": {
+  "generated": "2026-08-20",
+  "n": 18,
+  "sample": true,
+  "axes": [
+   {
+    "id": "scope",
+    "label": "Scope",
+    "values": [
+     "dendritic computation",
+     "hippocampal coding & memory",
+     "circuit & behavior",
+     "synaptic physiology",
+     "methods & tools",
+     "other"
+    ]
+   },
+   {
+    "id": "article_type",
+    "label": "Article type",
+    "values": [
+     "primary research",
+     "review / perspective",
+     "methods / tool",
+     "theory"
+    ]
+   },
+   {
+    "id": "prep",
+    "label": "Preparation",
+    "values": [
+     "acute slice",
+     "organotypic slice",
+     "anesthetized in vivo",
+     "awake in vivo",
+     "computational / modeling",
+     "human tissue",
+     "dissociated culture",
+     "unclear"
+    ]
+   },
+   {
+    "id": "modality",
+    "label": "Primary evidence modality",
+    "values": [
+     "patch",
+     "voltage imaging",
+     "calcium imaging",
+     "extracellular",
+     "anatomy",
+     "modeling",
+     "review",
+     "unclear"
+    ]
+   }
+  ],
+  "multi_axes": [
+   {
+    "id": "phenomena",
+    "label": "Phenomena reported",
+    "values": [
+     "NMDA spike",
+     "Ca spike",
+     "Na spike",
+     "bAP",
+     "plateau potential",
+     "passive integration",
+     "branch-specific computation"
+    ]
+   },
+   {
+    "id": "method_flags",
+    "label": "Method flags",
+    "values": [
+     "optogenetics",
+     "glutamate uncaging",
+     "anesthetized",
+     "room temperature",
+     "pharmacology",
+     "behavior",
+     "chronic/longitudinal"
+    ]
+   }
+  ],
+  "lineage": [
+   {
+    "person": "Matthew E. Larkum",
+    "trained_in": [
+     "Sakmann"
+    ],
+    "now_leads": [
+     "Larkum (single)"
+    ],
+    "as_first": 1,
+    "as_last": 1
+   }
+  ],
+  "version": 0.2,
+  "stances": [
+   "supports",
+   "qualifies",
+   "contradicts",
+   "assumes"
+  ],
+  "strengths": [
+   "direct",
+   "indirect",
+   "assumed"
+  ],
+  "statuses": [
+   "settled",
+   "contested",
+   "open"
+  ],
+  "region_policy": "recorded on edges, never a splitting axis",
+  "caveat_rules": {
+   "calcium": "C7.1",
+   "optogenetic": "C7.4",
+   "room_temp": "C7.2",
+   "anesthetized": "C7.3"
+  },
+  "modalities": [
+   "patch",
+   "voltage",
+   "calcium",
+   "model",
+   "review",
+   "theory"
+  ]
+ },
+ "questions": [
+  {
+   "id": "Q1",
+   "text": "\"What initiates dendritic regenerative events?\""
+  },
+  {
+   "id": "Q2",
+   "text": "\"How far do dendritic events spread",
+   "and is the branch an independent unit?\"": ""
+  },
+  {
+   "id": "Q3",
+   "text": "\"What are dendritic excitations for — integration",
+   "or plasticity?\"": ""
+  },
+  {
+   "id": "Q4",
+   "text": "\"What plasticity rule builds hippocampal place fields?\""
+  },
+  {
+   "id": "Q5",
+   "text": "\"What does the instructive signal represent?\""
+  },
+  {
+   "id": "Q6",
+   "text": "\"How is a memory maintained across days?\""
+  },
+  {
+   "id": "Q7",
+   "text": "\"What can each recording modality actually resolve?\""
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1.1",
+   "parent": "Q1",
+   "text": "Dendrites initiate regenerative spikes locally, without a preceding somatic action potential.",
+   "status": "contested",
+   "note": "The split tracks stimulus modality, not preparation. Every positive report used strong, spatially concentrated, fast-onset drive; the one negative report used gradual distributed optogenetic drive. Stuart & Spruston quantify the requirement at a handful to dozens of inputs within a few ms in a localised region — which is precisely what optogenetics does not deliver. The unresolved question is which regime real synaptic bombardment resembles.\n",
+   "evidence": [
+    {
+     "key": "golding_spruston_1998",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "strong local current injection into the dendrite",
+     "modality": "patch"
+    },
+    {
+     "key": "losonczy_magee_2006",
+     "doi": "10.1016/j.neuron.2006.03.016",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "synchronous clustered glutamate uncaging on radial oblique branches",
+     "modality": "patch"
+    },
+    {
+     "key": "schiller_2000",
+     "doi": "10.1038/35005094",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "clustered input to basal dendrites; NMDA-dependent",
+     "modality": "patch"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "review; quantifies the requirement as a handful to dozens of inputs in a localised region within a few ms, and asks openly whether that ever happens in vivo",
+     "modality": "review"
+    },
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "optogenetic drive (~130 pA, distributed), acute slice at 34 C. Never observed dendrite-initiated dSpikes; attributes this to stimulus modality and reproduces it in a conductance-based model",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "chavlis_poirazi_2026",
+     "doi": "10.1146/annurev-neuro-090325-115846",
+     "stance": "assumes",
+     "strength": "assumed",
+     "region": "both",
+     "condition": "treats local NMDA spikes as the established substrate of branch computation",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 4,
+    "qualifies": 1,
+    "contradicts": 1,
+    "assumes": 1
+   },
+   "modalities": {
+    "patch": 4,
+    "review": 1
+   },
+   "preps": {
+    "acute slice": 3
+   },
+   "years": [
+    2000,
+    2006
+   ],
+   "inherits": {},
+   "direct_sources": 4
+  },
+  {
+   "id": "C1.2",
+   "parent": "Q1",
+   "text": "Whether a bAP becomes a dendritic spike is set by prior dendritic depolarisation, not by somatic spike rate.\n",
+   "status": "contested",
+   "note": "REGION CONFOUND, FLAGGED. Every \"rate is the variable\" result is L5/cortex; the only \"depolarisation is the variable\" result is CA1. Per the no-region-split decision these sit on one node, but the confound is total and should be resolved before either framing is treated as general. The cleanest test would be the Park ramp protocol run in L5.\n",
+   "evidence": [
+    {
+     "key": "larkum_1999_pnas",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "critical bAP frequency (~100 Hz) for distal Ca electrogenesis",
+     "modality": "patch"
+    },
+    {
+     "key": "beaulieu_laroche_2019",
+     "doi": "10.1016/j.neuron.2019.05.014",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "ex vivo dual patch, V1 L5 — 200 Hz bAP trains engage dendritic electrogenesis, 50 Hz do not. Frequency dependence is explicit.",
+     "modality": "calcium"
+    },
+    {
+     "key": "larkum_zhu_sakmann_1999",
+     "doi": "10.1038/18686",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "BAC firing — a single bAP paired with distal input suffices, which is nearer Park's rule than the frequency framing is",
+     "modality": "patch"
+    },
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "an isolated bAP becomes a dSpike if the distal dendrite was depolarised >=15 ms beforehand; sigmoidal dependence on stimulus distance, ~80% beyond 300 um",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    }
+   ],
+   "n": {
+    "contradicts": 2,
+    "qualifies": 1,
+    "supports": 1,
+    "assumes": 1
+   },
+   "modalities": {
+    "patch": 1,
+    "voltage": 1
+   },
+   "preps": {
+    "acute slice": 1
+   },
+   "years": [
+    1994,
+    1999
+   ],
+   "inherits": {
+    "C7.4": 1
+   },
+   "direct_sources": 2
+  },
+  {
+   "id": "C1.3",
+   "parent": "Q1",
+   "text": "A-type Kv inactivation opens the dendritic spike window and slow Nav inactivation closes it, making the dendrite a spike-rate accelerometer.\n",
+   "status": "open",
+   "note": "The two channel contributions are each well established separately; the claim that their timescales jointly define a transient window is new and rests on one paper plus its model. Prime candidate for replication, and the strongest single thing to look for in vivo.\n",
+   "evidence": [
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "4-AP and Ba2+ raise dSpike probability, 20 nM TTX lowers it; NEURON model reproduces the failure-success-failure motif across a wide parameter range",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "hoffman_1997",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "measured the ~6-fold distal enrichment and inactivation kinetics of A-type Kv",
+     "modality": "patch"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "reviews Kv channels as restricting dendritic Ca spike generation and spread, and bAP-driven reduction of subsequent Na spike probability — the ingredients, not the synthesis",
+     "modality": "review"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "region": "CA1",
+     "condition": "Box 1 treats Kv and HCN as plateau regulators without this framing",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 3,
+    "assumes": 1
+   },
+   "modalities": {
+    "voltage": 1,
+    "patch": 1,
+    "review": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {
+    "C7.4": 1
+   },
+   "direct_sources": 1
+  },
+  {
+   "id": "C1.4",
+   "parent": "Q1",
+   "text": "Plateau potentials require collision of a dendritic Na spike with glutamatergic input; coincidence of distal input with somatic spiking alone is not sufficient.\n",
+   "status": "open",
+   "note": "Sharpest testable prediction in the set, and a real constraint on BTSP: during sustained fast firing the dendrite is refractory, so a distal input arriving late in a spike train cannot induce plasticity. If it holds, BTSP has a duty cycle. Untested in vivo.\n",
+   "evidence": [
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "EFS at 0.5 s into an optogenetic ramp evoked plateaus, at 2.5 s (24 Hz sustained) did not. D-AP5, Ni2+ and TTX each reduce the plateau, so NMDAR, VGCC and Nav are all necessary",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "takahashi_magee_2009",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "high-frequency EFS trains; stronger NMDAR dependence than Park saw with a single pulse. Induction protocol, not biology, may explain the gap",
+     "modality": "patch"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "region": "CA1",
+     "condition": "treats plateaus as reliably inducible by EC3/CA3 conjunction; no refractory window",
+     "modality": "review"
+    },
+    {
+     "key": "fischer_2022",
+     "doi": "10.1523/JNEUROSCI.1132-22.2022",
+     "stance": "assumes",
+     "strength": "assumed",
+     "region": "CA1",
+     "condition": "\"only a single plateau potential is sufficient\" — stated without a rate caveat",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 1,
+    "qualifies": 1,
+    "assumes": 2
+   },
+   "modalities": {
+    "voltage": 1,
+    "patch": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {
+    "C7.4": 1
+   },
+   "direct_sources": 2
+  },
+  {
+   "id": "C1.5",
+   "parent": "Q1",
+   "text": "The dendritic spike is a cell-wide broadcast carrying timing but not spatial information; synapse identity is carried by glutamate-bound NMDARs.\n",
+   "status": "open",
+   "note": "Answers \"where is the eligibility trace\" by elimination: dSpike footprints did not depend on which branch was stimulated, so voltage cannot carry it. Stuart & Spruston reach a compatible worry from the opposite direction — if dSpikes occur spontaneously from background activity, they cannot be input-specific either. Two independent routes to the same conclusion is the strongest thing this node has.\n",
+   "evidence": [
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "bAP and dSpike spatial profiles insensitive to stimulus location; no preference for the stimulated branch",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "notes that spontaneous dSpikes from background synaptic activity, without clustered input, \"questions their role in information processing\"",
+     "modality": "review"
+    },
+    {
+     "key": "chavlis_poirazi_2026",
+     "doi": "10.1146/annurev-neuro-090325-115846",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "reviews branch-specific plasticity and clustered spine formation as evidence that the branch is the unit of memory allocation. May be scope rather than conflict: clustered-input regime vs bAP-driven regime",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 2,
+    "contradicts": 1
+   },
+   "modalities": {
+    "voltage": 1,
+    "review": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {
+    "C7.4": 1
+   },
+   "direct_sources": 1
+  },
+  {
+   "id": "C2.1",
+   "parent": "Q2",
+   "text": "Dendritic branches act as independent computational subunits.",
+   "status": "contested",
+   "note": "Independence is conditional on impedance, not a property of branches. Wybo 2019 formalises this; Otor 2022 shows a subcompartment's morphology predicts its functional independence. So the honest form of this claim is \"under conditions X\" — and nobody has measured how often X holds in vivo.\n",
+   "evidence": [
+    {
+     "key": "poirazi_2003",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "model; branches as independent sigmoidal subunits",
+     "modality": "model"
+    },
+    {
+     "key": "losonczy_magee_2006",
+     "doi": "10.1016/j.neuron.2006.03.016",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "branch-local spike initiation with sharp threshold in oblique dendrites",
+     "modality": "patch"
+    },
+    {
+     "key": "cichon_gan_2015",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "distinct motor skills engage non-overlapping apical tuft branches in vivo",
+     "modality": "calcium"
+    },
+    {
+     "key": "voigts_harnett_2020",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "RSC",
+     "condition": "apical segments carry spatial tuning different from their own soma",
+     "modality": "calcium"
+    },
+    {
+     "key": "wybo_2019",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "model",
+     "condition": "independence requires sufficiently high inter-branch impedance; dynamically regulated",
+     "modality": "model"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "Na spikes fail propagating from high- to low-impedance dendrites; NMDA spikes cannot leave the glutamate-release region. Compartmentalisation is a propagation failure, not a designed boundary",
+     "modality": "review"
+    },
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "under bAP-driven conditions dSpikes engaged the whole apical tree, with no branch preference",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    }
+   ],
+   "n": {
+    "supports": 5,
+    "qualifies": 2,
+    "contradicts": 1,
+    "assumes": 1
+   },
+   "modalities": {
+    "model": 2,
+    "patch": 2,
+    "calcium": 2,
+    "review": 1
+   },
+   "preps": {
+    "acute slice": 1,
+    "human tissue": 1
+   },
+   "years": [
+    2006,
+    2020
+   ],
+   "inherits": {
+    "C7.1": 2
+   },
+   "direct_sources": 5
+  },
+  {
+   "id": "C2.2",
+   "parent": "Q2",
+   "text": "Somatic and dendritic activity are highly correlated in vivo.",
+   "status": "contested",
+   "note": "Fischer 2022 states this split explicitly with both citation lists, which is why this node exists in this form. CRITICAL SCOPE, see C7.1 — every \"highly correlated\" result is calcium, and Beaulieu-Laroche's own calibration shows GCaMP6f is blind to subthreshold. So the correlation claim is about suprathreshold events only, and the two camps may not be measuring the same thing.\n",
+   "evidence": [
+    {
+     "key": "beaulieu_laroche_2019",
+     "doi": "10.1016/j.neuron.2019.05.014",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "V1 L5 awake; dendritic activity in 156/157 pairs, correlation 0.542, coupling index ~0.97, unchanged by visual stimuli or locomotion",
+     "modality": "calcium"
+    },
+    {
+     "key": "francioni_2019",
+     "doi": "10.7554/eLife.49145",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "V1 L5; high but asymmetric coupling, independent of stimulation and locomotion",
+     "modality": "calcium"
+    },
+    {
+     "key": "kerlin_2019",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "ALM",
+     "condition": "functional clustering during decision-making",
+     "modality": "calcium"
+    },
+    {
+     "key": "otor_2022",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "tuft subcompartments compute independently, but independence predicted by morphology",
+     "modality": "calcium"
+    },
+    {
+     "key": "sheffield_dombeck_2015",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "branch-specific Ca transient prevalence predicts place field properties",
+     "modality": "calcium"
+    },
+    {
+     "key": "voigts_harnett_2020",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "RSC",
+     "condition": "dendritic spatial tuning differs from somatic during 2D navigation",
+     "modality": "calcium"
+    },
+    {
+     "key": "fischer_2022",
+     "doi": "10.1523/JNEUROSCI.1132-22.2022",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "names the disagreement explicitly and lists both camps without adjudicating",
+     "modality": "review"
+    },
+    {
+     "key": "beaulieu_laroche_2019_selfcaveat",
+     "doi": "10.1016/j.neuron.2019.05.014",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "the same authors note compartmentalisation persists at subthreshold level, and that flexible coupling may occur on timescales or along categories GCaMP cannot resolve",
+     "modality": "calcium"
+    }
+   ],
+   "n": {
+    "supports": 3,
+    "qualifies": 3,
+    "contradicts": 2
+   },
+   "modalities": {
+    "calcium": 5,
+    "review": 1
+   },
+   "preps": {
+    "awake in vivo": 1
+   },
+   "years": [
+    2019,
+    2019
+   ],
+   "inherits": {
+    "C7.1": 5
+   },
+   "direct_sources": 5
+  },
+  {
+   "id": "C2.3a",
+   "parent": "Q2",
+   "text": "NMDA spikes are spatially restricted to the branch that generates them.",
+   "status": "settled",
+   "note": "Settled by mechanism rather than by accumulated observation: NMDAR gating needs both glutamate and depolarisation, so the event cannot exist outside the glutamate field. Kept in the tree as the calibration point for what 'settled' means here.",
+   "evidence": [
+    {
+     "key": "schiller_2000",
+     "doi": "10.1038/35005094",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "modality": "patch",
+     "condition": "NMDA spikes confined to the activated basal branch"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "both",
+     "modality": "review",
+     "condition": "NMDA spikes cannot propagate beyond the region of glutamate release, since NMDAR activation requires both glutamate and depolarisation"
+    }
+   ],
+   "n": {
+    "supports": 2
+   },
+   "modalities": {
+    "patch": 1,
+    "review": 1
+   },
+   "preps": {
+    "acute slice": 1
+   },
+   "years": [
+    2000,
+    2000
+   ],
+   "inherits": {},
+   "direct_sources": 1
+  },
+  {
+   "id": "C2.3b",
+   "parent": "Q2",
+   "text": "Dendritic Na spikes are spatially restricted to the branch that generates them.",
+   "status": "contested",
+   "note": "SPLITTING THIS OUT CHANGED THE ANSWER. In the merged node Park's result was diluted by the NMDA and plateau evidence. Isolated, it is a head-on contradiction: Park's dSpikes are Na-mediated (abolished by 20 nM TTX) yet engaged the whole apical tree with no branch preference. Either impedance confinement fails for bAP-driven Na spikes, or locally-initiated and bAP-driven Na spikes are different objects sharing a name.",
+   "evidence": [
+    {
+     "key": "golding_spruston_1998",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "modality": "patch",
+     "condition": "Na spikes are variable triggers of axonal APs; often fail to reach the soma"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "both",
+     "modality": "review",
+     "condition": "Na spikes fail propagating from small high-impedance dendrites into larger low-impedance ones"
+    },
+    {
+     "key": "ariav_2003",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "modality": "patch",
+     "condition": "fast Na dendritic spikes in basal dendrites with submillisecond precision"
+    },
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ],
+     "condition": "TTX-sensitive dSpikes engaged the entire apical tree regardless of stimulus location; no branch preference in 17 neurons"
+    }
+   ],
+   "n": {
+    "supports": 4,
+    "contradicts": 1,
+    "assumes": 1
+   },
+   "modalities": {
+    "patch": 3,
+    "review": 1
+   },
+   "preps": {
+    "acute slice": 1
+   },
+   "years": [
+    1994,
+    2002
+   ],
+   "inherits": {},
+   "direct_sources": 2
+  },
+  {
+   "id": "C2.3c",
+   "parent": "Q2",
+   "text": "Dendritic Ca plateau potentials are spatially restricted to the compartment that generates them.",
+   "status": "contested",
+   "note": "Probably false as written, and the interesting part is the unit. Ca spikes are restricted to a DOMAIN (the distal apical initiation zone) but propagate freely within and beyond it. If the tree keeps confusing domain-level with branch-level confinement, the fix is a `unit: branch|domain|cell` field rather than more nodes.",
+   "evidence": [
+    {
+     "key": "schiller_1997",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "modality": "patch",
+     "condition": "Ca action potentials restricted to distal apical dendrites — a domain claim, not a branch claim"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "CA1",
+     "modality": "review",
+     "condition": "Box 1 — plateaus propagate through the entirety of CA1 pyramidal neurons; explicitly contrasted with local Na and NMDA events"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "both",
+     "modality": "review",
+     "condition": "Ca spikes deliver more charge to soma and axon than Na spikes and drive high-frequency burst firing"
+    },
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ],
+     "condition": "plateaus were global, accompanied by somatic complex spikes"
+    }
+   ],
+   "n": {
+    "supports": 1,
+    "contradicts": 5
+   },
+   "modalities": {
+    "patch": 1
+   },
+   "preps": {},
+   "years": [
+    1999,
+    2014
+   ],
+   "inherits": {},
+   "direct_sources": 1
+  },
+  {
+   "id": "C3.1",
+   "parent": "Q3",
+   "text": "Dendritic nonlinearity primarily serves synaptic plasticity, not input integration.",
+   "status": "contested",
+   "note": "BHL's original view axis, promoted to a claim. This is the single most useful contested node in the tree — it is the disagreement that organises the two reviews, and Park's paper argues one side explicitly while flagging it as untested in vivo.\n",
+   "evidence": [
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "under conditions where integration was linear and passive, bAPs still drove strong dendritic excitations. Authors state the plasticity-primacy reading and flag it as requiring in vivo test",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "golding_2002",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "distal LTP requires local dSpikes, not the bAP",
+     "modality": "patch"
+    },
+    {
+     "key": "magee_johnston_1997",
+     "doi": "10.1126/science.275.5297.209",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "bAP as the associative signal for Hebbian plasticity",
+     "modality": "patch"
+    },
+    {
+     "key": "chavlis_poirazi_2026",
+     "doi": "10.1146/annurev-neuro-090325-115846",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "argues throughout that the dendrite is a computational unit; XOR, orientation selectivity, multi-unit processor",
+     "modality": "review"
+    },
+    {
+     "key": "smith_2013",
+     "doi": "10.1038/nature12600",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "L2/3",
+     "condition": "dendritic spikes sharpen orientation tuning relative to soma — integration, not plasticity",
+     "modality": "patch",
+     "flags": [
+      "anesthetized"
+     ]
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "reviews both roles as established and does not rank them",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 3,
+    "contradicts": 3,
+    "qualifies": 1
+   },
+   "modalities": {
+    "voltage": 1,
+    "patch": 2,
+    "review": 1
+   },
+   "preps": {
+    "acute slice": 2
+   },
+   "years": [
+    1997,
+    2020
+   ],
+   "inherits": {
+    "C7.4": 1
+   },
+   "direct_sources": 3
+  },
+  {
+   "id": "C3.2",
+   "parent": "Q3",
+   "text": "Synaptic integration in vivo is supralinear.",
+   "status": "contested",
+   "note": "Stuart & Spruston's conclusion is that this is the wrong question: in vivo neurons perform both sub- and supra-linear integration, varying by cell type, layer and stimulus. If that is right this node should eventually be retired and replaced by \"under what conditions\", which is C1.1.\n",
+   "evidence": [
+    {
+     "key": "smith_2013",
+     "doi": "10.1038/nature12600",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L2/3",
+     "condition": "V1 in vivo",
+     "modality": "patch",
+     "flags": [
+      "anesthetized"
+     ]
+    },
+    {
+     "key": "xu_2012",
+     "doi": "10.1038/nature11601",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "whisker task, awake",
+     "modality": "calcium"
+    },
+    {
+     "key": "palmer_2014",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L2/3",
+     "condition": "NMDA spikes enhance AP generation during sensory input",
+     "modality": "patch",
+     "flags": [
+      "anesthetized"
+     ]
+    },
+    {
+     "key": "jia_2014",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "L4",
+     "condition": "linear integration of spine Ca signals in vivo",
+     "modality": "calcium"
+    },
+    {
+     "key": "longordo_2013",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "V1",
+     "condition": "sublinear binocular integration",
+     "modality": "patch"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "concludes both modes occur; treats the dichotomy as ill-posed",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 3,
+    "contradicts": 2,
+    "qualifies": 1
+   },
+   "modalities": {
+    "patch": 2,
+    "calcium": 1,
+    "review": 1
+   },
+   "preps": {
+    "anesthetized in vivo": 1,
+    "awake in vivo": 1
+   },
+   "years": [
+    2012,
+    2013
+   ],
+   "inherits": {
+    "C7.3": 2,
+    "C7.1": 1
+   },
+   "direct_sources": 3
+  },
+  {
+   "id": "C3.3",
+   "parent": "Q3",
+   "text": "A single neuron implements a multi-layer network.",
+   "status": "open",
+   "note": "Mostly a modelling claim with in vivo support that is suggestive rather than direct. Note that C1.5, if true, is a serious problem for it: a two-layer network needs the hidden layer to be addressable, and a broadcast dSpike is not.\n",
+   "evidence": [
+    {
+     "key": "poirazi_2003",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "model",
+     "condition": "two-layer model fits CA1 input-output",
+     "modality": "model"
+    },
+    {
+     "key": "chavlis_poirazi_2026",
+     "doi": "10.1146/annurev-neuro-090325-115846",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "review; extends to ANN performance gains",
+     "modality": "review"
+    },
+    {
+     "key": "bicknell_hausser_2021",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "model",
+     "condition": "morphologically detailed model learns feature binding that a point neuron cannot",
+     "modality": "model"
+    },
+    {
+     "key": "fischer_2022",
+     "doi": "10.1523/JNEUROSCI.1132-22.2022",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "model",
+     "condition": "reports a continuum of task specialisation across cell types rather than a categorical dendritic advantage",
+     "modality": "review"
+    },
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "a spatially non-specific dSpike is a poor substrate for an addressable hidden layer",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    }
+   ],
+   "n": {
+    "supports": 4,
+    "qualifies": 1,
+    "contradicts": 1
+   },
+   "modalities": {
+    "model": 2,
+    "review": 3
+   },
+   "preps": {
+    "computational / modeling": 1
+   },
+   "years": [
+    2020,
+    2020
+   ],
+   "inherits": {},
+   "direct_sources": 2
+  },
+  {
+   "id": "C3.4",
+   "parent": "Q3",
+   "text": "Dendritic events causally shape behaviour.",
+   "status": "open",
+   "note": "Stuart & Spruston's 2015 verdict was that only correlations existed. Takahashi 2016 and Maristany 2025 are the causal exceptions, and both are optogenetic manipulation of tuft activity. Still very thin for how load-bearing this claim is across the field.\n",
+   "evidence": [
+    {
+     "key": "takahashi_2016",
+     "doi": "10.1126/science.aah6066",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "enhancing or suppressing apical activity shifts perceptual threshold",
+     "modality": "calcium",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "maristany_2025",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "ALM",
+     "condition": "inhibiting apical tufts impairs relearning under new rules but not established behaviour",
+     "modality": "calcium",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "takahashi_2020",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "effect is pathway-specific (ET not IT) and context-dependent — not a general dendritic property",
+     "modality": "calcium"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "as of 2015, \"even the best work has only shown correlations\"",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 2,
+    "qualifies": 1,
+    "contradicts": 1
+   },
+   "modalities": {
+    "calcium": 3
+   },
+   "preps": {
+    "awake in vivo": 1
+   },
+   "years": [
+    2016,
+    2016
+   ],
+   "inherits": {
+    "C7.1": 3,
+    "C7.4": 2
+   },
+   "direct_sources": 3
+  },
+  {
+   "id": "C4.1",
+   "parent": "Q4",
+   "text": "BTSP is the main mechanism producing CA1 place fields.",
+   "status": "open",
+   "note": "Magee Box 2 already is this node, with four numbered evidence lines each carrying its own caveat.",
+   "evidence": [
+    {
+     "key": "bittner_2017",
+     "doi": "10.1126/science.aan3846",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "single plateau produces a predictive place field in one trial",
+     "modality": "patch"
+    },
+    {
+     "key": "grienberger_magee_2022",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "EC3 inhibition removes the reward-site overrepresentation",
+     "modality": "calcium",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "priestley_2022",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "most new PCs show BTSP signatures during novel experience",
+     "modality": "calcium"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "review; Box 2 aggregates four lines with caveats",
+     "modality": "review"
+    },
+    {
+     "key": "fischer_2022",
+     "doi": "10.1523/JNEUROSCI.1132-22.2022",
+     "stance": "assumes",
+     "strength": "assumed",
+     "region": "CA1",
+     "condition": "treats BTSP as the mechanism when framing credit assignment",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 6,
+    "assumes": 1
+   },
+   "modalities": {
+    "patch": 2,
+    "calcium": 2,
+    "review": 1,
+    "voltage": 1
+   },
+   "preps": {
+    "awake in vivo": 3
+   },
+   "years": [
+    2015,
+    2023
+   ],
+   "inherits": {
+    "C7.1": 2,
+    "C7.4": 2
+   },
+   "direct_sources": 3
+  },
+  {
+   "id": "C4.2",
+   "parent": "Q4",
+   "text": "BTSP is the only plasticity mechanism producing CA1 place fields.",
+   "status": "contested",
+   "note": "Split from C4.1 deliberately. \"Main\" and \"only\" have different evidence and must not share a node — Magee concedes under 25% of PCs lack BTSP hallmarks and explicitly leaves this open, while Sheffield & Dombeck offer a clustered-synapse alternative.\n",
+   "evidence": [
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "\"Questions remain as to whether BTSP is the sole synaptic plasticity mechanism\"; <25% of PCs lack the signatures",
+     "modality": "review"
+    },
+    {
+     "key": "sheffield_dombeck_2015",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "already-strengthened or clustered synapses can drive place cell activity via local dSpikes",
+     "modality": "calcium"
+    },
+    {
+     "key": "madar_2025",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "BTSP but not STDP accounts for place field shifting dynamics",
+     "modality": "model"
+    }
+   ],
+   "n": {
+    "contradicts": 2,
+    "supports": 1
+   },
+   "modalities": {
+    "model": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 1
+  },
+  {
+   "id": "C4.3",
+   "parent": "Q4",
+   "text": "The BTSP rule is asymmetric in CA1 and symmetric in CA3.",
+   "status": "open",
+   "note": "If true, the plasticity rule is tuned to network function rather than fixed by biochemistry — which is a much stronger claim than it looks, and rests on one paper.\n",
+   "evidence": [
+    {
+     "key": "li_2024",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA3",
+     "condition": "symmetric ~5 s window at CA3-CA3 recurrent synapses",
+     "modality": "patch"
+    },
+    {
+     "key": "bittner_2017",
+     "doi": "10.1126/science.aan3846",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "asymmetric, projecting further backward",
+     "modality": "patch"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "review; links the asymmetry to prediction vs attractor stability",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 3
+   },
+   "modalities": {
+    "patch": 2,
+    "review": 1
+   },
+   "preps": {
+    "awake in vivo": 1
+   },
+   "years": [
+    2017,
+    2017
+   ],
+   "inherits": {},
+   "direct_sources": 2
+  },
+  {
+   "id": "C5.1",
+   "parent": "Q5",
+   "text": "EC3 input is a target signal, not an error signal.",
+   "status": "contested",
+   "note": "Magee's argument is negative evidence with a clear logic — EC3 activity stayed constant while CA1 adapted, which is not what an error signal does. The predictive-coding models require error. Chavlis & Poirazi state outright the question is unresolved.\n",
+   "evidence": [
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "EC3 peak at salient regions persisted for the whole session instead of decaying as CA1 adapted",
+     "modality": "review"
+    },
+    {
+     "key": "urbanczik_senn_2014",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "model",
+     "condition": "dendritic voltage as prediction, somatic spike as ground truth; requires an error",
+     "modality": "model"
+    },
+    {
+     "key": "chavlis_poirazi_2026",
+     "doi": "10.1146/annurev-neuro-090325-115846",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "section 2.5.2 frames association vs prediction error as unresolved: \"remains to be seen\"",
+     "modality": "review"
+    },
+    {
+     "key": "gillon_2024",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "V1",
+     "condition": "distal apical responses to pattern-violating stimuli increase as somatic responses adapt — error-like",
+     "modality": "calcium"
+    }
+   ],
+   "n": {
+    "supports": 1,
+    "contradicts": 2,
+    "qualifies": 1
+   },
+   "modalities": {
+    "review": 2
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 1
+  },
+  {
+   "id": "C5.2",
+   "parent": "Q5",
+   "text": "Dendrites implement backpropagation-like, neuron-specific credit assignment.",
+   "status": "open",
+   "note": "Fischer 2022 says plainly this \"remains untested\", and describes the BCI design built to test it. Worth watching as the node most likely to move in the next two years.\n",
+   "evidence": [
+    {
+     "key": "guerguiev_2017",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "model",
+     "condition": "segregated dendrites approximate backprop error",
+     "modality": "model"
+    },
+    {
+     "key": "payeur_2021",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "model",
+     "condition": "burst-dependent plasticity coordinates learning in hierarchical circuits",
+     "modality": "model"
+    },
+    {
+     "key": "francioni_2025",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "apical dendrites process instructive signals in vectorised format during a BCI task",
+     "modality": "calcium"
+    },
+    {
+     "key": "fischer_2022",
+     "doi": "10.1523/JNEUROSCI.1132-22.2022",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "states the hypothesis \"remains untested\" and lays out the BCI design intended to test it",
+     "modality": "review"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "argues EC3 cannot be neuron-specific — stochastic, and each axon innervates thousands of CA1 cells; proposes stable residual weights supply the specificity instead",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 3,
+    "qualifies": 1,
+    "contradicts": 1
+   },
+   "modalities": {
+    "model": 2,
+    "calcium": 1,
+    "review": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {
+    "C7.1": 1
+   },
+   "direct_sources": 3
+  },
+  {
+   "id": "C6.1",
+   "parent": "Q6",
+   "text": "Memory persists through stabilised synaptic weights.",
+   "status": "contested",
+   "note": "The classical position. Magee Box 5 is written explicitly as a contrast against it.",
+   "evidence": [
+    {
+     "key": "marr_1971",
+     "stance": "supports",
+     "strength": "assumed",
+     "region": "theory",
+     "condition": "foundational assumption of the archicortex model",
+     "modality": "theory"
+    },
+    {
+     "key": "hopfield_1982",
+     "stance": "supports",
+     "strength": "assumed",
+     "region": "theory",
+     "condition": "attractor memory via fixed weights",
+     "modality": "theory"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "Box 5 — \"Contrasts with concepts based on complete reactivation ... via stable synaptic weights\"",
+     "modality": "review"
+    },
+    {
+     "key": "vaidya_2025",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "even stable PCs required new BTSP each day; weights decayed or were overwritten overnight",
+     "modality": "patch"
+    }
+   ],
+   "n": {
+    "supports": 2,
+    "contradicts": 2
+   },
+   "modalities": {
+    "theory": 2
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 0
+  },
+  {
+   "id": "C6.2",
+   "parent": "Q6",
+   "text": "Memory persists via a raised likelihood of new neuron-specific plasticity.",
+   "status": "open",
+   "note": "The positive form of C6.1's negation, and a genuinely new proposal. Rests on the residual subthreshold depolarisation that lowers plateau threshold at particular locations. One lab.\n",
+   "evidence": [
+    {
+     "key": "vaidya_2025",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "stable PC population expanded ~3-fold over a week; residual amplitude grew with days",
+     "modality": "patch"
+    },
+    {
+     "key": "qian_2025",
+     "stance": "supports",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "experience-dependent place cell referencing",
+     "modality": "patch"
+    },
+    {
+     "key": "magee_2026",
+     "doi": "10.1038/s41593-026-02214-2",
+     "stance": "supports",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "review; proposes it as the solution to the stability-plasticity dilemma",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "supports": 3
+   },
+   "modalities": {
+    "patch": 2,
+    "review": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 2
+  },
+  {
+   "id": "C7.1",
+   "parent": "Q7",
+   "text": "Dendritic calcium signals report dendritic voltage.",
+   "status": "contested",
+   "note": "THIS NODE RE-WEIGHTS MOST OTHERS. Beaulieu-Laroche calibrated it directly and found subthreshold depolarisation produces negligible GCaMP6f signal — so calcium reports suprathreshold electrogenesis, not membrane potential. Park adds a spatial argument: Ca diffuses ~2 um in 100 ms while electrical length constants exceed 100 um, so the two signals have different spatial structure by construction. Most in vivo dendritic literature is calcium. Every claim above resting on calcium in vivo inherits this scope.\n",
+   "evidence": [
+    {
+     "key": "beaulieu_laroche_2019",
+     "doi": "10.1016/j.neuron.2019.05.014",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "ex vivo dual patch + GCaMP6f — subthreshold produces negligible dF/F, suprathreshold electrogenesis produces significant dF/F. Calcium reports electrogenesis specifically",
+     "modality": "patch"
+    },
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "CA1",
+     "condition": "Ca buffered diffusion <20 um2/s gives ~2 um spread per 100 ms vs >100 um electrical length constants; calls for simultaneous voltage and calcium imaging to settle it",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "fischer_2022",
+     "doi": "10.1523/JNEUROSCI.1132-22.2022",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "names calcium temporal resolution and fluorescence nonlinearity as formidable obstacles",
+     "modality": "review"
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "assumes",
+     "strength": "assumed",
+     "region": "both",
+     "condition": "treats in vivo calcium imaging as evidence for dendritic spikes throughout",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "qualifies": 2,
+    "contradicts": 1,
+    "assumes": 1
+   },
+   "modalities": {
+    "patch": 1,
+    "review": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 1
+  },
+  {
+   "id": "C7.2",
+   "parent": "Q7",
+   "text": "Slice dendritic excitability at room temperature reflects physiological behaviour.",
+   "status": "contested",
+   "note": "Park measured this directly and the effect is large. Several classic dendritic results were collected at room temperature, so this is not a pedantic node.\n",
+   "evidence": [
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "dSpike probability 16% at 34 C vs 50% at 24 C (any bAP); authors propose this explains discrepancies with earlier room-temperature bAP propagation measurements",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    }
+   ],
+   "n": {
+    "contradicts": 1
+   },
+   "modalities": {},
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 0
+  },
+  {
+   "id": "C7.3",
+   "parent": "Q7",
+   "text": "Anaesthesia preserves dendritic integration.",
+   "status": "contested",
+   "note": "Stuart & Spruston raise this as an unresolved confound and note that in vitro work shows most anaesthetics degrade active dendritic membrane properties. A large share of the in vivo dendritic literature is anaesthetized.\n",
+   "evidence": [
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "flags anaesthetics as a possible source of apparent disagreement; cites in vitro evidence that most anaesthetics negatively affect active dendritic membrane properties",
+     "modality": "review"
+    },
+    {
+     "key": "potez_larkum_2008",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "direct measurement of anaesthetic effects on dendritic properties",
+     "modality": "patch"
+    },
+    {
+     "key": "suzuki_larkum_2020",
+     "stance": "contradicts",
+     "strength": "direct",
+     "region": "L5",
+     "condition": "general anaesthesia decouples apical input from somatic output",
+     "modality": "patch"
+    }
+   ],
+   "n": {
+    "contradicts": 3
+   },
+   "modalities": {},
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 0
+  },
+  {
+   "id": "C7.4",
+   "parent": "Q7",
+   "text": "Optogenetic dendritic stimulation approximates physiological synaptic drive.",
+   "status": "open",
+   "note": "The methodological node underneath C1.1. Park estimates ~130 pA of dendritic CheRiff current, far below the injected currents that trigger local Na spikes in patch studies — which is either the reason their result differs, or the reason their result is the more physiological one. Nobody has measured which.\n",
+   "evidence": [
+    {
+     "key": "park_2025",
+     "doi": "10.1038/s41467-025-55819-9",
+     "stance": "qualifies",
+     "strength": "direct",
+     "region": "CA1",
+     "condition": "estimates dendritic CheRiff currents at ~130 pA and shows in simulation that the absence of dendrite-initiated dSpikes follows from the gradual, weak, distributed stimulus",
+     "modality": "voltage",
+     "flags": [
+      "optogenetic"
+     ]
+    },
+    {
+     "key": "stuart_spruston_2015",
+     "doi": "10.1038/nn.4157",
+     "stance": "qualifies",
+     "strength": "indirect",
+     "region": "both",
+     "condition": "\"activation is nonetheless artificial\"; in vitro studies describe possible computations, not the ones the brain uses",
+     "modality": "review"
+    }
+   ],
+   "n": {
+    "qualifies": 2
+   },
+   "modalities": {
+    "voltage": 1,
+    "review": 1
+   },
+   "preps": {},
+   "years": null,
+   "inherits": {},
+   "direct_sources": 1
+  }
+ ],
+ "edges": [
+  {
+   "claim": "C1.1",
+   "key": "golding_spruston_1998",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "strong local current injection into the dendrite",
+   "source": "human"
+  },
+  {
+   "claim": "C1.1",
+   "key": "losonczy_magee_2006",
+   "paper_id": "10.1016_j.neuron.2006.03.016",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "synchronous clustered glutamate uncaging on radial oblique branches",
+   "source": "human"
+  },
+  {
+   "claim": "C1.1",
+   "key": "schiller_2000",
+   "paper_id": "10.1038_35005094",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "clustered input to basal dendrites; NMDA-dependent",
+   "source": "human"
+  },
+  {
+   "claim": "C1.1",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "review; quantifies the requirement as a handful to dozens of inputs in a localised region within a few ms, and asks openly whether that ever happens in vivo",
+   "source": "human"
+  },
+  {
+   "claim": "C1.1",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "optogenetic drive (~130 pA, distributed), acute slice at 34 C. Never observed dendrite-initiated dSpikes; attributes this to stimulus modality and reproduces it in a conductance-based model",
+   "source": "human"
+  },
+  {
+   "claim": "C1.1",
+   "key": "chavlis_poirazi_2026",
+   "paper_id": null,
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "treats local NMDA spikes as the established substrate of branch computation",
+   "source": "human"
+  },
+  {
+   "claim": "C1.2",
+   "key": "larkum_1999_pnas",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "critical bAP frequency (~100 Hz) for distal Ca electrogenesis",
+   "source": "human"
+  },
+  {
+   "claim": "C1.2",
+   "key": "beaulieu_laroche_2019",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "ex vivo dual patch, V1 L5 — 200 Hz bAP trains engage dendritic electrogenesis, 50 Hz do not. Frequency dependence is explicit.",
+   "source": "human"
+  },
+  {
+   "claim": "C1.2",
+   "key": "larkum_zhu_sakmann_1999",
+   "paper_id": "10.1038_18686",
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "BAC firing — a single bAP paired with distal input suffices, which is nearer Park's rule than the frequency framing is",
+   "source": "human"
+  },
+  {
+   "claim": "C1.2",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "an isolated bAP becomes a dSpike if the distal dendrite was depolarised >=15 ms beforehand; sigmoidal dependence on stimulus distance, ~80% beyond 300 um",
+   "source": "human"
+  },
+  {
+   "claim": "C1.3",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "4-AP and Ba2+ raise dSpike probability, 20 nM TTX lowers it; NEURON model reproduces the failure-success-failure motif across a wide parameter range",
+   "source": "human"
+  },
+  {
+   "claim": "C1.3",
+   "key": "hoffman_1997",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "measured the ~6-fold distal enrichment and inactivation kinetics of A-type Kv",
+   "source": "human"
+  },
+  {
+   "claim": "C1.3",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "reviews Kv channels as restricting dendritic Ca spike generation and spread, and bAP-driven reduction of subsequent Na spike probability — the ingredients, not the synthesis",
+   "source": "human"
+  },
+  {
+   "claim": "C1.3",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "Box 1 treats Kv and HCN as plateau regulators without this framing",
+   "source": "human"
+  },
+  {
+   "claim": "C1.4",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "EFS at 0.5 s into an optogenetic ramp evoked plateaus, at 2.5 s (24 Hz sustained) did not. D-AP5, Ni2+ and TTX each reduce the plateau, so NMDAR, VGCC and Nav are all necessary",
+   "source": "human"
+  },
+  {
+   "claim": "C1.4",
+   "key": "takahashi_magee_2009",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "high-frequency EFS trains; stronger NMDAR dependence than Park saw with a single pulse. Induction protocol, not biology, may explain the gap",
+   "source": "human"
+  },
+  {
+   "claim": "C1.4",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "treats plateaus as reliably inducible by EC3/CA3 conjunction; no refractory window",
+   "source": "human"
+  },
+  {
+   "claim": "C1.4",
+   "key": "fischer_2022",
+   "paper_id": null,
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "\"only a single plateau potential is sufficient\" — stated without a rate caveat",
+   "source": "human"
+  },
+  {
+   "claim": "C1.5",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "bAP and dSpike spatial profiles insensitive to stimulus location; no preference for the stimulated branch",
+   "source": "human"
+  },
+  {
+   "claim": "C1.5",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "notes that spontaneous dSpikes from background synaptic activity, without clustered input, \"questions their role in information processing\"",
+   "source": "human"
+  },
+  {
+   "claim": "C1.5",
+   "key": "chavlis_poirazi_2026",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "reviews branch-specific plasticity and clustered spine formation as evidence that the branch is the unit of memory allocation. May be scope rather than conflict: clustered-input regime vs bAP-driven regime",
+   "source": "human"
+  },
+  {
+   "claim": "C2.1",
+   "key": "poirazi_2003",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "model",
+   "flags": [],
+   "condition": "model; branches as independent sigmoidal subunits",
+   "source": "human"
+  },
+  {
+   "claim": "C2.1",
+   "key": "losonczy_magee_2006",
+   "paper_id": "10.1016_j.neuron.2006.03.016",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "branch-local spike initiation with sharp threshold in oblique dendrites",
+   "source": "human"
+  },
+  {
+   "claim": "C2.1",
+   "key": "cichon_gan_2015",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "distinct motor skills engage non-overlapping apical tuft branches in vivo",
+   "source": "human"
+  },
+  {
+   "claim": "C2.1",
+   "key": "voigts_harnett_2020",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "RSC",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "apical segments carry spatial tuning different from their own soma",
+   "source": "human"
+  },
+  {
+   "claim": "C2.1",
+   "key": "wybo_2019",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "model",
+   "modality": "model",
+   "flags": [],
+   "condition": "independence requires sufficiently high inter-branch impedance; dynamically regulated",
+   "source": "human"
+  },
+  {
+   "claim": "C2.1",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "Na spikes fail propagating from high- to low-impedance dendrites; NMDA spikes cannot leave the glutamate-release region. Compartmentalisation is a propagation failure, not a designed boundary",
+   "source": "human"
+  },
+  {
+   "claim": "C2.1",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "under bAP-driven conditions dSpikes engaged the whole apical tree, with no branch preference",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "beaulieu_laroche_2019",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "V1 L5 awake; dendritic activity in 156/157 pairs, correlation 0.542, coupling index ~0.97, unchanged by visual stimuli or locomotion",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "francioni_2019",
+   "paper_id": "10.7554_eLife.49145",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "V1 L5; high but asymmetric coupling, independent of stimulation and locomotion",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "kerlin_2019",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "ALM",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "functional clustering during decision-making",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "otor_2022",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "tuft subcompartments compute independently, but independence predicted by morphology",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "sheffield_dombeck_2015",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "branch-specific Ca transient prevalence predicts place field properties",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "voigts_harnett_2020",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "RSC",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "dendritic spatial tuning differs from somatic during 2D navigation",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "fischer_2022",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "names the disagreement explicitly and lists both camps without adjudicating",
+   "source": "human"
+  },
+  {
+   "claim": "C2.2",
+   "key": "beaulieu_laroche_2019_selfcaveat",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "the same authors note compartmentalisation persists at subthreshold level, and that flexible coupling may occur on timescales or along categories GCaMP cannot resolve",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3a",
+   "key": "schiller_2000",
+   "paper_id": "10.1038_35005094",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "NMDA spikes confined to the activated basal branch",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3a",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "NMDA spikes cannot propagate beyond the region of glutamate release, since NMDAR activation requires both glutamate and depolarisation",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3b",
+   "key": "golding_spruston_1998",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "Na spikes are variable triggers of axonal APs; often fail to reach the soma",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3b",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "Na spikes fail propagating from small high-impedance dendrites into larger low-impedance ones",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3b",
+   "key": "ariav_2003",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "fast Na dendritic spikes in basal dendrites with submillisecond precision",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3b",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "TTX-sensitive dSpikes engaged the entire apical tree regardless of stimulus location; no branch preference in 17 neurons",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3c",
+   "key": "schiller_1997",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "Ca action potentials restricted to distal apical dendrites — a domain claim, not a branch claim",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3c",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "Box 1 — plateaus propagate through the entirety of CA1 pyramidal neurons; explicitly contrasted with local Na and NMDA events",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3c",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "Ca spikes deliver more charge to soma and axon than Na spikes and drive high-frequency burst firing",
+   "source": "human"
+  },
+  {
+   "claim": "C2.3c",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "plateaus were global, accompanied by somatic complex spikes",
+   "source": "human"
+  },
+  {
+   "claim": "C3.1",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "under conditions where integration was linear and passive, bAPs still drove strong dendritic excitations. Authors state the plasticity-primacy reading and flag it as requiring in vivo test",
+   "source": "human"
+  },
+  {
+   "claim": "C3.1",
+   "key": "golding_2002",
+   "paper_id": "10.1038_nature00854",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "distal LTP requires local dSpikes, not the bAP",
+   "source": "human"
+  },
+  {
+   "claim": "C3.1",
+   "key": "magee_johnston_1997",
+   "paper_id": "10.1126_science.275.5297.209",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "bAP as the associative signal for Hebbian plasticity",
+   "source": "human"
+  },
+  {
+   "claim": "C3.1",
+   "key": "chavlis_poirazi_2026",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "argues throughout that the dendrite is a computational unit; XOR, orientation selectivity, multi-unit processor",
+   "source": "human"
+  },
+  {
+   "claim": "C3.1",
+   "key": "smith_2013",
+   "paper_id": "10.1038_nature12600",
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "L2/3",
+   "modality": "patch",
+   "flags": [
+    "anesthetized"
+   ],
+   "condition": "dendritic spikes sharpen orientation tuning relative to soma — integration, not plasticity",
+   "source": "human"
+  },
+  {
+   "claim": "C3.1",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "reviews both roles as established and does not rank them",
+   "source": "human"
+  },
+  {
+   "claim": "C3.2",
+   "key": "smith_2013",
+   "paper_id": "10.1038_nature12600",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L2/3",
+   "modality": "patch",
+   "flags": [
+    "anesthetized"
+   ],
+   "condition": "V1 in vivo",
+   "source": "human"
+  },
+  {
+   "claim": "C3.2",
+   "key": "xu_2012",
+   "paper_id": "10.1038_nature11601",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "whisker task, awake",
+   "source": "human"
+  },
+  {
+   "claim": "C3.2",
+   "key": "palmer_2014",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L2/3",
+   "modality": "patch",
+   "flags": [
+    "anesthetized"
+   ],
+   "condition": "NMDA spikes enhance AP generation during sensory input",
+   "source": "human"
+  },
+  {
+   "claim": "C3.2",
+   "key": "jia_2014",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "L4",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "linear integration of spine Ca signals in vivo",
+   "source": "human"
+  },
+  {
+   "claim": "C3.2",
+   "key": "longordo_2013",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "V1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "sublinear binocular integration",
+   "source": "human"
+  },
+  {
+   "claim": "C3.2",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "concludes both modes occur; treats the dichotomy as ill-posed",
+   "source": "human"
+  },
+  {
+   "claim": "C3.3",
+   "key": "poirazi_2003",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "model",
+   "modality": "model",
+   "flags": [],
+   "condition": "two-layer model fits CA1 input-output",
+   "source": "human"
+  },
+  {
+   "claim": "C3.3",
+   "key": "chavlis_poirazi_2026",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "review; extends to ANN performance gains",
+   "source": "human"
+  },
+  {
+   "claim": "C3.3",
+   "key": "bicknell_hausser_2021",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "model",
+   "modality": "model",
+   "flags": [],
+   "condition": "morphologically detailed model learns feature binding that a point neuron cannot",
+   "source": "human"
+  },
+  {
+   "claim": "C3.3",
+   "key": "fischer_2022",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "model",
+   "modality": "review",
+   "flags": [],
+   "condition": "reports a continuum of task specialisation across cell types rather than a categorical dendritic advantage",
+   "source": "human"
+  },
+  {
+   "claim": "C3.3",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "a spatially non-specific dSpike is a poor substrate for an addressable hidden layer",
+   "source": "human"
+  },
+  {
+   "claim": "C3.4",
+   "key": "takahashi_2016",
+   "paper_id": "10.1126_science.aah6066",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "enhancing or suppressing apical activity shifts perceptual threshold",
+   "source": "human"
+  },
+  {
+   "claim": "C3.4",
+   "key": "maristany_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "ALM",
+   "modality": "calcium",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "inhibiting apical tufts impairs relearning under new rules but not established behaviour",
+   "source": "human"
+  },
+  {
+   "claim": "C3.4",
+   "key": "takahashi_2020",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "effect is pathway-specific (ET not IT) and context-dependent — not a general dendritic property",
+   "source": "human"
+  },
+  {
+   "claim": "C3.4",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "as of 2015, \"even the best work has only shown correlations\"",
+   "source": "human"
+  },
+  {
+   "claim": "C4.1",
+   "key": "bittner_2017",
+   "paper_id": "10.1126_science.aan3846",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "single plateau produces a predictive place field in one trial",
+   "source": "human"
+  },
+  {
+   "claim": "C4.1",
+   "key": "grienberger_magee_2022",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "calcium",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "EC3 inhibition removes the reward-site overrepresentation",
+   "source": "human"
+  },
+  {
+   "claim": "C4.1",
+   "key": "priestley_2022",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "most new PCs show BTSP signatures during novel experience",
+   "source": "human"
+  },
+  {
+   "claim": "C4.1",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "review; Box 2 aggregates four lines with caveats",
+   "source": "human"
+  },
+  {
+   "claim": "C4.1",
+   "key": "fischer_2022",
+   "paper_id": null,
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "treats BTSP as the mechanism when framing credit assignment",
+   "source": "human"
+  },
+  {
+   "claim": "C4.2",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "\"Questions remain as to whether BTSP is the sole synaptic plasticity mechanism\"; <25% of PCs lack the signatures",
+   "source": "human"
+  },
+  {
+   "claim": "C4.2",
+   "key": "sheffield_dombeck_2015",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "already-strengthened or clustered synapses can drive place cell activity via local dSpikes",
+   "source": "human"
+  },
+  {
+   "claim": "C4.2",
+   "key": "madar_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "model",
+   "flags": [],
+   "condition": "BTSP but not STDP accounts for place field shifting dynamics",
+   "source": "human"
+  },
+  {
+   "claim": "C4.3",
+   "key": "li_2024",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA3",
+   "modality": "patch",
+   "flags": [],
+   "condition": "symmetric ~5 s window at CA3-CA3 recurrent synapses",
+   "source": "human"
+  },
+  {
+   "claim": "C4.3",
+   "key": "bittner_2017",
+   "paper_id": "10.1126_science.aan3846",
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "asymmetric, projecting further backward",
+   "source": "human"
+  },
+  {
+   "claim": "C4.3",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "review; links the asymmetry to prediction vs attractor stability",
+   "source": "human"
+  },
+  {
+   "claim": "C5.1",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "EC3 peak at salient regions persisted for the whole session instead of decaying as CA1 adapted",
+   "source": "human"
+  },
+  {
+   "claim": "C5.1",
+   "key": "urbanczik_senn_2014",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "model",
+   "modality": "model",
+   "flags": [],
+   "condition": "dendritic voltage as prediction, somatic spike as ground truth; requires an error",
+   "source": "human"
+  },
+  {
+   "claim": "C5.1",
+   "key": "chavlis_poirazi_2026",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "section 2.5.2 frames association vs prediction error as unresolved: \"remains to be seen\"",
+   "source": "human"
+  },
+  {
+   "claim": "C5.1",
+   "key": "gillon_2024",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "V1",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "distal apical responses to pattern-violating stimuli increase as somatic responses adapt — error-like",
+   "source": "human"
+  },
+  {
+   "claim": "C5.2",
+   "key": "guerguiev_2017",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "model",
+   "modality": "model",
+   "flags": [],
+   "condition": "segregated dendrites approximate backprop error",
+   "source": "human"
+  },
+  {
+   "claim": "C5.2",
+   "key": "payeur_2021",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "model",
+   "modality": "model",
+   "flags": [],
+   "condition": "burst-dependent plasticity coordinates learning in hierarchical circuits",
+   "source": "human"
+  },
+  {
+   "claim": "C5.2",
+   "key": "francioni_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "calcium",
+   "flags": [],
+   "condition": "apical dendrites process instructive signals in vectorised format during a BCI task",
+   "source": "human"
+  },
+  {
+   "claim": "C5.2",
+   "key": "fischer_2022",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "states the hypothesis \"remains untested\" and lays out the BCI design intended to test it",
+   "source": "human"
+  },
+  {
+   "claim": "C5.2",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "argues EC3 cannot be neuron-specific — stochastic, and each axon innervates thousands of CA1 cells; proposes stable residual weights supply the specificity instead",
+   "source": "human"
+  },
+  {
+   "claim": "C6.1",
+   "key": "marr_1971",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "assumed",
+   "region": "theory",
+   "modality": "theory",
+   "flags": [],
+   "condition": "foundational assumption of the archicortex model",
+   "source": "human"
+  },
+  {
+   "claim": "C6.1",
+   "key": "hopfield_1982",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "assumed",
+   "region": "theory",
+   "modality": "theory",
+   "flags": [],
+   "condition": "attractor memory via fixed weights",
+   "source": "human"
+  },
+  {
+   "claim": "C6.1",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "Box 5 — \"Contrasts with concepts based on complete reactivation ... via stable synaptic weights\"",
+   "source": "human"
+  },
+  {
+   "claim": "C6.1",
+   "key": "vaidya_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "even stable PCs required new BTSP each day; weights decayed or were overwritten overnight",
+   "source": "human"
+  },
+  {
+   "claim": "C6.2",
+   "key": "vaidya_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "stable PC population expanded ~3-fold over a week; residual amplitude grew with days",
+   "source": "human"
+  },
+  {
+   "claim": "C6.2",
+   "key": "qian_2025",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "patch",
+   "flags": [],
+   "condition": "experience-dependent place cell referencing",
+   "source": "human"
+  },
+  {
+   "claim": "C6.2",
+   "key": "magee_2026",
+   "paper_id": null,
+   "stance": "supports",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "review",
+   "flags": [],
+   "condition": "review; proposes it as the solution to the stability-plasticity dilemma",
+   "source": "human"
+  },
+  {
+   "claim": "C7.1",
+   "key": "beaulieu_laroche_2019",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "ex vivo dual patch + GCaMP6f — subthreshold produces negligible dF/F, suprathreshold electrogenesis produces significant dF/F. Calcium reports electrogenesis specifically",
+   "source": "human"
+  },
+  {
+   "claim": "C7.1",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "Ca buffered diffusion <20 um2/s gives ~2 um spread per 100 ms vs >100 um electrical length constants; calls for simultaneous voltage and calcium imaging to settle it",
+   "source": "human"
+  },
+  {
+   "claim": "C7.1",
+   "key": "fischer_2022",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "names calcium temporal resolution and fluorescence nonlinearity as formidable obstacles",
+   "source": "human"
+  },
+  {
+   "claim": "C7.1",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "treats in vivo calcium imaging as evidence for dendritic spikes throughout",
+   "source": "human"
+  },
+  {
+   "claim": "C7.2",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "dSpike probability 16% at 34 C vs 50% at 24 C (any bAP); authors propose this explains discrepancies with earlier room-temperature bAP propagation measurements",
+   "source": "human"
+  },
+  {
+   "claim": "C7.3",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "flags anaesthetics as a possible source of apparent disagreement; cites in vitro evidence that most anaesthetics negatively affect active dendritic membrane properties",
+   "source": "human"
+  },
+  {
+   "claim": "C7.3",
+   "key": "potez_larkum_2008",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "direct measurement of anaesthetic effects on dendritic properties",
+   "source": "human"
+  },
+  {
+   "claim": "C7.3",
+   "key": "suzuki_larkum_2020",
+   "paper_id": null,
+   "stance": "contradicts",
+   "strength": "direct",
+   "region": "L5",
+   "modality": "patch",
+   "flags": [],
+   "condition": "general anaesthesia decouples apical input from somatic output",
+   "source": "human"
+  },
+  {
+   "claim": "C7.4",
+   "key": "park_2025",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "direct",
+   "region": "CA1",
+   "modality": "voltage",
+   "flags": [
+    "optogenetic"
+   ],
+   "condition": "estimates dendritic CheRiff currents at ~130 pA and shows in simulation that the absence of dendrite-initiated dSpikes follows from the gradual, weak, distributed stimulus",
+   "source": "human"
+  },
+  {
+   "claim": "C7.4",
+   "key": "stuart_spruston_2015",
+   "paper_id": null,
+   "stance": "qualifies",
+   "strength": "indirect",
+   "region": "both",
+   "modality": "review",
+   "flags": [],
+   "condition": "\"activation is nonetheless artificial\"; in vitro studies describe possible computations, not the ones the brain uses",
+   "source": "human"
+  },
+  {
+   "claim": "C1.2",
+   "key": "10.1038_367069a0",
+   "paper_id": "10.1038_367069a0",
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": null,
+   "modality": "patch",
+   "flags": [
+    "room temperature"
+   ],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.3b",
+   "key": "10.1038_367069a0",
+   "paper_id": "10.1038_367069a0",
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": null,
+   "modality": "patch",
+   "flags": [
+    "room temperature"
+   ],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.3c",
+   "key": "10.1038_18686",
+   "paper_id": "10.1038_18686",
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": null,
+   "modality": "patch",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.3b",
+   "key": "10.1038_nature00854",
+   "paper_id": "10.1038_nature00854",
+   "stance": "supports",
+   "strength": "indirect",
+   "region": null,
+   "modality": "patch",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C1.1",
+   "key": "10.1523_JNEUROSCI.4428-05.2006",
+   "paper_id": "10.1523_JNEUROSCI.4428-05.2006",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "patch",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C4.1",
+   "key": "10.1038_nn.4062",
+   "paper_id": "10.1038_nn.4062",
+   "stance": "supports",
+   "strength": "indirect",
+   "region": null,
+   "modality": "patch",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.3c",
+   "key": "10.1016_j.neuron.2014.11.015",
+   "paper_id": "10.1016_j.neuron.2014.11.015",
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": null,
+   "modality": "calcium",
+   "flags": [
+    "anesthetized"
+   ],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.1",
+   "key": "10.1016_j.cell.2018.08.045",
+   "paper_id": "10.1016_j.cell.2018.08.045",
+   "stance": "supports",
+   "strength": "indirect",
+   "region": null,
+   "modality": "patch",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C4.1",
+   "key": "10.1016_j.cell.2022.11.031",
+   "paper_id": "10.1016_j.cell.2022.11.031",
+   "stance": "supports",
+   "strength": "direct",
+   "region": null,
+   "modality": "voltage",
+   "flags": [
+    "optogenetics"
+   ],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C3.3",
+   "key": "10.1038_s41583-020-0301-7",
+   "paper_id": "10.1038_s41583-020-0301-7",
+   "stance": "supports",
+   "strength": "indirect",
+   "region": null,
+   "modality": "review",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C2.1",
+   "key": "10.1038_s41583-020-0301-7",
+   "paper_id": "10.1038_s41583-020-0301-7",
+   "stance": "assumes",
+   "strength": "assumed",
+   "region": null,
+   "modality": "review",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  },
+  {
+   "claim": "C3.1",
+   "key": "10.1038_s41583-020-0301-7",
+   "paper_id": "10.1038_s41583-020-0301-7",
+   "stance": "contradicts",
+   "strength": "indirect",
+   "region": null,
+   "modality": "review",
+   "flags": [],
+   "condition": "",
+   "quote": "",
+   "source": "model",
+   "needs_review": false
+  }
+ ],
+ "papers": [
+  {
+   "title": "Active propagation of somatic action potentials into neocortical pyramidal cell dendrites",
+   "year": 1994,
+   "venue": "Nature",
+   "doi": "10.1038/367069a0",
+   "authors": [
+    "Greg J. Stuart",
+    "Bert Sakmann"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.69,
+    "article_type": 0.95,
+    "prep": 0.93,
+    "modality": 0.84
+   },
+   "significance": "Showed that somatic spikes actively invade the apical dendrite, making the bAP a real, measurable signal available to synapses rather than a theoretical one.",
+   "keywords": [
+    "backpropagation",
+    "dendritic patch",
+    "layer 5"
+   ],
+   "cited_by": 2100,
+   "id": "10.1038_367069a0",
+   "first_author": "Greg J. Stuart",
+   "last_author": "Bert Sakmann",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "bAP"
+   ],
+   "lab_cluster": 1,
+   "lab_cluster_name": "Sakmann",
+   "similar": [
+    {
+     "id": "10.1038_18686",
+     "score": 0.75,
+     "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Matthew E. Larkum"
+   ],
+   "method_flags": [
+    "room temperature"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C1.2",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "A synaptically controlled, associative signal for Hebbian plasticity in hippocampal neurons",
+   "year": 1997,
+   "venue": "Science",
+   "doi": "10.1126/science.275.5297.209",
+   "authors": [
+    "Jeffrey C. Magee",
+    "Daniel Johnston"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.64,
+    "article_type": 0.96,
+    "prep": 0.87,
+    "modality": 0.82
+   },
+   "significance": "Identified the bAP paired with EPSPs as the associative signal for plasticity, giving Hebb's postulate a concrete biophysical implementation.",
+   "keywords": [
+    "STDP",
+    "Hebbian",
+    "CA1"
+   ],
+   "cited_by": 2400,
+   "id": "10.1126_science.275.5297.209",
+   "first_author": "Jeffrey C. Magee",
+   "last_author": "Daniel Johnston",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "bAP"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.493,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.493,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.451,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.448,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    }
+   ],
+   "lineage": [],
+   "method_flags": [],
+   "claim_edges": [
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+   "year": 1999,
+   "venue": "Nature",
+   "doi": "10.1038/18686",
+   "authors": [
+    "Matthew E. Larkum",
+    "J. Julius Zhu",
+    "Bert Sakmann"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.78,
+    "article_type": 0.85,
+    "prep": 0.87,
+    "modality": 0.62
+   },
+   "significance": "Described BAC firing, where a bAP coincident with distal input triggers a dendritic Ca spike and a somatic burst, recasting L5 cells as two-compartment coincidence detectors.",
+   "keywords": [
+    "BAC firing",
+    "Ca spike",
+    "layer 5"
+   ],
+   "cited_by": 1500,
+   "id": "10.1038_18686",
+   "first_author": "Matthew E. Larkum",
+   "last_author": "Bert Sakmann",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Ca spike",
+    "bAP"
+   ],
+   "lab_cluster": 1,
+   "lab_cluster_name": "Sakmann",
+   "similar": [
+    {
+     "id": "10.1038_367069a0",
+     "score": 0.75,
+     "title": "Active propagation of somatic action potentials into neocortical pyramidal cell dendrites",
+     "year": 1994
+    },
+    {
+     "id": "10.1126_science.aah6066",
+     "score": 0.428,
+     "title": "Active cortical dendrites modulate perception",
+     "year": 2016
+    }
+   ],
+   "lineage": [
+    "Matthew E. Larkum"
+   ],
+   "method_flags": [],
+   "claim_edges": [
+    {
+     "claim": "C1.2",
+     "stance": "qualifies",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3c",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "NMDA spikes in basal dendrites of cortical pyramidal neurons",
+   "year": 2000,
+   "venue": "Nature",
+   "doi": "10.1038/35005094",
+   "authors": [
+    "Jackie Schiller",
+    "Guy Major",
+    "Helmut J. Koester",
+    "Yitzhak Schiller"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.91,
+    "article_type": 0.93,
+    "prep": 0.67,
+    "modality": 0.71
+   },
+   "significance": "Found regenerative NMDA spikes confined to single basal branches, establishing the thin-dendrite branch as an independent nonlinear subunit.",
+   "keywords": [
+    "NMDA spike",
+    "basal dendrite",
+    "branch subunit"
+   ],
+   "cited_by": 1300,
+   "id": "10.1038_35005094",
+   "first_author": "Jackie Schiller",
+   "last_author": "Yitzhak Schiller",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "NMDA spike"
+   ],
+   "lab_cluster": 3,
+   "lab_cluster_name": "Schiller (single)",
+   "similar": [],
+   "lineage": [],
+   "method_flags": [
+    "glutamate uncaging"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3a",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Dendritic spikes as a mechanism for cooperative long-term potentiation",
+   "year": 2002,
+   "venue": "Nature",
+   "doi": "10.1038/nature00854",
+   "authors": [
+    "Nelson B. Golding",
+    "Nathan P. Staff",
+    "Nelson Spruston"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.98,
+    "article_type": 0.74,
+    "prep": 0.85,
+    "modality": 0.79
+   },
+   "significance": "Showed LTP at distal CA1 synapses requires local dendritic spikes and not the bAP, breaking the assumption that somatic output is necessary for plasticity.",
+   "keywords": [
+    "local spike",
+    "distal LTP",
+    "CA1"
+   ],
+   "cited_by": 1000,
+   "id": "10.1038_nature00854",
+   "first_author": "Nelson B. Golding",
+   "last_author": "Nelson Spruston",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike",
+    "bAP"
+   ],
+   "lab_cluster": 4,
+   "lab_cluster_name": "Spruston (single)",
+   "similar": [],
+   "lineage": [],
+   "method_flags": [],
+   "claim_edges": [
+    {
+     "claim": "C3.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.3b",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+   "year": 2006,
+   "venue": "Journal of Neuroscience",
+   "doi": "10.1523/JNEUROSCI.4428-05.2006",
+   "authors": [
+    "Sonia Gasparini",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.95,
+    "article_type": 0.74,
+    "prep": 0.91,
+    "modality": 0.7
+   },
+   "significance": "Demonstrated that whether CA1 dendrites integrate linearly or fire local spikes depends on input synchrony, making the computation itself state-dependent rather than fixed.",
+   "keywords": [
+    "input synchrony",
+    "local spike",
+    "integration mode"
+   ],
+   "cited_by": 600,
+   "id": "10.1523_JNEUROSCI.4428-05.2006",
+   "first_author": "Sonia Gasparini",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.75,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.75,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": [],
+   "method_flags": [],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+   "year": 2006,
+   "venue": "Neuron",
+   "doi": "10.1016/j.neuron.2006.03.016",
+   "authors": [
+    "Attila Losonczy",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "acute slice",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.63,
+    "article_type": 0.75,
+    "prep": 0.95,
+    "modality": 0.76
+   },
+   "significance": "Mapped branch-local spike initiation and its sharp threshold in oblique dendrites, supplying the empirical basis for treating branches as separate integration units.",
+   "keywords": [
+    "oblique dendrite",
+    "glutamate uncaging",
+    "branch strength"
+   ],
+   "cited_by": 800,
+   "id": "10.1016_j.neuron.2006.03.016",
+   "first_author": "Attila Losonczy",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike",
+    "branch-specific computation"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.75,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.75,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": [],
+   "method_flags": [
+    "glutamate uncaging"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C1.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+   "year": 2012,
+   "venue": "Nature",
+   "doi": "10.1038/nature11601",
+   "authors": [
+    "Ning-long Xu",
+    "Mark T. Harnett",
+    "Stephen R. Williams",
+    "Daniel Huber",
+    "Daniel H. O'Connor",
+    "Karel Svoboda",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "confidence": {
+    "scope": 0.79,
+    "article_type": 0.64,
+    "prep": 0.75,
+    "modality": 0.69
+   },
+   "significance": "Recorded dendritic plateaus in behaving mice and tied them to convergence of touch and motor signals, moving dendritic nonlinearity from slice phenomenology to behavioral relevance.",
+   "keywords": [
+    "plateau potential",
+    "whisker",
+    "tuft"
+   ],
+   "cited_by": 700,
+   "id": "10.1038_nature11601",
+   "first_author": "Ning-long Xu",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential",
+    "Ca spike"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.75,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.75,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": [],
+   "method_flags": [
+    "behavior"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Dendritic spikes enhance stimulus selectivity in cortical neurons in vivo",
+   "year": 2013,
+   "venue": "Nature",
+   "doi": "10.1038/nature12600",
+   "authors": [
+    "Spencer L. Smith",
+    "Ikuko T. Smith",
+    "Tiago Branco",
+    "Michael Häusser"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "anesthetized in vivo",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.64,
+    "article_type": 0.91,
+    "prep": 0.87,
+    "modality": 0.63
+   },
+   "significance": "Recorded dendritic spikes in V1 in vivo and showed they are more orientation-tuned than the soma, arguing dendrites sharpen selectivity before the axon sees it.",
+   "keywords": [
+    "orientation tuning",
+    "V1",
+    "dendritic patch in vivo"
+   ],
+   "cited_by": 900,
+   "id": "10.1038_nature12600",
+   "first_author": "Spencer L. Smith",
+   "last_author": "Michael Häusser",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Na spike",
+    "branch-specific computation"
+   ],
+   "lab_cluster": 5,
+   "lab_cluster_name": "Häusser (single)",
+   "similar": [],
+   "lineage": [],
+   "method_flags": [
+    "anesthetized"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C3.1",
+     "stance": "contradicts",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+   "year": 2015,
+   "venue": "Nature Neuroscience",
+   "doi": "10.1038/nn.4062",
+   "authors": [
+    "Katie C. Bittner",
+    "Christine Grienberger",
+    "Sachin P. Vaidya",
+    "Aaron D. Milstein",
+    "John J. Macklin",
+    "Jinhyun Kim",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.8,
+    "article_type": 0.92,
+    "prep": 0.67,
+    "modality": 0.71
+   },
+   "significance": "Showed CA1 place fields arise from dendritic plateau potentials driven by conjunctive CA3 and entorhinal input rather than from somatic summation.",
+   "keywords": [
+    "plateau",
+    "place field",
+    "conjunctive input"
+   ],
+   "cited_by": 650,
+   "id": "10.1038_nn.4062",
+   "first_author": "Katie C. Bittner",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.87,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": [],
+   "method_flags": [
+    "behavior"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "NMDA receptor-dependent multidendrite Ca2+ spikes required for hippocampal burst firing in vivo",
+   "year": 2014,
+   "venue": "Neuron",
+   "doi": "10.1016/j.neuron.2014.11.015",
+   "authors": [
+    "Christine Grienberger",
+    "Xiaowei Chen",
+    "Arthur Konnerth"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "anesthetized in vivo",
+    "modality": "calcium imaging"
+   },
+   "confidence": {
+    "scope": 0.77,
+    "article_type": 0.78,
+    "prep": 0.63,
+    "modality": 0.63
+   },
+   "significance": "Linked multi-branch NMDA-dependent Ca spikes to somatic bursting in vivo, connecting local dendritic events directly to the neuron's output code.",
+   "keywords": [
+    "Ca spike",
+    "burst firing",
+    "CA1 in vivo"
+   ],
+   "cited_by": 400,
+   "id": "10.1016_j.neuron.2014.11.015",
+   "first_author": "Christine Grienberger",
+   "last_author": "Arthur Konnerth",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Ca spike",
+    "NMDA spike"
+   ],
+   "lab_cluster": 6,
+   "lab_cluster_name": "Konnerth (single)",
+   "similar": [
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.148,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1126_science.aan3846",
+     "score": 0.051,
+     "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+     "year": 2017
+    }
+   ],
+   "lineage": [],
+   "method_flags": [
+    "anesthetized"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.3c",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Active cortical dendrites modulate perception",
+   "year": 2016,
+   "venue": "Science",
+   "doi": "10.1126/science.aah6066",
+   "authors": [
+    "Naoya Takahashi",
+    "Thomas G. Oertner",
+    "Peter Hegemann",
+    "Matthew E. Larkum"
+   ],
+   "labels": {
+    "scope": "circuit & behavior",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "confidence": {
+    "scope": 0.67,
+    "article_type": 0.92,
+    "prep": 0.72,
+    "modality": 0.81
+   },
+   "significance": "Manipulated dendritic Ca activity during a detection task and shifted perceptual threshold, providing causal evidence that dendritic events matter for behavior.",
+   "keywords": [
+    "perception",
+    "optogenetics",
+    "tuft"
+   ],
+   "cited_by": 550,
+   "id": "10.1126_science.aah6066",
+   "first_author": "Naoya Takahashi",
+   "last_author": "Matthew E. Larkum",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "Ca spike"
+   ],
+   "lab_cluster": 7,
+   "lab_cluster_name": "Larkum (single)",
+   "similar": [
+    {
+     "id": "10.1038_18686",
+     "score": 0.428,
+     "title": "A new cellular mechanism for coupling inputs arriving at different cortical layers",
+     "year": 1999
+    }
+   ],
+   "lineage": [
+    "Matthew E. Larkum"
+   ],
+   "method_flags": [
+    "optogenetics",
+    "behavior"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C3.4",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Behavioral time scale synaptic plasticity underlies CA1 place fields",
+   "year": 2017,
+   "venue": "Science",
+   "doi": "10.1126/science.aan3846",
+   "authors": [
+    "Katie C. Bittner",
+    "Aaron D. Milstein",
+    "Christine Grienberger",
+    "Sandro Romani",
+    "Jeffrey C. Magee"
+   ],
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.73,
+    "article_type": 0.7,
+    "prep": 0.92,
+    "modality": 0.86
+   },
+   "significance": "Described a plateau-driven plasticity rule operating over seconds, displacing millisecond STDP as the dominant account of how place fields form.",
+   "keywords": [
+    "BTSP",
+    "plateau",
+    "place field"
+   ],
+   "cited_by": 900,
+   "id": "10.1126_science.aan3846",
+   "first_author": "Katie C. Bittner",
+   "last_author": "Jeffrey C. Magee",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential"
+   ],
+   "lab_cluster": 0,
+   "lab_cluster_name": "Magee + Johnston",
+   "similar": [
+    {
+     "id": "10.1038_nn.4062",
+     "score": 0.87,
+     "title": "Conjunctive input processing drives feature selectivity in hippocampal CA1 neurons",
+     "year": 2015
+    },
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.75,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    },
+    {
+     "id": "10.1016_j.neuron.2006.03.016",
+     "score": 0.75,
+     "title": "Integrative properties of radial oblique dendrites in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    },
+    {
+     "id": "10.1523_JNEUROSCI.4428-05.2006",
+     "score": 0.75,
+     "title": "State-dependent dendritic computation in hippocampal CA1 pyramidal neurons",
+     "year": 2006
+    }
+   ],
+   "lineage": [],
+   "method_flags": [
+    "behavior"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C4.3",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "High and asymmetric somato-dendritic coupling of V1 layer 5 pyramidal neurons independent of visual stimulation and locomotion",
+   "year": 2019,
+   "venue": "eLife",
+   "doi": "10.7554/eLife.49145",
+   "authors": [
+    "Valerio Francioni",
+    "Zahid Padamsey",
+    "Nathalie L. Rochefort"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "calcium imaging"
+   },
+   "confidence": {
+    "scope": 0.75,
+    "article_type": 0.82,
+    "prep": 0.63,
+    "modality": 0.93
+   },
+   "significance": "Reported that dendritic Ca signals in V1 L5 cells mostly track somatic spiking, pushing back on the view that dendritic events are routinely independent in vivo.",
+   "keywords": [
+    "somato-dendritic coupling",
+    "V1",
+    "two-photon"
+   ],
+   "cited_by": 200,
+   "id": "10.7554_eLife.49145",
+   "first_author": "Valerio Francioni",
+   "last_author": "Nathalie L. Rochefort",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "bAP",
+    "Ca spike"
+   ],
+   "lab_cluster": 8,
+   "lab_cluster_name": "Rochefort (single)",
+   "similar": [],
+   "lineage": [],
+   "method_flags": [
+    "behavior"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C2.2",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Enhanced dendritic compartmentalization in human cortical neurons",
+   "year": 2018,
+   "venue": "Cell",
+   "doi": "10.1016/j.cell.2018.08.045",
+   "authors": [
+    "Lou Beaulieu-Laroche",
+    "Enrique H. S. Toloza",
+    "Marie-Sophie van der Goes",
+    "Mathieu Lafourcade",
+    "Derrick Barnagian",
+    "Ziv M. Williams",
+    "Emad N. Eskandar",
+    "Matthew P. Frosch",
+    "Sydney S. Cash",
+    "Mark T. Harnett"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "primary research",
+    "prep": "human tissue",
+    "modality": "patch"
+   },
+   "confidence": {
+    "scope": 0.93,
+    "article_type": 0.93,
+    "prep": 0.71,
+    "modality": 0.8
+   },
+   "significance": "Showed human L5 dendrites are electrotonically more isolated than rodent ones, implying species differences in how much computation happens before the soma.",
+   "keywords": [
+    "human cortex",
+    "compartmentalization",
+    "cable properties"
+   ],
+   "cited_by": 400,
+   "id": "10.1016_j.cell.2018.08.045",
+   "first_author": "Lou Beaulieu-Laroche",
+   "last_author": "Mark T. Harnett",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "passive integration"
+   ],
+   "lab_cluster": 9,
+   "lab_cluster_name": "Harnett (single)",
+   "similar": [
+    {
+     "id": "10.1038_nature11601",
+     "score": 0.166,
+     "title": "Nonlinear dendritic integration of sensory and motor input during an active sensing task",
+     "year": 2012
+    }
+   ],
+   "lineage": [],
+   "method_flags": [],
+   "claim_edges": [
+    {
+     "claim": "C2.1",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Voltage imaging and optogenetics reveal behaviour-dependent changes in hippocampal dynamics",
+   "year": 2019,
+   "venue": "Nature",
+   "doi": "10.1038/s41586-019-1166-7",
+   "authors": [
+    "Yoav Adam",
+    "Jeong Jun Kim",
+    "Shan Lou",
+    "Yongxin Zhao",
+    "Michael E. Xie",
+    "Daan Brinks",
+    "Hao Wu",
+    "Mohammed A. Mostajo-Radji",
+    "Simon Kheifets",
+    "Vicente Parot",
+    "Selmaan Chettih",
+    "Katherine J. Williams",
+    "Benjamin Gmeiner",
+    "Samouil L. Farhi",
+    "Linda Madisen",
+    "E. Josephine Buchanan",
+    "Ian Kinsella",
+    "Ding Zhou",
+    "Liam Paninski",
+    "Christopher D. Harvey",
+    "Hongkui Zeng",
+    "Paola Arlotta",
+    "Robert E. Campbell",
+    "Adam E. Cohen"
+   ],
+   "labels": {
+    "scope": "methods & tools",
+    "article_type": "methods / tool",
+    "prep": "awake in vivo",
+    "modality": "voltage imaging"
+   },
+   "confidence": {
+    "scope": 0.72,
+    "article_type": 0.95,
+    "prep": 0.84,
+    "modality": 0.64
+   },
+   "significance": "Delivered all-optical voltage recording in behaving mice, making subthreshold and spike dynamics accessible where electrode access had been the limiting factor.",
+   "keywords": [
+    "voltage imaging",
+    "QuasAr",
+    "optopatch"
+   ],
+   "cited_by": 700,
+   "id": "10.1038_s41586-019-1166-7",
+   "first_author": "Yoav Adam",
+   "last_author": "Adam E. Cohen",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [],
+   "lab_cluster": 2,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.1016_j.cell.2022.11.031",
+     "score": 0.75,
+     "title": "All-optical physiology resolves a synaptic basis of behavioral timescale plasticity",
+     "year": 2023
+    }
+   ],
+   "lineage": [],
+   "method_flags": [
+    "behavior",
+    "chronic/longitudinal"
+   ],
+   "claim_edges": [],
+   "claims_done": true
+  },
+  {
+   "title": "All-optical physiology resolves a synaptic basis of behavioral timescale plasticity",
+   "year": 2023,
+   "venue": "Cell",
+   "doi": "10.1016/j.cell.2022.11.031",
+   "authors": [
+    "Linlin Z. Fan",
+    "Simon Kheifets",
+    "Urs L. Böhm",
+    "Hao Wu",
+    "Kiryl D. Piatkevich",
+    "Michael E. Xie",
+    "Vicente Parot",
+    "Yooree Ha",
+    "Kathryn E. Evans",
+    "Edward S. Boyden",
+    "Adam E. Takesian",
+    "Adam E. Cohen"
+   ],
+   "labels": {
+    "scope": "hippocampal coding & memory",
+    "article_type": "primary research",
+    "prep": "awake in vivo",
+    "modality": "voltage imaging"
+   },
+   "confidence": {
+    "scope": 0.96,
+    "article_type": 0.98,
+    "prep": 0.87,
+    "modality": 0.76
+   },
+   "significance": "Combined voltage imaging with optogenetic input control to expose the synaptic mechanism behind behavioral timescale plasticity in single CA1 cells.",
+   "keywords": [
+    "all-optical",
+    "BTSP",
+    "voltage imaging"
+   ],
+   "cited_by": 250,
+   "id": "10.1016_j.cell.2022.11.031",
+   "first_author": "Linlin Z. Fan",
+   "last_author": "Adam E. Cohen",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "plateau potential"
+   ],
+   "lab_cluster": 2,
+   "lab_cluster_name": "Cohen",
+   "similar": [
+    {
+     "id": "10.1038_s41586-019-1166-7",
+     "score": 0.75,
+     "title": "Voltage imaging and optogenetics reveal behaviour-dependent changes in hippocampal dynamics",
+     "year": 2019
+    }
+   ],
+   "lineage": [],
+   "method_flags": [
+    "optogenetics"
+   ],
+   "claim_edges": [
+    {
+     "claim": "C4.1",
+     "stance": "supports",
+     "strength": "direct",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  },
+  {
+   "title": "Illuminating dendritic function with computational models",
+   "year": 2020,
+   "venue": "Nature Reviews Neuroscience",
+   "doi": "10.1038/s41583-020-0301-7",
+   "authors": [
+    "Panayiota Poirazi",
+    "Athanasia Papoutsi"
+   ],
+   "labels": {
+    "scope": "dendritic computation",
+    "article_type": "review / perspective",
+    "prep": "computational / modeling",
+    "modality": "review"
+   },
+   "confidence": {
+    "scope": 0.83,
+    "article_type": 0.79,
+    "prep": 0.69,
+    "modality": 0.63
+   },
+   "significance": "Synthesized modeling work arguing single neurons implement multi-layer networks, framing the dendrite as the substrate of within-cell computation.",
+   "keywords": [
+    "two-layer model",
+    "review",
+    "compartmental model"
+   ],
+   "cited_by": 500,
+   "id": "10.1038_s41583-020-0301-7",
+   "first_author": "Panayiota Poirazi",
+   "last_author": "Athanasia Papoutsi",
+   "needs_review": false,
+   "evidence": {},
+   "phenomena": [
+    "NMDA spike",
+    "branch-specific computation"
+   ],
+   "lab_cluster": 10,
+   "lab_cluster_name": "Papoutsi (single)",
+   "similar": [],
+   "lineage": [],
+   "method_flags": [],
+   "claim_edges": [
+    {
+     "claim": "C3.3",
+     "stance": "supports",
+     "strength": "indirect",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C2.1",
+     "stance": "assumes",
+     "strength": "assumed",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    },
+    {
+     "claim": "C3.1",
+     "stance": "contradicts",
+     "strength": "indirect",
+     "condition": "",
+     "quote": "",
+     "confidence": 0.85,
+     "source": "model",
+     "needs_review": false
+    }
+   ],
+   "claims_done": true
+  }
+ ],
+ "sim_edges": [
+  [
+   0,
+   2,
+   0.75
+  ],
+  [
+   1,
+   5,
+   0.493
+  ],
+  [
+   1,
+   6,
+   0.493
+  ],
+  [
+   5,
+   6,
+   0.75
+  ],
+  [
+   5,
+   7,
+   0.75
+  ],
+  [
+   5,
+   9,
+   0.75
+  ],
+  [
+   5,
+   12,
+   0.75
+  ],
+  [
+   6,
+   7,
+   0.75
+  ],
+  [
+   6,
+   9,
+   0.75
+  ],
+  [
+   6,
+   12,
+   0.75
+  ],
+  [
+   7,
+   9,
+   0.75
+  ],
+  [
+   7,
+   12,
+   0.75
+  ],
+  [
+   7,
+   14,
+   0.166
+  ],
+  [
+   9,
+   10,
+   0.148
+  ],
+  [
+   9,
+   12,
+   0.87
+  ],
+  [
+   15,
+   16,
+   0.75
+  ]
+ ]
+};
+const $ = s => document.querySelector(s);
+const CL = Object.fromEntries(DB.claims.map(c => [c.id, c]));
+const PP = Object.fromEntries(DB.papers.map(p => [p.id, p]));
+const ORDER = ["supports","qualifies","contradicts","assumes"];
+const S = {view:"claims", q:null, c:null, node:null, tau:0.15, win:5};
+const esc = s => String(s ?? "").replace(/[&<>"]/g, x => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[x]));
+const edgesOf = id => DB.edges.filter(e => e.claim === id);
+const paperOf = e => PP[e.paper_id] || null;
+const pretty = k => { const m = String(k).match(/^([a-z_]+?)_(\d{4})/i); if (!m) return k;
+  return m[1].split("_").filter(x=>x!=="et"&&x!=="al").map(x=>x[0].toUpperCase()+x.slice(1)).join(" & ")+" "+m[2]; };
+const titleOf = e => { const p = paperOf(e); return p ? p.title : pretty(e.key); };
+
+/* A claim is thin when its positive case rests on one source, or when all of that case
+   shares one modality or one preparation. The second test is why the factual label axes
+   were kept when the interpretive ones were retired. */
+function thin(c){
+  const sup = edgesOf(c.id).filter(e => e.stance==="supports"||e.stance==="qualifies");
+  if (!sup.length) return null;
+  if (c.direct_sources <= 1) return `${c.direct_sources} direct source`;
+  const mods = new Set(sup.map(e=>e.modality).filter(Boolean));
+  if (mods.size===1 && sup.length>2) return `all support is ${[...mods][0]}`;
+  const preps = new Set(sup.map(e=>(paperOf(e)?.labels||{}).prep).filter(Boolean));
+  if (preps.size===1 && sup.length>2) return `all support is ${[...preps][0]}`;
+  return null;
+}
+const tally = c => { const n=c.n||{};
+  return `<span class="tal"><span class="s">+${n.supports||0}</span> <span class="c">−${n.contradicts||0}</span>`+
+         (n.assumes?` <span class="a">~${n.assumes}</span>`:"")+`</span>`; };
+
+/* ── view 1: claim tree ───────────────────────────────── */
+function viewClaims(){
+  const out = $("#out");
+  const qs = DB.questions.map(q => {
+    const cs = DB.claims.filter(c => c.parent === q.id);
+    const n = cs.reduce((a,c)=>a+Object.values(c.n||{}).reduce((x,y)=>x+y,0),0);
+    const cont = cs.filter(c=>c.status==="contested").length;
+    return {...q, cs, n, cont};
+  });
+  let h = `<div class="rail"><div><div class="colh">Questions</div>`;
+  for (const q of qs)
+    h += `<button class="box" data-q="${q.id}" aria-selected="${S.q===q.id}">
+      <div class="k">${q.id}</div>
+      <div class="h">${esc(q.text.replace(/^"|"$/g,""))}</div>
+      <div class="sub2"><span>${q.cs.length} claims</span><span>${q.n} edges</span>
+        ${q.cont?`<span class="pill contested">${q.cont} contested</span>`:""}</div></button>`;
+  h += `</div><div id="ccol">`;
+  if (!S.q) h += `<div class="hint">Pick a question.</div>`;
+  else {
+    h += `<div class="colh">Claims in ${S.q}</div>`;
+    for (const c of DB.claims.filter(c=>c.parent===S.q)){
+      const t = thin(c);
+      h += `<button class="box" data-c="${c.id}" aria-selected="${S.c===c.id}">
+        <div class="k">${c.id} ${tally(c)}</div>
+        <div class="h">${esc(c.text.trim())}</div>
+        <div class="sub2"><span class="pill ${c.status}">${c.status}</span>
+          ${c.years?`<span>${c.years[0]}–${c.years[1]}</span>`:""}</div>
+        ${t?`<div class="warnp">▲ ${esc(t)}</div>`:""}</button>`;
+    }
+  }
+  h += `</div><div id="pcol">`;
+  h += S.c ? claimDetail(CL[S.c]) : `<div class="hint">Pick a claim to see the papers under it.</div>`;
+  out.innerHTML = h + `</div></div>`;
+  out.querySelectorAll("[data-q]").forEach(b => b.onclick = () => {
+    S.q = S.q===b.dataset.q ? null : b.dataset.q; S.c = null; render(); });
+  out.querySelectorAll("[data-c]").forEach(b => b.onclick = () => {
+    S.c = S.c===b.dataset.c ? null : b.dataset.c; render(); });
+  out.querySelectorAll("[data-goto]").forEach(a => a.onclick = ev => {
+    ev.preventDefault(); const c = CL[a.dataset.goto];
+    S.q = c.parent; S.c = c.id; render(); });
+  requestAnimationFrame(wires);
+}
+
+function bars(o){
+  const mx = Math.max(...Object.values(o||{}),1);
+  const rows = Object.entries(o||{}).sort((a,b)=>b[1]-a[1]);
+  return rows.length ? rows.map(([k,v])=>
+    `<div class="r"><i style="width:${5+40*v/mx}px"></i>${esc(k)} ${v}</div>`).join("")
+    : `<div class="r" style="color:var(--ink3)">—</div>`;
+}
+
+function claimDetail(c){
+  const es = edgesOf(c.id), t = thin(c), inh = Object.entries(c.inherits||{});
+  let h = `<div class="colh">Evidence</div><div class="cd">
+    <div class="ct">${esc(c.text.trim())}</div>
+    ${c.note?`<div class="cn">${esc(c.note.trim())}</div>`:""}
+    <div class="diag">
+      <div class="dc ${t?"bad":""}"><h5>Evidence base</h5>
+        <div class="r">${es.length} edges · ${c.direct_sources} direct</div>
+        <div class="r">${c.years?c.years[0]+"–"+c.years[1]:"—"}</div>
+        ${t?`<div class="r">▲ ${esc(t)}</div>`:""}</div>
+      <div class="dc"><h5>Modality</h5>${bars(c.modalities)}</div>
+      <div class="dc"><h5>Preparation</h5>${bars(c.preps)}</div>
+      ${inh.length?`<div class="dc bad"><h5>Inherited caveats</h5>`+inh.map(([k,v])=>
+        `<div class="r"><a href="#" data-goto="${k}">${k}</a> ${v} edges</div>`).join("")+`</div>`:""}
+    </div></div>`;
+  for (const s of ORDER){
+    const g = es.filter(e=>e.stance===s);
+    if (!g.length) continue;
+    g.sort((a,b)=>(paperOf(b)?.year||0)-(paperOf(a)?.year||0));
+    h += `<div class="sh ${s}"><span>${s}</span><span>${g.length}</span></div>`;
+    for (const e of g){
+      const p = paperOf(e);
+      h += `<div class="ev ${s} ${p?"":"ghost"}">
+        <div class="t">${esc(titleOf(e))}</div>
+        ${e.condition?`<div class="c">${esc(e.condition)}</div>`:""}
+        <div class="m">${p?`<span style="color:var(--ink2)">${p.year||""}</span>`:""}
+          <span>${esc(e.strength)}</span>${e.region?`<span>${esc(e.region)}</span>`:""}
+          ${e.modality?`<span class="pill">${esc(e.modality)}</span>`:""}
+          ${(e.flags||[]).map(f=>`<span class="pill">${esc(f)}</span>`).join("")}
+          <span class="pill">${e.source}</span>
+          ${p&&p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">doi</a>`:""}
+          ${p?"":`<span style="color:var(--ink3)">not in Zotero</span>`}</div></div>`;
+    }
+  }
+  return h;
+}
+
+/* connectors drawn from measured geometry, so they follow the boxes on any reflow */
+function wires(){
+  const svg = $("#wires"), cv = $("#canvas");
+  svg.innerHTML = "";
+  if (S.view !== "claims" || innerWidth <= 1100) return;
+  const R = el => { const a = el.getBoundingClientRect(), b = cv.getBoundingClientRect();
+    return {l:a.left-b.left+cv.scrollLeft, t:a.top-b.top+cv.scrollTop, w:a.width, h:a.height}; };
+  const draw = (from, to, on) => {
+    const a = R(from), b = R(to);
+    const x1 = a.l+a.w, y1 = a.t+a.h/2, x2 = b.l, y2 = b.t+b.h/2, dx = Math.max(26,(x2-x1)*.55);
+    const p = document.createElementNS("http://www.w3.org/2000/svg","path");
+    p.setAttribute("d",`M${x1},${y1} C${x1+dx},${y1} ${x2-dx},${y2} ${x2},${y2}`);
+    p.setAttribute("fill","none");
+    p.setAttribute("stroke", on ? "var(--accent)" : "var(--line2)");
+    p.setAttribute("stroke-width", on ? 1.6 : 1);
+    p.setAttribute("opacity", on ? .95 : .4);
+    svg.appendChild(p);
+  };
+  const qb = S.q && document.querySelector(`[data-q="${S.q}"]`);
+  if (qb) document.querySelectorAll("[data-c]").forEach(cb => draw(qb, cb, cb.dataset.c===S.c));
+  const cb = S.c && document.querySelector(`[data-c="${S.c}"]`);
+  const first = document.querySelector("#pcol .cd");
+  if (cb && first) draw(cb, first, true);
+}
+
+/* ── view 2: author–paper network ─────────────────────── */
+function buildTree(){
+  const P = DB.papers.map((p,i)=>({...p, i})).filter(p=>p.year);
+  const idx = new Map(P.map((p,k)=>[p.i,k]));
+  const adj = new Map(P.map((_,k)=>[k,[]]));
+  for (const [i,j,s] of (DB.sim_edges||[])){
+    if (s < S.tau) continue;
+    const a = idx.get(i), b = idx.get(j);
+    if (a===undefined||b===undefined) continue;
+    adj.get(a).push([b,s]); adj.get(b).push([a,s]);
+  }
+  const order = P.map((_,k)=>k).sort((a,b)=>P[a].year-P[b].year);
+  const parent = new Array(P.length).fill(-1);
+  for (const k of order){
+    let best = null;
+    for (const [o,s] of adj.get(k)){
+      const dy = P[k].year - P[o].year;
+      if (dy > 0 && dy <= S.win && (!best || s > best[1])) best = [o,s];
+    }
+    if (best) parent[k] = best[0];
+  }
+  const kids = new Map(P.map((_,k)=>[k,[]]));
+  const roots = [];
+  parent.forEach((pa,k) => pa>=0 ? kids.get(pa).push(k) : roots.push(k));
+  roots.sort((a,b)=>P[a].year-P[b].year || P[a].lab_cluster-P[b].lab_cluster);
+  let slot = 0; const x = new Array(P.length).fill(0);
+  const walk = k => { kids.get(k).sort((a,b)=>P[a].year-P[b].year);
+    if (!kids.get(k).length){ x[k] = slot++; return; }
+    kids.get(k).forEach(walk); x[k] = (x[kids.get(k)[0]] + x[kids.get(k).slice(-1)[0]])/2;
+    if (kids.get(k).length===1) x[k] = x[kids.get(k)[0]] - .5; };
+  roots.forEach(walk);
+  return {P, parent, kids, roots, x, span: slot};
+}
+
+const PAL = ["#FF3D8A","#34D399","#60A5FA","#FBBF24","#A78BFA","#F472B6","#2DD4BF",
+             "#FB7185","#93C5FD","#FCD34D","#C4B5FD","#5EEAD4"];
+
+function viewNet(){
+  const T = buildTree(), {P,parent,x} = T;
+  const yrs = P.map(p=>p.year), y0 = Math.min(...yrs), y1 = Math.max(...yrs);
+  const CW = 30, RH = 26, L = 58, TOP = 26;
+  const W = L + Math.max(T.span,1)*CW + 300, H = TOP + (y1-y0+1)*RH + 40;
+  const px = k => L + x[k]*CW + CW/2, py = k => TOP + (P[k].year-y0)*RH;
+  const nRoot = T.roots.length, nLink = parent.filter(p=>p>=0).length;
+
+  let g = "";
+  for (let yr=y0; yr<=y1; yr++){
+    const yy = TOP + (yr-y0)*RH;
+    g += `<line x1="${L-8}" y1="${yy}" x2="${W}" y2="${yy}" stroke="var(--grid)"/>`;
+    if (yr%5===0||yr===y0||yr===y1) g += `<text class="ylab" x="4" y="${yy+3}">${yr}</text>`;
+  }
+  let links = "";
+  parent.forEach((pa,k)=>{ if (pa<0) return;
+    const on = S.node===P[k].id || S.node===P[pa].id;
+    links += `<path class="link ${on?"on":""}" d="M${px(pa)},${py(pa)} C${px(pa)},${(py(pa)+py(k))/2} ${px(k)},${(py(pa)+py(k))/2} ${px(k)},${py(k)}"/>`; });
+  let nodes = "";
+  P.forEach((p,k)=>{
+    const on = S.node===p.id, c = PAL[(p.lab_cluster||0)%PAL.length];
+    const r = 3.5 + Math.min(3.5, Math.sqrt((p.cited_by||0))/22);
+    const lab = ((p.last_author||"").split(" ").pop()||"") + " " + (p.year||"");
+    nodes += `<g class="node ${on?"on":""}" data-p="${esc(p.id)}">
+      <circle cx="${px(k)}" cy="${py(k)}" r="${r.toFixed(1)}" fill="${c}"/>
+      <text class="nlab ${on?"on":""}" x="${px(k)+r+4}" y="${py(k)+3}">${esc(lab)}</text></g>`;
+  });
+
+  $("#out").innerHTML = `
+    <div class="ctrls">
+      <label>similarity ≥ <input type="range" id="tau" min="8" max="80" value="${S.tau*100}">
+        <b id="tauv">${S.tau.toFixed(2)}</b></label>
+      <label>window <input type="range" id="win" min="2" max="12" value="${S.win}">
+        <b id="winv">±${S.win}y</b></label>
+      <span>${nLink} links · ${nRoot} roots · ${P.length} papers</span>
+    </div>
+    <div class="netwrap">
+      <div class="netscroll"><svg width="${W}" height="${H}">${g}${links}${nodes}</svg></div>
+      <div class="side" id="side">${sidePanel()}</div>
+    </div>`;
+  const bind = (id, key, fmt, scale) => { const el = $("#"+id); el.oninput = () => {
+    S[key] = scale(+el.value); $("#"+id+"v").textContent = fmt(S[key]); render(); }; };
+  bind("tau","tau", v=>v.toFixed(2), v=>v/100);
+  bind("win","win", v=>"±"+v+"y", v=>v);
+  $("#out").querySelectorAll("[data-p]").forEach(n => n.onclick = () => {
+    S.node = S.node===n.dataset.p ? null : n.dataset.p; render(); });
+}
+
+function sidePanel(){
+  const p = PP[S.node];
+  if (!p) return `<div class="hint" style="padding:0">Each paper hangs from its most
+    author-similar predecessor within the window. Unconnected papers are roots — a new
+    line, or a gap in the library. Click a node.</div>`;
+  const cl = (p.claim_edges||[]);
+  return `<h4>${esc(p.title)}</h4>
+    <div class="meta"><span>${p.year||""}</span><span>${esc(p.venue||"")}</span>
+      <span class="pill">${esc(p.lab_cluster_name||"")}</span></div>
+    ${p.significance?`<p>${esc(p.significance)}</p>`:""}
+    <div class="lbl">Authors</div><p style="font-size:11.5px">${esc((p.authors||[]).join(", "))}</p>
+    ${cl.length?`<div class="lbl">Claims</div>`+cl.map(e=>
+      `<div class="ev ${e.stance}" style="margin-bottom:4px"><div class="m" style="margin:0">
+        <a href="#" data-jump="${e.claim}" style="color:var(--accent)">${e.claim}</a>
+        <span>${e.stance}</span><span>${e.strength}</span></div></div>`).join("")
+      :`<div class="lbl">Claims</div><p style="color:var(--ink3)">none attached</p>`}
+    ${p.doi?`<div class="lbl">Link</div><p><a href="https://doi.org/${esc(p.doi)}" target="_blank"
+       rel="noopener" style="color:var(--accent)">doi.org/${esc(p.doi)}</a></p>`:""}`;
+}
+
+function render(){
+  const cont = DB.claims.filter(c=>c.status==="contested").length;
+  const thinN = DB.claims.filter(thin).length;
+  const miss = new Set(DB.edges.filter(e=>!e.paper_id).map(e=>e.key)).size;
+  $("#stats").innerHTML = `<span><b>${DB.papers.length}</b> papers</span>
+    <span><b>${DB.claims.length}</b> claims</span><span><b>${DB.edges.length}</b> edges</span>
+    <span style="color:var(--con)"><b>${cont}</b> contested</span>
+    <span style="color:var(--qual)"><b>${thinN}</b> thin</span>
+    ${miss?`<span><b>${miss}</b> cited, not in Zotero</span>`:""}`;
+  document.querySelectorAll(".sub").forEach(b=>b.setAttribute("aria-selected", b.dataset.v===S.view));
+  S.view==="claims" ? viewClaims() : viewNet();
+  document.querySelectorAll("[data-jump]").forEach(a => a.onclick = ev => {
+    ev.preventDefault(); const c = CL[a.dataset.jump];
+    if (!c) return; S.view="claims"; S.q=c.parent; S.c=c.id; render(); });
+  if (S.view!=="claims") $("#wires").innerHTML="";
+}
+
+document.querySelector(".subs").onclick = e => { const b = e.target.closest(".sub");
+  if (b) { S.view = b.dataset.v; render(); } };
+addEventListener("resize", () => { clearTimeout(window._w);
+  window._w = setTimeout(wires, 90); });
+$("#saveBtn").onclick = () => { const b = new Blob([JSON.stringify(DB,null,1)],{type:"application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download="atlas.json"; a.click(); };
+$("#loadBtn").onclick = () => $("#file").click();
+$("#file").onchange = e => e.target.files[0] && load(e.target.files[0]);
+function load(f){ const r = new FileReader(); r.onload = () => {
+  try { const d = JSON.parse(r.result);
+    if (!d.claims || !d.edges) throw new Error("not an atlas.json");
+    Object.assign(DB, d); location.reload();
+  } catch(err){ alert("Could not read that file: "+err.message); } };
+  r.readAsText(f); }
+const drop = $("#drop");
+addEventListener("dragover", e => { e.preventDefault(); drop.classList.add("on"); });
+addEventListener("dragleave", e => { if (e.relatedTarget===null) drop.classList.remove("on"); });
+addEventListener("drop", e => { e.preventDefault(); drop.classList.remove("on");
+  const f = e.dataTransfer.files[0]; if (f) load(f); });
+render();
+</script></body></html>

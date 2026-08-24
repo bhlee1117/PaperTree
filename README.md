@@ -7,6 +7,8 @@ claim, what holds it up, and where is it thin?" — and it answers the second pa
 mechanically, from the labels, so you find out that a claim rests entirely on one
 preparation without having to notice it yourself.
 
+Visit, https://bhlee1117.github.io/PaperTree/ for the latest status of the tree.
+
 ---
 
 ## The idea in one table
